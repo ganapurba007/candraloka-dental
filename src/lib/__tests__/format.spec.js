@@ -5,6 +5,7 @@ import {
   formatTimeWib,
   formatTimeRangeWib,
   formatDuration,
+  formatPracticeDaysSummary,
   getDayName,
 } from '../format'
 
@@ -43,5 +44,15 @@ describe('format.js', () => {
     expect(getDayName(6)).toBe('Sabtu')
     expect(getDayName(7)).toBe('Minggu')
     expect(getDayName(8)).toBe('')
+  })
+
+  it('formats doctor practice days summary', () => {
+    const hours = [
+      { day: 1, start: '09:00', end: '14:00' },
+      { day: 3, start: '09:00', end: '14:00' },
+      { day: 5, start: '14:00', end: '20:00' },
+    ]
+    expect(formatPracticeDaysSummary(hours)).toBe('Senin, Rabu, Jumat')
+    expect(formatPracticeDaysSummary([])).toBe('Sesuai perjanjian')
   })
 })

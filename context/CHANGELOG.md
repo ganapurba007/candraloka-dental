@@ -14,6 +14,31 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 6 — Profil Dokter (2026-10-12)
+**FR terkait:** FR-5.1, FR-5.2, FR-5.3, FR-5.4
+**Yang dikerjakan:**
+- Menambahkan helper fungsi murni:
+  - `formatPracticeDaysSummary(practiceHours)` di `src/lib/format.js` untuk merangkum hari praktek dokter
+  - `isDoctorPracticingOn(doctor, now)` di `src/lib/schedule.js` untuk mengecek status praktek hari ini dengan mempertimbangkan tanggal cuti
+- Membangun halaman direktori dokter di `src/pages/Doctors.vue` (FR-5.1):
+  - Filter pencarian nama atau keahlian real-time
+  - Filter spesialisasi berbasis chip dinamis
+  - Kartu dokter lengkap dengan foto WebP, penanda "Praktek Hari Ini", lama pengalaman, ringkasan hari praktek, tombol "Lihat Profil", dan "Reservasi"
+  - *Empty state* ramah saat pencarian dokter tidak ditemukan
+- Membangun halaman detail dokter di `src/pages/DoctorDetail.vue` (FR-5.2, FR-5.3, FR-5.4):
+  - Foto dokter, bio, bahasa, spesialisasi, dan pengalaman
+  - Riwayat pendidikan dan gelar terstruktur
+  - Tag fokus & minat klinis dokter
+  - Daftar layanan yang ditangani yang menaut ke detail layanan
+  - Tabel jadwal praktek mingguan (Senin–Minggu) dengan penyorot hari ini dan pemberitahuan tanggal cuti bila ada
+  - Tombol CTA "Reservasi dengan Dokter Ini" menuju `/reservasi?dokter=:slug` dan tanya via WhatsApp
+  - Bar CTA tetap di bawah layar untuk mobile viewport (FR-5.3)
+  - Integrasi komponen `NotFound.vue` bila slug dokter tidak valid (FR-5.4)
+- Menambahkan unit test di `Doctors.spec.js`, `DoctorDetail.spec.js`, serta unit test helper di `format.spec.js` dan `schedule.spec.js`: 78 passed / 78 total
+**File yang berubah:** AGENTS.md, context/CHANGELOG.md, src/lib/format.js, src/lib/schedule.js, src/lib/__tests__/*, src/pages/Doctors.vue, src/pages/DoctorDetail.vue, src/pages/__tests__/Doctors.spec.js, src/pages/__tests__/DoctorDetail.spec.js
+**Test:** 78 passed / 78 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
 ## Fase 5 — Layanan & Detail Layanan (2026-10-12)
 **FR terkait:** FR-4.1, FR-4.2, FR-4.3, FR-4.4, FR-4.5
 **Yang dikerjakan:**

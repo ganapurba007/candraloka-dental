@@ -4,6 +4,7 @@ import {
   getTimePeriod,
   groupSlotsByPeriod,
   getClinicOpenStatus,
+  isDoctorPracticingOn,
 } from '../schedule'
 
 describe('schedule.js', () => {
@@ -60,5 +61,24 @@ describe('schedule.js', () => {
     const sunRes = getClinicOpenStatus(hours, sunday)
     expect(sunRes.isOpen).toBe(false)
     expect(sunRes.statusBadge).toBe('Tutup Hari Ini')
+  })
+
+  it('determines if doctor is practicing on a given date considering leave', () => {
+    const doctor = {
+      practiceHours: [
+        { day: 1, start: '09:00', end: '14:00' }, // Monday
+        { day: 3, start: '09:00', end: '14:00' }, // Wednesday
+      ],
+      leaveDates: ['2026-10-19'], // A Monday on leave
+    }
+
+    // Monday 2026-10-12 (day 1, normal) -> practicing
+    expect(isDoctorPracticingOn(doctor, '2026-10-12')).toBe(true)
+
+    // Tuesday 2026-10-13 (day 2, not in practiceHours) -> false
+    expect(isDoctorPracticingOn(doctor, '2026-10-13')).toBe(false)
+
+    // Monday 2026-10-19 (day 1, but on leave) -> false
+    expect(isDoctorPracticingOn(doctor, '2026-10-19')).toBe(false)
   })
 })

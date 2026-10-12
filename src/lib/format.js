@@ -104,3 +104,15 @@ export function formatDuration(minutes) {
   }
   return `${minutes} menit`
 }
+
+/**
+ * Format ringkas hari praktek dokter.
+ * Contoh: [{ day: 1 }, { day: 3 }, { day: 5 }] -> "Senin, Rabu, Jumat"
+ * @param {Array<{ day: number }>} practiceHours
+ * @returns {string}
+ */
+export function formatPracticeDaysSummary(practiceHours = []) {
+  if (!practiceHours || practiceHours.length === 0) return 'Sesuai perjanjian'
+  const uniqueDays = [...new Set(practiceHours.map((h) => h.day))].sort((a, b) => a - b)
+  return uniqueDays.map(getDayName).join(', ')
+}

@@ -114,3 +114,21 @@ export function getClinicOpenStatus(operatingHours = [], now = new Date()) {
     hoursText: `Buka kembali besok`,
   }
 }
+
+/**
+ * Mengetahui apakah dokter memiliki sesi praktek pada hari tertentu (default hari ini WIB).
+ * Memperhitungkan cuti (leaveDates).
+ * @param {object} doctor
+ * @param {Date|string} [now=new Date()]
+ * @returns {boolean}
+ */
+export function isDoctorPracticingOn(doctor, now = new Date()) {
+  if (!doctor || !doctor.practiceHours || !Array.isArray(doctor.practiceHours)) return false
+  const todayIso = toIsoDateString(now)
+  if (doctor.leaveDates && doctor.leaveDates.includes(todayIso)) {
+    return false
+  }
+  const dayOfWeek = getIsoDayOfWeek(todayIso)
+  return doctor.practiceHours.some((h) => h.day === dayOfWeek)
+}
+
