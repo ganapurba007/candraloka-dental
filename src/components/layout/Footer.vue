@@ -139,7 +139,7 @@ const navLinks = [
 
       <!-- Bottom Bar -->
       <div class="pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© {{ currentYear }} Candraloka Dental Care. Semua hak dilindungi.</p>
+        <p>© {{ currentYear }} Candraloka Dental Care. All rights reserved.</p>
       </div>
     </div>
   </footer>
