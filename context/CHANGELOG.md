@@ -14,6 +14,21 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Optimasi Tampilan — Hero Section Bersih, Kontras & Mudah Dibaca (2026-10-12)
+**FR terkait:** FR-2.1, PRD §10, PRD §11 (Prinsip UX)
+**Yang dikerjakan:**
+- Menyempurnakan tata letak hero section agar lebih bersih (*clean*), minim distraksi visual, dan nyaman dibaca:
+  - Mengubah overlay gradien menjadi lapisan *silky sapphire blue* (`rgba(8, 20, 50, 0.40)` ke `rgba(8, 19, 48, 1)`) yang meredam garis jendela/pohon di latar belakang tanpa menghilangkan visibilitas dental chair di sisi kiri.
+  - Memindahkan watermark siluet gigi dekoratif ke sisi kanan luar dengan opasitas sangat halus (`opacity-[0.07]`) sehingga tidak lagi menabrak atau menumpuk teks judul dan paragraf.
+  - Merapikan hierarki tipografi: memadukan judul utama yang tegas, subjudul biru muda yang elegan, dan deskripsi bernarasi utuh tanpa tumpukan heading bertingkat.
+  - Memperlebar jarak vertikal bawah hero (`pb-36 sm:pb-44 lg:pb-48`) dan menaikkan posisi dot slider sehingga tidak lagi bertabrakan dengan kartu mengambang `QuickInfoStrip`.
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** src/components/sections/HomeHero.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Redesign — Adaptasi Medcity Layout & Transisi Dental Blue (2026-10-12)
 **FR terkait:** FR-3.1, FR-3.2, FR-3.3, FR-3.5, FR-2.8, PRD §10 (Referensi Medcity)
 **Yang dikerjakan:**
