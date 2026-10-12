@@ -14,6 +14,27 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Redesign Interaktif — Carousel Ulasan Pasien Otomatis & Foto Profil Nyata (2026-10-12)
+**FR terkait:** FR-2.7, PRD §10, PRD §11 (Prinsip UX), PRD §12 (Optimasi & Gambar)
+**Yang dikerjakan:**
+- Mengubah tampilan Ulasan Pasien ([TestimonialsSection.vue](file:///d:/Projects/candraloka-dental/src/components/sections/TestimonialsSection.vue)) dari grid 3-kolom statis menjadi carousel interaktif modern yang menampilkan ulasan satu per satu:
+  - Transisi slide otomatis setiap 5 detik dengan animasi halus (`slide-left` / `slide-right`) serta dukungan `prefers-reduced-motion`.
+  - Pause otomatis saat kursor mouse masuk (`mouseenter`) atau fokus keyboard (`focusin`), dan kembali berjalan saat kursor keluar (`mouseleave`).
+  - Kontrol navigasi manual lengkap: tombol panah chevron kiri & kanan dengan efek hover/active dan `cursor-pointer`, serta indikator navigasi titik (dots) dengan bentuk pil dinamis untuk ulasan aktif.
+- Mengganti seluruh placeholder inisial avatar pasien dengan foto profil potret nyata berkualitas tinggi, ramah, dan representatif:
+  - `Ratna Sari` (Scaling): Potret wanita Indonesia tersenyum ceria dengan gigi putih sehat dan baju batik.
+  - `Budi Santoso` (Ortodonti): Pria ramah tersenyum lebar memperlihatkan susunan gigi rapi dan bersih.
+  - `Dina Mariana` (Tambal Komposit): Wanita tersenyum natural memperlihatkan gigi depan sehat.
+  - `Hendra Wijaya` (Perawatan Anak): Sosok ayah muda berkacamata ramah.
+- Seluruh avatar diproses ke WebP responsif (`400x400`, `300x300`, `200x200`) dan lolos validasi ukuran `npm run check:images`.
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` (24 images verified)
+  - `npm run build` sukses
+**File yang berubah:** src/components/sections/TestimonialsSection.vue, src-images/testimonials/*, public/images/testimonials/*, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Integrasi Media — Foto Potret Profesional Tim Dokter Gigi (2026-10-12)
 **FR terkait:** FR-2.6, FR-3.6, PRD §12 (Optimasi & Gambar)
 **Yang dikerjakan:**
