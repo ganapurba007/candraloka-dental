@@ -1,7 +1,13 @@
 /**
  * schedule.js — Helper murni untuk kalkulasi pembagian slot jadwal praktek.
  */
-import { timeToMinutes, minutesToTime } from './time'
+import {
+  timeToMinutes,
+  minutesToTime,
+  getIsoDayOfWeek,
+  toIsoDateString,
+  toWibDate,
+} from './time'
 
 /**
  * Menghasilkan daftar slot jam awal dari sebuah sesi waktu.
@@ -60,4 +66,51 @@ export function groupSlotsByPeriod(slots) {
 
   // Hanya return periode yang memiliki slot
   return periods.filter((p) => p.slots.length > 0)
+}
+
+/**
+ * Menghitung status buka/tutup klinik hari ini berdasarkan jam operasional dan waktu WIB.
+ * @param {Array<{ day: number, open: string, close: string }>} operatingHours
+ * @param {Date|string} [now=new Date()]
+ * @returns {{ isOpen: boolean, statusBadge: string, hoursText: string }}
+ */
+export function getClinicOpenStatus(operatingHours = [], now = new Date()) {
+  const todayIso = toIsoDateString(now)
+  const dayOfWeek = getIsoDayOfWeek(todayIso)
+
+  const schedule = operatingHours.find((h) => h.day === dayOfWeek)
+  if (!schedule) {
+    return {
+      isOpen: false,
+      statusBadge: 'Tutup Hari Ini',
+      hoursText: 'Klinik libur hari ini',
+    }
+  }
+
+  const wib = toWibDate(now)
+  const currentMin = wib.getHours() * 60 + wib.getMinutes()
+  const openMin = timeToMinutes(schedule.open)
+  const closeMin = timeToMinutes(schedule.close)
+
+  if (currentMin >= openMin && currentMin < closeMin) {
+    return {
+      isOpen: true,
+      statusBadge: 'Buka Sekarang',
+      hoursText: `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
+    }
+  }
+
+  if (currentMin < openMin) {
+    return {
+      isOpen: false,
+      statusBadge: `Buka ${schedule.open} WIB`,
+      hoursText: `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
+    }
+  }
+
+  return {
+    isOpen: false,
+    statusBadge: 'Sudah Tutup',
+    hoursText: `Buka kembali besok`,
+  }
 }

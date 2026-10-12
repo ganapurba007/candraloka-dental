@@ -1,29 +1,49 @@
 <script setup>
 import { useHead } from '@unhead/vue'
+import HomeHero from '@/components/sections/HomeHero.vue'
+import QuickInfoStrip from '@/components/sections/QuickInfoStrip.vue'
+import HomeAboutBrief from '@/components/sections/HomeAboutBrief.vue'
+import FeaturedServices from '@/components/sections/FeaturedServices.vue'
+import ReservationSteps from '@/components/sections/ReservationSteps.vue'
+import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
+import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
+import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
 
 useHead({
-  title: 'Beranda | Candraloka Dental Care',
+  title: 'Beranda | Candraloka Dental Care — Klinik Gigi Modern & Ramah',
   meta: [
     {
       name: 'description',
-      content: 'Klinik gigi modern dengan layanan profesional dan reservasi online mudah.',
+      content: 'Klinik gigi keluarga dengan layanan modern, dokter gigi umum & spesialis berpengalaman, dan sistem reservasi online jadwal waktu nyata.',
     },
   ],
 })
 </script>
 
 <template>
-  <main class="flex-1 flex flex-col items-center justify-center p-8 text-center">
-    <div class="max-w-md p-6 bg-white rounded-2xl shadow-card border border-slate-100">
-      <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary-100 text-primary-800 mb-3">
-        Fase 0 — Setup
-      </span>
-      <h1 class="text-2xl font-bold text-slate-900 tracking-tight mb-2">
-        Candraloka Dental Care
-      </h1>
-      <p class="text-sm text-slate-600">
-        Fondasi proyek telah siap. Tailwind CSS, Vue Router, Vitest, dan pipeline gambar aktif.
-      </p>
-    </div>
+  <main class="flex-1 flex flex-col">
+    <!-- FR-2.1 Hero Section -->
+    <HomeHero />
+
+    <!-- FR-2.2 Quick Info Strip -->
+    <QuickInfoStrip />
+
+    <!-- FR-2.3 Brief About with CountUp Stats -->
+    <HomeAboutBrief />
+
+    <!-- FR-2.4 Featured Services -->
+    <FeaturedServices />
+
+    <!-- FR-2.5 4-Step Reservation Process -->
+    <ReservationSteps />
+
+    <!-- FR-2.6 Featured Doctors -->
+    <FeaturedDoctors />
+
+    <!-- FR-2.7 Patient Testimonials -->
+    <TestimonialsSection />
+
+    <!-- FR-2.8 Closing CTA Banner -->
+    <HomeCtaBanner />
   </main>
 </template>

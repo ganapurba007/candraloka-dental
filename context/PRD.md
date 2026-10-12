@@ -154,7 +154,7 @@ Volume data minimal: 8 layanan, 5 dokter (3 unggulan), 4 testimoni, 6 foto fasil
 | 0 | Setup: Vite, Tailwind (token tema), Vue Router, ESLint/Prettier, Vitest, struktur folder, pipeline gambar WebP (`sharp`), `ResponsiveImage`, font self-host, dan `check:images` (§12) | ✅ |
 | 1 | Layout global (FR-1.x) + komponen UI dasar (Button, Card, Badge, Accordion, Toast, StepIndicator) | ✅ |
 | 2 | Data JSON + helper murni (format tanggal/jam WIB, slot, ketersediaan, kode reservasi, pesan WhatsApp) beserta test | ✅ |
-| 3 | Beranda (FR-2.x) | ⬜ |
+| 3 | Beranda (FR-2.x) | ✅ |
 | 4 | Tentang (FR-3.x) | ⬜ |
 | 5 | Layanan: daftar dan detail (FR-4.x) | ⬜ |
 | 6 | Profil dokter: daftar dan detail (FR-5.x) | ⬜ |
