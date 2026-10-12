@@ -14,6 +14,22 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 10 — Rilis & Publikasi (2026-10-12)
+**FR terkait:** PRD §6 (Milestone 10)
+**Yang dikerjakan:**
+- Menambahkan dokumentasi komprehensif `README.md` mencakup:
+  - Ringkasan portofolio dan branding resmi Candraloka Dental Care
+  - Daftar fitur interaktif lengkap (Beranda, Tentang, Layanan, Profil Dokter, Jadwal Praktek matriks, Alur Reservasi 4 langkah berbasis ketersediaan)
+  - Arsitektur teknologi (Vue 3, Vite, Tailwind CSS, Zod, `@unhead/vue`, `sharp`, Vitest)
+  - Kepatuhan standar UX dan aksesibilitas (UX-1 s.d. UX-11)
+  - Panduan instalasi lokal, eksekusi test suite, validasi pipeline gambar WebP, dan build produksi
+  - Struktur direktori dan disclaimer portofolio
+- Menambahkan konfigurasi `vercel.json` untuk SPA client-side routing rewrites dan header cache jangka panjang aset gambar/font
+- Seluruh 92 unit tests lolos verifikasi dan build produksi berhasil tanpa peringatan
+**File yang berubah:** README.md, vercel.json, AGENTS.md, context/PRD.md, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** README.md, AGENTS.md, context/PRD.md, context/CHANGELOG.md
+
 ## Fase 9 — Audit Akhir, UX Polish, Aksesibilitas & SEO (2026-10-12)
 **FR terkait:** UX-1 s.d. UX-11, FR-1.5, FR-1.6, FR-1.7, PRD §11, PRD §12
 **Yang dikerjakan:**

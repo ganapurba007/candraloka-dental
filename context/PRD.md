@@ -161,7 +161,7 @@ Volume data minimal: 8 layanan, 5 dokter (3 unggulan), 4 testimoni, 6 foto fasil
 | 7 | Jadwal praktek (FR-6.x) | ✅ |
 | 8 | Reservasi online + konfirmasi (FR-7.x) | ✅ |
 | 9 | Audit akhir: polishing UX, responsif, aksesibilitas, SEO, dan audit performa menyeluruh (§11, §12) | ✅ |
-| 10 | Rilis: deploy, README, screenshot, tautan demo | ⬜ |
+| 10 | Rilis: deploy, README, screenshot, tautan demo | ✅ |
 
 ## 7. Non-Goals
 Hal-hal yang SENGAJA tidak dibangun di scope ini, supaya AI tidak menambahkannya secara tidak diminta:
