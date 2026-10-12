@@ -7,7 +7,22 @@ import Card from '@/components/ui/Card.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 
-// 3 Featured doctors (FR-2.6)
+const props = defineProps({
+  badge: {
+    type: String,
+    default: 'Tenaga Medis Berdedikasi',
+  },
+  title: {
+    type: String,
+    default: 'Dokter Gigi Unggulan',
+  },
+  description: {
+    type: String,
+    default: 'Didukung dokter gigi umum dan spesialis berpengalaman yang siap memberikan perawatan terbaik untuk Anda.',
+  },
+})
+
+// 3 Featured doctors (FR-2.6 / FR-3.6)
 const featuredDoctors = computed(() => {
   return doctorsData.filter((d) => d.featured).slice(0, 3)
 })
@@ -20,13 +35,13 @@ const featuredDoctors = computed(() => {
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div class="max-w-2xl space-y-2">
           <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-            Tenaga Medis Berdedikasi
+            {{ badge }}
           </span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
-            Dokter Gigi Unggulan
+            {{ title }}
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Didukung dokter gigi umum dan spesialis berpengalaman yang siap memberikan perawatan terbaik untuk Anda.
+            {{ description }}
           </p>
         </div>
         <div class="flex-shrink-0">

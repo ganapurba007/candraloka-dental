@@ -28,6 +28,13 @@ const testimonials = [
   { name: 'avatar-4', label: 'Hendra Wijaya', color: '#0e204d' },
 ]
 
+const facilities = [
+  { name: 'ruang-perawatan', label: 'Ruang Perawatan Ergonomis', color: '#21cdc0' },
+  { name: 'ruang-tunggu', label: 'Area Tunggu Tenang &amp; Nyaman', color: '#354f8e' },
+  { name: 'sterilisasi', label: 'Sterilisasi Bertaraf Medis', color: '#17a89e' },
+  { name: 'ruang-anak', label: 'Pojok Ramah Anak (Kids Corner)', color: '#4c73b3' },
+]
+
 async function generate() {
   // Services
   const srvDir = path.resolve('src-images/services')
@@ -50,9 +57,10 @@ async function generate() {
     await sharp(Buffer.from(svg)).png().toFile(path.join(srvDir, `${s.name}.png`))
   }
 
-  // Clinic hero
+  // Clinic hero, about, map
   const clinicDir = path.resolve('src-images/clinic')
   await fs.promises.mkdir(clinicDir, { recursive: true })
+
   const heroSvg = `
   <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -69,6 +77,40 @@ async function generate() {
     <text x="120" y="380" font-family="sans-serif" font-size="26" fill="#e4ecf7">Klinik Gigi Modern, Ramah, dan Nyaman untuk Keluarga Anda</text>
   </svg>`
   await sharp(Buffer.from(heroSvg)).png().toFile(path.join(clinicDir, 'hero.png'))
+
+  const aboutSvg = `
+  <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g_about" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#354f8e" />
+        <stop offset="60%" stop-color="#17a89e" />
+        <stop offset="100%" stop-color="#0e204d" />
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g_about)" />
+    <circle cx="200" cy="200" r="220" fill="white" fill-opacity="0.08" />
+    <circle cx="1000" cy="500" r="300" fill="white" fill-opacity="0.06" />
+    <text x="120" y="320" font-family="sans-serif" font-size="44" font-weight="bold" fill="white">Profil Klinik Candraloka</text>
+    <text x="120" y="380" font-family="sans-serif" font-size="24" fill="#e4ecf7">Standar Medis Higienis &amp; Pelayanan Penuh Empati</text>
+  </svg>`
+  await sharp(Buffer.from(aboutSvg)).png().toFile(path.join(clinicDir, 'about.png'))
+
+  const mapSvg = `
+  <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g_map" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0e204d" />
+        <stop offset="100%" stop-color="#1b3164" />
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g_map)" />
+    <path d="M 100,360 Q 640,100 1180,360" stroke="#21cdc0" stroke-width="4" fill="none" opacity="0.4" />
+    <circle cx="640" cy="360" r="20" fill="#21cdc0" />
+    <circle cx="640" cy="360" r="40" fill="#21cdc0" fill-opacity="0.2" />
+    <text x="640" y="440" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="white">Candraloka Dental Care — Kebayoran Baru</text>
+    <text x="640" y="480" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#dce1ee">Klik untuk membuka di Google Maps</text>
+  </svg>`
+  await sharp(Buffer.from(mapSvg)).png().toFile(path.join(clinicDir, 'map.png'))
 
   // Doctors
   const docDir = path.resolve('src-images/doctors')
@@ -103,6 +145,27 @@ async function generate() {
       <text x="200" y="270" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="white">${t.label}</text>
     </svg>`
     await sharp(Buffer.from(testSvg)).png().toFile(path.join(testDir, `${t.name}.png`))
+  }
+
+  // Facilities
+  const facDir = path.resolve('src-images/facilities')
+  await fs.promises.mkdir(facDir, { recursive: true })
+  for (const f of facilities) {
+    const facSvg = `
+    <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g_${f.name}" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="${f.color}" />
+          <stop offset="100%" stop-color="#0e204d" />
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#g_${f.name})" />
+      <circle cx="1100" cy="200" r="260" fill="white" fill-opacity="0.08" />
+      <circle cx="200" cy="500" r="280" fill="white" fill-opacity="0.05" />
+      <text x="100" y="340" font-family="sans-serif" font-size="44" font-weight="bold" fill="white">${f.label}</text>
+      <text x="100" y="400" font-family="sans-serif" font-size="24" fill="#e4ecf7">Fasilitas Higienis Candraloka Dental Care</text>
+    </svg>`
+    await sharp(Buffer.from(facSvg)).png().toFile(path.join(facDir, `${f.name}.png`))
   }
 
   console.log('Successfully generated all source images.')

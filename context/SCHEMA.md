@@ -2,7 +2,7 @@
 
 > Sumber kebenaran struktur data SAAT INI. Proyek ini TIDAK memakai database: "tabel" di bawah adalah struktur file JSON di `src/data/`, ditambah objek runtime yang hidup di browser. Berbeda dari §4 PRD.md yang cuma rencana awal — file ini WAJIB selalu sinkron dengan file JSON dan skema Zod aktual di kode. Update file ini di sesi yang sama setiap kali struktur data berubah.
 
-**Terakhir disinkronkan:** 2026-10-12 — Fase 0 (rencana awal, belum ada kode)
+**Terakhir disinkronkan:** 2026-10-12 — Fase 4 (Tentang selesai)
 
 **Konvensi umum:** tanggal memakai format ISO `YYYY-MM-DD`; jam memakai `HH:mm` (24 jam); semua waktu diartikan dalam WIB (UTC+7). Nomor hari memakai ISO: 1 = Senin … 7 = Minggu. Path gambar relatif terhadap `/public`, selalu berekstensi `.webp`, dan menunjuk varian terbesar (1280 px); varian `-768` dan `-480` diturunkan oleh komponen `ResponsiveImage` (PRD §12.1). Rasio gambar ditentukan komponen pemakai, bukan JSON.
 
@@ -14,7 +14,7 @@
 | name | string | wajib | "Candraloka Dental Care" |
 | tagline | string | wajib | |
 | establishedYear | number | wajib | Dasar angka "tahun melayani" |
-| contact | object | wajib | `{ phone, whatsapp, email, address, mapUrl, mapEmbedUrl }`; `whatsapp` format internasional tanpa `+` (rekaan), dipakai untuk `wa.me` |
+| contact | object | wajib | `{ phone, whatsapp, email, address, mapUrl, mapEmbedUrl, mapImage }`; `whatsapp` format internasional tanpa `+` (rekaan), dipakai untuk `wa.me` |
 | operatingHours | object[] | wajib | `{ day, open, close }` per hari buka; hari yang tidak tercantum = tutup |
 | timezoneLabel | string | wajib | "WIB" |
 | reservation | object | wajib | `{ slotMinutes, bookingWindowDays, minLeadMinutes }`; nilai awal 30, 30, 60 |
