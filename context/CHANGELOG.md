@@ -14,6 +14,23 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Integrasi Media — Foto Potret Profesional Tim Dokter Gigi (2026-10-12)
+**FR terkait:** FR-2.6, FR-3.6, PRD §12 (Optimasi & Gambar)
+**Yang dikerjakan:**
+- Mengganti seluruh placeholder siluet avatar dokter dengan foto potret medis profesional berkualitas tinggi yang ramah dan representatif:
+  - `drg. Andi Pratama, Sp.KG`: Dokter gigi spesialis konservasi gigi di ruang operatory modern dengan latar dental chair dan radiografi.
+  - `drg. Nadia Safira, Sp.KGA`: Dokter gigi spesialis kedokteran gigi anak yang hangat dan ceria di klinik ramah anak (*pediatric corner*).
+  - `drg. Farhan Maulana, Sp.Ort`: Spesialis ortodonti berkacamata dengan jas lab dokter rapi di depan layar model ortodonti 3D.
+  - `drg. Citra Lestari`: Dokter gigi umum di ruang dental studio estetika.
+  - `drg. Bambang Wicaksono, Sp.BM`: Spesialis bedah mulut dengan loupes bedah dan masker di ruang bedah minor.
+- Seluruh foto diproses dalam format WebP responsif (`800x1000`, `768x960`, `480x600`) dengan rasio 4:5 dan lulus batas anggaran ukuran PRD §12.
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** src-images/doctors/*, public/images/doctors/*, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Redesign & Animasi — Alur Reservasi Medcity Style dengan Efek Hover (2026-10-12)
 **FR terkait:** FR-2.5, PRD §10 (Referensi Medcity), PRD §11 (Prinsip UX)
 **Yang dikerjakan:**
