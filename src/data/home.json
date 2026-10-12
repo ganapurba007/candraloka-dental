@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "headline": "Senyum Sehat dan Percaya Diri Dimulai dari Sini",
+    "subheadline": "Perawatan gigi modern dengan dokter berpengalaman, teknologi higienis terkini, dan alur reservasi tepat waktu tanpa antrean panjang.",
+    "image": "/images/clinic/hero.webp"
+  },
+  "stats": [
+    { "label": "Tahun Melayani", "value": 7, "suffix": "+" },
+    { "label": "Pasien Puas", "value": 12500, "suffix": "+" },
+    { "label": "Dokter Spesialis", "value": 5, "suffix": " Dokter" }
+  ],
+  "reservationSteps": [
+    { "number": 1, "title": "Pilih Layanan", "description": "Tentukan perawatan gigi yang Anda atau keluarga butuhkan." },
+    { "number": 2, "title": "Pilih Dokter", "description": "Pilih dokter spesialis atau opsi fleksibel 'Dokter Mana Saja'." },
+    { "number": 3, "title": "Pilih Jadwal", "description": "Tentukan tanggal dan jam praktek yang tersedia secara waktu nyata." },
+    { "number": 4, "title": "Isi Data & Konfirmasi", "description": "Lengkapi kontak Anda dan dapatkan kode reservasi resmi instan." }
+  ]
+}

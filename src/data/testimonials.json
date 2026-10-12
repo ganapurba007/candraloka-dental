@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Ratna Sari",
+    "service": "Pembersihan Karang Gigi (Scaling)",
+    "quote": "Proses scaling di Candraloka nyaman sekali, dokternya sangat hati-hati dan teliti. Tempatnya bersih, alatnya canggih, dan suasananya tenang.",
+    "avatar": "/images/testimonials/avatar-1.webp"
+  },
+  {
+    "id": 2,
+    "name": "Budi Santoso",
+    "service": "Perawatan Behel (Ortodonti)",
+    "quote": "Penjelasan dokter sangat detail mengenai rencana perawatan behel saya. Jadwal kontrol selalu tepat waktu tanpa antrean panjang.",
+    "avatar": "/images/testimonials/avatar-2.webp"
+  },
+  {
+    "id": 3,
+    "name": "Dina Mariana",
+    "service": "Penambalan Gigi Komposit",
+    "quote": "Warna tambalannya benar-benar menyatu alami dengan gigi asli. Sekarang makan atau minum dingin sudah tidak terasa ngilu lagi.",
+    "avatar": "/images/testimonials/avatar-3.webp"
+  },
+  {
+    "id": 4,
+    "name": "Hendra Wijaya",
+    "service": "Perawatan Gigi Anak (Pediatrik)",
+    "quote": "Anak saya yang biasanya cemas ke dokter gigi justru merasa rileks berkat pendekatan dokter yang hangat dan komunikatif.",
+    "avatar": "/images/testimonials/avatar-4.webp"
+  }
+]

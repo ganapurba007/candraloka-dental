@@ -94,7 +94,7 @@ Disimpan sebagai array di `localStorage` (kunci tetap, mis. `reservations`), div
 
 | Field | Tipe | Keterangan |
 |---|---|---|
-| code | string | Format `DNT-YYMMDD-XXXX` (`XXXX` huruf besar/angka acak tanpa karakter ambigu) |
+| code | string | Format `CDC-YYMMDD-XXXX` (`XXXX` huruf besar/angka acak tanpa karakter ambigu) |
 | serviceId | number | FK → services.id |
 | doctorId | number | FK → doctors.id; selalu terisi (hasil penetapan otomatis jika pasien memilih "dokter mana saja") |
 | date | string | ISO |

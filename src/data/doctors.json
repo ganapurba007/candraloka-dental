@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "slug": "drg-andi-pratama-sp-kg",
+    "name": "drg. Andi Pratama, Sp.KG",
+    "specialty": "Spesialis Konservasi Gigi",
+    "experienceYears": 9,
+    "languages": ["Bahasa Indonesia", "English"],
+    "bio": "Dokter gigi spesialis konservasi gigi yang berfokus pada restorasi estetik, perawatan saluran akar mikro, dan pemulihan fungsi gigi alami dengan pendekatan minim trauma.",
+    "education": [
+      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Indonesia", "year": 2015 },
+      { "degree": "Spesialis Konservasi Gigi (Sp.KG)", "institution": "Universitas Indonesia", "year": 2019 }
+    ],
+    "interests": ["Endodonti Modern", "Restorasi Komposit Estetik", "Smile Enhancement"],
+    "serviceIds": [1, 2, 4, 6, 7],
+    "photo": "/images/doctors/dr-andi.webp",
+    "featured": true,
+    "practiceHours": [
+      { "day": 1, "start": "09:00", "end": "14:00" },
+      { "day": 3, "start": "09:00", "end": "14:00" },
+      { "day": 5, "start": "14:00", "end": "20:00" }
+    ],
+    "leaveDates": ["2026-10-25"],
+    "bookedSlots": [
+      { "date": "2026-10-15", "time": "09:00", "durationMinutes": 60 },
+      { "date": "2026-10-15", "time": "10:30", "durationMinutes": 30 }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "drg-nadia-safira-sp-kga",
+    "name": "drg. Nadia Safira, Sp.KGA",
+    "specialty": "Spesialis Kedokteran Gigi Anak",
+    "experienceYears": 8,
+    "languages": ["Bahasa Indonesia", "English"],
+    "bio": "Berpengalaman menangani kesehatan gigi balita dan anak-anak dengan metode komunikasi menyenangkan untuk membangun kepercayaan dan kebiasaan gigi sehat bebas rasa takut.",
+    "education": [
+      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Airlangga", "year": 2016 },
+      { "degree": "Spesialis Gigi Anak (Sp.KGA)", "institution": "Universitas Indonesia", "year": 2020 }
+    ],
+    "interests": ["Perawatan Gigi Anak", "Preventive Dentistry", "Manajemen Kecemasan Dental"],
+    "serviceIds": [1, 2, 8],
+    "photo": "/images/doctors/dr-nadia.webp",
+    "featured": true,
+    "practiceHours": [
+      { "day": 2, "start": "09:00", "end": "15:00" },
+      { "day": 4, "start": "09:00", "end": "15:00" },
+      { "day": 6, "start": "09:00", "end": "15:00" }
+    ],
+    "leaveDates": [],
+    "bookedSlots": [
+      { "date": "2026-10-17", "time": "10:00", "durationMinutes": 30 }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "drg-farhan-maulana-sp-ort",
+    "name": "drg. Farhan Maulana, Sp.Ort",
+    "specialty": "Spesialis Ortodonti",
+    "experienceYears": 11,
+    "languages": ["Bahasa Indonesia", "English"],
+    "bio": "Menangani perawatan kawat gigi (behel) dan perataan maloklusi kompleks menggunakan teknik modern untuk mencapai harmonisasi senyum dan profil wajah seimbang.",
+    "education": [
+      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Padjadjaran", "year": 2013 },
+      { "degree": "Spesialis Ortodonti (Sp.Ort)", "institution": "Universitas Indonesia", "year": 2017 }
+    ],
+    "interests": ["Braket Self-Ligating", "Koreksi Gigitan Kompleks", "Ortodonti Estetik"],
+    "serviceIds": [1, 5],
+    "photo": "/images/doctors/dr-farhan.webp",
+    "featured": true,
+    "practiceHours": [
+      { "day": 1, "start": "14:00", "end": "20:00" },
+      { "day": 3, "start": "14:00", "end": "20:00" },
+      { "day": 6, "start": "13:00", "end": "17:00" }
+    ],
+    "leaveDates": ["2026-10-20"],
+    "bookedSlots": [
+      { "date": "2026-10-14", "time": "14:00", "durationMinutes": 60 }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "drg-citra-lestari",
+    "name": "drg. Citra Lestari",
+    "specialty": "Dokter Gigi Umum",
+    "experienceYears": 6,
+    "languages": ["Bahasa Indonesia"],
+    "bio": "Dokter gigi umum yang teliti dan komunikatif, fokus pada perawatan pencegahan, scaling berkala, penambalan komposit, serta edukasi kesehatan mulut keluarga.",
+    "education": [
+      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Gadjah Mada", "year": 2018 }
+    ],
+    "interests": ["Scaling & Polishing", "Penambalan Estetik", "Edukasi Higiene Oral"],
+    "serviceIds": [1, 2, 3, 4],
+    "photo": "/images/doctors/dr-citra.webp",
+    "featured": false,
+    "practiceHours": [
+      { "day": 2, "start": "13:00", "end": "20:00" },
+      { "day": 4, "start": "13:00", "end": "20:00" },
+      { "day": 5, "start": "09:00", "end": "15:00" }
+    ],
+    "leaveDates": [],
+    "bookedSlots": []
+  },
+  {
+    "id": 5,
+    "slug": "drg-bambang-wicaksono-sp-bm",
+    "name": "drg. Bambang Wicaksono, Sp.BM",
+    "specialty": "Spesialis Bedah Mulut & Maksilofasial",
+    "experienceYears": 12,
+    "languages": ["Bahasa Indonesia", "English"],
+    "bio": "Ahli dalam bedah minor gigi, ekstraksi gigi bungsu impaksi, serta penanganan bedah mulut dengan prosedur anestesi terukur dan pemulihan cepat.",
+    "education": [
+      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Indonesia", "year": 2012 },
+      { "degree": "Spesialis Bedah Mulut (Sp.BM)", "institution": "Universitas Indonesia", "year": 2017 }
+    ],
+    "interests": ["Odontektomi Gigi Bungsu", "Bedah Minor Preprostetik", "Trauma Dentoalveolar"],
+    "serviceIds": [1, 3],
+    "photo": "/images/doctors/dr-bambang.webp",
+    "featured": false,
+    "practiceHours": [
+      { "day": 2, "start": "16:00", "end": "20:00" },
+      { "day": 4, "start": "16:00", "end": "20:00" },
+      { "day": 6, "start": "09:00", "end": "13:00" }
+    ],
+    "leaveDates": [],
+    "bookedSlots": [
+      { "date": "2026-10-15", "time": "16:00", "durationMinutes": 60 }
+    ]
+  }
+]
