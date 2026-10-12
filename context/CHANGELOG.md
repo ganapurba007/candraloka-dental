@@ -14,6 +14,21 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Redesign & Animasi — Alur Reservasi Medcity Style dengan Efek Hover (2026-10-12)
+**FR terkait:** FR-2.5, PRD §10 (Referensi Medcity), PRD §11 (Prinsip UX)
+**Yang dikerjakan:**
+- Mengadopsi tata letak kartu langkah reservasi Medcity 4-kolom ([ReservationSteps.vue](file:///d:/Projects/candraloka-dental/src/components/sections/ReservationSteps.vue)):
+  - Baris atas kartu memuat ikon medis klinis bertema di sisi kiri (`ClipboardList`, `UserCheck`, `CalendarClock`, `ShieldCheck`) dan nomor tahapan besar translusen `01`–`04` di sisi kanan (`text-5xl sm:text-6xl font-black text-slate-200`).
+  - Kartu pertama dilengkapi garis aksen vertikal kiri `border-l-4 border-l-primary-500` sesuai referensi desain Medcity.
+  - Menambahkan aksi interaktif di bagian bawah setiap kartu dengan panah animasi yang mengarah ke rute halaman terkait (`/layanan`, `/dokter`, `/jadwal`, `/reservasi`).
+  - Menambahkan animasi hover kartu: pengangkatan kartu (`-translate-y-2.5`), bayangan dinamis (`hover:shadow-2xl`), pembesaran ikon berotasi halus (`group-hover:scale-110 group-hover:rotate-3`), angka bercahaya biru, dan pergeseran panah (`group-hover:translate-x-1.5`).
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** src/components/sections/ReservationSteps.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Integrasi Media — Dummy Image Realistis Layanan Unggulan (2026-10-12)
 **FR terkait:** FR-2.4, FR-4.1, PRD §12 (Optimasi & Gambar)
 **Yang dikerjakan:**
