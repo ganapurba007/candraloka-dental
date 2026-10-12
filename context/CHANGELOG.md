@@ -14,13 +14,15 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
-## Fase 0 — Perencanaan & dokumentasi awal (2026-10-12)
+## Fase 0 — Perencanaan, setup tooling & image pipeline (2026-10-12)
 **Yang dikerjakan:**
-- Menyusun `PRD.md` (FR, tech stack, aturan ketersediaan, milestone, non-goals, referensi tampilan, prinsip UX)
-- Menyusun `SCHEMA.md` untuk struktur data JSON serta objek runtime `Reservation`, `ReservationDraft`, dan `SlotInfo`
-- Menyiapkan `AGENTS.md`
-- Menambahkan aturan optimasi sejak awal dan gambar WebP (PRD §12 dan entri Amandemen di §9)
-- Setup project (Vite, Tailwind, Vue Router, ESLint/Prettier, Vitest): BELUM dikerjakan
-**File yang berubah:** AGENTS.md, context/PRD.md, context/SCHEMA.md, context/CHANGELOG.md
-**Test:** 0 passed / 0 total
-**Docs updated:** PRD §9 dan §12, SCHEMA.md, AGENTS.md
+- Mengubah nama klinik menjadi "Candraloka Dental Care" di seluruh dokumentasi dan konfigurasi
+- Menyiapkan `context/rules.md` untuk standar alur kerja, penamaan, dan konvensi git commit
+- Setup tooling: Tailwind CSS (tema & token warna tenang), PostCSS, Vue Router, Unhead, VeeValidate + Zod, Vitest + Vue Test Utils + Happy-DOM
+- Menyiapkan pipeline optimasi gambar WebP (`scripts/optimize-images.mjs`) & validasi anggaran ukuran gambar (`scripts/check-images.mjs`) yang otomatis dijalankan di `prebuild`
+- Menyiapkan font self-hosted Latin woff2 (Plus Jakarta Sans) di `public/fonts/` tanpa CDN pihak ketiga
+- Membuat komponen `ResponsiveImage.vue` untuk multi-resolusi WebP & pencegahan CLS beserta unit test
+- Menata struktur folder lengkap (`components/`, `pages/`, `composables/`, `lib/`, `data/`, `src-images/`)
+**File yang berubah:** AGENTS.md, package.json, vite.config.js, tailwind.config.js, postcss.config.js, index.html, src/main.js, src/App.vue, src/router/index.js, src/assets/main.css, src/pages/Home.vue, src/components/ui/ResponsiveImage.vue, scripts/optimize-images.mjs, scripts/check-images.mjs, context/rules.md, context/CHANGELOG.md
+**Test:** 5 passed / 5 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md, context/rules.md, context/PRD.md, context/SCHEMA.md

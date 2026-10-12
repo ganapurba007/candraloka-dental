@@ -151,7 +151,7 @@ Volume data minimal: 8 layanan, 5 dokter (3 unggulan), 4 testimoni, 6 foto fasil
 ## 6. Milestone
 | Fase | Fitur | Status |
 |---|---|---|
-| 0 | Setup: Vite, Tailwind (token tema), Vue Router, ESLint/Prettier, Vitest, struktur folder, pipeline gambar WebP (`sharp`), `ResponsiveImage`, font self-host, dan `check:images` (§12) | ⬜ |
+| 0 | Setup: Vite, Tailwind (token tema), Vue Router, ESLint/Prettier, Vitest, struktur folder, pipeline gambar WebP (`sharp`), `ResponsiveImage`, font self-host, dan `check:images` (§12) | ✅ |
 | 1 | Layout global (FR-1.x) + komponen UI dasar (Button, Card, Badge, Accordion, Toast, StepIndicator) | ⬜ |
 | 2 | Data JSON + helper murni (format tanggal/jam WIB, slot, ketersediaan, kode reservasi, pesan WhatsApp) beserta test | ⬜ |
 | 3 | Beranda (FR-2.x) | ⬜ |
