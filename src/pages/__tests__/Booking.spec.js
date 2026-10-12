@@ -128,4 +128,28 @@ describe('Booking.vue (FR-7.1 - FR-7.11)', () => {
     expect(wrapper.text()).toContain('Salin Ringkasan')
     expect(wrapper.text()).toContain('Buat Reservasi Lain')
   })
+
+  it('supports keyboard navigation and ARIA radiogroup roles on Step 3 (UX-8)', async () => {
+    mockRoute = {
+      query: { layanan: 'pembersihan-karang-gigi', dokter: 'drg-andi-pratama-sp-kg' },
+      path: '/reservasi',
+    }
+    const wrapper = createWrapper()
+    expect(wrapper.text()).toContain('Langkah 3: Pilih Tanggal & Jam Praktek')
+
+    // Find date radiogroup
+    const dateRadiogroup = wrapper.find('[role="radiogroup"][aria-label="Pilih tanggal kunjungan"]')
+    expect(dateRadiogroup.exists()).toBe(true)
+
+    const dateButtons = dateRadiogroup.findAll('button[role="radio"]')
+    expect(dateButtons.length).toBeGreaterThan(0)
+    const selectedIdx = dateButtons.findIndex((b) => b.attributes('aria-checked') === 'true')
+    expect(selectedIdx).toBeGreaterThanOrEqual(0)
+
+    // Test ArrowRight keydown moves selection to next date
+    await dateButtons[selectedIdx].trigger('keydown', { key: 'ArrowRight' })
+    await wrapper.vm.$nextTick()
+    const nextIdx = (selectedIdx + 1) % dateButtons.length
+    expect(dateButtons[nextIdx].attributes('aria-checked')).toBe('true')
+  })
 })

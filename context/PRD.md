@@ -160,7 +160,7 @@ Volume data minimal: 8 layanan, 5 dokter (3 unggulan), 4 testimoni, 6 foto fasil
 | 6 | Profil dokter: daftar dan detail (FR-5.x) | ✅ |
 | 7 | Jadwal praktek (FR-6.x) | ✅ |
 | 8 | Reservasi online + konfirmasi (FR-7.x) | ✅ |
-| 9 | Audit akhir: polishing UX, responsif, aksesibilitas, SEO, dan audit performa menyeluruh (§11, §12) | ⬜ |
+| 9 | Audit akhir: polishing UX, responsif, aksesibilitas, SEO, dan audit performa menyeluruh (§11, §12) | ✅ |
 | 10 | Rilis: deploy, README, screenshot, tautan demo | ⬜ |
 
 ## 7. Non-Goals

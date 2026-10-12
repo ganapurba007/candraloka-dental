@@ -327,6 +327,19 @@ function jumpToNextAvailableDate() {
   }
 }
 
+// Date strip keyboard navigation (UX-8)
+function onDateStripKeydown(event, currentIndex) {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+    event.preventDefault()
+    const nextIndex = (currentIndex + 1) % dateStrip.value.length
+    selectedDate.value = dateStrip.value[nextIndex].isoDate
+  } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+    event.preventDefault()
+    const prevIndex = (currentIndex - 1 + dateStrip.value.length) % dateStrip.value.length
+    selectedDate.value = dateStrip.value[prevIndex].isoDate
+  }
+}
+
 // Form validation (FR-7.6)
 function validatePatientForm() {
   formErrors.value = {}
@@ -857,11 +870,19 @@ function handleClearStoredReservations() {
                   </button>
                 </div>
 
-                <div class="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
+                <div
+                  role="radiogroup"
+                  aria-label="Pilih tanggal kunjungan"
+                  class="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none"
+                >
                   <button
-                    v-for="d in dateStrip"
+                    v-for="(d, idx) in dateStrip"
                     :key="d.isoDate"
                     type="button"
+                    role="radio"
+                    :aria-checked="selectedDate === d.isoDate"
+                    :tabindex="selectedDate === d.isoDate ? 0 : -1"
+                    :aria-label="`${d.dayNameShort}, ${d.shortDate}, status: ${d.status === 'tersedia' ? 'Tersedia' : d.status === 'penuh' ? 'Penuh' : 'Libur'}`"
                     class="p-3 rounded-2xl text-xs font-bold flex flex-col items-center gap-1.5 flex-shrink-0 min-w-[76px] transition-all cursor-pointer border"
                     :class="[
                       selectedDate === d.isoDate
@@ -873,6 +894,7 @@ function handleClearStoredReservations() {
                         : 'border-slate-100 bg-slate-50 text-slate-400',
                     ]"
                     @click="selectedDate = d.isoDate"
+                    @keydown="onDateStripKeydown($event, idx)"
                   >
                     <span class="text-[11px] font-medium uppercase">{{ d.dayNameShort }}</span>
                     <span class="text-sm font-extrabold">{{ d.shortDate }}</span>
@@ -919,13 +941,21 @@ function handleClearStoredReservations() {
                       {{ period.label }}
                     </h4>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+                    <div
+                      role="radiogroup"
+                      :aria-label="`Pilih jam kunjungan sesi ${period.label}`"
+                      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5"
+                    >
                       <button
                         v-for="slot in period.slots"
                         :key="slot.time"
                         type="button"
+                        role="radio"
+                        :aria-checked="selectedTime === slot.time"
+                        :aria-disabled="slot.status !== 'tersedia'"
+                        :aria-label="`${slot.time} WIB, ${slot.status === 'tersedia' ? 'Tersedia' : slot.reason || 'Penuh'}`"
                         :disabled="slot.status !== 'tersedia'"
-                        class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center justify-center gap-1"
+                        class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center justify-center gap-1 min-h-[44px]"
                         :class="[
                           selectedTime === slot.time
                             ? 'bg-primary-600 text-white border-primary-600 shadow-md ring-2 ring-primary-600/30'
@@ -1047,10 +1077,12 @@ function handleClearStoredReservations() {
                     v-model="patientForm.name"
                     type="text"
                     placeholder="Contoh: Budi Santoso"
-                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
+                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.name ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
+                    :aria-invalid="!!formErrors.name"
+                    :aria-describedby="formErrors.name ? 'name-error' : undefined"
                   />
-                  <p v-if="formErrors.name" class="text-xs text-rose-600 font-medium">
+                  <p v-if="formErrors.name" id="name-error" class="text-xs text-rose-600 font-medium">
                     {{ formErrors.name }}
                   </p>
                 </div>
@@ -1065,13 +1097,15 @@ function handleClearStoredReservations() {
                     v-model="patientForm.whatsapp"
                     type="tel"
                     placeholder="Contoh: 081234567890"
-                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
+                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.whatsapp ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
+                    :aria-invalid="!!formErrors.whatsapp"
+                    :aria-describedby="formErrors.whatsapp ? 'whatsapp-error' : 'whatsapp-hint'"
                   />
-                  <p v-if="formErrors.whatsapp" class="text-xs text-rose-600 font-medium">
+                  <p v-if="formErrors.whatsapp" id="whatsapp-error" class="text-xs text-rose-600 font-medium">
                     {{ formErrors.whatsapp }}
                   </p>
-                  <p class="text-[11px] text-slate-400">
+                  <p id="whatsapp-hint" class="text-[11px] text-slate-400">
                     Nomor aktif untuk konfirmasi jadwal dan informasi kedatangan klinik.
                   </p>
                 </div>
@@ -1086,10 +1120,12 @@ function handleClearStoredReservations() {
                     v-model="patientForm.email"
                     type="email"
                     placeholder="Contoh: budi@gmail.com"
-                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
+                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.email ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
+                    :aria-invalid="!!formErrors.email"
+                    :aria-describedby="formErrors.email ? 'email-error' : undefined"
                   />
-                  <p v-if="formErrors.email" class="text-xs text-rose-600 font-medium">
+                  <p v-if="formErrors.email" id="email-error" class="text-xs text-rose-600 font-medium">
                     {{ formErrors.email }}
                   </p>
                 </div>
@@ -1101,7 +1137,7 @@ function handleClearStoredReservations() {
                   </span>
                   <div class="grid grid-cols-2 gap-4">
                     <label
-                      class="flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all"
+                      class="flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all min-h-[44px]"
                       :class="
                         patientForm.isNewPatient === true
                           ? 'border-primary-500 bg-primary-50/30 font-bold text-navy-900'
@@ -1119,7 +1155,7 @@ function handleClearStoredReservations() {
                     </label>
 
                     <label
-                      class="flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all"
+                      class="flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all min-h-[44px]"
                       :class="
                         patientForm.isNewPatient === false
                           ? 'border-primary-500 bg-primary-50/30 font-bold text-navy-900'
@@ -1160,10 +1196,12 @@ function handleClearStoredReservations() {
                     rows="3"
                     maxlength="300"
                     placeholder="Ceritakan keluhan gigi Anda secara singkat bila ada..."
-                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
+                    class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.notes ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
+                    :aria-invalid="!!formErrors.notes"
+                    :aria-describedby="formErrors.notes ? 'notes-error' : undefined"
                   />
-                  <p v-if="formErrors.notes" class="text-xs text-rose-600 font-medium">
+                  <p v-if="formErrors.notes" id="notes-error" class="text-xs text-rose-600 font-medium">
                     {{ formErrors.notes }}
                   </p>
                 </div>

@@ -168,6 +168,42 @@ async function generate() {
     await sharp(Buffer.from(facSvg)).png().toFile(path.join(facDir, `${f.name}.png`))
   }
 
+  // Generate og-image.png (1200x630) for social sharing & SEO
+  const ogSvg = `
+  <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g_og" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0e204d" />
+        <stop offset="60%" stop-color="#142f6e" />
+        <stop offset="100%" stop-color="#21cdc0" />
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g_og)" />
+    <circle cx="1050" cy="180" r="260" fill="white" fill-opacity="0.06" />
+    <circle cx="150" cy="520" r="300" fill="white" fill-opacity="0.04" />
+    <circle cx="1000" cy="480" r="140" fill="#21cdc0" fill-opacity="0.12" />
+
+    <rect x="100" y="100" width="160" height="36" rx="18" fill="#21cdc0" fill-opacity="0.2" />
+    <text x="180" y="123" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#21cdc0" letter-spacing="1">DENTAL CARE</text>
+
+    <text x="100" y="220" font-family="sans-serif" font-size="52" font-weight="bold" fill="white">Candraloka Dental Care</text>
+    <text x="100" y="275" font-family="sans-serif" font-size="24" fill="#a5f3ec">Klinik Gigi Modern, Nyaman, dan Ramah Keluarga</text>
+    <text x="100" y="340" font-family="sans-serif" font-size="20" fill="#e2e8f0">Sistem Reservasi Online Jadwal Dokter Berbasis Ketersediaan Real-Time</text>
+
+    <line x1="100" y1="400" x2="1100" y2="400" stroke="white" stroke-opacity="0.15" stroke-width="1" />
+
+    <text x="100" y="470" font-family="sans-serif" font-size="16" font-weight="bold" fill="#21cdc0">LOKASI</text>
+    <text x="100" y="500" font-family="sans-serif" font-size="16" fill="white">Kebayoran Baru, Jakarta Selatan</text>
+
+    <text x="450" y="470" font-family="sans-serif" font-size="16" font-weight="bold" fill="#21cdc0">JAM PRAKTEK</text>
+    <text x="450" y="500" font-family="sans-serif" font-size="16" fill="white">Senin – Sabtu: 09:00 – 21:00 WIB</text>
+
+    <text x="800" y="470" font-family="sans-serif" font-size="16" font-weight="bold" fill="#21cdc0">WHATSAPP</text>
+    <text x="800" y="500" font-family="sans-serif" font-size="16" fill="white">+62 812-3456-7890</text>
+  </svg>`
+  await fs.promises.mkdir(path.resolve('public'), { recursive: true })
+  await sharp(Buffer.from(ogSvg)).png().toFile(path.resolve('public/og-image.png'))
+
   console.log('Successfully generated all source images.')
 }
 

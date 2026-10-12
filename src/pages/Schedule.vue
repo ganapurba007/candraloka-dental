@@ -196,7 +196,7 @@ const mobileDayDoctors = computed(() => {
             <select
               id="doctor-filter"
               v-model="selectedDoctorSlug"
-              class="w-full px-3.5 py-2.5 bg-surface-50 border border-slate-300 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none"
+              class="w-full px-3.5 py-2.5 bg-surface-50 border border-slate-300 rounded-xl text-navy-900 text-base sm:text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none min-h-[44px]"
             >
               <option value="all">Semua Dokter</option>
               <option v-for="d in doctorsData" :key="d.id" :value="d.slug">

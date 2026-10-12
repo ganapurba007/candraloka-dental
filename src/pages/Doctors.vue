@@ -111,7 +111,7 @@ function clearFilters() {
             type="search"
             placeholder="Cari nama dokter atau keahlian..."
             aria-label="Cari nama dokter gigi"
-            class="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl text-navy-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm transition-all text-sm sm:text-base"
+            class="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl text-navy-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm transition-all text-base"
           />
           <button
             v-if="searchQuery"

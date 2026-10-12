@@ -14,6 +14,28 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 9 — Audit Akhir, UX Polish, Aksesibilitas & SEO (2026-10-12)
+**FR terkait:** UX-1 s.d. UX-11, FR-1.5, FR-1.6, FR-1.7, PRD §11, PRD §12
+**Yang dikerjakan:**
+- Audit & Polishing UX & Aksesibilitas (§11 UX-1 s.d. UX-11):
+  - Dukungan navigasi keyboard tombol panah (ArrowLeft/ArrowRight) pada navigator strip tanggal reservasi (UX-8)
+  - Penambahan ARIA roles (`role="radiogroup"`, `role="radio"`, `aria-checked`, `aria-disabled`) pada pemilih tanggal dan pemilih slot jam
+  - Standarisasi ukuran font input minimal 16px (`text-base`) pada form reservasi, filter dokter, dan pencarian katalog untuk mencegah auto-zoom di browser mobile iOS Safari (UX-4)
+  - Penambahan asosiasi error form yang jelas via `aria-invalid` dan `aria-describedby` (UX-8)
+  - Stack posisi tombol `ScrollToTop.vue` di atas `FloatingWhatsapp.vue` pada layar mobile dan desktop untuk mencegah bentrok/tumpang tindih tombol aksi (UX-4)
+  - Pengaturan elevasi `FloatingWhatsapp.vue` (`bottom-20 lg:bottom-6`) agar tidak menutupi mobile sticky CTA bar pada halaman detail (UX-4)
+  - Dukungan `@media (prefers-reduced-motion: reduce)` pada `src/assets/main.css` untuk kenyamanan aksesibilitas pengguna (UX-8, §12.2)
+- SEO & Social Meta (§12):
+  - Pembuatan aset `public/og-image.png` (1200×630 px) otomatis via `scripts/generate-source-images.mjs` dengan palet tema Medcity
+  - Penambahan tag meta Open Graph (`og:type`, `og:site_name`, `og:title`, `og:description`, `og:image`) dan Twitter Card (`summary_large_image`) pada `index.html`
+- Validasi Performa & Kualitas:
+  - Verifikasi seluruh 24 gambar konten berformat WebP dengan ukuran di bawah batas anggaran (`npm run check:images` lolos)
+  - Verifikasi bundle JavaScript awal Beranda sebesar ~52.2 KB gzip (jauh di bawah batas anggaran 170 KB gzip)
+  - Penambahan unit test aksesibilitas keyboard dan role ARIA di `src/pages/__tests__/Booking.spec.js`: 92 passed / 92 total
+**File yang berubah:** AGENTS.md, context/PRD.md, context/CHANGELOG.md, index.html, public/og-image.png, scripts/generate-source-images.mjs, src/assets/main.css, src/components/layout/FloatingWhatsapp.vue, src/components/layout/ScrollToTop.vue, src/pages/Booking.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Services.vue, src/pages/__tests__/Booking.spec.js
+**Test:** 92 passed / 92 total
+**Docs updated:** AGENTS.md, context/PRD.md, context/CHANGELOG.md
+
 ## Fase 8 — Reservasi Online & Konfirmasi (2026-10-12)
 **FR terkait:** FR-7.1, FR-7.2, FR-7.3, FR-7.4, FR-7.5, FR-7.6, FR-7.7, FR-7.8, FR-7.9, FR-7.10, FR-7.11
 **Yang dikerjakan:**
