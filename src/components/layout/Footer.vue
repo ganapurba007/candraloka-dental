@@ -9,7 +9,6 @@ import {
   Mail,
   Clock,
   ExternalLink,
-  ShieldAlert,
 } from 'lucide-vue-next'
 
 const currentYear = new Date().getFullYear()
@@ -138,18 +137,9 @@ const navLinks = [
         </div>
       </div>
 
-      <!-- Portfolio Disclaimer Notice (FR-1.4) -->
-      <div class="p-4 rounded-xl bg-navy-800/60 border border-navy-700/60 flex items-start gap-3 mb-8">
-        <ShieldAlert class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
-        <p class="text-xs text-slate-300 leading-relaxed">
-          <strong class="text-white">Pemberitahuan Proyek Portofolio:</strong> Situs web ini dirancang khusus untuk keperluan portofolio pengembangan web frontend (Vue 3 & Tailwind CSS). Seluruh data klinik, dokter, kontak, dan jadwal bersifat simulasi/rekaan. Reservasi yang dibuat pada situs ini tidak diproses oleh klinik sungguhan.
-        </p>
-      </div>
-
       <!-- Bottom Bar -->
       <div class="pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
         <p>© {{ currentYear }} Candraloka Dental Care. Semua hak dilindungi.</p>
-        <p>Dibangun dengan Vue 3, Tailwind CSS & Vitest.</p>
       </div>
     </div>
   </footer>

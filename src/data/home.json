@@ -6,29 +6,48 @@
     "slides": [
       {
         "id": 1,
+        "layout": "left",
         "badge": "Klinik Gigi Ramah & Terpercaya di Jakarta",
         "title": "Candraloka",
-        "subtitle": "Dental Center in Jakarta",
+        "subtitle": "Dental Care Jakarta",
         "headline": "Senyum Sehat dan Percaya Diri Dimulai dari Sini",
-        "description": "Perawatan gigi komprehensif dengan dokter berpengalaman, teknologi higienis terkini, dan alur reservasi tepat waktu tanpa antrean panjang.",
+        "description": "Perawatan gigi komprehensif bersama tim dokter berpengalaman, teknologi modern, dan alur reservasi tepat waktu tanpa antrean panjang.",
         "image": "/images/clinic/hero.webp",
         "ctaText": "Buat Reservasi Online",
         "ctaTo": "/reservasi",
         "secondaryText": "Lihat Jadwal Praktek",
-        "secondaryTo": "/jadwal"
+        "secondaryTo": "/jadwal",
+        "highlights": ["Jadwal Bebas Antre", "5 Dokter Spesialis", "Sterilisasi Medis Tinggi"]
       },
       {
         "id": 2,
-        "badge": "Standar Medis & Higienis Tinggi",
-        "title": "Pelayanan Ramah",
-        "subtitle": "Klinik Gigi Nyaman untuk Seluruh Keluarga",
-        "headline": "Pendekatan Personal Bebas Rasa Cemas",
-        "description": "Kenyamanan Anda dan keluarga adalah prioritas utama kami dengan standar sterilisasi medis bertaraf tinggi dan konsultasi transparan.",
-        "image": "/images/clinic/hero.webp",
-        "ctaText": "Kenali Dokter Gigi",
+        "layout": "split",
+        "badge": "Pendekatan Ramah & Penuh Empati",
+        "title": "Perawatan Gigi Keluarga",
+        "subtitle": "Nyaman & Bebas Rasa Cemas",
+        "headline": "Pengalaman ke Dokter Gigi yang Tenang & Ramah",
+        "description": "Dari perawatan anak hingga ortodonti dewasa, kami mengutamakan kenyamanan, komunikasi terbuka, dan tindakan medis berorientasi pasien.",
+        "image": "/images/clinic/hero-2.webp",
+        "ctaText": "Kenali Dokter Spesialis",
         "ctaTo": "/dokter",
-        "secondaryText": "Semua Layanan",
-        "secondaryTo": "/layanan"
+        "secondaryText": "Lihat Semua Layanan",
+        "secondaryTo": "/layanan",
+        "highlights": ["Pojok Ramah Anak", "Konsultasi Terbuka", "Rencana Tindakan Jelas"]
+      },
+      {
+        "id": 3,
+        "layout": "centered",
+        "badge": "Fasilitas & Standar Higienis Medis",
+        "title": "Teknologi Digital & Higienis",
+        "subtitle": "Fasilitas Ergonomis Terkini",
+        "headline": "Perawatan Presisi dengan Fasilitas Ergonomis Modern",
+        "description": "Didukung unit dental mutakhir, radiografi panoramik digital, dan protokol sterilisasi berstandar medis untuk keamanan maksimal setiap pasien.",
+        "image": "/images/clinic/hero-3.webp",
+        "ctaText": "Jelajahi Layanan Kami",
+        "ctaTo": "/layanan",
+        "secondaryText": "Reservasi Sekarang",
+        "secondaryTo": "/reservasi",
+        "highlights": ["Radiografi Digital", "Autoclave Sterilisasi", "Dental Unit Ergonomis"]
       }
     ]
   },

@@ -14,6 +14,27 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Desain Multi-Slide Hero Section & Pembersihan Footer (2026-10-12)
+**FR terkait:** FR-2.1, FR-1.4, PRD §12
+**Yang dikerjakan:**
+- **Hero Section Dinamis & Multi-Layout ([HomeHero.vue](file:///d:/Projects/candraloka-dental/src/components/sections/HomeHero.vue), [src/data/home.json](file:///d:/Projects/candraloka-dental/src/data/home.json)):**
+  - Mengimplementasikan 3 slide dengan foto klinik berbeda dan variasi layout teks yang unik:
+    - *Slide 1 (Left / Brand Anchor):* Foto operatory interior klinik (`hero.webp`), headline brand Candraloka Dental Care, dual CTA, dan deretan trust badges.
+    - *Slide 2 (Split / Family & Doctor):* Foto dokter merawat pasien dengan hangat (`hero-2.webp`), badge empati, headline fokus kenyamanan keluarga, dan tumpukan kartu fitur bertingkat (*Pojok Ramah Anak*, *Konsultasi Terbuka*, *Rencana Tindakan Jelas*).
+    - *Slide 3 (Centered / Modern Tech):* Foto studio klinik modern (`hero-3.webp`), tata letak tengah dengan badge teknologi, dan 3 pilar standar klinik (*Radiografi Digital*, *Autoclave Sterilisasi*, *Dental Unit Ergonomis*).
+  - Menambahkan animasi transisi halus saat perpindahan slide: crossfade & subtle scale untuk gambar latar belakang, slide-fade dinamis (`slide-content-left` / `slide-content-right`) untuk konten teks, serta auto-slide otomatis setiap 6.5 detik dengan pause on hover.
+  - Memproses aset gambar WebP responsif (`hero-2.webp`, `hero-3.webp` beserta varian 768w dan 480w) dan lolos audit `npm run check:images`.
+- **Pembersihan Footer ([Footer.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Footer.vue)):**
+  - Menghapus blok kartu pemberitahuan proyek portofolio simulasi/rekaan.
+  - Menghapus teks "Dibangun dengan Vue 3, Tailwind CSS & Vitest." pada baris bawah footer.
+- **Verifikasi:**
+  - 92/92 unit tests lulus (100% pass)
+  - `npm run check:images` (26 gambar tervalidasi)
+  - `npm run build` sukses
+**File yang berubah:** src/components/sections/HomeHero.vue, src/data/home.json, src/components/layout/Footer.vue, public/images/clinic/*, src-images/clinic/*, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Penghapusan Banner CTA Beranda — Tampilan Home Lebih Rapi (2026-10-12)
 **FR terkait:** FR-2.8
 **Yang dikerjakan:**
