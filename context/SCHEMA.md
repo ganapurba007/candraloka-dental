@@ -11,7 +11,7 @@
 ## clinic.json (objek tunggal)
 | Field | Tipe | Constraint | Keterangan |
 |---|---|---|---|
-| name | string | wajib | "Dantaloka Dental Care" |
+| name | string | wajib | "Candraloka Dental Care" |
 | tagline | string | wajib | |
 | establishedYear | number | wajib | Dasar angka "tahun melayani" |
 | contact | object | wajib | `{ phone, whatsapp, email, address, mapUrl, mapEmbedUrl }`; `whatsapp` format internasional tanpa `+` (rekaan), dipakai untuk `wa.me` |

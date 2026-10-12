@@ -3,7 +3,7 @@
 > File ini adalah pintu masuk pertama untuk AI agent. Baca file ini SEBELUM membaca file lain.
 
 ## Proyek
-**Nama:** Website Klinik Gigi — Dantaloka Dental Care (portofolio)
+**Nama:** Website Klinik Gigi — Candraloka Dental Care (portofolio)
 **Tujuan:** Website klinik gigi dengan fitur tentang, layanan, profil dokter, jadwal praktek, dan reservasi online berbasis ketersediaan. Dibuat untuk portofolio dengan fokus UX yang jelas dan mudah dipakai.
 **Stack:** Vue 3 (Vite, Composition API), Vue Router, Tailwind CSS, VeeValidate + Zod, `sharp` (gambar WebP), data JSON lokal (tanpa backend/database/pembayaran), reservasi di `localStorage`, Vitest + Vue Test Utils
 

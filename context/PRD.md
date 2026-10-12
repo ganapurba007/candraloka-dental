@@ -1,4 +1,4 @@
-# PRD.md — Website Klinik Gigi Dantaloka Dental Care (Portofolio)
+# PRD.md — Website Klinik Gigi Candraloka Dental Care (Portofolio)
 
 > Dokumen ini adalah RENCANA. Untuk kebenaran struktur data saat ini, selalu rujuk `SCHEMA.md`, bukan §4 di bawah. Kalau ada perbedaan antara section manapun di sini dengan kode aktual, catat di §9 Amandemen — jangan biarkan diam-diam berbeda.
 
@@ -19,7 +19,7 @@
 ---
 
 ## 1. Overview
-**Apa yang dibangun:** Website klinik gigi untuk **Dantaloka Dental Care**, klinik rekaan untuk keperluan portofolio, memakai Vue 3 dan Tailwind CSS. Fitur utama: tentang klinik, layanan, profil dokter, jadwal praktek, dan reservasi online dengan pemilihan dokter, tanggal, dan jam berdasarkan ketersediaan. Semua konten berasal dari file JSON lokal; tidak ada backend dan tidak ada pembayaran.
+**Apa yang dibangun:** Website klinik gigi untuk **Candraloka Dental Care**, klinik rekaan untuk keperluan portofolio, memakai Vue 3 dan Tailwind CSS. Fitur utama: tentang klinik, layanan, profil dokter, jadwal praktek, dan reservasi online dengan pemilihan dokter, tanggal, dan jam berdasarkan ketersediaan. Semua konten berasal dari file JSON lokal; tidak ada backend dan tidak ada pembayaran.
 **Untuk siapa:** (1) calon pasien yang ingin tahu layanan dan dokter, lalu membuat janji dengan cepat dari ponsel; (2) reviewer portofolio (HRD/engineer) yang menilai kualitas UI, UX, dan kode.
 **Masalah yang diselesaikan:** Menunjukkan kemampuan membangun alur reservasi berbasis jadwal (perhitungan slot, validasi, status ketersediaan) yang jelas dan mudah dipakai, dalam tampilan yang tenang dan terpercaya untuk layanan kesehatan.
 
