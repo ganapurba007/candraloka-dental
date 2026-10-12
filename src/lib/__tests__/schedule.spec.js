@@ -5,6 +5,7 @@ import {
   groupSlotsByPeriod,
   getClinicOpenStatus,
   isDoctorPracticingOn,
+  isDoctorSessionActiveNow,
 } from '../schedule'
 
 describe('schedule.js', () => {
@@ -80,5 +81,27 @@ describe('schedule.js', () => {
 
     // Monday 2026-10-19 (day 1, but on leave) -> false
     expect(isDoctorPracticingOn(doctor, '2026-10-19')).toBe(false)
+  })
+
+  it('determines if a doctor session is actively ongoing right now', () => {
+    const doctor = {
+      leaveDates: ['2026-10-19'],
+    }
+    const sessionMondayMorning = { day: 1, start: '09:00', end: '14:00' }
+
+    // Monday 2026-10-12 at 10:30 WIB -> active
+    expect(isDoctorSessionActiveNow(doctor, sessionMondayMorning, '2026-10-12T10:30:00+07:00')).toBe(true)
+
+    // Monday 2026-10-12 at 08:30 WIB (before session) -> inactive
+    expect(isDoctorSessionActiveNow(doctor, sessionMondayMorning, '2026-10-12T08:30:00+07:00')).toBe(false)
+
+    // Monday 2026-10-12 at 15:00 WIB (after session) -> inactive
+    expect(isDoctorSessionActiveNow(doctor, sessionMondayMorning, '2026-10-12T15:00:00+07:00')).toBe(false)
+
+    // Tuesday 2026-10-13 at 10:30 WIB (different day) -> inactive
+    expect(isDoctorSessionActiveNow(doctor, sessionMondayMorning, '2026-10-13T10:30:00+07:00')).toBe(false)
+
+    // Monday 2026-10-19 at 10:30 WIB (on leave) -> inactive
+    expect(isDoctorSessionActiveNow(doctor, sessionMondayMorning, '2026-10-19T10:30:00+07:00')).toBe(false)
   })
 })

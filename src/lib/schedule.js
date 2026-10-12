@@ -132,3 +132,31 @@ export function isDoctorPracticingOn(doctor, now = new Date()) {
   return doctor.practiceHours.some((h) => h.day === dayOfWeek)
 }
 
+/**
+ * Mengetahui apakah sesi dokter tertentu sedang aktif berlangsung saat ini (berdasarkan hari dan jam WIB).
+ * Mengembalikan false bila dokter sedang cuti hari ini atau waktu di luar rentang sesi.
+ * @param {object} doctor
+ * @param {{ day: number, start: string, end: string }} session
+ * @param {Date|string} [now=new Date()]
+ * @returns {boolean}
+ */
+export function isDoctorSessionActiveNow(doctor, session, now = new Date()) {
+  if (!doctor || !session || typeof session.day !== 'number') return false
+  const todayIso = toIsoDateString(now)
+  if (doctor.leaveDates && doctor.leaveDates.includes(todayIso)) {
+    return false
+  }
+  const dayOfWeek = getIsoDayOfWeek(todayIso)
+  if (session.day !== dayOfWeek) {
+    return false
+  }
+
+  const wib = toWibDate(now)
+  const currentMin = wib.getHours() * 60 + wib.getMinutes()
+  const startMin = timeToMinutes(session.start)
+  const endMin = timeToMinutes(session.end)
+
+  return currentMin >= startMin && currentMin < endMin
+}
+
+

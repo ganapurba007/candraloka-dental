@@ -14,6 +14,20 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 7 — Jadwal Praktek (2026-10-12)
+**FR terkait:** FR-6.1, FR-6.2, FR-6.3, FR-6.4, FR-6.5, FR-6.6
+**Yang dikerjakan:**
+- Menambahkan fungsi murni `isDoctorSessionActiveNow(doctor, session, now)` di `src/lib/schedule.js` untuk mengecek sesi praktek aktif saat ini secara deterministik
+- Membangun halaman jadwal praktek dokter di `src/pages/Schedule.vue`:
+  - Keterangan jam operasional klinik, status buka/tutup klinik hari ini, dan zona waktu WIB (FR-6.6)
+  - Filter dokter dan filter hari yang reaktif dan tersimpan otomatis ke query URL `?dokter=...&hari=...` tanpa reload halaman (FR-6.2)
+  - Tampilan desktop (FR-6.1): tabel mingguan matriks dokter x hari (Senin–Minggu), penanda kolom "Hari Ini", penanda badge denyut "Sedang Praktek" untuk sesi aktif (FR-6.3), catatan cuti dokter (FR-6.4), dan tombol reservasi (FR-6.5)
+  - Tampilan mobile (FR-6.1): tab hari geser/tap bebas scroll horizontal berlebih dengan penanda "Hari Ini", daftar kartu dokter yang praktek pada hari tersebut beserta jam sesi dan status cuti
+- Menambahkan test suite di `src/pages/__tests__/Schedule.spec.js` dan unit test helper di `schedule.spec.js`: 84 passed / 84 total
+**File yang berubah:** AGENTS.md, context/CHANGELOG.md, src/lib/schedule.js, src/lib/__tests__/schedule.spec.js, src/pages/Schedule.vue, src/pages/__tests__/Schedule.spec.js
+**Test:** 84 passed / 84 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
 ## Fase 6 — Profil Dokter (2026-10-12)
 **FR terkait:** FR-5.1, FR-5.2, FR-5.3, FR-5.4
 **Yang dikerjakan:**
