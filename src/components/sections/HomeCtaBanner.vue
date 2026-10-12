@@ -15,7 +15,7 @@ const waUrl = computed(() => {
   <section class="py-16 sm:py-24 bg-surface-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Medcity styled CTA Banner Container (cta bg-primary) -->
-      <div class="relative bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 sm:p-12 lg:p-14 text-white shadow-2xl overflow-hidden border border-primary-500/40">
+      <div class="relative bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 sm:p-12 lg:p-14 text-white shadow-2xl overflow-hidden border border-primary-500/40" style="background-color: #174fb8;">
         <!-- Decorative circular backdrop glow -->
         <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
         <div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-black/10 blur-2xl pointer-events-none" />
@@ -57,7 +57,7 @@ const waUrl = computed(() => {
               :href="waUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-sm transition-all border border-white/25 w-full min-h-[44px]"
+              class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/10 hover:bg-white hover:text-navy-900 text-white font-bold text-sm transition-all border border-white/40 w-full min-h-[44px] shadow-sm"
             >
               <MessageCircle class="w-4 h-4 mr-2" aria-hidden="true" />
               <span>Konsultasi via WhatsApp</span>

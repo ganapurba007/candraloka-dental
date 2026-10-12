@@ -28,8 +28,22 @@ export default {
           600: '#4c73b3',
           700: '#354f8e', // Medcity Secondary Blue
           800: '#1b3164', // Medcity Mid Navy
+          850: '#14285a', // Mid-Deep Navy gradient stop
           900: '#0e204d', // Medcity Deep Dark Navy
           950: '#081330',
+        },
+        teal: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#1e60d5',
+          600: '#174fb8',
+          700: '#133f94',
+          800: '#103275',
+          900: '#0c2557',
+          950: '#08183a',
         },
         accent: {
           50: '#f0f9ff',

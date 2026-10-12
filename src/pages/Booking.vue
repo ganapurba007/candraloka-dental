@@ -511,7 +511,7 @@ function handleClearStoredReservations() {
     <Breadcrumb :items="breadcrumbs" />
 
     <!-- Header Section -->
-    <section class="py-10 sm:py-14 bg-navy-900 text-white relative overflow-hidden">
+    <section class="py-10 sm:py-14 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
       <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
 

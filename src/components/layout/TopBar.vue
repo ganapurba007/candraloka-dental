@@ -17,6 +17,7 @@ const waUrl = computed(() => {
   <aside
     aria-label="Informasi Kontak Cepat"
     class="hidden md:block bg-navy-900 text-slate-300 text-xs py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-800"
+    style="background-color: #0e204d;"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Left side: Location and Hours -->

@@ -5,9 +5,9 @@ import clinicData from '@/data/clinic.json'
 </script>
 
 <template>
-  <section class="relative bg-navy-900 text-white py-20 sm:py-24 lg:py-28 overflow-hidden">
+  <section class="relative bg-navy-900 text-white py-20 sm:py-24 lg:py-28 overflow-hidden" style="background-color: #0e204d;">
     <!-- Decorative background glow & medical geometric lines -->
-    <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-850 opacity-95" />
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-850 opacity-95 pointer-events-none" />
     <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-primary-600/10 to-transparent pointer-events-none" />
     <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-primary-500/15 blur-3xl pointer-events-none" />
     <div class="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />

@@ -110,8 +110,8 @@ const values = clinicData.about.values
       <div class="mt-14 text-center max-w-2xl mx-auto">
         <p class="text-sm text-slate-600">
           Mengabdi untuk senyum sehat dan rasa percaya diri keluarga Anda.
-          <RouterLink to="/kontak" class="text-primary-700 hover:text-primary-800 font-bold ml-1 inline-flex items-center gap-1">
-            <span>Pelajari selengkapnya tentang standar kami</span>
+          <RouterLink to="/jadwal" class="text-primary-700 hover:text-primary-800 font-bold ml-1 inline-flex items-center gap-1">
+            <span>Pelajari selengkapnya tentang jadwal & layanan kami</span>
             <ArrowRight class="w-3.5 h-3.5" aria-hidden="true" />
           </RouterLink>
         </p>

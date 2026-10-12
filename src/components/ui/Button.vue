@@ -57,7 +57,7 @@ const variantClasses = computed(() => {
     case 'outline':
       return 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:text-navy-900 hover:border-primary-400 active:bg-slate-100 focus-visible:ring-primary-500'
     case 'white':
-      return 'bg-white text-navy-900 hover:bg-slate-100 active:bg-slate-200 shadow-md hover:shadow-lg focus-visible:ring-primary-500'
+      return 'bg-white text-navy-900 border border-slate-200 hover:bg-slate-100 active:bg-slate-200 shadow-md hover:shadow-lg focus-visible:ring-primary-500'
     case 'navy':
       return 'bg-navy-900 text-white hover:bg-navy-950 active:bg-black shadow-md hover:shadow-lg focus-visible:ring-primary-500'
     case 'ghost':

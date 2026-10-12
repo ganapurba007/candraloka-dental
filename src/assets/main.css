@@ -21,7 +21,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  @media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
     ::after {
@@ -32,3 +32,30 @@
     }
   }
 }
+
+@layer utilities {
+  .bg-navy-950 {
+    background-color: #081330;
+  }
+  .bg-navy-900 {
+    background-color: #0e204d;
+  }
+  .bg-navy-850 {
+    background-color: #14285a;
+  }
+  .bg-navy-800 {
+    background-color: #1b3164;
+  }
+  .text-navy-900 {
+    color: #0e204d;
+  }
+  .from-primary-700 {
+    --tw-gradient-from: #133f94 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(19 63 148 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  .to-primary-700 {
+    --tw-gradient-to: #133f94 var(--tw-gradient-to-position);
+  }
+}
+
