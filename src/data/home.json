@@ -2,7 +2,35 @@
   "hero": {
     "headline": "Senyum Sehat dan Percaya Diri Dimulai dari Sini",
     "subheadline": "Perawatan gigi modern dengan dokter berpengalaman, teknologi higienis terkini, dan alur reservasi tepat waktu tanpa antrean panjang.",
-    "image": "/images/clinic/hero.webp"
+    "image": "/images/clinic/hero.webp",
+    "slides": [
+      {
+        "id": 1,
+        "badge": "Klinik Gigi Ramah & Terpercaya di Jakarta",
+        "title": "Candraloka",
+        "subtitle": "Dental Center in Jakarta",
+        "headline": "Senyum Sehat dan Percaya Diri Dimulai dari Sini",
+        "description": "Perawatan gigi komprehensif dengan dokter berpengalaman, teknologi higienis terkini, dan alur reservasi tepat waktu tanpa antrean panjang.",
+        "image": "/images/clinic/hero.webp",
+        "ctaText": "Buat Reservasi Online",
+        "ctaTo": "/reservasi",
+        "secondaryText": "Lihat Jadwal Praktek",
+        "secondaryTo": "/jadwal"
+      },
+      {
+        "id": 2,
+        "badge": "Standar Medis & Higienis Tinggi",
+        "title": "Pelayanan Ramah",
+        "subtitle": "Klinik Gigi Nyaman untuk Seluruh Keluarga",
+        "headline": "Pendekatan Personal Bebas Rasa Cemas",
+        "description": "Kenyamanan Anda dan keluarga adalah prioritas utama kami dengan standar sterilisasi medis bertaraf tinggi dan konsultasi transparan.",
+        "image": "/images/clinic/hero.webp",
+        "ctaText": "Kenali Dokter Gigi",
+        "ctaTo": "/dokter",
+        "secondaryText": "Semua Layanan",
+        "secondaryTo": "/layanan"
+      }
+    ]
   },
   "stats": [
     { "label": "Tahun Melayani", "value": 7, "suffix": "+" },
