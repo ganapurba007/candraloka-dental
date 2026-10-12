@@ -155,11 +155,11 @@ Volume data minimal: 8 layanan, 5 dokter (3 unggulan), 4 testimoni, 6 foto fasil
 | 1 | Layout global (FR-1.x) + komponen UI dasar (Button, Card, Badge, Accordion, Toast, StepIndicator) | ✅ |
 | 2 | Data JSON + helper murni (format tanggal/jam WIB, slot, ketersediaan, kode reservasi, pesan WhatsApp) beserta test | ✅ |
 | 3 | Beranda (FR-2.x) | ✅ |
-| 4 | Tentang (FR-3.x) | ⬜ |
-| 5 | Layanan: daftar dan detail (FR-4.x) | ⬜ |
-| 6 | Profil dokter: daftar dan detail (FR-5.x) | ⬜ |
-| 7 | Jadwal praktek (FR-6.x) | ⬜ |
-| 8 | Reservasi online + konfirmasi (FR-7.x) | ⬜ |
+| 4 | Tentang (FR-3.x) | ✅ |
+| 5 | Layanan: daftar dan detail (FR-4.x) | ✅ |
+| 6 | Profil dokter: daftar dan detail (FR-5.x) | ✅ |
+| 7 | Jadwal praktek (FR-6.x) | ✅ |
+| 8 | Reservasi online + konfirmasi (FR-7.x) | ✅ |
 | 9 | Audit akhir: polishing UX, responsif, aksesibilitas, SEO, dan audit performa menyeluruh (§11, §12) | ⬜ |
 | 10 | Rilis: deploy, README, screenshot, tautan demo | ⬜ |
 
