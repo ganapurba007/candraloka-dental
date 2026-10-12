@@ -8,9 +8,9 @@
 **Stack:** Vue 3 (Vite, Composition API), Vue Router, Tailwind CSS, VeeValidate + Zod, `sharp` (gambar WebP), data JSON lokal (tanpa backend/database/pembayaran), reservasi di `localStorage`, Vitest + Vue Test Utils
 
 ## Status Saat Ini
-- **Fase aktif:** Fase 0 — Setup (selesai) / Fase 1 — Layout global (siap)
-- **Test:** 5 passed / 5 total
-- **Sedang dikerjakan:** Fase 0 selesai
+- **Fase aktif:** Fase 1 — Layout global & UI dasar (selesai) / Fase 2 — Data JSON & helper (siap)
+- **Test:** 15 passed / 15 total
+- **Sedang dikerjakan:** Fase 1 selesai
 - **Update terakhir:** 2026-10-12
 
 > Update 3 baris di atas setiap kali fase/task berubah. Jangan biarkan basi.

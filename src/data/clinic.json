@@ -1,0 +1,61 @@
+{
+  "name": "Candraloka Dental Care",
+  "tagline": "Klinik Gigi Modern, Ramah, dan Nyaman untuk Senyum Sehat Keluarga Anda",
+  "establishedYear": 2018,
+  "contact": {
+    "phone": "021-5550192",
+    "whatsapp": "6281234567890",
+    "email": "kontak@candralokadental.id",
+    "address": "Jl. Candraloka Raya No. 45, Kebayoran Baru, Jakarta Selatan 12180",
+    "mapUrl": "https://maps.google.com/?q=Jl.+Candraloka+Raya+No.+45+Jakarta",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb="
+  },
+  "operatingHours": [
+    { "day": 1, "open": "09:00", "close": "20:00" },
+    { "day": 2, "open": "09:00", "close": "20:00" },
+    { "day": 3, "open": "09:00", "close": "20:00" },
+    { "day": 4, "open": "09:00", "close": "20:00" },
+    { "day": 5, "open": "09:00", "close": "20:00" },
+    { "day": 6, "open": "09:00", "close": "17:00" }
+  ],
+  "timezoneLabel": "WIB",
+  "reservation": {
+    "slotMinutes": 30,
+    "bookingWindowDays": 30,
+    "minLeadMinutes": 60
+  },
+  "social": [
+    { "name": "Instagram", "url": "https://instagram.com/candralokadental", "icon": "Instagram" },
+    { "name": "Facebook", "url": "https://facebook.com/candralokadental", "icon": "Facebook" }
+  ],
+  "about": {
+    "story": "Candraloka Dental Care didirikan pada tahun 2018 dengan komitmen menghadirkan layanan kesehatan gigi yang komprehensif, tenang, dan transparan. Kami memadukan keahlian dokter gigi profesional dengan teknologi modern untuk memberikan perawatan yang aman dan nyaman bagi seluruh keluarga.",
+    "vision": "Menjadi mitra kesehatan gigi terpercaya yang mengedepankan kenyamanan pasien, profesionalisme, dan edukasi kesehatan gigi berkelanjutan.",
+    "mission": [
+      "Memberikan pelayanan gigi berkualitas tinggi dengan standar kebersihan dan sterilisasi ketat.",
+      "Menciptakan suasana klinik yang tenang, ramah, dan ramah anak.",
+      "Menyediakan sistem jadwal dan reservasi yang transparan dan tepat waktu."
+    ],
+    "values": [
+      { "icon": "HeartHandshake", "title": "Pelayanan Empatis", "description": "Mendengarkan keluhan dengan teliti dan memberikan solusi tanpa rasa cemas." },
+      { "icon": "ShieldCheck", "title": "Standar Higienis", "description": "Sterilisasi instrumen bertaraf medis tinggi untuk keamanan maksimal." },
+      { "icon": "Sparkles", "title": "Teknologi Terkini", "description": "Peralatan modern untuk pemeriksaan presisi dan tindakan yang minim rasa sakit." },
+      { "icon": "Clock", "title": "Tepat Waktu", "description": "Manajemen slot jadwal terstruktur untuk meminimalkan waktu tunggu." },
+      { "icon": "Smile", "title": "Edukasi Berkelanjutan", "description": "Edukasi kesehatan gigi berkala agar senyum sehat bertahan seumur hidup." },
+      { "icon": "Users", "title": "Ramah Keluarga", "description": "Pendekatan hangat untuk pasien dewasa maupun anak-anak." }
+    ],
+    "facilities": [
+      { "title": "Ruang Konsultasi & Perawatan Modern", "caption": "Dilengkapi dental unit modern ergonomis dan pencahayaan optimal." },
+      { "title": "Ruang Tunggu Tenang & Nyaman", "caption": "Area tunggu sejuk berfasilitas Wi-Fi, air minum, dan bacaan informatif." },
+      { "title": "Area Sterilisasi Terpusat", "caption": "Proses sterilisasi alat bertahap dengan autoklaf standar medis." },
+      { "title": "Pojok Ramah Anak", "caption": "Suasana ramah anak untuk membantu si kecil merasa rileks sebelum tindakan." }
+    ],
+    "visitSteps": [
+      { "number": 1, "title": "Reservasi Online / WhatsApp", "description": "Pilih layanan, dokter, serta tanggal dan jam praktek yang sesuai jadwal Anda." },
+      { "number": 2, "title": "Konfirmasi & Kedatangan", "description": "Tiba di klinik 10 menit sebelum jam reservasi dan verifikasi data di meja registrasi." },
+      { "number": 3, "title": "Konsultasi & Pemeriksaan", "description": "Dokter memeriksa kondisi gigi secara teliti dan menjelaskan rencana tindakan." },
+      { "number": 4, "title": "Tindakan Perawatan", "description": "Perawatan dilakukan dengan standar kebersihan tinggi dan teknik yang lembut." },
+      { "number": 5, "title": "Edukasi Pasca Tindakan", "description": "Mendapatkan saran perawatan mandiri di rumah dan jadwal kontrol berkala bila diperlukan." }
+    ]
+  }
+}

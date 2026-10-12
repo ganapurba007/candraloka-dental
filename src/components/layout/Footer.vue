@@ -1,0 +1,153 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+import clinicData from '@/data/clinic.json'
+import servicesData from '@/data/services.json'
+import {
+  MapPin,
+  Phone,
+  MessageCircle,
+  Mail,
+  Clock,
+  ExternalLink,
+  Sparkles,
+  ShieldAlert,
+} from 'lucide-vue-next'
+
+const currentYear = new Date().getFullYear()
+const featuredServices = servicesData.slice(0, 5)
+
+const navLinks = [
+  { name: 'Beranda', to: '/' },
+  { name: 'Tentang Kami', to: '/tentang' },
+  { name: 'Semua Layanan', to: '/layanan' },
+  { name: 'Tim Dokter Gigi', to: '/dokter' },
+  { name: 'Jadwal Praktek', to: '/jadwal' },
+  { name: 'Reservasi Online', to: '/reservasi' },
+]
+</script>
+
+<template>
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Main Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <!-- Col 1: Clinic Summary -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary-600 to-primary-400 flex items-center justify-center text-white shadow-sm">
+              <Sparkles class="w-5 h-5" aria-hidden="true" />
+            </div>
+            <div>
+              <span class="text-lg font-bold text-white tracking-tight leading-none block">
+                Candraloka
+              </span>
+              <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest leading-none block mt-0.5">
+                Dental Care
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            {{ clinicData.tagline }}
+          </p>
+          <div class="text-xs text-slate-500 pt-1">
+            Melayani senyum sehat keluarga Indonesia sejak {{ clinicData.establishedYear }}.
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            Navigasi Cepat
+          </h3>
+          <ul class="space-y-2.5 text-sm">
+            <li v-for="link in navLinks" :key="link.to">
+              <RouterLink
+                :to="link.to"
+                class="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:text-primary-400 inline-block py-0.5"
+              >
+                {{ link.name }}
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services List -->
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            Layanan Unggulan
+          </h3>
+          <ul class="space-y-2.5 text-sm">
+            <li v-for="srv in featuredServices" :key="srv.id">
+              <RouterLink
+                :to="`/layanan/${srv.slug}`"
+                class="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:text-primary-400 inline-block py-0.5"
+              >
+                {{ srv.name }}
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Directions -->
+        <div class="space-y-4">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            Kontak & Lokasi
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <MapPin class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <span>{{ clinicData.contact.address }}</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <Phone class="w-4 h-4 text-primary-400 flex-shrink-0" aria-hidden="true" />
+              <a :href="`tel:${clinicData.contact.phone}`" class="hover:text-white transition-colors">
+                {{ clinicData.contact.phone }}
+              </a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <MessageCircle class="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
+              <a
+                :href="`https://wa.me/${clinicData.contact.whatsapp}`"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white transition-colors"
+              >
+                +{{ clinicData.contact.whatsapp }}
+              </a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <Clock class="w-4 h-4 text-primary-400 flex-shrink-0" aria-hidden="true" />
+              <span>Senin – Sabtu: 09:00 – 20:00 {{ clinicData.timezoneLabel }}</span>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a
+              :href="clinicData.contact.mapUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors border border-slate-700/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px]"
+            >
+              <span>Petunjuk Arah</span>
+              <ExternalLink class="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Disclaimer Notice (FR-1.4) -->
+      <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-start gap-3 mb-8">
+        <ShieldAlert class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+        <p class="text-xs text-slate-300 leading-relaxed">
+          <strong class="text-white">Pemberitahuan Proyek Portofolio:</strong> Situs web ini dirancang khusus untuk keperluan portofolio pengembangan web frontend (Vue 3 & Tailwind CSS). Seluruh data klinik, dokter, kontak, dan jadwal bersifat simulasi/rekaan. Reservasi yang dibuat pada situs ini tidak diproses oleh klinik sungguhan.
+        </p>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© {{ currentYear }} Candraloka Dental Care. Semua hak dilindungi.</p>
+        <p>Dibangun dengan Vue 3, Tailwind CSS & Vitest.</p>
+      </div>
+    </div>
+  </footer>
+</template>

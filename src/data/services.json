@@ -1,0 +1,221 @@
+[
+  {
+    "id": 1,
+    "slug": "pembersihan-karang-gigi",
+    "name": "Pembersihan Karang Gigi (Scaling)",
+    "category": "Umum",
+    "summary": "Pembersihan plak dan karang gigi ultrasonik untuk gusi sehat dan nafas segar.",
+    "description": "Perawatan pembersihan kalkulus (karang gigi) dan plak bakteri yang mengeras di permukaan gigi dan bawah garis gusi menggunakan teknologi ultrasonik modern yang nyaman.",
+    "whenNeeded": [
+      "Karang gigi terlihat kekuningan atau kecokelatan di sela gigi",
+      "Gusi sering berdarah saat menyikat gigi",
+      "Bau mulut tak sedap yang menetap",
+      "Pemeriksaan rutin setiap 6 bulan sekali"
+    ],
+    "procedure": [
+      { "title": "Pemeriksaan Awal", "description": "Pengecekan kondisi gigi dan gusi oleh dokter." },
+      { "title": "Scaling Ultrasonik", "description": "Pembersihan karang gigi dengan getaran mikro dan aliran air halus." },
+      { "title": "Poles & Fluoridasi", "description": "Penghalusan permukaan gigi untuk mencegah plak cepat menempel kembali." }
+    ],
+    "preparation": [
+      "Makan secukupnya sebelum datang ke klinik",
+      "Menyikat gigi sebelum pemeriksaan"
+    ],
+    "durationMinutes": 30,
+    "icon": "Sparkles",
+    "image": "/images/services/scaling.webp",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": 2,
+    "slug": "penambalan-gigi",
+    "name": "Penambalan Gigi Komposit",
+    "category": "Umum",
+    "summary": "Perbaikan gigi berlubang menggunakan bahan komposit sewarna gigi alami.",
+    "description": "Restorasi gigi berlubang menggunakan resin komposit bermutu tinggi yang disesuaikan dengan warna alami gigi, mengembalikan fungsi kunyah dan estetika.",
+    "whenNeeded": [
+      "Gigi berlubang atau ngilu saat makan manis/dingin",
+      "Gigi patah atau retak ringan",
+      "Tambalan lama yang sudah aus atau lepas"
+    ],
+    "procedure": [
+      { "title": "Pembersihan Jaringan Rusak", "description": "Mengangkat bagian gigi yang mengalami pembusukan secara hati-hati." },
+      { "title": "Aplikasi Bonding", "description": "Pemberian cairan pengikat khusus pada kavitas gigi." },
+      { "title": "Pengisian & Polishing", "description": "Penambalan lapis demi lapis dan penyinaran UV hingga kuat sempurna." }
+    ],
+    "preparation": [
+      "Beritahu dokter jika memiliki riwayat sensitivitas tinggi",
+      "Menyikat gigi sebelum tindakan"
+    ],
+    "durationMinutes": 30,
+    "icon": "ShieldCheck",
+    "image": "/images/services/tambal.webp",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": 3,
+    "slug": "pencabutan-gigi",
+    "name": "Pencabutan Gigi & Odontektomi",
+    "category": "Bedah",
+    "summary": "Ekstraksi gigi rusak parah atau gigi bungsu impaksi dengan anestesi lokal nyaman.",
+    "description": "Tindakan pencabutan gigi yang sudah tidak dapat dipertahankan atau gigi geraham bungsu yang tumbuh miring (impaksi) dengan anestesi lokal dan prosedur antiseptik ketat.",
+    "whenNeeded": [
+      "Gigi bungsu terasa nyeri, bengkak, atau mendorong gigi depan",
+      "Gigi rusak berat dengan sisa akar yang infeksi",
+      "Kebutuhan pencabutan untuk perawatan behel gigi"
+    ],
+    "procedure": [
+      { "title": "Pemeriksaan & Rontgen", "description": "Evaluasi posisi akar gigi dan jaringan saraf di sekitarnya." },
+      { "title": "Anestesi Lokal", "description": "Pemberian bius lokal agar area tindakan mati rasa dan bebas nyeri." },
+      { "title": "Pencabutan Halus", "description": "Pengangkatan gigi secara terukur dan pemasangan kassa hemostatik." }
+    ],
+    "preparation": [
+      "Wajib makan sebelum tindakan",
+      "Istirahat cukup di malam sebelumnya",
+      "Informasikan riwayat obat pengencer darah atau alergi obat"
+    ],
+    "durationMinutes": 60,
+    "icon": "Activity",
+    "image": "/images/services/cabut.webp",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": 4,
+    "slug": "bleaching-gigi",
+    "name": "Pemutihan Gigi (Teeth Whitening)",
+    "category": "Estetika",
+    "summary": "Mencerahkan warna gigi beberapa tingkat lebih putih secara aman dalam 1 sesi.",
+    "description": "Perawatan pemutihan gigi in-office menggunakan gel peroksida medis yang diaktivasi sinar khusus untuk menghilangkan noda kopi, teh, dan penuaan enamel gigi.",
+    "whenNeeded": [
+      "Warna gigi menguning akibat noda makanan atau minuman",
+      "Persiapan momen spesial seperti pernikahan atau wisuda",
+      "Ingin meningkatkan kecerahan senyum alami"
+    ],
+    "procedure": [
+      { "title": "Pembersihan & Perlindungan Gusi", "description": "Pemasangan gingival barrier untuk melindungi gusi." },
+      { "title": "Aplikasi Gel Whitening", "description": "Pengolesan formula pemutih pada permukaan gigi." },
+      { "title": "Penyinaran Khusus", "description": "Aktivasi gel selama 3 siklus @ 15 menit." }
+    ],
+    "preparation": [
+      "Disarankan telah melakukan scaling terlebih dahulu",
+      "Hindari makanan/minuman berpewarna pekat 48 jam setelah tindakan"
+    ],
+    "durationMinutes": 60,
+    "icon": "Sun",
+    "image": "/images/services/bleaching.webp",
+    "featured": true,
+    "order": 4
+  },
+  {
+    "id": 5,
+    "slug": "behel-kawat-gigi",
+    "name": "Perawatan Behel (Ortodonti)",
+    "category": "Ortodonti",
+    "summary": "Meratakan susunan gigi dan memperbaiki relasi gigitan untuk fungsi kunyah ideal.",
+    "description": "Koreksi susunan gigi berjejal, renggang, atau maloklusi menggunakan braket logam atau keramik transparan dipandu dokter gigi spesialis ortodonti.",
+    "whenNeeded": [
+      "Gigi bertumpuk atau berjejal sulit dibersihkan",
+      "Terdapat celah renggang antar gigi",
+      "Gigi depan maju (tonggos) atau gigitan terbalik (cameuh)"
+    ],
+    "procedure": [
+      { "title": "Cetakan & Analisis Sefalometri", "description": "Pembuatan model studi dan rencana pergerakan gigi." },
+      { "title": "Pemasangan Braket", "description": "Perekatan braket pada permukaan gigi secara presisi." },
+      { "title": "Aktivasi Kawat & Karet", "description": "Pemasangan kawat nikel-titanium untuk memulai pergerakan lembut." }
+    ],
+    "preparation": [
+      "Menuntaskan penambalan lubang gigi dan scaling sebelum pasang",
+      "Siap berkomitmen kontrol rutin setiap 3-4 minggu"
+    ],
+    "durationMinutes": 60,
+    "icon": "Layers",
+    "image": "/images/services/behel.webp",
+    "featured": true,
+    "order": 5
+  },
+  {
+    "id": 6,
+    "slug": "perawatan-saluran-akar",
+    "name": "Perawatan Saluran Akar (Endodonti)",
+    "category": "Umum",
+    "summary": "Menyelamatkan gigi dengan infeksi saraf agar tidak perlu dicabut.",
+    "description": "Terapi pembersihan jaringan pulpa yang terinfeksi bakteri di dalam saluran akar gigi, diikuti sterilisasi dan pengisian hermetis untuk mempertahankan gigi alami.",
+    "whenNeeded": [
+      "Nyeri berdenyut hebat spontan terutama di malam hari",
+      "Gigi berubah warna menjadi keabuan setelah benturan",
+      "Muncul benjolan kecil berisi nanah di gusi dekat akar gigi"
+    ],
+    "procedure": [
+      { "title": "Akses Kavitas & Pembersihan", "description": "Membuka jalan masuk dan membersihkan jaringan saraf yang mati." },
+      { "title": "Pengukuran & Sterilisasi", "description": "Pembersihan mikroba saluran akar dengan obat disinfektan." },
+      { "title": "Obturasi Saluran Akar", "description": "Pengisian saluran akar dengan bahan gutta-percha kedap bakteri." }
+    ],
+    "preparation": [
+      "Makan sebelum kunjungan",
+      "Membawa hasil foto rontgen bila sudah memiliki sebelumnya"
+    ],
+    "durationMinutes": 60,
+    "icon": "Heart",
+    "image": "/images/services/psa.webp",
+    "featured": true,
+    "order": 6
+  },
+  {
+    "id": 7,
+    "slug": "veneer-gigi",
+    "name": "Veneer Gigi Estetik",
+    "category": "Estetika",
+    "summary": "Lapisan tipis porselen atau komposit untuk senyum simetris dan rapi proporsional.",
+    "description": "Pemasangan cangkang tipis berkualitas tinggi pada permukaan depan gigi untuk memperbaiki bentuk, ukuran, warna, atau menutup celah ringan antar gigi.",
+    "whenNeeded": [
+      "Bentuk gigi tidak beraturan atau patah di sudut",
+      "Perubahan warna gigi intrinsik yang tidak mempan dengan bleaching",
+      "Celah kecil di gigi depan yang ingin ditutup segera"
+    ],
+    "procedure": [
+      { "title": "Desain Senyum & Mockup", "description": "Simulasi bentuk senyum baru sesuai proporsi wajah pasien." },
+      { "title": "Preparasi Minimal", "description": "Pengurangan permukaan email gigi secara sangat tipis (0.3 - 0.5 mm)." },
+      { "title": "Pemasangan & Polishing", "description": "Penyemenan veneer permanen dengan resin semen kuat." }
+    ],
+    "preparation": [
+      "Konsultasikan ekspektasi bentuk senyum saat pemeriksaan",
+      "Gigi dalam kondisi sehat dan bebas karang"
+    ],
+    "durationMinutes": 60,
+    "icon": "CheckCircle2",
+    "image": "/images/services/veneer.webp",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": 8,
+    "slug": "perawatan-gigi-anak",
+    "name": "Perawatan Gigi Anak (Pediatrik)",
+    "category": "Anak",
+    "summary": "Pemeriksaan ramah dan bebas trauma untuk membangun kebiasaan gigi sehat sejak dini.",
+    "description": "Layanan preventif dan kuratif untuk anak balita hingga remaja, meliputi aplikasi fluorida, penambalan gigi susu, dan edukasi menyikat gigi dengan pendekatan menyenangkan.",
+    "whenNeeded": [
+      "Pemeriksaan gigi pertama kali sejak usia 1 tahun",
+      "Gigi susu berlubang atau gigis (karies botol)",
+      "Pencegahan karies dengan aplikasi topical fluoride"
+    ],
+    "procedure": [
+      { "title": "Perkenalan Ramah", "description": "Membiasakan anak dengan kursi gigi dan instrumen secara santai." },
+      { "title": "Pemeriksaan Halus", "description": "Pengecekan pertumbuhan gigi dan kebersihan mulut." },
+      { "title": "Perawatan & Hadiah Apresiasi", "description": "Tindakan tanpa rasa sakit dan stiker apresiasi keberanian." }
+    ],
+    "preparation": [
+      "Jelaskan pada anak tentang dokter gigi dengan nada menyenangkan",
+      "Hindari menakut-nakuti anak dengan kata suntik atau sakit",
+      "Pilih jam praktek saat anak sedang aktif dan tidak mengantuk"
+    ],
+    "durationMinutes": 30,
+    "icon": "Smile",
+    "image": "/images/services/anak.webp",
+    "featured": true,
+    "order": 8
+  }
+]
