@@ -14,6 +14,23 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Optimasi Tampilan — Perapian Kartu Statistik & Kursor Pointer Tombol (2026-10-12)
+**FR terkait:** FR-2.3, PRD §10, PRD §11 (Prinsip UX)
+**Yang dikerjakan:**
+- Merapikan tata letak bagian Tentang & Statistik Beranda ([HomeAboutBrief.vue](file:///d:/Projects/candraloka-dental/src/components/sections/HomeAboutBrief.vue)):
+  - Menghilangkan pembatasan kotak sempit yang membuat angka besar (`12.500+`) meluber keluar batas.
+  - Mengubah desain kartu statistik dengan ikon medis profesional (`Award`, `Users`, `Stethoscope`) di sisi kiri, serta tipografi angka tebal besar (`text-2xl sm:text-3xl font-black text-navy-900`) di sisi kanan dengan judul dan keterangan yang sejajar rapi.
+  - Menambahkan efek hover lembut (`hover:shadow-lg hover:border-primary-200/70`) pada tiap kartu statistik.
+- Memperbaiki interaktivitas kursor tombol secara menyeluruh:
+  - Menambahkan aturan global `cursor: pointer` pada elemen `button`, `[role="button"]`, dan `a` di `src/assets/main.css`.
+  - Menambahkan kelas utilitas `cursor-pointer` pada komponen [Button.vue](file:///d:/Projects/candraloka-dental/src/components/ui/Button.vue) saat dihover, dan `!cursor-not-allowed` ketika disabled.
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** src/assets/main.css, src/components/ui/Button.vue, src/components/sections/HomeAboutBrief.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Update Identitas Brand & Hero Header — Logo Baru & Minimalis (2026-10-12)
 **FR terkait:** FR-1.1, FR-2.1, PRD §10, PRD §11 (Prinsip UX)
 **Yang dikerjakan:**

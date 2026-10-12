@@ -21,6 +21,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  button,
+  [role="button"],
+  a,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"] {
+    cursor: pointer;
+  }
+
     @media (prefers-reduced-motion: reduce) {
     *,
     ::before,

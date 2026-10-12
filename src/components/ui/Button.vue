@@ -91,12 +91,12 @@ const sizeClasses = computed(() => {
     :disabled="disabled || loading"
     :aria-disabled="disabled || loading"
     :class="[
-      'inline-flex items-center justify-center font-sans tracking-wide transition-colors duration-150',
+      'inline-flex items-center justify-center font-sans tracking-wide transition-colors duration-150 cursor-pointer',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
       'select-none touch-manipulation',
       variantClasses,
       sizeClasses,
-      (disabled || loading) && 'opacity-60 cursor-not-allowed pointer-events-none shadow-none',
+      (disabled || loading) && 'opacity-60 !cursor-not-allowed pointer-events-none shadow-none',
     ]"
   >
     <svg
