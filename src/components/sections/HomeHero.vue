@@ -4,7 +4,6 @@ import { RouterLink } from 'vue-router'
 import {
   CalendarCheck,
   Clock,
-  Sparkles,
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
@@ -128,14 +127,6 @@ function goToSlide(index) {
 
           <!-- Main Text Stack -->
           <div class="relative z-10 space-y-6 text-center lg:text-left">
-            <!-- Badge: Clean and compact -->
-            <div>
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-200 text-xs font-semibold tracking-wide shadow-sm">
-                <Sparkles class="w-3.5 h-3.5 text-primary-300" aria-hidden="true" />
-                <span>Klinik Gigi Ramah & Terpercaya di Jakarta</span>
-              </div>
-            </div>
-
             <!-- Big, Bold Brand Heading -->
             <div class="space-y-1">
               <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">

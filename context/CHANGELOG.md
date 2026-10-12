@@ -14,6 +14,19 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Update Identitas Brand & Hero Header — Logo Baru & Minimalis (2026-10-12)
+**FR terkait:** FR-1.1, FR-2.1, PRD §10, PRD §11 (Prinsip UX)
+**Yang dikerjakan:**
+- Menghapus komponen *pill badge* di atas judul Hero section ([HomeHero.vue](file:///d:/Projects/candraloka-dental/src/components/sections/HomeHero.vue)) untuk menghasilkan tampilan hero yang lebih bersih, fokus, dan minimalis tanpa distraksi visual.
+- Memperbarui ikon identitas klinik pada Header ([Navbar.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Navbar.vue)), Footer ([Footer.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Footer.vue)), dan favicon tab browser ([index.html](file:///d:/Projects/candraloka-dental/index.html)) menggunakan lambang resmi bulan sabit & mahkota gigi dari `public/icon.jpg`.
+- Mengoptimalkan framing lambang ikon menjadi bentuk persegi proporsional untuk ketajaman tampilan tab browser (`favicon.ico` dan `favicon.png`).
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** index.html, public/icon.jpg, public/favicon.ico, public/favicon.png, src/components/layout/Navbar.vue, src/components/layout/Footer.vue, src/components/sections/HomeHero.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Optimasi Tampilan — Hero Section Bersih, Kontras & Mudah Dibaca (2026-10-12)
 **FR terkait:** FR-2.1, PRD §10, PRD §11 (Prinsip UX)
 **Yang dikerjakan:**

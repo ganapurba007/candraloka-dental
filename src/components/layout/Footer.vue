@@ -9,7 +9,6 @@ import {
   Mail,
   Clock,
   ExternalLink,
-  Sparkles,
   ShieldAlert,
 } from 'lucide-vue-next'
 
@@ -34,9 +33,13 @@ const navLinks = [
         <!-- Col 1: Clinic Summary -->
         <div class="space-y-4">
           <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary-600 to-primary-400 flex items-center justify-center text-white shadow-sm">
-              <Sparkles class="w-5 h-5" aria-hidden="true" />
-            </div>
+            <img
+              src="/icon.jpg"
+              alt="Candraloka Dental Care"
+              class="w-9 h-9 object-contain rounded-xl shadow-xs"
+              width="36"
+              height="36"
+            />
             <div>
               <span class="text-lg font-bold text-white tracking-tight leading-none block">
                 Candraloka

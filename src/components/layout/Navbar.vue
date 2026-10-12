@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { Menu, X, CalendarCheck, Sparkles } from 'lucide-vue-next'
+import { Menu, X, CalendarCheck } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 
 const route = useRoute()
@@ -74,9 +74,13 @@ function isActive(to) {
           class="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg p-1"
           aria-label="Candraloka Dental Care Beranda"
         >
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-700 to-primary-500 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-            <Sparkles class="w-5 h-5" aria-hidden="true" />
-          </div>
+          <img
+            src="/icon.jpg"
+            alt="Candraloka Dental Care"
+            class="w-10 h-10 object-contain rounded-xl shadow-xs group-hover:scale-105 transition-transform"
+            width="40"
+            height="40"
+          />
           <div class="flex flex-col">
             <span class="text-base sm:text-lg font-bold text-navy-900 tracking-tight leading-tight group-hover:text-primary-600 transition-colors">
               Candraloka
