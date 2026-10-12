@@ -27,7 +27,7 @@ const navLinks = [
 </script>
 
 <template>
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+  <footer class="bg-navy-900 text-slate-300 pt-16 pb-12 border-t border-navy-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Main Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
@@ -126,7 +126,7 @@ const navLinks = [
               :href="clinicData.contact.mapUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors border border-slate-700/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px]"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold transition-colors border border-navy-700/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px]"
             >
               <span>Petunjuk Arah</span>
               <ExternalLink class="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
@@ -136,7 +136,7 @@ const navLinks = [
       </div>
 
       <!-- Portfolio Disclaimer Notice (FR-1.4) -->
-      <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-start gap-3 mb-8">
+      <div class="p-4 rounded-xl bg-navy-800/60 border border-navy-700/60 flex items-start gap-3 mb-8">
         <ShieldAlert class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
         <p class="text-xs text-slate-300 leading-relaxed">
           <strong class="text-white">Pemberitahuan Proyek Portofolio:</strong> Situs web ini dirancang khusus untuk keperluan portofolio pengembangan web frontend (Vue 3 & Tailwind CSS). Seluruh data klinik, dokter, kontak, dan jadwal bersifat simulasi/rekaan. Reservasi yang dibuat pada situs ini tidak diproses oleh klinik sungguhan.
@@ -144,7 +144,7 @@ const navLinks = [
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
         <p>© {{ currentYear }} Candraloka Dental Care. Semua hak dilindungi.</p>
         <p>Dibangun dengan Vue 3, Tailwind CSS & Vitest.</p>
       </div>

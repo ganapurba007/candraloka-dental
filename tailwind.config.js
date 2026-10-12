@@ -4,18 +4,32 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Medcity inspired healthcare palette (Teal Turquoise + Deep Navy)
         primary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e',
+          50: '#edfbf9',
+          100: '#d4f6f2',
+          200: '#aceee6',
+          300: '#76e1d6',
+          400: '#42cdc2',
+          500: '#21cdc0', // Signature Medcity Teal
+          600: '#17a89e',
+          700: '#16867f',
+          800: '#176a66',
+          900: '#175854',
+          950: '#073533',
+        },
+        navy: {
+          50: '#f3f6fb',
+          100: '#e4ecf7',
+          200: '#cedef0',
+          300: '#acc8e5',
+          400: '#82abd6',
+          500: '#628ec6',
+          600: '#4c73b3',
+          700: '#354f8e', // Medcity Secondary Blue
+          800: '#1b3164', // Medcity Mid Navy
+          900: '#0e204d', // Medcity Deep Dark Navy
+          950: '#081330',
         },
         accent: {
           50: '#f0f9ff',
@@ -25,15 +39,15 @@ export default {
           400: '#38bdf8',
           500: '#0ea5e9',
           600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          700: '#354f8e',
+          800: '#1b3164',
+          900: '#0e204d',
         },
         surface: {
           50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
+          100: '#f4f6fa', // Medcity soft background
+          200: '#eaedf5',
+          300: '#dce1ee',
           DEFAULT: '#ffffff',
         },
       },
@@ -42,8 +56,8 @@ export default {
         heading: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 2px 10px rgba(15, 23, 42, 0.05)',
-        'card-hover': '0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04)',
+        card: '0 2px 12px rgba(14, 32, 77, 0.06)',
+        'card-hover': '0 12px 28px -4px rgba(14, 32, 77, 0.12), 0 6px 12px -4px rgba(14, 32, 77, 0.05)',
       },
     },
   },

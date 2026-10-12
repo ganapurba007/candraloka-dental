@@ -78,7 +78,7 @@ function isActive(to) {
             <Sparkles class="w-5 h-5" aria-hidden="true" />
           </div>
           <div class="flex flex-col">
-            <span class="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight group-hover:text-primary-700 transition-colors">
+            <span class="text-base sm:text-lg font-bold text-navy-900 tracking-tight leading-tight group-hover:text-primary-600 transition-colors">
               Candraloka
             </span>
             <span class="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-widest leading-none">
