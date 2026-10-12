@@ -14,6 +14,25 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Integrasi Media — Dummy Image Realistis Layanan Unggulan (2026-10-12)
+**FR terkait:** FR-2.4, FR-4.1, PRD §12 (Optimasi & Gambar)
+**Yang dikerjakan:**
+- Mengganti aset gambar grafis SVG abstrak pada seluruh kartu layanan klinik dengan foto dummy klinis kedokteran gigi profesional dan realistis:
+  - `scaling`: Prosedur pembersihan karang gigi ultrasonik dengan dental hygienist.
+  - `tambal`: Restorasi penambalan komposit dengan lampu polimerisasi UV & model gigi.
+  - `bleaching`: Penggunaan lampu LED pemutihan gigi klinis pada ruang perawatan modern.
+  - `behel`: Konsultasi ortodonti estetika dengan model studi behel transparan.
+  - `psa`: Perawatan endodonti saluran akar berteknologi tinggi dengan mikroskop dental.
+  - `anak`: Dokter gigi anak ramah anak dengan boneka edukasi perawatan gigi.
+  - `cabut` & `veneer`: Prosedur bedah mulut radiografi dan konsultasi veneer keramik estetik dengan panduan shade warna gigi.
+- Seluruh 8 gambar diproses secara responsif (`1280px`, `768px`, `480px`) dalam format WebP terkompresi dengan anggaran performa PRD §12 terpenuhi (<40 KB untuk mobile).
+- Verifikasi:
+  - 92 unit tests lulus (100% pass)
+  - `npm run check:images` & `npm run build` berhasil tanpa error.
+**File yang berubah:** src-images/services/*, public/images/services/*, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Optimasi Tampilan — Perapian Kartu Statistik & Kursor Pointer Tombol (2026-10-12)
 **FR terkait:** FR-2.3, PRD §10, PRD §11 (Prinsip UX)
 **Yang dikerjakan:**
