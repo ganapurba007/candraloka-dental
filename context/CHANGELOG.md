@@ -14,6 +14,28 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 8 — Reservasi Online & Konfirmasi (2026-10-12)
+**FR terkait:** FR-7.1, FR-7.2, FR-7.3, FR-7.4, FR-7.5, FR-7.6, FR-7.7, FR-7.8, FR-7.9, FR-7.10, FR-7.11
+**Yang dikerjakan:**
+- Menambahkan fungsi helper `localStorage` dan `sessionStorage` di `src/lib/reservation.js`:
+  - `getStoredReservations`, `saveReservationToStorage`, `clearStoredReservations` (FR-7.9, FR-7.10)
+  - `getBookingDraft`, `saveBookingDraft`, `clearBookingDraft` (FR-7.11)
+- Memperbarui skema validasi Zod `patientFormSchema` di `src/lib/schemas.js` agar pesan error sesuai tabel FR-7.6 PRD
+- Membangun alur 4 langkah interaktif reservasi online di `src/pages/Booking.vue`:
+  - `StepIndicator.vue` indikator progres 4 langkah (FR-7.1)
+  - Pengisian otomatis awal dari URL query (`?layanan=:slug` & `?dokter=:slug`)
+  - Langkah 1 (FR-7.2): Pilihan kartu layanan dengan estimasi durasi
+  - Langkah 2 (FR-7.3): Pilihan dokter (opsi default "Dokter mana saja yang tersedia" atau dokter spesifik yang menangani layanan)
+  - Langkah 3 (FR-7.4, FR-7.5): Strip 14 hari navigator dengan status ketersediaan (Tersedia, Penuh, Libur), tombol lompat ke tanggal tersedia berikutnya, slot jam per periode (Pagi/Siang/Sore), serta penetapan dokter otomatis saat memilih jam
+  - Langkah 4 (FR-7.6, FR-7.7): Form data pasien (nama, WhatsApp, email, status pasien, keluhan dengan penghitung 300 karakter, persetujuan, honeypot) dengan proteksi anti-collision double booking
+  - Layar konfirmasi sukses (FR-7.8): Kode reservasi `CDC-YYMMDD-XXXX`, ringkasan jadwal, status "Menunggu konfirmasi klinik", tombol WhatsApp `wa.me`, salin ringkasan, buat reservasi lain, dan disclaimer portofolio
+  - Penyimpanan persistensi `localStorage` dan draft `sessionStorage` (FR-7.9, FR-7.11)
+  - Fitur pengosongan data reservasi di perangkat untuk peninjauan reviewer (FR-7.10)
+- Menambahkan unit test suite di `src/pages/__tests__/Booking.spec.js` dan `src/lib/__tests__/reservation.spec.js`: 91 passed / 91 total
+**File yang berubah:** AGENTS.md, context/CHANGELOG.md, src/lib/reservation.js, src/lib/schemas.js, src/lib/__tests__/reservation.spec.js, src/pages/Booking.vue, src/pages/__tests__/Booking.spec.js
+**Test:** 91 passed / 91 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
 ## Fase 7 — Jadwal Praktek (2026-10-12)
 **FR terkait:** FR-6.1, FR-6.2, FR-6.3, FR-6.4, FR-6.5, FR-6.6
 **Yang dikerjakan:**

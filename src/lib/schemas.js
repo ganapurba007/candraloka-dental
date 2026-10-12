@@ -13,8 +13,8 @@ export const patientFormSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(3, 'Nama lengkap minimal 3 karakter')
-    .max(60, 'Nama lengkap maksimal 60 karakter')
+    .min(3, 'Nama wajib diisi (minimal 3 karakter)')
+    .max(60, 'Maksimal 60 karakter')
     .regex(/^[a-zA-Z\s.,'-]+$/, 'Nama hanya boleh mengandung huruf, spasi, dan tanda baca umum'),
 
   whatsapp: z
@@ -22,25 +22,25 @@ export const patientFormSchema = z.object({
     .trim()
     .transform((val) => val.replace(/[\s-]/g, ''))
     .refine((val) => INDONESIAN_PHONE_REGEX.test(val), {
-      message: 'Nomor WhatsApp tidak valid (contoh: 081234567890)',
+      message: 'Nomor WhatsApp tidak valid',
     }),
 
   email: z
     .string()
     .trim()
-    .email('Format alamat email tidak valid')
+    .email('Format email tidak valid')
     .optional()
     .or(z.literal('')),
 
   notes: z
     .string()
     .trim()
-    .max(300, 'Catatan keluhan maksimal 300 karakter')
+    .max(300, 'Maksimal 300 karakter')
     .optional()
     .or(z.literal('')),
 
   isNewPatient: z.boolean({
-    required_error: 'Status pasien harus dipilih',
+    required_error: 'Pilih status pasien',
   }),
 })
 
