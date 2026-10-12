@@ -64,6 +64,17 @@ const testimonials = computed(() => testimonialsData.slice(0, 3))
           </div>
         </div>
       </div>
+
+      <!-- Medcity Rating Summary Badge (testimonials__rating) -->
+      <div class="mt-12 max-w-md mx-auto bg-white rounded-full py-3.5 px-7 border border-slate-200/90 shadow-md flex items-center justify-center gap-4">
+        <span class="text-2xl font-black text-navy-900">4.9</span>
+        <div class="text-left text-xs">
+          <div class="flex items-center text-amber-400 gap-0.5">
+            <Star v-for="i in 5" :key="i" class="w-3.5 h-3.5 fill-current" aria-hidden="true" />
+          </div>
+          <span class="text-slate-500 font-medium">Tingkat Kepuasan & Ulasan Positif Pasien</span>
+        </div>
+      </div>
     </div>
   </section>
 </template>

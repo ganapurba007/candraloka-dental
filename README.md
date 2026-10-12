@@ -65,7 +65,7 @@ Fitur unggulan proyek ini adalah **Sistem Reservasi Online Berbasis Ketersediaan
 |---|---|---|
 | **Framework** | Vue 3 (Composition API `<script setup>`) | Single Page Application berbasis Vite |
 | **Routing** | Vue Router 4 | Lazy-loaded routes & dynamic query handling |
-| **Styling** | Tailwind CSS | Tema Medcity: Deep Navy `#0e204d`, Signature Teal `#21cdc0` (tanpa warna `#12A193`) |
+| **Styling** | Tailwind CSS | Tema Medcity: Deep Navy `#0e204d`, Dental Sapphire Blue `#1e60d5` (tanpa warna tosca/teal) |
 | **Validasi Form** | Zod | Skema validasi deklaratif dan pesan error ramah pengguna |
 | **Metadata & SEO** | `@unhead/vue` | Meta tag judul, deskripsi, Open Graph, dan Twitter Card per halaman |
 | **Pengolahan Gambar** | `sharp` | Pipeline konversi WebP otomatis (1280, 768, 480 px) |

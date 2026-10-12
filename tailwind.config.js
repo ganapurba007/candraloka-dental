@@ -4,19 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Medcity inspired healthcare palette (Teal Turquoise + Deep Navy)
+        // Medcity inspired healthcare palette — Distinctive Dental Care Blue + Deep Navy (No Tosca)
         primary: {
-          50: '#edfbf9',
-          100: '#d4f6f2',
-          200: '#aceee6',
-          300: '#76e1d6',
-          400: '#42cdc2',
-          500: '#21cdc0', // Signature Medcity Teal
-          600: '#17a89e',
-          700: '#16867f',
-          800: '#176a66',
-          900: '#175854',
-          950: '#073533',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#1e60d5', // Signature Dental Sapphire Blue
+          600: '#174fb8',
+          700: '#133f94',
+          800: '#103275',
+          900: '#0c2557',
+          950: '#08183a',
         },
         navy: {
           50: '#f3f6fb',

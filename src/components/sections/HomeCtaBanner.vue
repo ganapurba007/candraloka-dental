@@ -1,50 +1,69 @@
 <script setup>
 import { computed } from 'vue'
-import { CalendarCheck, MessageCircle, Sparkles } from 'lucide-vue-next'
+import { CalendarCheck, MessageCircle, Sparkles, ArrowRight } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
 
 const waNumber = clinicData.contact.whatsapp
 const waUrl = computed(() => {
-  const text = encodeURIComponent('Halo Candraloka Dental Care, saya ingin konsultasi mengenai reservasi jadwal.')
+  const text = encodeURIComponent('Halo Candraloka Dental Care, saya ingin konsultasi mengenai reservasi jadwal dokter gigi.')
   return `https://wa.me/${waNumber}?text=${text}`
 })
 </script>
 
 <template>
-  <section class="py-16 sm:py-20 bg-navy-900 text-white relative overflow-hidden">
-    <!-- Decorative background glow -->
-    <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
-    <div class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
+  <section class="py-16 sm:py-24 bg-surface-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Medcity styled CTA Banner Container (cta bg-primary) -->
+      <div class="relative bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 sm:p-12 lg:p-14 text-white shadow-2xl overflow-hidden border border-primary-500/40">
+        <!-- Decorative circular backdrop glow -->
+        <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+        <div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-black/10 blur-2xl pointer-events-none" />
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-primary-300 text-xs font-semibold">
-        <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-        <span>Kesehatan Gigi Keluarga Anda</span>
-      </div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Icon Column -->
+          <div class="hidden sm:flex lg:col-span-2 items-center justify-center">
+            <div class="w-20 h-20 rounded-3xl bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-inner">
+              <Sparkles class="w-10 h-10 text-white" aria-hidden="true" />
+            </div>
+          </div>
 
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight max-w-2xl mx-auto leading-tight">
-        Siap Mendapatkan Senyum Sehat dan Percaya Diri?
-      </h2>
+          <!-- Content Column -->
+          <div class="lg:col-span-6 space-y-3 text-center sm:text-left">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary-200 block">
+              Pelayanan Terbaik untuk Keluarga
+            </span>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
+              Siap Mendapatkan Senyum Sehat dan Percaya Diri?
+            </h2>
+            <p class="text-sm sm:text-base text-primary-100 leading-relaxed max-w-xl">
+              Pilih layanan dan dokter spesialis yang sesuai dengan kebutuhan Anda. Jadwal terstruktur rapi, tanpa antre panjang di klinik.
+            </p>
+          </div>
 
-      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-        Pilih dokter dan jadwal yang Anda inginkan dengan alur reservasi online praktis, cepat, dan transparan.
-      </p>
+          <!-- Actions Column -->
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3.5 justify-center lg:items-end">
+            <Button
+              to="/reservasi"
+              variant="navy"
+              size="lg"
+              class="font-bold shadow-xl hover:-translate-y-0.5 transition-all w-full text-center justify-center"
+            >
+              <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
+              <span>Buat Reservasi Online</span>
+            </Button>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-        <Button to="/reservasi" variant="primary" size="lg" class="w-full sm:w-auto font-semibold shadow-lg">
-          <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
-          <span>Buat Reservasi Online</span>
-        </Button>
-        <a
-          :href="waUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-navy-700 bg-navy-800 hover:bg-navy-700 text-white font-semibold text-base transition-colors w-full sm:w-auto min-h-[48px]"
-        >
-          <MessageCircle class="w-5 h-5 mr-2 text-emerald-400" aria-hidden="true" />
-          <span>Konsultasi WhatsApp</span>
-        </a>
+            <a
+              :href="waUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-sm transition-all border border-white/25 w-full min-h-[44px]"
+            >
+              <MessageCircle class="w-4 h-4 mr-2" aria-hidden="true" />
+              <span>Konsultasi via WhatsApp</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

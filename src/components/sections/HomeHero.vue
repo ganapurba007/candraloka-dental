@@ -52,7 +52,7 @@ const { hero } = homeData
           <!-- Trust Badges -->
           <div class="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500">
             <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="w-2 h-2 rounded-full bg-primary-600"></span>
               <span>Jadwal Terstruktur & Bebas Antre</span>
             </div>
             <div class="flex items-center gap-2">

@@ -44,7 +44,7 @@
 - **Styling:**
   - Gunakan Tailwind CSS dengan token tema yang konsisten.
   - Hindari CSS kustom ad-hoc jika bisa dicapai dengan token Tailwind.
-  - Palet warna mengacu pada tema Medcity (Signature Teal `#21cdc0` dan Deep Navy `#0e204d`). Dilarang menggunakan warna `#12A193`.
+  - Palet warna mengacu pada tema Medcity dengan Dental Sapphire Blue (`#1e60d5` / `#2563eb`) dan Deep Navy (`#0e204d`). Dilarang menggunakan warna tosca/teal (termasuk `#21cdc0`) dan warna `#12A193`.
 - **Data Dinamis:**
   - Konten klinik, layanan, dokter, dan jadwal selalu dibaca dari `src/data/*.json`, jangan pernah di-hardcode ke dalam template komponen.
 

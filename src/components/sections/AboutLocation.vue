@@ -138,7 +138,7 @@ const daysList = computed(() => {
               :href="clinicData.contact.mapUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-full px-6 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold text-base transition-colors shadow-md gap-2"
+              class="inline-flex items-center justify-center w-full px-7 py-3.5 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 gap-2"
             >
               <Navigation class="w-5 h-5" aria-hidden="true" />
               <span>Petunjuk Arah via Google Maps</span>

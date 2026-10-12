@@ -14,6 +14,29 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Redesign — Adaptasi Medcity Layout & Transisi Dental Blue (2026-10-12)
+**FR terkait:** FR-3.1, FR-3.2, FR-3.3, FR-3.5, FR-2.8, PRD §10 (Referensi Medcity)
+**Yang dikerjakan:**
+- Mengadopsi tata letak & estetika resmi tema kesehatan Medcity (https://7oroof.com/demos/medcity/about-us.html):
+  - `AboutHeader.vue`: Mengadaptasi Medcity `page-title-layout1` dengan latar Navy, tipografi kuat, dan tombol pil ganda ("Lihat Dokter" & "Layanan Kami")
+  - `AboutStory.vue`: Mengadaptasi Medcity `about-layout1` dengan judul 2 baris, cerita filosofi perawatan, Visi & Misi terstruktur, baris aksi pil "Kenali Dokter Kami" dengan segel sertifikasi klinis, dan kartu foto klinik berbayang lembut
+  - `AboutValues.vue`: Mengadaptasi Medcity `features-layout1` dengan tajuk 2 kolom, kartu nilai berikon Dental Blue berlingkar dengan sudut panah tautan, dan catatan komitmen klinis di bagian bawah
+  - `AboutVisitFlow.vue`: Mengadaptasi Medcity `work-process` berlatar Deep Navy dengan nomor langkah besar `01`-`05`, daftar sorotan centang, dan banner CTA terintegrasi berlatar Dental Blue
+  - `HomeCtaBanner.vue`: Mengadaptasi Medcity horizontal CTA banner dengan ikon sparkle, judul kontras, dan tombol pil Deep Navy
+  - `Button.vue`: Standardisasi gaya pil membulat (`rounded-full`) untuk seluruh tombol aksi utama (`btn__rounded` khas Medcity) dan penambahan varian `white` serta `navy`
+  - `TestimonialsSection.vue`: Menambahkan badge rekap rating kepuasan pasien (`4.9` skor kepuasan) ala Medcity
+- Menghapus seluruh warna tosca/teal dan menggantinya dengan **Dental Sapphire Blue** (`#1e60d5` / `#2563eb`):
+  - Memperbarui token `primary` pada `tailwind.config.js` dari tosca menjadi Dental Blue
+  - Memperbarui skrip `scripts/generate-source-images.mjs` dan meregenerasi seluruh 24 varian gambar WebP konten serta `public/og-image.png` dengan nuansa Dental Blue & Deep Navy
+  - Memperbarui aturan styling di `context/rules.md` dan `README.md`
+- Verifikasi pengujian & build:
+  - 92 unit tests lolos (100% pass)
+  - 24 gambar WebP lolos validasi ukuran (`npm run check:images`)
+  - Build produksi lolos dengan ukuran awal JavaScript ~52.2 KB gzip
+**File yang berubah:** tailwind.config.js, scripts/generate-source-images.mjs, public/og-image.png, public/images/*, src/components/ui/Button.vue, src/components/sections/AboutHeader.vue, src/components/sections/AboutStory.vue, src/components/sections/AboutValues.vue, src/components/sections/AboutVisitFlow.vue, src/components/sections/AboutFacilities.vue, src/components/sections/AboutLocation.vue, src/components/sections/HomeCtaBanner.vue, src/components/sections/HomeHero.vue, src/components/sections/TestimonialsSection.vue, README.md, context/rules.md, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** README.md, context/rules.md, context/CHANGELOG.md
+
 ## Fase 10 — Rilis & Publikasi (2026-10-12)
 **FR terkait:** PRD §6 (Milestone 10)
 **Yang dikerjakan:**
