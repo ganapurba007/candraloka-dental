@@ -14,6 +14,30 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fase 5 — Layanan & Detail Layanan (2026-10-12)
+**FR terkait:** FR-4.1, FR-4.2, FR-4.3, FR-4.4, FR-4.5
+**Yang dikerjakan:**
+- Menambahkan varian warna `primary` pada komponen `Badge.vue`
+- Membangun halaman katalog layanan di `src/pages/Services.vue` (FR-4.1):
+  - Kolom pencarian layanan real-time dengan tombol hapus pencarian
+  - Filter kategori berbasis chip (`Semua`, `Umum`, `Estetika`, `Ortodonti`, `Bedah`, `Anak`) dengan jumlah badge layanan
+  - Grid kartu layanan dengan foto WebP responsif, estimasi durasi, dan dual CTA ("Detail" & "Reservasi")
+  - Tampilan *empty state* ramah saat pencarian tidak ditemukan dengan tombol reset
+  - Kotak informasi transparansi biaya (FR-4.4)
+- Membangun halaman detail layanan di `src/pages/ServiceDetail.vue` (FR-4.2, FR-4.3, FR-4.4, FR-4.5):
+  - Integrasi SEO meta title & description dinamis
+  - Gambar utama, deskripsi perawatan, daftar kapan dibutuhkan (`whenNeeded`), tahapan perawatan (`procedure`), dan persiapan sebelum kunjungan (`preparation`)
+  - Kartu daftar dokter yang menangani layanan terkait (`serviceIds`) yang menaut ke `/dokter/:slug`
+  - Rekomendasi layanan terkait dalam kategori serupa
+  - Tombol CTA "Reservasi Layanan Ini" menuju `/reservasi?layanan=:slug` serta tautan konsultasi WhatsApp
+  - Bar CTA tetap di bawah layar untuk perangkat mobile (FR-4.3)
+  - Notifikasi transparansi biaya (FR-4.4)
+  - Integrasi komponen `NotFound.vue` bila slug layanan tidak ditemukan (FR-4.5)
+- Menambahkan unit test di `Services.spec.js` dan `ServiceDetail.spec.js`: 69 passed / 69 total
+**File yang berubah:** AGENTS.md, context/CHANGELOG.md, src/components/ui/Badge.vue, src/pages/Services.vue, src/pages/ServiceDetail.vue, src/pages/__tests__/Services.spec.js, src/pages/__tests__/ServiceDetail.spec.js
+**Test:** 69 passed / 69 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
 ## Fase 4 — Tentang (2026-10-12)
 **FR terkait:** FR-3.1, FR-3.2, FR-3.3, FR-3.4, FR-3.5, FR-3.6, FR-3.7, FR-3.8
 **Yang dikerjakan:**

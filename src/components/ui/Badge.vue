@@ -5,7 +5,7 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'neutral',
-    validator: (v) => ['success', 'warning', 'danger', 'info', 'neutral'].includes(v),
+    validator: (v) => ['primary', 'success', 'warning', 'danger', 'info', 'neutral'].includes(v),
   },
   size: {
     type: String,
@@ -20,6 +20,8 @@ const props = defineProps({
 
 const variantClasses = computed(() => {
   switch (props.variant) {
+    case 'primary':
+      return 'bg-primary-50 text-primary-700 border-primary-200/60'
     case 'success':
       return 'bg-emerald-50 text-emerald-700 border-emerald-200/60'
     case 'warning':
@@ -36,6 +38,8 @@ const variantClasses = computed(() => {
 
 const dotColorClasses = computed(() => {
   switch (props.variant) {
+    case 'primary':
+      return 'bg-primary-500'
     case 'success':
       return 'bg-emerald-500'
     case 'warning':
