@@ -43,8 +43,5 @@ describe('Home.vue (FR-2.x)', () => {
 
     // FR-2.7 Testimonials
     expect(wrapper.text()).toContain('Apa Kata Mereka Tentang Kami')
-
-    // FR-2.8 Closing CTA Banner
-    expect(wrapper.text()).toContain('Siap Mendapatkan Senyum Sehat')
   })
 })

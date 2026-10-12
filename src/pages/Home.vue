@@ -7,7 +7,6 @@ import FeaturedServices from '@/components/sections/FeaturedServices.vue'
 import ReservationSteps from '@/components/sections/ReservationSteps.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
 import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
-import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
 
 useHead({
   title: 'Beranda | Candraloka Dental Care — Klinik Gigi Modern & Ramah',
@@ -42,8 +41,5 @@ useHead({
 
     <!-- FR-2.7 Patient Testimonials -->
     <TestimonialsSection />
-
-    <!-- FR-2.8 Closing CTA Banner -->
-    <HomeCtaBanner />
   </main>
 </template>

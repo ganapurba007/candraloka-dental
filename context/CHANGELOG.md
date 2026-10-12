@@ -14,6 +14,16 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Penghapusan Banner CTA Beranda — Tampilan Home Lebih Rapi (2026-10-12)
+**FR terkait:** FR-2.8
+**Yang dikerjakan:**
+- Menghapus card/banner CTA penutup (*"Siap Mendapatkan Senyum Sehat dan Percaya Diri?"*) dari halaman utama ([Home.vue](file:///d:/Projects/candraloka-dental/src/pages/Home.vue)) sesuai permintaan pengguna, sehingga halaman beranda berakhir rapi setelah carousel Ulasan Pasien.
+- Memperbarui pengujian di [Home.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/Home.spec.js).
+- Verifikasi: 92/92 unit tests lulus dan build produksi berhasil.
+**File yang berubah:** src/pages/Home.vue, src/pages/__tests__/Home.spec.js, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Redesign Interaktif — Carousel Ulasan Pasien Otomatis & Foto Profil Nyata (2026-10-12)
 **FR terkait:** FR-2.7, PRD §10, PRD §11 (Prinsip UX), PRD §12 (Optimasi & Gambar)
 **Yang dikerjakan:**
