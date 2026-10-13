@@ -14,8 +14,6 @@ import {
   ShieldCheck,
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import Card from '@/components/ui/Card.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
@@ -46,11 +44,6 @@ useHead({
     },
   ],
 })
-
-const breadcrumbs = computed(() => [
-  { label: 'Layanan', to: '/layanan' },
-  { label: service.value ? service.value.name : 'Detail Layanan' },
-])
 
 // Doctors assigned to this service (FR-4.2)
 const assignedDoctors = computed(() => {
@@ -86,9 +79,6 @@ const waConsultUrl = computed(() => {
   <NotFound v-if="!service" />
 
   <div v-else class="flex-1 flex flex-col bg-surface-50 pb-20 lg:pb-0">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Service Header Banner -->
     <section class="py-12 sm:py-16 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
@@ -97,9 +87,9 @@ const waConsultUrl = computed(() => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-3xl space-y-4">
           <div class="flex items-center gap-3">
-            <Badge variant="primary">
+            <span class="text-xs font-semibold uppercase tracking-wider text-primary-300">
               {{ service.category }}
-            </Badge>
+            </span>
             <div class="flex items-center gap-1.5 text-xs text-primary-200">
               <Clock class="w-4 h-4 text-primary-400" aria-hidden="true" />
               <span>Estimasi durasi: {{ formatDuration(service.durationMinutes) }}</span>

@@ -1,10 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { ArrowRight, Clock, Sparkles } from 'lucide-vue-next'
+import { ArrowRight, Clock } from 'lucide-vue-next'
 import servicesData from '@/data/services.json'
 import Card from '@/components/ui/Card.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import { formatDuration } from '@/lib/format'
@@ -60,11 +59,6 @@ const featuredServices = computed(() => {
                 aspect-ratio="16/9"
                 img-class="group-hover:scale-105 transition-transform duration-300"
               />
-              <div class="absolute top-3 left-3">
-                <Badge variant="info" size="sm">
-                  {{ service.category }}
-                </Badge>
-              </div>
             </div>
 
             <!-- Card Content -->

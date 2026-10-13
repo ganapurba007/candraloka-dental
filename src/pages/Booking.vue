@@ -10,7 +10,6 @@ import {
   ArrowRight,
   ArrowLeft,
   Calendar,
-  Sparkles,
   Info,
   Copy,
   Check,
@@ -21,10 +20,8 @@ import {
   UserCheck,
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import StepIndicator from '@/components/ui/StepIndicator.vue'
 import Card from '@/components/ui/Card.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import { useToast } from '@/composables/useToast'
@@ -71,7 +68,6 @@ const route = useRoute()
 const router = useRouter()
 const { success: toastSuccess, error: toastError, info: toastInfo } = useToast()
 
-const breadcrumbs = [{ label: 'Reservasi Online' }]
 
 const steps = [
   { number: 1, title: 'Layanan' },
@@ -506,20 +502,12 @@ function handleClearStoredReservations() {
 
 <template>
   <div class="flex-1 flex flex-col bg-surface-50 min-h-screen">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Header Section -->
     <section class="py-10 sm:py-14 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
       <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-primary-300 text-xs font-semibold">
-          <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Sistem Reservasi Online</span>
-        </div>
-
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
           Buat Janji Temu Perawatan Gigi
         </h1>
@@ -680,9 +668,9 @@ function handleClearStoredReservations() {
                 >
                   <div class="space-y-2">
                     <div class="flex items-center justify-between">
-                      <Badge variant="primary">
+                      <span class="text-xs font-semibold uppercase tracking-wider text-primary-600">
                         {{ srv.category }}
-                      </Badge>
+                      </span>
                       <div
                         class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors"
                         :class="
@@ -755,7 +743,7 @@ function handleClearStoredReservations() {
                         <h3 class="text-base font-bold text-navy-900 group-hover:text-primary-700 transition-colors">
                           Dokter Mana Saja yang Tersedia
                         </h3>
-                        <Badge variant="primary">Rekomendasi</Badge>
+                        <span class="text-xs font-bold text-primary-600 uppercase tracking-wider">(Rekomendasi)</span>
                       </div>
                       <p class="text-xs text-slate-500 leading-relaxed">
                         Sistem menetapkan dokter yang paling optimal secara otomatis saat Anda memilih jam.

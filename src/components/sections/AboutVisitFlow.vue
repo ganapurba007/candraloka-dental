@@ -4,11 +4,10 @@ import {
   CalendarCheck,
   ClipboardList,
   Stethoscope,
-  Sparkles,
+  ShieldCheck,
   HeartHandshake,
   ArrowRight,
   Check,
-  ShieldCheck,
 } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
@@ -17,7 +16,7 @@ const stepIcons = [
   CalendarCheck,
   ClipboardList,
   Stethoscope,
-  Sparkles,
+  ShieldCheck,
   HeartHandshake,
 ]
 
@@ -121,7 +120,7 @@ const highlights = [
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div class="hidden sm:flex lg:col-span-2 items-center justify-center">
             <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center shadow-lg">
-              <Sparkles class="w-8 h-8 text-white" aria-hidden="true" />
+              <HeartHandshake class="w-8 h-8 text-white" aria-hidden="true" />
             </div>
           </div>
 

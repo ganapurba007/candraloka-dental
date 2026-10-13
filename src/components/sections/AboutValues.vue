@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 import {
   HeartHandshake,
   ShieldCheck,
-  Sparkles,
+  Cpu,
   Clock,
   Smile,
   Users,
@@ -16,7 +16,7 @@ import clinicData from '@/data/clinic.json'
 const iconMap = {
   HeartHandshake,
   ShieldCheck,
-  Sparkles,
+  Cpu,
   Clock,
   Smile,
   Users,
@@ -80,7 +80,7 @@ const values = clinicData.about.values
             <div class="flex items-center justify-between">
               <div class="w-14 h-14 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm">
                 <component
-                  :is={...iconMap}[val.icon] || Sparkles
+                  :is="{...iconMap}[val.icon] || HeartHandshake"
                   class="w-7 h-7"
                   aria-hidden="true"
                 />

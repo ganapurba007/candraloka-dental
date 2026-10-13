@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { CalendarCheck, Sparkles, ArrowRight } from 'lucide-vue-next'
+import { CalendarCheck, ArrowRight } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
@@ -25,7 +25,7 @@ const waUrl = computed(() => {
           <!-- Icon Column -->
           <div class="hidden sm:flex lg:col-span-2 items-center justify-center">
             <div class="w-20 h-20 rounded-3xl bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-inner">
-              <Sparkles class="w-10 h-10 text-white" aria-hidden="true" />
+              <CalendarCheck class="w-10 h-10 text-white" aria-hidden="true" />
             </div>
           </div>
 

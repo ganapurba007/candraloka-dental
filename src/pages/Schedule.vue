@@ -8,13 +8,10 @@ import {
   CalendarCheck,
   User,
   AlertCircle,
-  Sparkles,
   Info,
   RotateCcw,
   Stethoscope,
 } from 'lucide-vue-next'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
@@ -40,8 +37,6 @@ useHead({
 
 const route = useRoute()
 const router = useRouter()
-
-const breadcrumbs = [{ label: 'Jadwal Praktek' }]
 
 const now = new Date()
 const currentIsoDay = getIsoDayOfWeek(toIsoDateString(now))
@@ -140,20 +135,12 @@ const mobileDayDoctors = computed(() => {
 
 <template>
   <div class="flex-1 flex flex-col bg-surface-50">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Header Section (FR-6.6) -->
     <section class="py-12 sm:py-16 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
       <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-primary-300 text-xs font-semibold">
-          <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Jadwal Praktek Candraloka Dental Care</span>
-        </div>
-
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white">
           Jadwal Praktek Dokter Mingguan
         </h1>

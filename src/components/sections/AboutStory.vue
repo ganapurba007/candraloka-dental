@@ -1,5 +1,5 @@
 <script setup>
-import { CheckCircle2, Award, Heart, Target, ArrowRight, ShieldCheck, Sparkles } from 'lucide-vue-next'
+import { CheckCircle2, Award, Heart, Target, ArrowRight, ShieldCheck } from 'lucide-vue-next'
 import clinicData from '@/data/clinic.json'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import Button from '@/components/ui/Button.vue'

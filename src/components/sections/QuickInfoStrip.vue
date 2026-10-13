@@ -4,7 +4,6 @@ import clinicData from '@/data/clinic.json'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { Clock, Phone, MapPin } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
-import Badge from '@/components/ui/Badge.vue'
 
 const clinicStatus = computed(() => {
   return getClinicOpenStatus(clinicData.operatingHours, new Date())
@@ -33,13 +32,16 @@ const waUrl = computed(() => {
             <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
               Praktek Hari Ini
             </span>
-            <Badge
-              :variant="clinicStatus.isOpen ? 'success' : 'danger'"
-              size="sm"
-              :dot="true"
+            <span
+              class="inline-flex items-center gap-1.5 text-xs font-semibold"
+              :class="clinicStatus.isOpen ? 'text-emerald-600' : 'text-slate-500'"
             >
-              {{ clinicStatus.statusBadge }}
-            </Badge>
+              <span
+                class="w-1.5 h-1.5 rounded-full"
+                :class="clinicStatus.isOpen ? 'bg-emerald-500' : 'bg-slate-400'"
+              />
+              <span>{{ clinicStatus.statusBadge }}</span>
+            </span>
           </div>
           <p class="text-sm font-bold text-navy-900">
             {{ clinicStatus.hoursText }}

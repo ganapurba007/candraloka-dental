@@ -41,7 +41,7 @@
     "values": [
       { "icon": "HeartHandshake", "title": "Pelayanan Empatis", "description": "Mendengarkan keluhan dengan teliti dan memberikan solusi tanpa rasa cemas." },
       { "icon": "ShieldCheck", "title": "Standar Higienis", "description": "Sterilisasi instrumen bertaraf medis tinggi untuk keamanan maksimal." },
-      { "icon": "Sparkles", "title": "Teknologi Terkini", "description": "Peralatan modern untuk pemeriksaan presisi dan tindakan yang minim rasa sakit." },
+      { "icon": "Cpu", "title": "Teknologi Terkini", "description": "Peralatan modern untuk pemeriksaan presisi dan tindakan yang minim rasa sakit." },
       { "icon": "Clock", "title": "Tepat Waktu", "description": "Manajemen slot jadwal terstruktur untuk meminimalkan waktu tunggu." },
       { "icon": "Smile", "title": "Edukasi Berkelanjutan", "description": "Edukasi kesehatan gigi berkala agar senyum sehat bertahan seumur hidup." },
       { "icon": "Users", "title": "Ramah Keluarga", "description": "Pendekatan hangat untuk pasien dewasa maupun anak-anak." }

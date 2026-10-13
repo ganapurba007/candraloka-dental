@@ -7,16 +7,14 @@ import {
   Award,
   Globe,
   GraduationCap,
-  Sparkles,
   Calendar,
   Clock,
   ArrowRight,
   ShieldCheck,
   AlertCircle,
+  Stethoscope,
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import Card from '@/components/ui/Card.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
@@ -50,10 +48,6 @@ useHead({
   ],
 })
 
-const breadcrumbs = computed(() => [
-  { label: 'Dokter', to: '/dokter' },
-  { label: doctor.value ? doctor.value.name : 'Profil Dokter' },
-])
 
 // Services handled by this doctor (FR-5.2)
 const handledServices = computed(() => {
@@ -102,9 +96,6 @@ const waDoctorUrl = computed(() => {
   <NotFound v-if="!doctor" />
 
   <div v-else class="flex-1 flex flex-col bg-surface-50 pb-20 lg:pb-0">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Doctor Header Profile Section -->
     <section class="py-12 sm:py-16 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
@@ -121,21 +112,15 @@ const waDoctorUrl = computed(() => {
                 aspect-ratio="4/5"
                 img-class="w-full h-full object-cover"
               />
-              <div v-if="isPracticingToday" class="absolute top-3 left-3">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-lg">
-                  <span class="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  <span>Praktek Hari Ini</span>
-                </span>
-              </div>
             </div>
           </div>
 
           <!-- Doctor Basic Info -->
           <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-              <Badge variant="primary" class="text-xs px-3 py-1">
+              <span class="text-xs font-semibold text-primary-300 uppercase tracking-wider">
                 {{ doctor.specialty }}
-              </Badge>
+              </span>
               <span class="text-xs text-primary-200 flex items-center gap-1">
                 <Award class="w-4 h-4 text-primary-400" aria-hidden="true" />
                 <span>{{ doctor.experienceYears }} Tahun Pengalaman</span>
@@ -220,7 +205,7 @@ const waDoctorUrl = computed(() => {
           <!-- Clinical Interests (Fokus & Minat Klinis) -->
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
-              <Sparkles class="w-6 h-6 text-primary-600" aria-hidden="true" />
+              <Stethoscope class="w-6 h-6 text-primary-600" aria-hidden="true" />
               <span>Fokus & Minat Klinis</span>
             </h2>
 

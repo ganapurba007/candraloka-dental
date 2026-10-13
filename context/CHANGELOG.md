@@ -14,6 +14,35 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Pembersihan Global: Penghapusan Breadcrumb, Badge, & Ikon Sparkling (2026-10-13)
+**FR terkait:** FR-1.4, FR-2.x, FR-3.x, FR-4.x, FR-5.x, FR-6.x, FR-7.x
+**Yang dikerjakan:**
+- **Penghapusan Breadcrumb di Seluruh Halaman:**
+  - Menghapus komponen `<Breadcrumb />` beserta variabel breadcrumbs pada:
+    - [Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue)
+    - [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue)
+    - [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue)
+    - [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue)
+    - [Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue)
+    - [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue)
+    - [About.vue](file:///d:/Projects/candraloka-dental/src/pages/About.vue)
+- **Penghapusan Badge Pills di Seluruh Komponen & Halaman:**
+  - Menghapus badge pills di atas header halaman ([Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue), [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue), [Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue), [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue), [AboutHeader.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutHeader.vue)).
+  - Menghapus badge overlay kartu layanan & kartu dokter ([Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue), [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue), [FeaturedServices.vue](file:///d:/Projects/candraloka-dental/src/components/sections/FeaturedServices.vue)).
+  - Mengganti elemen badge dengan tipografi teks bersih (`span` uppercase tracking-wider) pada [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue), [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue), dan [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue).
+  - Mengganti status badge pada [QuickInfoStrip.vue](file:///d:/Projects/candraloka-dental/src/components/sections/QuickInfoStrip.vue) dengan dot status minimalis tanpa pill.
+  - Menghapus badge pill pada [AboutFacilities.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutFacilities.vue) dan [NotFound.vue](file:///d:/Projects/candraloka-dental/src/pages/NotFound.vue).
+- **Penghapusan Total Ikon Sparkling (`Sparkles`):**
+  - Menghapus seluruh impor dan penggunaan `Sparkles` di seluruh situs.
+  - Mengganti ikon representatif pada [AboutValues.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutValues.vue) (`Cpu`), [AboutVisitFlow.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutVisitFlow.vue) (`ShieldCheck`, `HeartHandshake`), [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue) (`Stethoscope`), [NotFound.vue](file:///d:/Projects/candraloka-dental/src/pages/NotFound.vue) (`ArrowRight`), serta data JSON [services.json](file:///d:/Projects/candraloka-dental/src/data/services.json) (`Smile`) & [clinic.json](file:///d:/Projects/candraloka-dental/src/data/clinic.json) (`Cpu`).
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` (26 gambar tervalidasi).
+  - `npm run build` sukses.
+**File yang berubah:** src/pages/*, src/components/sections/*, src/data/*, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Standardisasi Ikon WhatsApp Autentik & Pembersihan Ikon Generik (2026-10-13)
 **FR terkait:** FR-1.4, FR-7.8
 **Yang dikerjakan:**

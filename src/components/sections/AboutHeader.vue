@@ -1,5 +1,5 @@
 <script setup>
-import { ArrowRight, Stethoscope, Sparkles } from 'lucide-vue-next'
+import { ArrowRight, Stethoscope } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
 </script>
@@ -14,11 +14,9 @@ import clinicData from '@/data/clinic.json'
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-2xl space-y-6">
-        <!-- Subtitle Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/90 border border-navy-700/80 text-primary-300 text-xs font-semibold tracking-wide shadow-sm">
-          <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Tentang Candraloka Dental Care</span>
-        </div>
+        <span class="text-xs font-bold uppercase tracking-wider text-primary-300 block">
+          Tentang Candraloka Dental Care
+        </span>
 
         <!-- Heading (Medcity pagetitle__heading) -->
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">

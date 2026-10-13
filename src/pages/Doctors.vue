@@ -7,15 +7,12 @@ import {
   X,
   CalendarCheck,
   ArrowRight,
-  Sparkles,
   Calendar,
   Award,
   SearchX,
   CheckCircle2,
 } from 'lucide-vue-next'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import Card from '@/components/ui/Card.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
@@ -32,8 +29,6 @@ useHead({
     },
   ],
 })
-
-const breadcrumbs = [{ label: 'Dokter' }]
 
 const selectedSpecialty = ref('Semua')
 const searchQuery = ref('')
@@ -73,20 +68,12 @@ function clearFilters() {
 
 <template>
   <div class="flex-1 flex flex-col bg-surface-50">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Header Section -->
     <section class="py-12 sm:py-16 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
       <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-primary-300 text-xs font-semibold">
-          <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Tenaga Medis Candraloka Dental Care</span>
-        </div>
-
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white">
           Tim Dokter Gigi Berpengalaman & Terpercaya
         </h1>
@@ -160,26 +147,14 @@ function clearFilters() {
               aspect-ratio="4/5"
               img-class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
-
-            <!-- Practicing Today Badge (FR-5.2) -->
-            <div v-if="isDoctorPracticingOn(doc)" class="absolute top-3 left-3">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-md">
-                <span class="w-2 h-2 rounded-full bg-white animate-pulse" />
-                <span>Praktek Hari Ini</span>
-              </span>
-            </div>
-
-            <!-- Specialty Badge -->
-            <div class="absolute bottom-3 left-3">
-              <Badge variant="primary" class="shadow-sm backdrop-blur-md bg-white/95">
-                {{ doc.specialty }}
-              </Badge>
-            </div>
           </div>
 
           <!-- Doctor Info -->
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div class="space-y-2">
+              <p class="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                {{ doc.specialty }}
+              </p>
               <h2 class="text-lg font-bold text-navy-900 group-hover:text-primary-700 transition-colors leading-snug">
                 <RouterLink :to="`/dokter/${doc.slug}`" class="focus-visible:outline-none focus-visible:underline">
                   {{ doc.name }}

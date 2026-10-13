@@ -1,6 +1,5 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import AboutHeader from '@/components/sections/AboutHeader.vue'
 import AboutStory from '@/components/sections/AboutStory.vue'
 import AboutValues from '@/components/sections/AboutValues.vue'
@@ -19,14 +18,10 @@ useHead({
     },
   ],
 })
-
-const breadcrumbs = [{ label: 'Tentang Kami' }]
 </script>
 
 <template>
   <div class="flex-1 flex flex-col">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
 
     <!-- FR-3.1: Header -->
     <AboutHeader />

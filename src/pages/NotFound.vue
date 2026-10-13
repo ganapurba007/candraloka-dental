@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
 import { RouterLink } from 'vue-router'
-import { Home, Sparkles, CalendarCheck, HelpCircle } from 'lucide-vue-next'
+import { Home, CalendarCheck, HelpCircle, ArrowRight } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 
 useHead({
@@ -22,9 +22,9 @@ useHead({
         <HelpCircle class="w-8 h-8 sm:w-10 sm:h-10" aria-hidden="true" />
       </div>
 
-      <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-slate-100 text-slate-600 mb-3 tracking-wide">
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
         Error 404
-      </span>
+      </p>
 
       <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
         Halaman Tidak Ditemukan
@@ -40,7 +40,7 @@ useHead({
           Kembali ke Beranda
         </Button>
         <Button to="/layanan" variant="outline" size="md" class="w-full sm:w-auto">
-          <Sparkles class="w-4 h-4 mr-2" aria-hidden="true" />
+          <ArrowRight class="w-4 h-4 mr-2" aria-hidden="true" />
           Lihat Layanan
         </Button>
         <Button to="/reservasi" variant="secondary" size="md" class="w-full sm:w-auto">

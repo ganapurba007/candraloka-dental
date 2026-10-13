@@ -1,7 +1,6 @@
 <script setup>
 import clinicData from '@/data/clinic.json'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
-import { Sparkles } from 'lucide-vue-next'
 
 const facilities = clinicData.about.facilities
 </script>
@@ -36,10 +35,6 @@ const facilities = clinicData.about.facilities
               aspect-ratio="16/10"
               img-class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div class="absolute top-4 right-4 bg-navy-900/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-white flex items-center gap-1.5 shadow-md">
-              <Sparkles class="w-3 h-3 text-primary-400" aria-hidden="true" />
-              <span>Fasilitas Terstandarisasi</span>
-            </div>
           </div>
 
           <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">

@@ -9,12 +9,9 @@ import {
   ArrowRight,
   CalendarCheck,
   Info,
-  Sparkles,
   SearchX,
 } from 'lucide-vue-next'
-import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import Card from '@/components/ui/Card.vue'
-import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
@@ -30,8 +27,6 @@ useHead({
     },
   ],
 })
-
-const breadcrumbs = [{ label: 'Layanan' }]
 
 const categories = ['Semua', 'Umum', 'Estetika', 'Ortodonti', 'Bedah', 'Anak']
 const selectedCategory = ref('Semua')
@@ -73,20 +68,12 @@ function clearFilters() {
 
 <template>
   <div class="flex-1 flex flex-col bg-surface-50">
-    <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbs" />
-
     <!-- Header Section -->
     <section class="py-12 sm:py-16 bg-navy-900 text-white relative overflow-hidden" style="background-color: #0e204d;">
       <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-500/10 blur-3xl pointer-events-none" />
       <div class="absolute -left-24 -bottom-24 w-96 h-96 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-primary-300 text-xs font-semibold">
-          <Sparkles class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Layanan Candraloka Dental Care</span>
-        </div>
-
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white">
           Layanan Perawatan Gigi Komprehensif
         </h1>
@@ -166,11 +153,6 @@ function clearFilters() {
               aspect-ratio="16/9"
               img-class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div class="absolute top-3 left-3">
-              <Badge variant="primary">
-                {{ srv.category }}
-              </Badge>
-            </div>
           </div>
 
           <!-- Service Content -->
