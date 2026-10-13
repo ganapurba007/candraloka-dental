@@ -398,32 +398,24 @@ onUnmounted(() => {
       </Transition>
     </div>
 
-    <!-- 5. Slide Controls Bar: Counter & Indicators -->
+    <!-- 5. Slide Controls Bar: Indicators -->
     <div
       v-if="slides.length > 1"
-      class="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 bg-navy-950/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-lg"
+      class="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-navy-950/40 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15 shadow-lg"
       role="tablist"
       aria-label="Navigasi slide utama"
     >
-      <span class="text-xs font-mono font-bold text-blue-200/90 tracking-wider">
-        0{{ currentSlideIndex + 1 }} / 0{{ slides.length }}
-      </span>
-
-      <div class="w-px h-3.5 bg-white/20" aria-hidden="true" />
-
-      <div class="flex items-center gap-2">
-        <button
-          v-for="(s, sIdx) in slides"
-          :key="s.id"
-          type="button"
-          role="tab"
-          :aria-selected="currentSlideIndex === sIdx"
-          :aria-label="`Buka slide ${sIdx + 1}: ${s.headline}`"
-          class="cursor-pointer h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          :class="currentSlideIndex === sIdx ? 'w-8 bg-white shadow-md' : 'w-2 bg-white/40 hover:bg-white/70'"
-          @click="goToSlide(sIdx)"
-        />
-      </div>
+      <button
+        v-for="(s, sIdx) in slides"
+        :key="s.id"
+        type="button"
+        role="tab"
+        :aria-selected="currentSlideIndex === sIdx"
+        :aria-label="`Buka slide ${sIdx + 1}: ${s.headline}`"
+        class="cursor-pointer h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        :class="currentSlideIndex === sIdx ? 'w-8 bg-white shadow-md' : 'w-2 bg-white/40 hover:bg-white/70'"
+        @click="goToSlide(sIdx)"
+      />
     </div>
   </section>
 </template>
