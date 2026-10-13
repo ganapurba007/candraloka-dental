@@ -7,7 +7,6 @@ import AboutFacilities from '@/components/sections/AboutFacilities.vue'
 import AboutVisitFlow from '@/components/sections/AboutVisitFlow.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
 import AboutLocation from '@/components/sections/AboutLocation.vue'
-import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
 
 useHead({
   title: 'Tentang Kami | Candraloka Dental Care',
@@ -47,8 +46,5 @@ useHead({
 
     <!-- FR-3.7: Lokasi, Jam Praktek, & Peta -->
     <AboutLocation />
-
-    <!-- FR-3.8: Banner CTA Reservasi -->
-    <HomeCtaBanner />
   </div>
 </template>

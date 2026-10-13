@@ -18,7 +18,6 @@ import Button from '@/components/ui/Button.vue'
 import Card from '@/components/ui/Card.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import NotFound from '@/pages/NotFound.vue'
-import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
 import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
@@ -80,18 +79,18 @@ const waConsultUrl = computed(() => {
 
   <div v-else class="flex-1 flex flex-col bg-surface-50 pb-20 lg:pb-0">
     <!-- Service Header Banner -->
-    <section class="py-14 sm:py-20 bg-primary-800 text-white relative overflow-hidden" style="background-color: #133f94;">
-      <!-- Photographic Background & Sapphire Blue Wash (Reference Medcity Style) -->
+    <section class="py-10 sm:py-12 lg:py-14 bg-navy-950 text-white relative overflow-hidden" style="background-color: #081434;">
+      <!-- Photographic Background & Balanced Sapphire Blue Tint -->
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          :src="'/images/clinic/page-header.webp'"
+          :src="'/images/clinic/header-services.webp'"
           alt=""
-          class="w-full h-full object-cover object-bottom scale-100"
+          class="w-full h-full object-cover object-center scale-100 opacity-65 sm:opacity-75"
           loading="eager"
         />
         <div
           class="absolute inset-0"
-          style="background: linear-gradient(180deg, rgba(15, 42, 98, 0.35) 0%, rgba(10, 26, 64, 0.60) 100%);"
+          style="background: linear-gradient(180deg, rgba(8, 20, 52, 0.62) 0%, rgba(13, 36, 88, 0.48) 50%, rgba(8, 20, 52, 0.76) 100%);"
         />
       </div>
 
@@ -374,8 +373,5 @@ const waConsultUrl = computed(() => {
         </Button>
       </div>
     </div>
-
-    <!-- Closing CTA Banner -->
-    <HomeCtaBanner />
   </div>
 </template>

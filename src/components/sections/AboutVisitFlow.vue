@@ -9,7 +9,6 @@ import {
   ArrowRight,
   Check,
 } from 'lucide-vue-next'
-import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
 
 const stepIcons = [
@@ -111,38 +110,6 @@ const highlights = [
               <span>{{ step.number === 1 ? 'Pilih Jadwal' : 'Pelajari Detail' }}</span>
               <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </RouterLink>
-          </div>
-        </div>
-      </div>
-
-      <!-- Medcity Integrated Bottom CTA Banner (cta bg-primary) -->
-      <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-7 sm:p-10 shadow-2xl border border-primary-500/50">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          <div class="hidden sm:flex lg:col-span-2 items-center justify-center">
-            <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white flex items-center justify-center shadow-lg">
-              <HeartHandshake class="w-8 h-8 text-white" aria-hidden="true" />
-            </div>
-          </div>
-
-          <div class="lg:col-span-7 space-y-2 text-center sm:text-left">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-white">
-              Pelayanan Kesehatan Gigi Terbaik untuk Keluarga Anda!
-            </h4>
-            <p class="text-sm text-primary-100 leading-relaxed max-w-2xl">
-              Kami siap membantu Anda dan keluarga mendapatkan senyum yang sehat, rapi, dan percaya diri dengan proses reservasi tanpa antre panjang.
-            </p>
-          </div>
-
-          <div class="lg:col-span-3 flex justify-center lg:justify-end">
-            <Button
-              to="/reservasi"
-              variant="navy"
-              size="lg"
-              class="font-semibold shadow-xl hover:-translate-y-0.5 transition-all w-full sm:w-auto"
-            >
-              <span>Buat Janji Temu</span>
-              <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
-            </Button>
           </div>
         </div>
       </div>

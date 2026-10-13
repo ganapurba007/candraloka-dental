@@ -14,6 +14,147 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Penghapusan Banner CTA Penutup dari Halaman Detail Layanan dan Detail Dokter (2026-10-13)
+**FR terkait:** FR-4.2, FR-5.2, FR-3.8
+**Yang dikerjakan:**
+- Menghapus komponen card `<HomeCtaBanner />` (*"Siap Mendapatkan Senyum Sehat dan Percaya Diri?"*) serta pemanggilan impornya dari:
+  - Halaman Detail Layanan ([ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue))
+  - Halaman Detail Dokter ([DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue))
+- Memastikan tidak ada sisa pemanggilan `HomeCtaBanner` di seluruh halaman aplikasi.
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.18s.
+**File yang berubah:** src/pages/ServiceDetail.vue, src/pages/DoctorDetail.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
+## Peningkatan Kerapian Visual & Ergonomi Halaman Jadwal Praktek (2026-10-13)
+**FR terkait:** FR-6.1, FR-6.2, FR-6.3, FR-6.4, FR-6.5, FR-6.6
+**Yang dikerjakan:**
+- **Penyesuaian Kalender Muat 100% Tanpa Scroll Samping:**
+  - Mengubah tabel matriks jadwal menjadi `table-fixed w-full` dengan pembagian proporsi kolom dinamis (Dokter ~23%, masing-masing Hari ~9.5%, Aksi ~10.5%).
+  - Menghilangkan `overflow-x-auto` yang memicu scrollbar horizontal pada desktop sehingga seluruh 7 hari, data dokter, dan tombol aksi muat utuh di layar.
+  - Mengoptimalkan kartu jam praktek dan tipografi agar kompak dan presisi di dalam sel.
+- **Penghapusan Card Panduan & Legend di Bawah Kalender:**
+  - Menghapus 3 kartu informasi panduan kunjungan (*Reservasi Mandiri*, *Tiba Lebih Awal*, *Standar Waktu WIB*) di bagian bawah halaman.
+  - Menghapus komponen bar legend visual di bawah tabel kalender jadwal mingguan.
+  - Membersihkan impor icon `Info` yang tidak lagi digunakan.
+- **Perapian Total Tabel Matrix Desktop:**
+  - Menyamakan warna latar belakang baris header tabel menjadi satu warna solid navy elegan (`bg-navy-950`).
+  - Mengubah perataan vertikal seluruh sel tabel menjadi `align-middle` sehingga avatar dokter, nama dokter, kotak waktu jam praktek, tanda libur, dan tombol Reservasi sejajar di tengah secara simetris dan rapi.
+  - Mengganti kotak cuti besar menjadi badge pill ramping 1 baris di bawah spesialisasi dokter.
+  - Menambahkan grid border vertikal halus antar kolom untuk keterbacaan yang terstruktur.
+- **Filter Bar Terpadu & Quick Day Tabs:**
+  - Menyusun filter bar dalam form control yang simetris dan seimbang.
+  - Menambahkan bar tab filter cepat per hari (Semua Hari, Senin, Selasa, dst.) di atas tabel untuk memudahkan navigasi instan.
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.26s.
+**File yang berubah:** src/pages/Schedule.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
+## Penghapusan Bagian Transparansi Rincian Biaya di Halaman Layanan (2026-10-13)
+**FR terkait:** FR-4.1, FR-4.4
+**Yang dikerjakan:**
+- Menghapus komponen card notice "Transparansi Rincian Biaya" beserta icon `Info` dari [Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue).
+- Memperbarui pengujian pada [Services.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/Services.spec.js).
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.18s.
+**File yang berubah:** src/pages/Services.vue, src/pages/__tests__/Services.spec.js, AGENTS.md, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
+## Penghapusan Banner CTA Penutup pada Halaman Layanan, Dokter, dan Jadwal Praktek (2026-10-13)
+**FR terkait:** FR-3.2, FR-3.3, FR-3.4, FR-3.8
+**Yang dikerjakan:**
+- Menghapus komponen card `<HomeCtaBanner />` (*"Siap Mendapatkan Senyum Sehat dan Percaya Diri?"*) serta pemanggilan impornya dari:
+  - Halaman Layanan ([Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue))
+  - Halaman Dokter ([Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue))
+  - Halaman Jadwal Praktek ([Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue))
+- Memastikan tidak ada *unused import* dan seluruh alur halaman tetap rapi dan konsisten.
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses tanpa peringatan bundle chunk.
+**File yang berubah:** src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Perbaikan Hover Tombol Header & Penghapusan Elemen CTA Halaman Tentang (2026-10-13)
+**FR terkait:** FR-3.1, FR-3.5, FR-3.8
+**Yang dikerjakan:**
+- **Perbaikan Hover Tombol "Layanan Kami" di Header Tentang Kami:**
+  - Memperbaiki konflik kelas styling tombol `variant="ghost"` pada [AboutHeader.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutHeader.vue) dengan menambahkan `!text-white` pada status normal dan `hover:!bg-white hover:!text-navy-950` saat di-hover, sehingga teks selalu terbaca tajam dengan kontras tinggi tanpa pernah hilang/tenggelam.
+- **Penghapusan Card "Pelayanan Kesehatan Gigi Terbaik untuk Keluarga Anda!":**
+  - Menghapus card CTA terintegrasi di bagian bawah alur kunjungan pada [AboutVisitFlow.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutVisitFlow.vue) serta membersihkan impor tombol yang tidak terpakai.
+- **Penghapusan Banner "Siap Mendapatkan Senyum Sehat dan Percaya Diri?":**
+  - Menghapus komponen penutup `<HomeCtaBanner />` dari [About.vue](file:///d:/Projects/candraloka-dental/src/pages/About.vue) dan menyinkronkan pengujian pada [About.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/About.spec.js).
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.50s.
+**File yang berubah:** src/components/sections/AboutHeader.vue, src/components/sections/AboutVisitFlow.vue, src/pages/About.vue, src/pages/__tests__/About.spec.js, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Peningkatan Visibilitas Gambar Header dengan Tint Sapphire Seimbang (2026-10-13)
+**FR terkait:** FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
+**Yang dikerjakan:**
+- **Peningkatan Visibilitas Gambar Latar Belakang:**
+  - Mengatasi gambar latar yang terlalu gelap/kurang terlihat dengan menaikkan opasitas foto dental care ke `opacity-65 sm:opacity-75` pada skala penuh tanpa filter peredup kecerahan (`scale-100`).
+  - Menyesuaikan lapisan gradien sapphire blue menjadi lebih seimbang dan jernih (`linear-gradient(180deg, rgba(8, 20, 52, 0.62) 0%, rgba(13, 36, 88, 0.48) 50%, rgba(8, 20, 52, 0.76) 100%)`).
+  - Menambahkan *text drop-shadow* mendalam pada teks judul (`drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]`), subjudul (`drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]`), dan pre-title badge, sehingga foto klinik tampak jelas, hidup, dan menarik, sementara seluruh teks tetap terbaca tajam dan ter-highlight sempurna.
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.39s.
+**File yang berubah:** src/components/sections/AboutHeader.vue, src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Booking.vue, src/pages/DoctorDetail.vue, src/pages/ServiceDetail.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Personalisasi Gambar Header Tiap Halaman, Ukuran Ramping, & Penegasan Kontras Teks (2026-10-13)
+**FR terkait:** FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
+**Yang dikerjakan:**
+- **Gambar Unik & Relevan Bertema Dental Care untuk Setiap Halaman:**
+  - [AboutHeader.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutHeader.vue) (Tentang Kami): Eksterior & lobi gedung klinik modern (`header-about.webp`).
+  - [Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue) & [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue) (Layanan): Ruang perawatan gigi dental operatory modern lengkap dengan kursi & peralatan medis (`header-services.webp`).
+  - [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue) & [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue) (Dokter): Ruang konsultasi dokter gigi profesional dengan layar rontgen & model gigi anatomi (`header-doctors.webp`).
+  - [Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue) (Jadwal Praktek): Ruang tunggu & lounge klinik yang nyaman dan bersahabat (`header-schedule.webp`).
+  - [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue) (Reservasi Online): Meja registrasi & check-in janji temu klinik modern (`header-booking.webp`).
+- **Penyesuaian Ukuran Section Menjadi Ramping & Proporsional:**
+  - Mengurangi tinggi banner menjadi lebih ringkas dan proporsional (`py-10 sm:py-12 lg:py-14` dari sebelumnya yang terlalu tinggi) dengan rasio banner panorama 1280x420px (~3:1), sehingga tidak mendominasi layar secara berlebihan.
+- **Penegasan Kontras Teks (Teks Ter-Highlight 100%):**
+  - Mengatasi masalah teks sulit dibaca dengan menerapkan overlay deep sapphire navy bertingkat (`linear-gradient(180deg, rgba(8, 20, 52, 0.88) 0%, rgba(13, 37, 94, 0.80) 50%, rgba(8, 20, 52, 0.92) 100%)`) dan menurunkan kecerahan foto dasar (`brightness-75 opacity-25`).
+  - Menambahkan *text drop-shadow* pada judul dan subjudul, serta mempertegas tombol sekunder dengan kontras tinggi sehingga seluruh teks putih dan tombol langsung terbaca jelas tanpa silau.
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.65s.
+**File yang berubah:** public/images/clinic/header-*.webp, src-images/clinic/header-*.png, src/components/sections/AboutHeader.vue, src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Booking.vue, src/pages/DoctorDetail.vue, src/pages/ServiceDetail.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Optimasi Gambar Header Bertema Dental Care & Penegasan Kontras Teks (2026-10-13)
+**FR terkait:** FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
+**Yang dikerjakan:**
+- **Gambar Latar Belakang Khusus Dental Care Sesuai Proporsi Banner:**
+  - Mengganti latar belakang arsitektur umum dengan fotografi otentik ruang praktik dokter gigi (*dental care operatory*) beresolusi tinggi yang menampilkan dental unit chair modern bernuansa sapphire blue, instrumen perawatan gigi presisi, dental monitor, dan pencahayaan klinik higienis.
+  - Memotong dan mengoptimalkan gambar ke proporsi panorama header section 1280x520px (`page-header.webp`), 768x360px (`page-header-768.webp`), dan 480x260px (`page-header-480.webp`) yang pas di seluruh perangkat.
+- **Penegasan Kontras Teks (Teks Tetap Ter-highlight):**
+  - Menerapkan overlay gradien sapphire navy (`linear-gradient(180deg, rgba(10, 26, 64, 0.65) 0%, rgba(15, 42, 98, 0.58) 50%, rgba(8, 19, 48, 0.80) 100%)`) dengan `object-center` yang memastikan elemen dental care tetap terlihat jelas, sementara teks judul, subjudul, dan tombol ter-highlight dengan kontras optimal dan bebas silau.
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.59s.
+**File yang berubah:** public/images/clinic/page-header*.webp, src-images/clinic/page-header.png, src/components/sections/AboutHeader.vue, src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Booking.vue, src/pages/DoctorDetail.vue, src/pages/ServiceDetail.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Integrasi Background Foto Arsitektur Rumah Sakit/Klinik Sapphire Blue di Setiap Judul Halaman (2026-10-13)
 **FR terkait:** FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
 **Yang dikerjakan:**

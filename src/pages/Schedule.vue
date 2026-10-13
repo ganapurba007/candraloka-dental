@@ -8,13 +8,11 @@ import {
   CalendarCheck,
   User,
   AlertCircle,
-  Info,
   RotateCcw,
   Stethoscope,
 } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
-import HomeCtaBanner from '@/components/sections/HomeCtaBanner.vue'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
 import { getDayName, formatDate, formatTimeRangeWib } from '@/lib/format'
@@ -136,43 +134,43 @@ const mobileDayDoctors = computed(() => {
 <template>
   <div class="flex-1 flex flex-col bg-surface-50">
     <!-- Header Section (FR-6.6) -->
-    <section class="py-14 sm:py-20 bg-primary-800 text-white relative overflow-hidden" style="background-color: #133f94;">
-      <!-- Photographic Background & Sapphire Blue Wash (Reference Medcity Style) -->
+    <section class="py-10 sm:py-12 lg:py-14 bg-navy-950 text-white relative overflow-hidden" style="background-color: #081434;">
+      <!-- Photographic Background & Balanced Sapphire Blue Tint -->
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          :src="'/images/clinic/page-header.webp'"
+          :src="'/images/clinic/header-schedule.webp'"
           alt=""
-          class="w-full h-full object-cover object-bottom scale-100"
+          class="w-full h-full object-cover object-center scale-100 opacity-65 sm:opacity-75"
           loading="eager"
         />
         <div
           class="absolute inset-0"
-          style="background: linear-gradient(180deg, rgba(15, 42, 98, 0.35) 0%, rgba(10, 26, 64, 0.60) 100%);"
+          style="background: linear-gradient(180deg, rgba(8, 20, 52, 0.62) 0%, rgba(13, 36, 88, 0.48) 50%, rgba(8, 20, 52, 0.76) 100%);"
         />
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
           Jadwal Praktek Dokter Mingguan
         </h1>
 
-        <p class="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
           Temukan waktu konsultasi yang tepat bersama dokter pilihan Anda. Seluruh jadwal mengacu pada waktu Indonesia Barat (WIB).
         </p>
 
         <!-- Clinic Operating Hours & Timezone Strip (FR-6.6) -->
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm">
-          <div class="px-4 py-2 rounded-xl bg-navy-950/50 border border-primary-300/30 text-blue-100 flex items-center gap-2 backdrop-blur-sm">
-            <Clock class="w-4 h-4 text-blue-300" aria-hidden="true" />
-            <span>Operasional: Senin–Jumat 09:00–20:00, Sabtu 09:00–17:00 ({{ clinicData.timezoneLabel }})</span>
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm">
+          <div class="px-4 py-2 rounded-xl bg-navy-950/60 border border-primary-300/30 text-blue-100 flex items-center gap-2 backdrop-blur-md shadow-sm">
+            <Clock class="w-4 h-4 text-blue-300 flex-shrink-0" aria-hidden="true" />
+            <span class="font-medium">Operasional: Senin–Jumat 09:00–20:00, Sabtu 09:00–17:00 ({{ clinicData.timezoneLabel }})</span>
           </div>
 
           <div
-            class="px-3.5 py-2 rounded-xl border font-semibold flex items-center gap-2 backdrop-blur-sm"
-            :class="clinicStatus.isOpen ? 'bg-emerald-950/80 border-emerald-500/60 text-emerald-300' : 'bg-navy-950/50 border-primary-300/30 text-blue-100'"
+            class="px-3.5 py-2 rounded-xl border font-semibold flex items-center gap-2 backdrop-blur-md shadow-sm"
+            :class="clinicStatus.isOpen ? 'bg-emerald-950/80 border-emerald-500/60 text-emerald-300' : 'bg-navy-950/60 border-primary-300/30 text-blue-100'"
           >
             <span
-              class="w-2 h-2 rounded-full"
+              class="w-2 h-2 rounded-full flex-shrink-0"
               :class="clinicStatus.isOpen ? 'bg-emerald-400 animate-pulse' : 'bg-slate-400'"
             />
             <span>{{ clinicStatus.statusBadge }}</span>
@@ -182,81 +180,139 @@ const mobileDayDoctors = computed(() => {
     </section>
 
     <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full space-y-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex-1 w-full space-y-8">
       <!-- Filter Bar (FR-6.2) -->
-      <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full md:w-auto">
-          <!-- Doctor Selector -->
-          <div class="w-full sm:w-64">
-            <label for="doctor-filter" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
-              Pilih Dokter
-            </label>
-            <select
-              id="doctor-filter"
-              v-model="selectedDoctorSlug"
-              class="w-full px-3.5 py-2.5 bg-surface-50 border border-slate-300 rounded-xl text-navy-900 text-base sm:text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none min-h-[44px]"
-            >
-              <option value="all">Semua Dokter</option>
-              <option v-for="d in doctorsData" :key="d.id" :value="d.slug">
-                {{ d.name }}
-              </option>
-            </select>
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-card p-4 sm:p-5">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <!-- Filter Dropdowns -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 flex-1 max-w-2xl">
+            <!-- Doctor Selector -->
+            <div>
+              <label for="doctor-filter" class="flex items-center gap-1.5 text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
+                <Stethoscope class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
+                <span>Pilih Dokter</span>
+              </label>
+              <select
+                id="doctor-filter"
+                v-model="selectedDoctorSlug"
+                class="w-full px-3.5 py-2.5 bg-surface-50 hover:bg-white focus:bg-white border border-slate-300 hover:border-slate-400 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none transition-colors min-h-[44px]"
+              >
+                <option value="all">Semua Dokter ({{ doctorsData.length }} dokter)</option>
+                <option v-for="d in doctorsData" :key="d.id" :value="d.slug">
+                  {{ d.name }}
+                </option>
+              </select>
+            </div>
+
+            <!-- Day Selector for Desktop -->
+            <div>
+              <label for="day-filter" class="flex items-center gap-1.5 text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
+                <Calendar class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
+                <span>Pilih Hari</span>
+              </label>
+              <select
+                id="day-filter"
+                v-model="selectedDay"
+                class="w-full px-3.5 py-2.5 bg-surface-50 hover:bg-white focus:bg-white border border-slate-300 hover:border-slate-400 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none transition-colors min-h-[44px]"
+              >
+                <option value="all">Semua Hari (Senin–Minggu)</option>
+                <option v-for="d in daysList" :key="d.day" :value="d.day">
+                  {{ d.dayName }} {{ d.isToday ? '(Hari Ini)' : '' }}
+                </option>
+              </select>
+            </div>
           </div>
 
-          <!-- Day Selector for Desktop -->
-          <div class="w-full sm:w-52 hidden md:block">
-            <label for="day-filter" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
-              Pilih Hari
-            </label>
-            <select
-              id="day-filter"
-              v-model="selectedDay"
-              class="w-full px-3.5 py-2.5 bg-surface-50 border border-slate-300 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none"
+          <!-- Status & Reset Actions -->
+          <div class="flex items-center justify-between lg:justify-end gap-3 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100">
+            <span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-surface-100 text-xs text-slate-600 font-medium border border-slate-200/60">
+              Menampilkan&nbsp;<strong class="text-navy-900 font-bold">{{ displayedDoctors.length }}</strong>&nbsp;dokter
+            </span>
+
+            <button
+              v-if="selectedDoctorSlug !== 'all' || selectedDay !== 'all'"
+              type="button"
+              class="inline-flex items-center gap-1.5 text-xs text-primary-700 hover:text-primary-800 font-bold py-2 px-3.5 rounded-xl bg-primary-50 hover:bg-primary-100 border border-primary-200 transition-colors"
+              @click="resetFilters"
             >
-              <option value="all">Semua Hari (Senin–Minggu)</option>
-              <option v-for="d in daysList" :key="d.day" :value="d.day">
-                {{ d.dayName }} {{ d.isToday ? '(Hari Ini)' : '' }}
-              </option>
-            </select>
+              <RotateCcw class="w-3.5 h-3.5" aria-hidden="true" />
+              <span>Reset Filter</span>
+            </button>
           </div>
         </div>
 
-        <!-- Reset Button -->
-        <button
-          v-if="selectedDoctorSlug !== 'all' || selectedDay !== 'all'"
-          type="button"
-          class="inline-flex items-center gap-1.5 text-xs text-primary-700 hover:text-primary-800 font-semibold py-2 px-3 rounded-lg hover:bg-primary-50 transition-colors"
-          @click="resetFilters"
-        >
-          <RotateCcw class="w-3.5 h-3.5" aria-hidden="true" />
-          <span>Reset Filter</span>
-        </button>
+        <!-- Quick Day Filter Tabs (Desktop & Tablet) -->
+        <div class="hidden md:flex items-center gap-1.5 pt-4 mt-4 border-t border-slate-100 overflow-x-auto">
+          <span class="text-xs font-bold text-slate-500 mr-2 flex-shrink-0">Filter Cepat:</span>
+          <button
+            type="button"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer flex-shrink-0"
+            :class="selectedDay === 'all' ? 'bg-primary-600 text-white shadow-xs' : 'bg-surface-100 text-slate-700 hover:bg-surface-200 border border-slate-200/80'"
+            @click="selectedDay = 'all'"
+          >
+            Semua Hari
+          </button>
+          <button
+            v-for="d in daysList"
+            :key="d.day"
+            type="button"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer flex items-center gap-1.5 flex-shrink-0"
+            :class="
+              selectedDay === d.day
+                ? 'bg-primary-600 text-white shadow-xs'
+                : 'bg-surface-100 text-slate-700 hover:bg-surface-200 border border-slate-200/80'
+            "
+            @click="selectedDay = d.day"
+          >
+            <span>{{ d.dayName }}</span>
+            <span
+              v-if="d.isToday"
+              class="px-1.5 py-0.2 rounded text-[9px] font-extrabold uppercase"
+              :class="selectedDay === d.day ? 'bg-white/20 text-white' : 'bg-primary-100 text-primary-800'"
+            >
+              Hari Ini
+            </span>
+          </button>
+        </div>
       </div>
 
       <!-- DESKTOP VIEW: Weekly Matrix Table (FR-6.1, FR-6.3, FR-6.4, FR-6.5) -->
-      <div class="hidden md:block bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full border-collapse text-left">
+      <div class="hidden md:block bg-white rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
+        <div class="w-full">
+          <table class="w-full table-fixed border-collapse text-left">
             <thead>
-              <tr class="bg-navy-900 text-white border-b border-navy-800 text-xs uppercase tracking-wider">
-                <th class="p-4 sm:p-5 font-bold min-w-[220px]">Dokter Gigi</th>
+              <tr class="bg-navy-950 text-white text-xs uppercase tracking-wider">
+                <th
+                  class="p-3 lg:p-4 font-bold border-r border-navy-900/60"
+                  :class="displayedDays.length > 1 ? 'w-[23%]' : 'w-1/2'"
+                >
+                  Dokter Gigi
+                </th>
                 <th
                   v-for="d in displayedDays"
                   :key="d.day"
-                  class="p-4 font-bold text-center min-w-[120px]"
-                  :class="d.isToday ? 'bg-primary-700/40 text-white ring-1 ring-primary-400/30' : ''"
+                  class="p-2 lg:p-2.5 font-bold text-center border-r border-navy-900/60 transition-colors"
+                  :class="[
+                    displayedDays.length > 1 ? 'w-[9.5%]' : 'w-1/4',
+                    d.isToday ? 'bg-navy-900 text-white' : ''
+                  ]"
                 >
-                  <div class="space-y-0.5">
-                    <div>{{ d.dayName }}</div>
+                  <div class="flex flex-col items-center justify-center gap-0.5">
+                    <span class="tracking-wide text-[11px] lg:text-xs font-bold">{{ d.dayName }}</span>
                     <span
                       v-if="d.isToday"
-                      class="inline-block px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-primary-400 text-navy-950 uppercase"
+                      class="inline-block px-1.5 py-0.2 rounded-full text-[8px] lg:text-[9px] font-extrabold bg-primary-500 text-white uppercase shadow-xs"
                     >
                       Hari Ini
                     </span>
                   </div>
                 </th>
-                <th class="p-4 sm:p-5 font-bold text-center min-w-[110px]">Aksi</th>
+                <th
+                  class="p-3 lg:p-4 font-bold text-center"
+                  :class="displayedDays.length > 1 ? 'w-[10.5%]' : 'w-1/4'"
+                >
+                  Aksi
+                </th>
               </tr>
             </thead>
 
@@ -264,12 +320,12 @@ const mobileDayDoctors = computed(() => {
               <tr
                 v-for="doc in displayedDoctors"
                 :key="doc.id"
-                class="hover:bg-slate-50/60 transition-colors"
+                class="hover:bg-slate-50/80 transition-colors"
               >
-                <!-- Doctor Info Column -->
-                <td class="p-4 sm:p-5 align-top">
-                  <div class="flex items-start gap-3">
-                    <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
+                <!-- Doctor Info Column (Centered Vertically) -->
+                <td class="p-3 lg:p-4 align-middle border-r border-slate-100">
+                  <div class="flex items-center gap-2.5 lg:gap-3 min-w-0">
+                    <div class="w-10 h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200 shadow-xs">
                       <ResponsiveImage
                         :src="doc.photo"
                         :alt="doc.name"
@@ -277,52 +333,55 @@ const mobileDayDoctors = computed(() => {
                         img-class="w-full h-full object-cover"
                       />
                     </div>
-                    <div class="space-y-1 min-w-0">
+                    <div class="space-y-0.5 min-w-0 flex-1">
                       <RouterLink
                         :to="`/dokter/${doc.slug}`"
-                        class="font-bold text-navy-900 hover:text-primary-700 transition-colors leading-snug block"
+                        class="font-bold text-navy-900 hover:text-primary-700 transition-colors leading-snug block text-xs lg:text-sm truncate"
+                        :title="doc.name"
                       >
                         {{ doc.name }}
                       </RouterLink>
-                      <p class="text-xs text-slate-500 font-medium leading-relaxed">
+                      <p class="text-[10px] lg:text-[11px] text-slate-500 font-medium leading-tight truncate" :title="doc.specialty">
                         {{ doc.specialty }}
                       </p>
 
-                      <!-- Leave notice (FR-6.4) -->
+                      <!-- Leave notice badge (FR-6.4) -->
                       <div
                         v-if="doc.leaveDates && doc.leaveDates.length > 0"
-                        class="text-[11px] text-amber-700 font-medium flex items-center gap-1 pt-1"
+                        class="inline-flex items-center gap-1 px-1.5 py-0.2 rounded bg-amber-50 border border-amber-200/80 text-[9px] lg:text-[10px] text-amber-800 font-semibold mt-0.5 max-w-full truncate"
                       >
-                        <AlertCircle class="w-3.5 h-3.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
-                        <span>Cuti: {{ doc.leaveDates.map((ld) => formatDate(ld, false)).join(', ') }}</span>
+                        <AlertCircle class="w-2.5 h-2.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
+                        <span class="truncate">Cuti: {{ doc.leaveDates.map((ld) => formatDate(ld, false)).join(', ') }}</span>
                       </div>
                     </div>
                   </div>
                 </td>
 
-                <!-- Day Schedule Columns -->
+                <!-- Day Schedule Columns (Centered Vertically) -->
                 <td
                   v-for="d in displayedDays"
                   :key="d.day"
-                  class="p-4 align-top text-center text-xs"
-                  :class="d.isToday ? 'bg-primary-50/40' : ''"
+                  class="p-1 lg:p-1.5 align-middle text-center text-xs border-r border-slate-100 transition-colors"
+                  :class="d.isToday ? 'bg-primary-50/30' : ''"
                 >
                   <template v-if="getDoctorSessions(doc, d.day).length > 0">
-                    <div class="space-y-2">
+                    <div class="space-y-1 flex flex-col items-center justify-center">
                       <div
                         v-for="(session, sIdx) in getDoctorSessions(doc, d.day)"
                         :key="sIdx"
-                        class="p-2 rounded-xl bg-surface-100 border border-slate-200/60 font-semibold text-navy-900"
+                        class="w-full px-1 py-1 lg:px-1.5 lg:py-1 rounded-lg bg-surface-50 border border-slate-200/90 shadow-xs text-center space-y-0.5 hover:border-primary-300 hover:bg-white transition-all"
                       >
-                        <div>{{ session.start }} – {{ session.end }}</div>
+                        <div class="font-bold tracking-tight text-[10px] lg:text-[11px] text-navy-950 whitespace-nowrap">
+                          {{ session.start }} – {{ session.end }}
+                        </div>
 
                         <!-- Active session indicator (FR-6.3) -->
                         <div
                           v-if="isDoctorSessionActiveNow(doc, session, now)"
-                          class="mt-1"
+                          class="pt-0.5"
                         >
-                          <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white animate-pulse">
-                            <span class="w-1.5 h-1.5 rounded-full bg-white" />
+                          <span class="inline-flex items-center justify-center gap-1 px-1 py-0.2 rounded text-[8px] lg:text-[9px] font-bold bg-emerald-600 text-white shadow-xs w-full truncate">
+                            <span class="w-1 h-1 rounded-full bg-white animate-pulse" />
                             Sedang Praktek
                           </span>
                         </div>
@@ -330,17 +389,19 @@ const mobileDayDoctors = computed(() => {
                     </div>
                   </template>
                   <template v-else>
-                    <span class="text-slate-300 font-medium select-none">—</span>
+                    <div class="flex items-center justify-center py-1">
+                      <span class="text-slate-300 font-bold select-none text-xs lg:text-sm">—</span>
+                    </div>
                   </template>
                 </td>
 
-                <!-- Reservation Action Column (FR-6.5) -->
-                <td class="p-4 sm:p-5 align-middle text-center">
+                <!-- Reservation Action Column (Centered Vertically) -->
+                <td class="p-2 lg:p-3 align-middle text-center">
                   <Button
                     :to="`/reservasi?dokter=${doc.slug}`"
                     variant="primary"
                     size="sm"
-                    class="font-semibold text-xs shadow-sm"
+                    class="w-full justify-center font-bold text-[11px] lg:text-xs py-1.5 px-2 shadow-xs"
                   >
                     <span>Reservasi</span>
                   </Button>
@@ -353,13 +414,13 @@ const mobileDayDoctors = computed(() => {
 
       <!-- MOBILE VIEW: Day Tabs & Doctor Cards (FR-6.1, FR-6.3, FR-6.4, FR-6.5) -->
       <div class="block md:hidden space-y-5">
-        <!-- Day Selector Tabs -->
+        <!-- Day Selector Tabs with consistent height -->
         <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
           <button
             v-for="d in daysList"
             :key="d.day"
             type="button"
-            class="px-4 py-2.5 rounded-2xl text-xs font-bold transition-all flex flex-col items-center gap-1 flex-shrink-0 cursor-pointer"
+            class="px-4 py-3 rounded-2xl text-xs font-bold transition-all flex flex-col items-center justify-center min-w-[76px] h-[58px] flex-shrink-0 cursor-pointer shadow-xs"
             :class="
               mobileSelectedDay === d.day
                 ? 'bg-primary-600 text-white shadow-md'
@@ -367,14 +428,15 @@ const mobileDayDoctors = computed(() => {
             "
             @click="mobileSelectedDay = d.day"
           >
-            <span>{{ d.dayName }}</span>
+            <span class="text-sm font-extrabold">{{ d.dayName }}</span>
             <span
               v-if="d.isToday"
-              class="px-1.5 py-0.2 rounded-full text-[9px] uppercase tracking-wider"
-              :class="mobileSelectedDay === d.day ? 'bg-white text-primary-800' : 'bg-primary-100 text-primary-800 font-extrabold'"
+              class="px-1.5 py-0.2 rounded-full text-[9px] uppercase tracking-wider font-extrabold mt-0.5"
+              :class="mobileSelectedDay === d.day ? 'bg-white text-primary-800' : 'bg-primary-100 text-primary-800'"
             >
               Hari Ini
             </span>
+            <span v-else class="text-[9px] text-transparent leading-tight mt-0.5 select-none">-</span>
           </button>
         </div>
 
@@ -383,10 +445,10 @@ const mobileDayDoctors = computed(() => {
           <div
             v-for="doc in mobileDayDoctors"
             :key="doc.id"
-            class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4"
+            class="p-5 bg-white rounded-3xl border border-slate-200 shadow-card space-y-4"
           >
             <div class="flex items-start gap-3.5">
-              <div class="w-14 h-14 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
+              <div class="w-14 h-14 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200 shadow-xs">
                 <ResponsiveImage
                   :src="doc.photo"
                   :alt="doc.name"
@@ -408,19 +470,19 @@ const mobileDayDoctors = computed(() => {
             </div>
 
             <!-- Sessions info -->
-            <div class="p-3.5 rounded-xl bg-surface-100 border border-slate-200/60 space-y-2">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-slate-500 font-medium">Jam Praktek:</span>
-                <div class="space-y-1 text-right">
+            <div class="p-3.5 rounded-2xl bg-surface-100 border border-slate-200/80 space-y-2.5">
+              <div class="flex items-start justify-between text-xs gap-3">
+                <span class="text-slate-500 font-medium pt-0.5">Jam Praktek:</span>
+                <div class="space-y-1.5 text-right flex-1">
                   <div
                     v-for="(session, sIdx) in doc.sessions"
                     :key="sIdx"
-                    class="font-bold text-navy-900"
+                    class="flex flex-col sm:flex-row items-end sm:items-center justify-end gap-1.5 font-bold text-navy-900"
                   >
-                    {{ session.start }} – {{ session.end }} WIB
+                    <span>{{ session.start }} – {{ session.end }} WIB</span>
                     <span
                       v-if="isDoctorSessionActiveNow(doc, session, now)"
-                      class="ml-1.5 px-1.5 py-0.5 rounded text-[10px] bg-emerald-600 text-white font-bold"
+                      class="px-1.5 py-0.5 rounded-md text-[10px] bg-emerald-600 text-white font-bold shadow-xs"
                     >
                       Sedang Praktek
                     </span>
@@ -431,9 +493,9 @@ const mobileDayDoctors = computed(() => {
               <!-- Leave notice if applicable -->
               <div
                 v-if="doc.onLeave"
-                class="pt-2 text-xs text-amber-700 font-semibold flex items-center gap-1.5"
+                class="pt-2 border-t border-slate-200 text-xs text-amber-700 font-semibold flex items-center gap-1.5"
               >
-                <AlertCircle class="w-4 h-4 text-amber-600" aria-hidden="true" />
+                <AlertCircle class="w-4 h-4 text-amber-600 flex-shrink-0" aria-hidden="true" />
                 <span>Dokter cuti pada hari ini</span>
               </div>
             </div>
@@ -442,10 +504,10 @@ const mobileDayDoctors = computed(() => {
             <Button
               :to="`/reservasi?dokter=${doc.slug}`"
               variant="primary"
-              size="sm"
-              class="w-full justify-center font-semibold text-xs shadow-sm"
+              size="md"
+              class="w-full justify-center font-bold text-sm shadow-xs"
             >
-              <CalendarCheck class="w-4 h-4 mr-1.5" aria-hidden="true" />
+              <CalendarCheck class="w-4 h-4 mr-2" aria-hidden="true" />
               <span>Reservasi Jadwal Ini</span>
             </Button>
           </div>
@@ -453,7 +515,7 @@ const mobileDayDoctors = computed(() => {
 
         <div
           v-else
-          class="p-8 text-center bg-white rounded-2xl border border-slate-200 space-y-2"
+          class="p-8 text-center bg-white rounded-3xl border border-slate-200 shadow-sm space-y-2"
         >
           <p class="text-sm font-bold text-navy-900">Tidak ada jadwal praktek</p>
           <p class="text-xs text-slate-500">
@@ -461,9 +523,7 @@ const mobileDayDoctors = computed(() => {
           </p>
         </div>
       </div>
-    </main>
 
-    <!-- Closing CTA Banner -->
-    <HomeCtaBanner />
+    </main>
   </div>
 </template>

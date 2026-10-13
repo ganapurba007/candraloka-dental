@@ -53,8 +53,5 @@ describe('About.vue (FR-3.x)', () => {
     expect(wrapper.text()).toContain('Status Klinik')
     expect(wrapper.text()).toContain('Jadwal Jam Buka')
     expect(wrapper.text()).toContain('Petunjuk Arah via Google Maps')
-
-    // FR-3.8 CTA Banner
-    expect(wrapper.text()).toContain('Siap Mendapatkan Senyum Sehat dan Percaya Diri?')
   })
 })

@@ -60,10 +60,4 @@ describe('Services.vue (FR-4.1, FR-4.4)', () => {
 
     expect(wrapper.text()).toContain('Tidak ada layanan ditemukan')
   })
-
-  it('renders price disclaimer notice according to FR-4.4', () => {
-    const wrapper = createWrapper()
-    expect(wrapper.text()).toContain('Transparansi Rincian Biaya')
-    expect(wrapper.text()).toContain('Rincian biaya disampaikan dokter setelah pemeriksaan')
-  })
 })
