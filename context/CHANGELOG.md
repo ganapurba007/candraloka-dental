@@ -14,6 +14,27 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Penambahan Background Gambar di Seluruh Judul Halaman (2026-10-13)
+**FR terkait:** FR-1.4, FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
+**Yang dikerjakan:**
+- **Background Gambar Header Tematik & Overlay Gradien:**
+  - Menambahkan gambar latar belakang fotografi klinik beresolusi tinggi dengan gradien sapphire navy elegan di setiap banner judul/header halaman:
+    - [AboutHeader.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutHeader.vue) (Tentang Kami): Foto eksterior klinik (`about.webp`)
+    - [Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue) (Layanan): Foto ruang perawatan dental unit modern (`ruang-perawatan.webp`)
+    - [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue) (Detail Layanan): Foto dinamis layanan spesifik (`service.image`)
+    - [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue) (Dokter): Foto interaksi ramah dokter & pasien (`hero-2.webp`)
+    - [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue) (Detail Dokter): Foto operatory interior klinik (`hero.webp`)
+    - [Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue) (Jadwal Praktek): Foto ruang tunggu & resepsionis klinik (`ruang-tunggu.webp`)
+    - [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue) (Reservasi Online): Foto studio dental modern (`hero-3.webp`)
+  - Menerapkan kontras warna optimal dengan gradien multi-stop (overlay opacity 80%–94%) sehingga keterbacaan teks judul putih tetap memenuhi standar WCAG AAA tanpa mengganggu interaksi.
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` (26 gambar tervalidasi).
+  - `npm run build` sukses.
+**File yang berubah:** src/pages/*, src/components/sections/AboutHeader.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Pembersihan Global: Penghapusan Breadcrumb, Badge, & Ikon Sparkling (2026-10-13)
 **FR terkait:** FR-1.4, FR-2.x, FR-3.x, FR-4.x, FR-5.x, FR-6.x, FR-7.x
 **Yang dikerjakan:**

@@ -6,11 +6,24 @@ import clinicData from '@/data/clinic.json'
 
 <template>
   <section class="relative bg-navy-900 text-white py-20 sm:py-24 lg:py-28 overflow-hidden" style="background-color: #0e204d;">
+    <!-- Photographic Background & Dark Gradient Overlay -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <img
+        :src="'/images/clinic/about.webp'"
+        alt=""
+        class="w-full h-full object-cover object-center scale-105 opacity-25 filter blur-[0.5px]"
+        loading="eager"
+      />
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(135deg, rgba(8, 19, 48, 0.94) 0%, rgba(14, 32, 77, 0.88) 50%, rgba(14, 45, 120, 0.80) 100%);"
+      />
+    </div>
+
     <!-- Decorative background glow & medical geometric lines -->
-    <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-850 opacity-95 pointer-events-none" />
-    <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-primary-600/10 to-transparent pointer-events-none" />
-    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-primary-500/15 blur-3xl pointer-events-none" />
-    <div class="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-primary-400/10 blur-3xl pointer-events-none" />
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-primary-600/10 to-transparent pointer-events-none z-[1]" />
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-primary-500/15 blur-3xl pointer-events-none z-[1]" />
+    <div class="absolute left-1/3 -bottom-24 w-80 h-80 rounded-full bg-primary-400/10 blur-3xl pointer-events-none z-[1]" />
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-2xl space-y-6">
