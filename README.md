@@ -1,121 +1,174 @@
 # Candraloka Dental Care
 
-> Website Portofolio Klinik Gigi Modern dengan Sistem Reservasi Online Berbasis Ketersediaan Real-Time.
+<p align="center">
+  <img src="public/og-image.png" alt="Candraloka Dental Care Banner" width="100%" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
+</p>
 
-![Candraloka Dental Care Social Preview](/public/og-image.png)
+<p align="center">
+  <strong>Website Klinik Gigi Modern dengan Sistem Reservasi Online Berbasis Ketersediaan Real-Time</strong>
+</p>
 
-## 📌 Tentang Proyek
-
-**Candraloka Dental Care** adalah proyek portofolio website klinik gigi yang dirancang untuk memberikan pengalaman pengguna (UX) yang tenang, transparan, dan intuitif dalam layanan kesehatan.
-
-Fitur unggulan proyek ini adalah **Sistem Reservasi Online Berbasis Ketersediaan Real-Time**:
-- Menghitung slot waktu praktek dokter secara otomatis dari data operasional mingguan.
-- Mendeteksi jadwal cuti dokter, slot yang sudah terisi (*booked slots*), dan reservasi yang tersimpan di perangkat.
-- Mendukung penetapan dokter otomatis berbasis rotasi beban layanan ("Dokter Mana Saja yang Tersedia").
-- Navigasi strip 14 hari dengan status visual & teks (Tersedia, Penuh, Libur).
-- Pembuatan kode unik reservasi (`CDC-YYMMDD-XXXX`) dan ringkasan pesan WhatsApp otomatis (`wa.me`) untuk verifikasi janji temu.
-
-> ℹ️ **Catatan Portofolio:** Seluruh entitas dokter, layanan, testimoni, alamat, dan nomor kontak pada situs ini bersifat rekaan untuk kebutuhan demonstrasi portofolio rekayasa antarmuka (frontend engineering). Tidak ada transaksi finansial atau backend medis nyata yang diproses.
+<p align="center">
+  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/Vue_3-3.5-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue 3" /></a>
+  <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /></a>
+  <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/Tests-93_Passed-brightgreen?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest 93 Passed" /></a>
+  <a href="https://zod.dev/"><img src="https://img.shields.io/badge/Zod-Validation-3E67B1?style=for-the-badge&logo=zod&logoColor=white" alt="Zod" /></a>
+</p>
 
 ---
 
-## ✨ Fitur Utama
+## 📌 Tentang Proyek
+
+**Candraloka Dental Care** adalah aplikasi web klinik gigi modern yang dirancang untuk menghadirkan pengalaman pengguna (UX) yang transparan, menenangkan, dan efisien. Website ini berfokus pada desain medis profesional dengan palet warna klinis elegan (*Deep Navy* `#0e204d` & *Dental Sapphire Blue* `#1e60d5`).
+
+Fitur keunggulan utama proyek ini adalah **Sistem Reservasi Online Berbasis Ketersediaan Waktu Nyata (Real-Time Availability)**:
+- 🕒 **Kalkulasi Slot Otomatis**: Menghitung ketersediaan jadwal dokter per sesi (pagi, siang, sore) secara dinamis dari jam operasional mingguan.
+- 📅 **Deteksi Cuti & Antrean**: Menghitung kuota tersisa dengan memperhitungkan tanggal cuti dokter, slot yang sudah terisi (*booked slots*), dan reservasi aktif di peramban.
+- 🧭 **Smart Doctor Assignment**: Mendukung penetapan dokter otomatis berbasis rotasi beban layanan (*"Dokter Mana Saja yang Tersedia"*).
+- 🏷️ **Kode Reservasi Unik**: Membuat kode booking resmi (`CDC-YYMMDD-XXXX`) dan ringkasan janji temu otomatis terintegrasi ke tautan pesan WhatsApp (`wa.me`).
+
+> ℹ️ **Catatan Portofolio:** Seluruh profil dokter, testimoni, alamat, dan nomor kontak pada proyek ini bersifat rekaan untuk kebutuhan demonstrasi rekayasa antarmuka (*frontend engineering*). Tidak ada transaksi finansial nyata yang diproses.
+
+---
+
+## 📸 Tampilan & Fasilitas Klinik
+
+<table align="center" width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="public/images/facilities/ruang-perawatan.webp" alt="Ruang Perawatan Ergonomis" width="100%" style="border-radius: 8px;" /><br />
+      <b>Ruang Perawatan Ergonomis</b><br />
+      <sub>Dental chair modern & pencahayaan ramah mata</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="public/images/facilities/ruang-tunggu.webp" alt="Ruang Tunggu Pasien" width="100%" style="border-radius: 8px;" /><br />
+      <b>Area Tunggu Tenang & Nyaman</b><br />
+      <sub>Suasana sejuk, alunan musik lembut, dan ruang santai</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="public/images/facilities/sterilisasi.webp" alt="Sterilisasi Bertaraf Medis" width="100%" style="border-radius: 8px;" /><br />
+      <b>Sterilisasi Bertaraf Medis</b><br />
+      <sub>Autoclave medis canggih & pouch instrumen steril</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="public/images/facilities/ruang-anak.webp" alt="Pojok Ramah Anak" width="100%" style="border-radius: 8px;" /><br />
+      <b>Pojok Ramah Anak (Kids Corner)</b><br />
+      <sub>Area bermain ceria, aman, dan higienis untuk si kecil</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## ✨ Fitur & Halaman Utama
 
 1. **Beranda (`/`):**
-   - Hero banner dengan CTA ganda terarah (*Buat Reservasi* & *Lihat Jadwal*).
-   - Indikator status operasional klinik hari ini (Buka/Tutup dengan jam WIB).
-   - Ringkasan profil dengan animasi *counter* angka saat terlihat di layar.
-   - Katalog layanan unggulan dan profil dokter spesialis pilihan.
-   - Langkah alur reservasi terpadu dan testimoni pasien.
+   - Hero banner dinamis dengan *Dual CTA* terarah (*Buat Reservasi* & *Lihat Jadwal*).
+   - Live badge status operasional klinik hari ini (Buka / Tutup dengan indikator jam WIB).
+   - Animasi *counter* angka pencapaian klinik (tahun melayani, pasien tersenyum, dokter spesialis).
+   - Ringkasan katalog layanan unggulan, profil dokter spesialis pilihan, dan ulasan pasien.
 
-2. **Tentang Klinik (`/tentang`):**
-   - Sejarah dan nilai inti klinik (Higienis Bertaraf Medis, Pendekatan Empatis, Transparansi Biaya, dll.).
-   - Galeri fasilitas modern dengan gambar WebP responsif.
-   - Alur kunjungan pasien 5 tahap.
-   - Peta lokasi (gambar WebP statis hemat performa dengan opsi interaktif Google Maps).
+2. **Tentang Kami (`/tentang`):**
+   - Cerita awal mula klinik, visi, dan misi pelayanan kesehatan gigi.
+   - Nilai layanan klinik: Pelayanan Empatis, Standar Higienis, Teknologi Terkini, dan Ramah Keluarga.
+   - Galeri fasilitas modern dengan gambar WebP multi-resolusi responsif.
+   - Alur kunjungan pasien terpandu (5 langkah dari kedatangan hingga edukasi pasca tindakan).
 
 3. **Katalog & Detail Layanan (`/layanan`, `/layanan/:slug`):**
-   - Pencarian layanan instan dan filter kategori (Pencegahan, Estetik, Bedah & Khusus).
-   - Halaman detail komprehensif: kapan perawatan dibutuhkan, langkah prosedur, persiapan sebelum perawatan, estimasi biaya, dokter pelaksana, dan rekomendasi layanan terkait.
-   - Sticky CTA Bar pada perangkat mobile untuk akses cepat reservasi.
+   - 8 Layanan komprehensif (Scaling, Penambalan, Pencabutan, Bleaching, Behel, Perawatan Saluran Akar, Veneer, Gigi Anak).
+   - Filter cepat kategori dan pencarian nama perawatan instan.
+   - Halaman detail terstruktur: indikasi perawatan, langkah prosedur bertahap, persiapan sebelum kunjungan, estimasi durasi, dan dokter pelaksana.
 
-4. **Direktori & Profil Dokter (`/dokter`, `/dokter/:slug`):**
-   - Pencarian dokter berdasarkan nama atau keahlian klinis.
-   - Profil dokter detail: riwayat pendidikan, minat klinis, bahasa yang dikuasai, layanan yang ditangani, dan ringkasan jadwal praktek mingguan.
-   - Penanda sesi praktek aktif hari ini dan pengumuman cuti.
+4. **Direktori Dokter (`/dokter`, `/dokter/:slug`):**
+   - Pencarian dokter berdasarkan nama atau spesialisasi klinis.
+   - Profil dokter detail: riwayat pendidikan, minat klinis, bahasa yang dikuasai, dan jadwal praktek mingguan.
+   - Indikator sesi praktek aktif hari ini dan pengumuman jadwal cuti dokter.
 
 5. **Jadwal Praktek Terpadu (`/jadwal`):**
-   - Matriks mingguan dokter x hari (Senin – Minggu) pada tampilan desktop.
-   - Tampilan tab hari bebas *scroll* horizontal pada perangkat mobile.
-   - Penanda denyut dinamis *"Sedang Praktek"* untuk dokter yang sedang bertugas saat jam kunjungan dibuka.
-   - Sinkronisasi filter ke query URL (`?dokter=...&hari=...`) untuk kemudahan berbagi tautan.
+   - Kalender jadwal mingguan dokter x hari (Senin – Minggu) yang rapi tanpa perlu geser/scroll horizontal.
+   - Penanda denyut dinamis *"Sedang Praktek"* untuk dokter yang sedang bertugas di jam aktif klinik.
+   - Sinkronisasi filter otomatis ke query URL (`?dokter=...&hari=...`).
 
-6. **Alur Reservasi Online 4 Langkah (`/reservasi`):**
-   - **Langkah 1 (Layanan):** Kartu pilihan layanan gigi beserta estimasi durasi waktu.
-   - **Langkah 2 (Dokter):** Opsi dokter spesifik atau penetapan otomatis (*smart doctor assignment*).
-   - **Langkah 3 (Jadwal):** Strip navigator 14 hari dengan status teks & ikon, tombol lompat ke tanggal tersedia berikutnya, dan slot jam per sesi (Pagi, Siang, Sore).
-   - **Langkah 4 (Data Pasien):** Formulir data minimalis tervalidasi Zod (nama, WhatsApp, email, status pasien baru/lama, batas catatan 300 karakter, persetujuan syarat, dan proteksi spam honeypot).
-   - **Layar Konfirmasi:** Tampilan kode reservasi `CDC-YYMMDD-XXXX`, tombol kirim WhatsApp, salin ringkasan jadwal, dan opsi pengosongan data lokal untuk peninjauan *reviewer*.
+6. **Sistem Reservasi Online 4 Langkah (`/reservasi`):**
+   - **Langkah 1 (Layanan):** Pilihan jenis perawatan gigi beserta estimasi durasi waktu.
+   - **Langkah 2 (Dokter):** Opsi dokter spesifik atau penugasan otomatis (*smart assignment*).
+   - **Langkah 3 (Jadwal):** Strip navigator 14 hari dengan status ketersediaan visual dan pembagian slot waktu (Pagi, Siang, Sore).
+   - **Langkah 4 (Data Pasien):** Formulir tervalidasi Zod (nama, WhatsApp, email opsional, status pasien baru/lama, batas catatan, dan proteksi honeypot).
+   - **Konfirmasi Janji Temu:** Penerbitan kode resmi `CDC-YYMMDD-XXXX`, tombol integrasi WhatsApp, dan opsi salin jadwal ke kalender.
+
+7. **Kontak & Lokasi Klinik (`/kontak`):**
+   - *Live Embed Google Maps* interaktif langsung terpusat ke lokasi klinik.
+   - Jadwal jam buka lengkap 7 hari per minggu dengan label status buka/tutup hari ini.
+   - Akses cepat tombol panggil telepon dan tautan percakapan WhatsApp.
+
+8. **Halaman Error 404 Kustom (`/:pathMatch(.*)*`):**
+   - Tampilan ramah pengguna dengan tombol kembali ke Beranda atau Reservasi.
 
 ---
 
 ## 🛠️ Tech Stack & Arsitektur
 
-| Komponen | Teknologi | Keterangan |
+| Layer | Teknologi | Peran & Keunggulan |
 |---|---|---|
-| **Framework** | Vue 3 (Composition API `<script setup>`) | Single Page Application berbasis Vite |
-| **Routing** | Vue Router 4 | Lazy-loaded routes & dynamic query handling |
-| **Styling** | Tailwind CSS | Tema Medcity: Deep Navy `#0e204d`, Dental Sapphire Blue `#1e60d5` (tanpa warna tosca/teal) |
-| **Validasi Form** | Zod | Skema validasi deklaratif dan pesan error ramah pengguna |
-| **Metadata & SEO** | `@unhead/vue` | Meta tag judul, deskripsi, Open Graph, dan Twitter Card per halaman |
-| **Pengolahan Gambar** | `sharp` | Pipeline konversi WebP otomatis (1280, 768, 480 px) |
-| **Font** | Plus Jakarta Sans (self-hosted WOFF2) | Zero third-party CDN, `font-display: swap` |
-| **Testing** | Vitest + Vue Test Utils + Happy DOM | 92 unit tests covering pure helpers, validation, and UI interaction |
-| **Penyimpanan Data** | JSON Lokal + Browser Storage | Reservasi disimpan di `localStorage`, draft sesi di `sessionStorage` |
+| **Core Framework** | [Vue 3](https://vuejs.org/) (Composition API) | Performa reaktif tinggi dengan `<script setup>` |
+| **Build Tool** | [Vite](https://vitejs.dev/) | HMR ultra-cepat dan bundling produksi teroptimasi |
+| **Routing** | [Vue Router 4](https://router.vuejs.org/) | Lazy-loaded routes & penanganan state URL dinamis |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | Desain sistem berbasis token tanpa warna tosca (*Navy & Dental Blue*) |
+| **Validasi Form** | [Zod](https://zod.dev/) + VeeValidate | Validasi skema tipe-aman dengan pesan kesalahan ramah pengguna |
+| **Metadata & SEO** | `@unhead/vue` | Manajemen dinamis title, meta description, Open Graph, dan Twitter Cards |
+| **Pengolahan Gambar** | [`sharp`](https://sharp.pixelplumbing.com/) | Pipeline konversi gambar WebP otomatis 3 ukuran (1280, 768, 480 px) |
+| **Tipografi** | Plus Jakarta Sans | Self-hosted WOFF2 font lokal (`font-display: swap`), zero third-party delay |
+| **Testing** | [Vitest](https://vitest.dev/) + Vue Test Utils | 93 unit tests otomatis untuk fungsi murni, ketersediaan slot, dan komponen UI |
+| **Penyimpanan Data** | Local JSON + Browser Storage | Reservasi disimpan di `localStorage`, draft sesi di `sessionStorage` |
 
 ---
 
-## ♿ Standar Kualitas UX & Aksesibilitas (PRD §11)
+## ♿ Standar Kualitas UX & Aksesibilitas (WCAG AA)
 
-- **UX-1 s.d. UX-3:** Alur terpandu 4 langkah, tanggal/slot berstatus visual & teks (Tersedia, Penuh, Libur), tombol pintas ke tanggal tersedia berikutnya dan saluran bantuan WhatsApp.
-- **UX-4 Mobile First:** Area sentuh minimal 44×44 px, ukuran font isian minimal 16 px (`text-base`) guna mencegah auto-zoom Safari di iOS, floating action bar terisolasi dari tumpang tindih.
-- **UX-6 & UX-7 Resiliensi Data:** Draft reservasi otomatis tersimpan ke `sessionStorage` saat berpindah langkah atau me-refresh halaman.
-- **UX-8 Aksesibilitas:** Kontras teks rasio WCAG AA, navigasi tombol panah keyboard (`ArrowLeft`/`ArrowRight`) pada strip tanggal, atribut `role="radiogroup"` & `role="radio"`, pesan error terhubung melalui `aria-describedby`, serta menghormati preferensi `prefers-reduced-motion`.
-- **UX-10 & UX-11:** Seluruh waktu menggunakan format bahasa Indonesia dengan keterangan zona waktu WIB; gambar konten dimuat secara *lazy-load* dengan rasio aspek terkunci guna mencegah *Cumulative Layout Shift* (CLS).
+- **Mobile First Ergonomics**: Area sentuh tombol minimal 44×44 px, ukuran font isian form minimal 16 px (`text-base`) untuk mencegah auto-zoom pada peramban mobile (iOS Safari).
+- **Resiliensi Data Sesi**: Formulir reservasi otomatis tersimpan ke `sessionStorage` saat berpindah langkah atau me-refresh halaman sehingga data pasien tidak hilang.
+- **Pencegahan Cumulative Layout Shift (CLS)**: Seluruh gambar konten disajikan dengan rasio aspek terkunci melalui komponen `ResponsiveImage`.
+- **Aksesibilitas Penuh**: Kontras warna memenuhi rasio WCAG AA, navigasi tombol panah keyboard (`ArrowLeft`/`ArrowRight`) pada strip tanggal kalender, dan atribut ARIA semantik.
 
 ---
 
 ## 🚀 Panduan Menjalankan Proyek
 
 ### Prasyarat
-- Node.js versi 18 atau lebih tinggi
-- npm versi 9 atau lebih tinggi
+- **Node.js**: versi 20.0.0 atau lebih tinggi
+- **npm**: versi 9.0.0 atau lebih tinggi
 
-### Instalasi & Menjalankan Dev Server
+### 1. Clone & Instalasi Dependensi
 ```bash
 # Clone repositori
-git clone https://github.com/username/candraloka-dental.git
+git clone https://github.com/ganapurba007/candraloka-dental.git
 cd candraloka-dental
 
 # Pasang dependensi
 npm install
-
-# Jalankan server pengembangan lokal (http://localhost:5173)
-npm run dev
 ```
 
-### Menjalankan Unit Test
+### 2. Menjalankan Server Pengembangan
 ```bash
-# Eksekusi seluruh rangkaian test Vitest (92 tests)
+npm run dev
+```
+Aplikasi akan aktif di `http://localhost:5173`.
+
+### 3. Menjalankan Rangkaian Pengujian
+```bash
+# Menjalankan 93 unit test otomatis
 npm test
 ```
 
-### Optimasi Gambar & Build Produksi
+### 4. Validasi Format Gambar & Build Produksi
 ```bash
-# Validasi dan konversi gambar sumber WebP
+# Validasi kepatuhan format & anggaran gambar WebP
 npm run check:images
 
-# Build bundel produksi
+# Build bundel produksi teroptimasi
 npm run build
 
 # Pratinjau hasil build produksi
@@ -128,33 +181,35 @@ npm run preview
 
 ```text
 candraloka-dental/
-├── context/               # Dokumentasi proyek (PRD.md, rules.md, SCHEMA.md, CHANGELOG.md)
+├── context/               # Dokumentasi spesifikasi (PRD.md, rules.md, SCHEMA.md, CHANGELOG.md)
 ├── public/
 │   ├── fonts/             # Self-hosted Plus Jakarta Sans (.woff2)
-│   ├── images/            # File WebP teroptimasi (1280, 768, 480 px)
+│   ├── images/            # Aset WebP teroptimasi (1280, 768, 480 px)
+│   ├── icon.jpg           # Identitas logo klinik
 │   └── og-image.png       # Open Graph social preview (1200x630 px)
 ├── scripts/
-│   ├── check-images.mjs   # Script validator kepatuhan format & anggaran gambar
-│   ├── optimize-images.mjs# Pipeline konversi WebP sharp
-│   └── generate-source-images.mjs
+│   ├── check-images.mjs   # Validator ukuran & kepatuhan anggaran gambar
+│   └── optimize-images.mjs# Pipeline konversi WebP otomatis via sharp
 ├── src/
-│   ├── assets/            # CSS global & konfigurasi font
+│   ├── assets/            # CSS global & konfigurasi tema
 │   ├── components/
 │   │   ├── layout/        # Navbar, Footer, TopBar, FloatingWhatsapp, ScrollToTop
 │   │   ├── ui/            # Button, Card, Badge, Accordion, Toast, StepIndicator, ResponsiveImage
-│   │   ├── sections/      # Bagian halaman Beranda & Tentang
-│   │   ├── doctor/        # Komponen kartu & badge profil dokter
+│   │   ├── sections/      # Komponen seksi Beranda, Tentang, dan Lokasi
+│   │   ├── doctor/        # Komponen kartu & badge dokter
 │   │   └── service/       # Komponen kartu & filter layanan
 │   ├── data/              # Sumber data JSON (clinic, services, doctors, home, testimonials)
-│   ├── lib/               # Fungsi murni (time, schedule, availability, format, reservation, schemas)
-│   ├── pages/             # Home, About, Services, ServiceDetail, Doctors, DoctorDetail, Schedule, Booking, NotFound
-│   ├── router/            # Konfigurasi Vue Router
+│   ├── lib/               # Fungsi logika murni (time, schedule, availability, format, reservation, schemas)
+│   ├── pages/             # Home, About, Services, ServiceDetail, Doctors, DoctorDetail, Schedule, Booking, Contact, NotFound
+│   ├── router/            # Konfigurasi Vue Router (scrollBehavior & lazy loading)
+│   ├── App.vue
 │   └── main.js
-├── vercel.json            # Konfigurasi SPA routing & header cache aset
+├── vercel.json            # Konfigurasi SPA rewrite & caching immutable
 └── package.json
 ```
 
 ---
 
 ## 📄 Lisensi
-Proyek ini dibuat untuk keperluan portofolio frontend. Lisensi bebas digunakan untuk referensi pembelajaran.
+
+Proyek ini dibuat untuk keperluan portofolio pengembangan antarmuka web (*frontend engineering*). Bebas digunakan sebagai referensi pembelajaran.
