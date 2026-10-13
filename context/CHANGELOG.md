@@ -14,6 +14,21 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Penyempurnaan Hero Section — Penghapusan Badge & Ikon Sparkling (2026-10-13)
+**FR terkait:** FR-2.1
+**Yang dikerjakan:**
+- **Hero Section ([HomeHero.vue](file:///d:/Projects/candraloka-dental/src/components/sections/HomeHero.vue)):**
+  - Menghapus badge pills di atas headline pada seluruh slide hero section (Slide 1, Slide 2, dan Slide 3).
+  - Menghapus seluruh ikon `Sparkles` dan menggantinya dengan ikon representatif (`Cpu`) pada pilar teknologi Slide 3.
+  - Membersihkan impor icon yang tidak terpakai (`ShieldCheck`, `Sparkles`).
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos (26 gambar tervalidasi).
+  - `npm run build` sukses.
+**File yang berubah:** src/components/sections/HomeHero.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Desain Multi-Slide Hero Section & Pembersihan Footer (2026-10-12)
 **FR terkait:** FR-2.1, FR-1.4, PRD §12
 **Yang dikerjakan:**
