@@ -20,6 +20,7 @@ Format tiap entri:
 - **Hero Section ([HomeHero.vue](file:///d:/Projects/candraloka-dental/src/components/sections/HomeHero.vue)):**
   - Menghapus badge pills di atas headline pada seluruh slide hero section (Slide 1, Slide 2, dan Slide 3).
   - Menghapus seluruh ikon `Sparkles` dan menggantinya dengan ikon representatif (`Cpu`) pada pilar teknologi Slide 3.
+  - Menghapus nomor counter slide (`01 / 03`) dan pemisah garis pada bar indikator slide di bagian bawah, menyisakan dot/pill indikator navigasi yang minimalis dan rapi.
   - Membersihkan impor icon yang tidak terpakai (`ShieldCheck`, `Sparkles`).
 - **Verifikasi:**
   - 92/92 unit tests lulus (`vitest run`).
