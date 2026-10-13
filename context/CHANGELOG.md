@@ -14,6 +14,22 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Integrasi Background Foto Arsitektur Rumah Sakit/Klinik Sapphire Blue di Setiap Judul Halaman (2026-10-13)
+**FR terkait:** FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
+**Yang dikerjakan:**
+- **Penerapan Background Foto Arsitektur Klinik Medcity Style:**
+  - Mengintegrasikan aset fotografi arsitektur gedung klinik/rumah sakit modern bernuansa *Sapphire Blue* (`/images/clinic/page-header.webp`) ke dalam seluruh banner judul halaman ([AboutHeader.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutHeader.vue), [Services.vue](file:///d:/Projects/candraloka-dental/src/pages/Services.vue), [Doctors.vue](file:///d:/Projects/candraloka-dental/src/pages/Doctors.vue), [Schedule.vue](file:///d:/Projects/candraloka-dental/src/pages/Schedule.vue), [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue), [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue), dan [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue)).
+  - Garis-garis arsitektural gedung tampak jelas dan hidup (*tidak polos*) dengan lapisan gradien transparan yang menjaga keterbacaan teks putih (WCAG AAA compliant), persis mengacu pada referensi visual Medcity ("About Us - Story about our hospital").
+  - Menghasilkan varian WebP responsif (`page-header.webp`, `-768.webp`, `-480.webp`) dengan ukuran sangat hemat performa (7.1 KB – 30.8 KB, jauh di bawah batas anggaran PRD §12).
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi.
+  - `npm run build` berhasil dalam 1.35s.
+  - `npm run build` sukses tanpa peringatan.
+**File yang berubah:** src/components/sections/AboutHeader.vue, src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Booking.vue, src/pages/DoctorDetail.vue, src/pages/ServiceDetail.vue, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Penambahan Background Gambar di Seluruh Judul Halaman (2026-10-13)
 **FR terkait:** FR-1.4, FR-3.1, FR-4.1, FR-5.1, FR-6.6, FR-7.1
 **Yang dikerjakan:**
