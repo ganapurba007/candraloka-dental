@@ -5,10 +5,8 @@ import {
   Clock,
   ChevronLeft,
   ChevronRight,
-  ShieldCheck,
   CheckCircle2,
   Users,
-  Sparkles,
   HeartHandshake,
   Cpu,
   ArrowRight,
@@ -213,12 +211,6 @@ onUnmounted(() => {
             </div>
 
             <div class="relative z-10 space-y-6 text-center lg:text-left">
-              <!-- Badge -->
-              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
-                <Sparkles class="w-3.5 h-3.5 text-blue-300" />
-                <span>{{ currentSlide.badge }}</span>
-              </div>
-
               <!-- Brand Title & Required Test Headline -->
               <div class="space-y-2">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
@@ -286,12 +278,6 @@ onUnmounted(() => {
 
           <!-- Right Content: Empathy message & feature cards -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
-              <HeartHandshake class="w-4 h-4 text-emerald-300" />
-              <span>{{ currentSlide.badge }}</span>
-            </div>
-
             <!-- Big Empathetic Headline -->
             <div class="space-y-2">
               <span class="text-xs font-bold uppercase tracking-widest text-blue-300 block">
@@ -356,12 +342,6 @@ onUnmounted(() => {
           :key="currentSlide.id"
           class="max-w-4xl mx-auto text-center space-y-7 relative"
         >
-          <!-- Badge Pill -->
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/35 text-cyan-200 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm shadow-inner">
-            <Cpu class="w-4 h-4 text-cyan-300" />
-            <span>{{ currentSlide.badge }}</span>
-          </div>
-
           <!-- Centered Headline with Category Sub-label -->
           <div class="space-y-2">
             <span class="text-xs font-bold uppercase tracking-widest text-cyan-300/90 block">
@@ -385,7 +365,7 @@ onUnmounted(() => {
               class="py-3 px-4 rounded-2xl bg-navy-900/70 backdrop-blur-md border border-cyan-400/25 text-center shadow-lg hover:border-cyan-300/40 transition-colors"
             >
               <div class="flex items-center justify-center gap-1.5 text-cyan-300 mb-1">
-                <Sparkles class="w-3.5 h-3.5" />
+                <Cpu class="w-3.5 h-3.5" />
                 <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-200">Teknologi Medis</span>
               </div>
               <p class="text-xs sm:text-sm font-bold text-white">{{ h }}</p>
