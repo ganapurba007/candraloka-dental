@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import {
   MapPin,
   Phone,
@@ -9,12 +9,8 @@ import {
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import clinicData from '@/data/clinic.json'
-import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
-import Button from '@/components/ui/Button.vue'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { getDayName } from '@/lib/format'
-
-const showInteractiveMap = ref(false)
 
 const openStatus = computed(() => {
   return getClinicOpenStatus(clinicData.operatingHours, new Date())
@@ -147,45 +143,21 @@ const daysList = computed(() => {
           </div>
         </div>
 
-        <!-- Right: Map Preview / Interactive Map (7 cols) -->
+        <!-- Right: Embed Google Maps (7 cols) -->
         <div class="lg:col-span-7">
-          <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100 flex flex-col">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-slate-100 flex flex-col h-full">
             <!-- Map Container -->
-            <div class="relative aspect-[16/10] w-full overflow-hidden bg-slate-200">
-              <template v-if="!showInteractiveMap">
-                <!-- Static WebP Map image (FR-3.7 & PRD §12 performance budget) -->
-                <a
-                  :href="clinicData.contact.mapUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group block w-full h-full relative"
-                  aria-label="Buka peta klinik di Google Maps"
-                >
-                  <ResponsiveImage
-                    :src="clinicData.contact.mapImage"
-                    alt="Peta Lokasi Candraloka Dental Care"
-                    aspect-ratio="16/10"
-                    img-class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
-                  />
-                  <!-- Overlay Click Hint -->
-                  <div class="absolute inset-0 bg-navy-900/30 group-hover:bg-navy-900/20 transition-colors flex items-center justify-center">
-                    <div class="px-5 py-2.5 rounded-full bg-white/95 text-navy-900 font-bold text-sm shadow-xl flex items-center gap-2 group-hover:bg-white transition-colors">
-                      <MapPin class="w-4 h-4 text-primary-600" aria-hidden="true" />
-                      <span>Klik untuk membuka di Google Maps</span>
-                    </div>
-                  </div>
-                </a>
-              </template>
-              <template v-else>
-                <iframe
-                  title="Peta Interaktif Candraloka Dental Care"
-                  :src="clinicData.contact.mapEmbedUrl || 'https://maps.google.com/?q=Jl.+Candraloka+Raya+No.+45+Jakarta&output=embed'"
-                  width="100%"
-                  height="100%"
-                  class="border-0 w-full h-full"
-                  loading="lazy"
-                />
-              </template>
+            <div class="relative w-full h-[400px] sm:h-[480px] lg:h-full lg:min-h-[580px] overflow-hidden bg-slate-100">
+              <iframe
+                title="Peta Lokasi Candraloka Dental Care"
+                :src="clinicData.contact.mapEmbedUrl"
+                width="100%"
+                height="100%"
+                class="border-0 w-full h-full min-h-[400px] sm:min-h-[480px] lg:min-h-[580px]"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <!-- Map Bottom Bar -->
@@ -194,13 +166,15 @@ const daysList = computed(() => {
                 <MapPin class="w-4 h-4 text-primary-600 flex-shrink-0" aria-hidden="true" />
                 {{ clinicData.contact.address }}
               </span>
-              <button
-                type="button"
-                class="text-primary-700 hover:text-primary-800 font-semibold underline underline-offset-2 flex-shrink-0"
-                @click="showInteractiveMap = !showInteractiveMap"
+              <a
+                :href="clinicData.contact.mapUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-semibold underline underline-offset-2 flex-shrink-0"
               >
-                {{ showInteractiveMap ? 'Tutup Peta Interaktif' : 'Muat Peta Interaktif' }}
-              </button>
+                <span>Buka di Google Maps</span>
+                <ExternalLink class="w-3.5 h-3.5" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>

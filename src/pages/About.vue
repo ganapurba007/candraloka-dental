@@ -6,7 +6,6 @@ import AboutValues from '@/components/sections/AboutValues.vue'
 import AboutFacilities from '@/components/sections/AboutFacilities.vue'
 import AboutVisitFlow from '@/components/sections/AboutVisitFlow.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
-import AboutLocation from '@/components/sections/AboutLocation.vue'
 
 useHead({
   title: 'Tentang Kami | Candraloka Dental Care',
@@ -43,8 +42,5 @@ useHead({
       title="Tenaga Medis Berdedikasi"
       description="Didukung dokter gigi umum dan spesialis yang siap memberikan perawatan terbaik dengan komunikasi yang jelas."
     />
-
-    <!-- FR-3.7: Lokasi, Jam Praktek, & Peta -->
-    <AboutLocation />
   </div>
 </template>

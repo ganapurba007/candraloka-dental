@@ -14,6 +14,95 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Pembersihan File & Komponen Tidak Digunakan (2026-10-13)
+**FR terkait:** -
+**Yang dikerjakan:**
+- Menghapus komponen mati / dead code yang tidak lagi diimpor atau digunakan dalam aplikasi:
+  - `src/components/sections/HomeCtaBanner.vue` (komponen banner CTA yang telah dihapus atas permintaan user).
+  - `src/components/ui/Breadcrumb.vue` (komponen breadcrumb yang telah dihapus global pada fase pembersihan tampilan).
+- Menghapus file aset gambar tidak terpakai:
+  - `public/icon-original.jpg` (file mentah backup 313 KB).
+- Menghapus skrip scratch generator lama yang berpotensi menimpa gambar:
+  - `scripts/create-header-bg.mjs`
+  - `scripts/generate-hero-dummy.mjs`
+  - `scripts/generate-source-images.mjs`
+- Memverifikasi integritas proyek: `npm run check:images` (26 passed), `npm test` (93/93 passed), dan `npm run build` (sukses).
+**File yang berubah:** src/components/sections/HomeCtaBanner.vue (deleted), src/components/ui/Breadcrumb.vue (deleted), public/icon-original.jpg (deleted), scripts/create-header-bg.mjs (deleted), scripts/generate-hero-dummy.mjs (deleted), scripts/generate-source-images.mjs (deleted), context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Integrasi Embed Google Maps Interaktif Langsung pada Halaman Kontak (2026-10-13)
+**FR terkait:** FR-3.7
+**Yang dikerjakan:**
+- Memperbarui `mapEmbedUrl` pada [clinic.json](file:///d:/Projects/candraloka-dental/src/data/clinic.json) dengan URL Google Maps Embed yang fungsional dan terpusat ke lokasi klinik.
+- Menampilkan iframe Google Maps embed secara langsung pada kartu lokasi [AboutLocation.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutLocation.vue) tanpa perlu klik tombol toggle/placeholder statis.
+- Menyediakan tautan cepat langsung *"Buka di Google Maps"* di bar bawah peta untuk navigasi eksternal.
+- Memperbarui unit test [Contact.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/Contact.spec.js) untuk memverifikasi ketersediaan dan atribut `iframe` peta.
+**File yang berubah:** src/data/clinic.json, src/components/sections/AboutLocation.vue, src/pages/__tests__/Contact.spec.js, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Penambahan Foto Fasilitas Kenyamanan & Kebersihan & Pemulihan Foto Dokter (2026-10-13)
+**FR terkait:** FR-3.5, FR-3.6, FR-2.6
+**Yang dikerjakan:**
+- Mengganti seluruh placeholder fasilitas klinik dengan foto berkualitas tinggi berstandar medis (*Ruang Perawatan*, *Ruang Tunggu Pasien*, *Sterilisasi & Kebersihan*, *Ruang Ramah Anak*).
+- **Perbaikan Foto Dokter & Layanan:** Menghapus 13 file duplikat `.png` (placeholder lama) pada folder `src-images/doctors/` dan `src-images/services/` yang sempat menimpa file foto `.jpg` asli saat script `optimize-images.mjs` dijalankan.
+- Meregenerasi seluruh file WebP multi-resolusi (`dr-andi`, `dr-nadia`, `dr-farhan`, dll.) dari foto asli beresolusi tinggi.
+- Memvalidasi seluruh performa gambar dan integritas build (`npm run check:images`, `npm test`, `npm run build`).
+- Menjalankan pipeline konversi gambar WebP multi-resolusi (`1280px`, `768px`, `480px`) via `npm run images`.
+- Memvalidasi seluruh anggaran ukuran file gambar WebP via `npm run check:images`.
+**File yang berubah:** src-images/facilities/*, public/images/facilities/*, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** context/CHANGELOG.md
+
+## Pembuatan Halaman Kontak & Pembersihan Bagian Nilai Layanan Kami (2026-10-13)
+**FR terkait:** FR-3.3, FR-3.7
+**Yang dikerjakan:**
+- **Pembersihan Bagian Nilai Layanan Kami:**
+  - Menghapus paragraf deskripsi protokol dan 2 tombol di bawahnya (*"Buat Reservasi Sekarang"* dan *"Jelajahi Layanan"*) pada [AboutValues.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutValues.vue).
+  - Menjadikan heading *"Nilai Layanan Kami: Memberikan Pelayanan Medis Gigi Terbaik untuk Senyum Anda"* terpusat secara rapi dan simetris.
+- **Pembuatan Halaman Baru Kontak (/kontak):**
+  - Membuat halaman baru [Contact.vue](file:///d:/Projects/candraloka-dental/src/pages/Contact.vue) dengan header tematik dan memindahkan komponen *Akses & Kunjungan* (Lokasi, Jam Praktek, Kontak Telepon/WA, dan Peta).
+  - Menghapus komponen lokasi dari [About.vue](file:///d:/Projects/candraloka-dental/src/pages/About.vue).
+  - Mendaftarkan rute `/kontak` pada [router/index.js](file:///d:/Projects/candraloka-dental/src/router/index.js).
+  - Menambahkan tautan menu *Kontak* pada navigasi [Navbar.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Navbar.vue) dan [Footer.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Footer.vue).
+  - Membuat unit test baru [Contact.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/Contact.spec.js) dan menyinkronkan [About.spec.js](file:///d:/Projects/candraloka-dental/src/pages/__tests__/About.spec.js).
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.21s.
+**File yang berubah:** src/components/sections/AboutValues.vue, src/pages/About.vue, src/pages/Contact.vue, src/router/index.js, src/components/layout/Navbar.vue, src/components/layout/Footer.vue, src/pages/__tests__/About.spec.js, src/pages/__tests__/Contact.spec.js, AGENTS.md, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
+## Penyempurnaan Layout Nilai Layanan Kami & Pembersihan Teks Catatan Halaman Tentang (2026-10-13)
+**FR terkait:** FR-3.1, FR-3.3
+**Yang dikerjakan:**
+- Merapikan tata letak heading dan action buttons pada bagian *Nilai Layanan Kami* ([AboutValues.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutValues.vue)) agar proporsional dan responsif pada layar mobile maupun desktop.
+- Mengoptimalkan kartu grid 6 nilai layanan dengan padding dan tipografi yang rapi, serta membersihkan panah dekoratif yang membingungkan pengunjung.
+- Menghapus teks catatan penutup (*"Mengabdi untuk senyum sehat dan rasa percaya diri keluarga Anda. Pelajari selengkapnya tentang jadwal & layanan kami"*).
+- Membersihkan impor komponen `Card` yang tidak terpakai.
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi).
+  - `npm run build` sukses dalam 1.21s.
+**File yang berubah:** src/components/sections/AboutValues.vue, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
+## Pembaruan Foto Profil & Filosofi Halaman Tentang (2026-10-13)
+**FR terkait:** FR-3.1, FR-3.6, PRD §12
+**Yang dikerjakan:**
+- Mengganti gambar placeholder lama pada bagian *Cerita & Filosofi Kami* ([AboutStory.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutStory.vue)) dengan foto profesional klinik gigi beresolusi tinggi yang menampilkan dokter gigi ramah dan fasilitas dental unit modern bertaraf medis.
+- Mengonversi aset mentah ke varian WebP responsif (`about.webp`, `about-768.webp`, `about-480.webp`) melalui pipeline `npm run images`.
+- **Verifikasi:**
+  - 92/92 unit tests lulus (`vitest run`).
+  - `npm run check:images` lolos validasi (26 gambar tervalidasi dalam anggaran ukuran).
+  - `npm run build` sukses dalam 1.17s.
+**File yang berubah:** src-images/clinic/about.jpg, public/images/clinic/about*.webp, context/CHANGELOG.md
+**Test:** 92 passed / 92 total
+**Docs updated:** context/CHANGELOG.md
+
 ## Penghapusan Banner CTA Penutup dari Halaman Detail Layanan dan Detail Dokter (2026-10-13)
 **FR terkait:** FR-4.2, FR-5.2, FR-3.8
 **Yang dikerjakan:**

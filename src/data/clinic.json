@@ -8,7 +8,7 @@
     "email": "kontak@candralokadental.id",
     "address": "Jl. Candraloka Raya No. 45, Kebayoran Baru, Jakarta Selatan 12180",
     "mapUrl": "https://maps.google.com/?q=Jl.+Candraloka+Raya+No.+45+Jakarta",
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=Jl.+Candraloka+Raya+No.+45,+Kebayoran+Baru,+Jakarta+Selatan&t=&z=15&ie=UTF8&iwloc=&output=embed",
     "mapImage": "/images/clinic/map.webp"
   },
   "operatingHours": [

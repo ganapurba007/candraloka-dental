@@ -13,6 +13,7 @@ const navLinks = [
   { name: 'Layanan', to: '/layanan' },
   { name: 'Dokter', to: '/dokter' },
   { name: 'Jadwal Praktek', to: '/jadwal' },
+  { name: 'Kontak', to: '/kontak' },
 ]
 
 function toggleMobileMenu() {

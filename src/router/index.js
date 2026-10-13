@@ -50,6 +50,11 @@ const router = createRouter({
       component: () => import('@/pages/Booking.vue'),
     },
     {
+      path: '/kontak',
+      name: 'contact',
+      component: () => import('@/pages/Contact.vue'),
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('@/pages/NotFound.vue'),

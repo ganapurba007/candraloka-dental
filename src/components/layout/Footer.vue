@@ -21,6 +21,7 @@ const navLinks = [
   { name: 'Tim Dokter Gigi', to: '/dokter' },
   { name: 'Jadwal Praktek', to: '/jadwal' },
   { name: 'Reservasi Online', to: '/reservasi' },
+  { name: 'Kontak & Lokasi', to: '/kontak' },
 ]
 </script>
 

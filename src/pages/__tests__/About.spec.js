@@ -47,11 +47,5 @@ describe('About.vue (FR-3.x)', () => {
     // FR-3.6 Doctors Team Callout
     expect(wrapper.text()).toContain('Tenaga Medis Berdedikasi')
     expect(wrapper.text()).toContain('Lihat Semua Dokter')
-
-    // FR-3.7 Location, Hours & Map
-    expect(wrapper.text()).toContain('Lokasi & Jam Praktek')
-    expect(wrapper.text()).toContain('Status Klinik')
-    expect(wrapper.text()).toContain('Jadwal Jam Buka')
-    expect(wrapper.text()).toContain('Petunjuk Arah via Google Maps')
   })
 })
