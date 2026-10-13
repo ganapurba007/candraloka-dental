@@ -1,7 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 import clinicData from '@/data/clinic.json'
-import { Phone, MessageCircle, MapPin, Clock } from 'lucide-vue-next'
+import { Phone, MapPin, Clock } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
 const phone = clinicData.contact.phone
 const whatsapp = clinicData.contact.whatsapp
@@ -47,7 +48,7 @@ const waUrl = computed(() => {
           rel="noopener noreferrer"
           class="flex items-center space-x-1.5 text-emerald-400 hover:text-emerald-300 transition-colors focus-visible:outline-none focus-visible:text-white"
         >
-          <MessageCircle class="w-3.5 h-3.5" aria-hidden="true" />
+          <IconWhatsApp class="w-3.5 h-3.5" />
           <span>WhatsApp Kami</span>
         </a>
       </div>

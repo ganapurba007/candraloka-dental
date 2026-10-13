@@ -5,11 +5,11 @@ import servicesData from '@/data/services.json'
 import {
   MapPin,
   Phone,
-  MessageCircle,
   Mail,
   Clock,
   ExternalLink,
 } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
 const currentYear = new Date().getFullYear()
 const featuredServices = servicesData.slice(0, 5)
@@ -107,7 +107,7 @@ const navLinks = [
               </a>
             </li>
             <li class="flex items-center gap-2.5">
-              <MessageCircle class="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
+              <IconWhatsApp class="w-4 h-4 text-emerald-400 flex-shrink-0" />
               <a
                 :href="`https://wa.me/${clinicData.contact.whatsapp}`"
                 target="_blank"

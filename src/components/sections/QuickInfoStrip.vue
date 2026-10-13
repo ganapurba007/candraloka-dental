@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import clinicData from '@/data/clinic.json'
 import { getClinicOpenStatus } from '@/lib/schedule'
-import { Clock, Phone, MapPin, MessageCircle } from 'lucide-vue-next'
+import { Clock, Phone, MapPin } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import Badge from '@/components/ui/Badge.vue'
 
 const clinicStatus = computed(() => {
@@ -72,7 +73,7 @@ const waUrl = computed(() => {
               rel="noopener noreferrer"
               class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
             >
-              <MessageCircle class="w-3.5 h-3.5" aria-hidden="true" />
+              <IconWhatsApp class="w-3.5 h-3.5" />
               <span>WhatsApp</span>
             </a>
           </div>

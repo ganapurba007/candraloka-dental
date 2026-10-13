@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import { CalendarCheck, MessageCircle, Sparkles, ArrowRight } from 'lucide-vue-next'
+import { CalendarCheck, Sparkles, ArrowRight } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import Button from '@/components/ui/Button.vue'
 import clinicData from '@/data/clinic.json'
 
@@ -59,7 +60,7 @@ const waUrl = computed(() => {
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white/10 hover:bg-white hover:text-navy-900 text-white font-bold text-sm transition-all border border-white/40 w-full min-h-[44px] shadow-sm"
             >
-              <MessageCircle class="w-4 h-4 mr-2" aria-hidden="true" />
+              <IconWhatsApp class="w-4 h-4 mr-2" />
               <span>Konsultasi via WhatsApp</span>
             </a>
           </div>

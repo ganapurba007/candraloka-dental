@@ -8,7 +8,6 @@ import {
   Smile,
   Users,
   ArrowRight,
-  MessageCircle,
 } from 'lucide-vue-next'
 import Card from '@/components/ui/Card.vue'
 import Button from '@/components/ui/Button.vue'

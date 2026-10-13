@@ -12,8 +12,8 @@ import {
   Info,
   ArrowRight,
   ShieldCheck,
-  MessageCircle,
 } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
@@ -130,7 +130,7 @@ const waConsultUrl = computed(() => {
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-navy-700 bg-navy-800/80 hover:bg-navy-700 text-white font-medium text-sm transition-colors"
             >
-              <MessageCircle class="w-4 h-4 mr-2 text-emerald-400" aria-hidden="true" />
+              <IconWhatsApp class="w-4 h-4 mr-2 text-emerald-400" />
               <span>Tanya via WhatsApp</span>
             </a>
           </div>

@@ -3,11 +3,11 @@ import { ref, computed } from 'vue'
 import {
   MapPin,
   Phone,
-  MessageCircle,
   Clock,
   Navigation,
   ExternalLink,
 } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import clinicData from '@/data/clinic.json'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import Button from '@/components/ui/Button.vue'
@@ -106,7 +106,7 @@ const daysList = computed(() => {
                 rel="noopener noreferrer"
                 class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-primary-400 text-slate-700 hover:text-primary-700 transition-colors"
               >
-                <MessageCircle class="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                <IconWhatsApp class="w-4 h-4 text-emerald-600" />
                 <div class="text-xs">
                   <p class="text-slate-400">WhatsApp</p>
                   <p class="font-semibold text-navy-900">+{{ clinicData.contact.whatsapp }}</p>

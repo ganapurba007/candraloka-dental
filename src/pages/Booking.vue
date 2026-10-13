@@ -12,16 +12,15 @@ import {
   Calendar,
   Sparkles,
   Info,
-  AlertCircle,
   Copy,
   Check,
-  MessageCircle,
   Stethoscope,
   Trash2,
   HelpCircle,
   ChevronRight,
   UserCheck,
 } from 'lucide-vue-next'
+import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import Breadcrumb from '@/components/ui/Breadcrumb.vue'
 import StepIndicator from '@/components/ui/StepIndicator.vue'
 import Card from '@/components/ui/Card.vue'
@@ -613,7 +612,7 @@ function handleClearStoredReservations() {
               rel="noopener noreferrer"
               class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base transition-colors shadow-lg gap-2"
             >
-              <MessageCircle class="w-5 h-5" aria-hidden="true" />
+              <IconWhatsApp class="w-5 h-5" />
               <span>Kirim Konfirmasi via WhatsApp</span>
             </a>
 

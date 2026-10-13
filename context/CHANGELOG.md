@@ -14,6 +14,28 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Standardisasi Ikon WhatsApp Autentik & Pembersihan Ikon Generik (2026-10-13)
+**FR terkait:** FR-1.4, FR-7.8
+**Yang dikerjakan:**
+- **Komponen Ikon WhatsApp ([IconWhatsApp.vue](file:///d:/Projects/candraloka-dental/src/components/ui/IconWhatsApp.vue)):**
+  - Membuat komponen SVG ikon WhatsApp resmi/autentik dengan dukungan `currentColor`, atribut aksesibilitas, dan fleksibilitas ukuran Tailwind.
+  - Menggantikan seluruh penggunaan ikon generik chat bubble (`MessageCircle`) di seluruh situs:
+    - [FloatingWhatsapp.vue](file:///d:/Projects/candraloka-dental/src/components/layout/FloatingWhatsapp.vue) (Floating CTA WhatsApp)
+    - [TopBar.vue](file:///d:/Projects/candraloka-dental/src/components/layout/TopBar.vue) (Header kontak cepat)
+    - [Footer.vue](file:///d:/Projects/candraloka-dental/src/components/layout/Footer.vue) (Daftar kontak klinik)
+    - [QuickInfoStrip.vue](file:///d:/Projects/candraloka-dental/src/components/sections/QuickInfoStrip.vue) (Strip info cepat beranda)
+    - [AboutLocation.vue](file:///d:/Projects/candraloka-dental/src/components/sections/AboutLocation.vue) (Kartu kontak lokasi)
+    - [Booking.vue](file:///d:/Projects/candraloka-dental/src/pages/Booking.vue) (Tombol kirim konfirmasi WhatsApp)
+    - [DoctorDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/DoctorDetail.vue) & [ServiceDetail.vue](file:///d:/Projects/candraloka-dental/src/pages/ServiceDetail.vue) (Tombol tanya via WhatsApp)
+  - Menambahkan unit test [IconWhatsApp.spec.js](file:///d:/Projects/candraloka-dental/src/components/ui/__tests__/IconWhatsApp.spec.js).
+- **Verifikasi:**
+  - 93/93 unit tests lulus (`vitest run`).
+  - `npm run check:images` (26 gambar tervalidasi).
+  - `npm run build` sukses.
+**File yang berubah:** src/components/ui/IconWhatsApp.vue, src/components/layout/*, src/components/sections/*, src/pages/*, AGENTS.md, context/CHANGELOG.md
+**Test:** 93 passed / 93 total
+**Docs updated:** AGENTS.md, context/CHANGELOG.md
+
 ## Penyempurnaan Hero Section — Penghapusan Badge & Ikon Sparkling (2026-10-13)
 **FR terkait:** FR-2.1
 **Yang dikerjakan:**
