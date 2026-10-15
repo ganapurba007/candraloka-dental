@@ -320,6 +320,106 @@
         "mapUrl": "https://maps.google.com/?q=Esthetic+Dental+Center+Kutoarjo",
         "mapEmbedUrl": "https://maps.google.com/maps?q=Esthetic+Dental+Center+Kutoarjo&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "andini-dental": {
+      "slug": "andini-dental",
+      "name": "Andini Dental Jogja",
+      "shortName": "Andini Dental",
+      "subName": "drg. Ratih Andini & Tim Dokter Spesialis",
+      "tagline": "Klinik Dokter Gigi Ramah Anak & Keluarga dengan Pelayanan Nyaman di Sleman Jogja",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0813-2255-2214",
+        "whatsapp": "6281322552214",
+        "email": "kontak@andinidental.com",
+        "address": "Jl. Griya Taman Asri No. 103, Pandowoharjo, Sleman, D.I. Yogyakarta 55512",
+        "mapUrl": "https://maps.google.com/?q=Andini+Dental+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Andini+Dental+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dsmile-jogja": {
+      "slug": "dsmile-jogja",
+      "name": "Klinik Gigi d'Smile Jogja",
+      "shortName": "d'Smile Jogja",
+      "subName": "Praktek Dokter Gigi Baciro",
+      "tagline": "Perawatan Gigi Modern, Nyaman, dan Terpercaya di Kota Yogyakarta",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0878-0384-1777",
+        "whatsapp": "6287803841777",
+        "email": "kontak@dsmilejogja.com",
+        "address": "Jl. Kompol Bambang Suprapto No. 32C, Baciro, Kec. Gondokusuman, Kota Yogyakarta 55225",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+dSmile+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+dSmile+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "kay-dental": {
+      "slug": "kay-dental",
+      "name": "KAY DENTAL JOGJA",
+      "shortName": "KAY Dental",
+      "subName": "drg. Annisa & Rekan Dokter Gigi",
+      "tagline": "Pilihan Terpercaya Perawatan Gigi Ramah & Menenangkan di Bantul Jogja",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0858-7670-3873",
+        "whatsapp": "6285876703873",
+        "email": "kontak@kaydentaljogja.com",
+        "address": "Jl. Bibis, Gendeng, Bangunjiwo, Kec. Kasihan, Kabupaten Bantul, D.I. Yogyakarta 55184",
+        "mapUrl": "https://maps.google.com/?q=KAY+DENTAL+JOGJA",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=KAY+DENTAL+JOGJA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "kana-dental": {
+      "slug": "kana-dental",
+      "name": "Kana Dental Care",
+      "shortName": "Kana Dental",
+      "subName": "drg. Krisna Amretasari, Sp.Ort",
+      "tagline": "Spesialis Orthodonti dan Perawatan Kesehatan Gigi Keluarga di Sewon Bantul",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0856-4058-2013",
+        "whatsapp": "6285640582013",
+        "email": "kontak@kanadental.com",
+        "address": "Jl. Parangtritis Km. 8,5, Dadapan Kidul, Timbulharjo, Kec. Sewon, Bantul, D.I. Yogyakarta 55186",
+        "mapUrl": "https://maps.google.com/?q=Kana+Dental+Bantul",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Kana+Dental+Bantul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "drg-siti-fatimah": {
+      "slug": "drg-siti-fatimah",
+      "name": "Klinik Gigi drg. Siti Fatimah",
+      "shortName": "Klinik Gigi Siti Fatimah",
+      "subName": "drg. Siti Fatimah & Rekan",
+      "tagline": "Pelayanan Dokter Gigi Profesional, Nyaman, dan Terjangkau di Pleret Bantul",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0811-2634-152",
+        "whatsapp": "628112634152",
+        "email": "kontak@klinikgigisitifatimah.com",
+        "address": "Dusun Kanggotan, RT.02, Desa Pleret, Kec. Pleret, Kabupaten Bantul, D.I. Yogyakarta 55791",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+drg+Siti+Fatimah+Bantul",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+drg+Siti+Fatimah+Bantul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
