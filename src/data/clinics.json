@@ -501,24 +501,24 @@
         "mapEmbedUrl": "https://maps.google.com/maps?q=Belle+Dente+Dental+Clinic+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
     },
-    "say-dental": {
-      "slug": "say-dental",
-      "name": "SAY Dental Care",
-      "shortName": "SAY Dental",
-      "subName": "Klinik Gigi Maguwoharjo",
-      "tagline": "Perawatan Gigi Profesional dan Nyaman di Maguwoharjo Sleman",
+    "drg-rochmani-indrati": {
+      "slug": "drg-rochmani-indrati",
+      "name": "Praktek Dokter Gigi drg. Rochmani Indrati",
+      "shortName": "drg. Rochmani Indrati",
+      "subName": "Praktek Dokter Gigi Pakualaman",
+      "tagline": "Pelayanan Dokter Gigi Ramah, Teliti, dan Nyaman di Pakualaman Yogyakarta",
       "logo": "/images/logos/candraloka.svg",
       "colors": {
         "primary": "#1e60d5",
         "navy": "#0e204d"
       },
       "contact": {
-        "phone": "0857-2920-6161",
-        "whatsapp": "6285729206161",
-        "email": "kontak@saydental.com",
-        "address": "Maguwoharjo, Kec. Depok, Kabupaten Sleman, D.I. Yogyakarta 55282",
-        "mapUrl": "https://maps.google.com/?q=SAY+Dental+Care+Maguwoharjo+Jogja",
-        "mapEmbedUrl": "https://maps.google.com/maps?q=SAY+Dental+Care+Maguwoharjo+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        "phone": "0857-9985-5772",
+        "whatsapp": "6285799855772",
+        "email": "kontak@drgrochmani.com",
+        "address": "Jl. Purwanggan No.12, Purwokinanti, Pakualaman, Kota Yogyakarta 55166",
+        "mapUrl": "https://maps.google.com/?q=Praktek+Dokter+Gigi+Drg+Rochmani+Indrati+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Praktek+Dokter+Gigi+Drg+Rochmani+Indrati+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
     }
   }
