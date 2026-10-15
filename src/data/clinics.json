@@ -240,6 +240,106 @@
         "mapUrl": "https://maps.google.com/?q=drg+Dedy+setyo+prayogo+Salatiga",
         "mapEmbedUrl": "https://maps.google.com/maps?q=drg+Dedy+setyo+prayogo+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "hedda-dental": {
+      "slug": "hedda-dental",
+      "name": "Klinik Gigi HDC (Hedda Dental Care)",
+      "shortName": "Hedda Dental",
+      "subName": "HDC Dental Care Temanggung",
+      "tagline": "Klinik Gigi Modern, Ramah, dan Nyaman untuk Senyum Sehat Keluarga Anda di Temanggung",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0821-3791-1140",
+        "whatsapp": "6282137911140",
+        "email": "kontak@heddadentalcare.com",
+        "address": "Jl. Teminabuan No. 3, Temanggung Lor, Kec. Temanggung, Kabupaten Temanggung 56213",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+HDC+Hedda+Dental+Care+Temanggung",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+HDC+Hedda+Dental+Care+Temanggung&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "ea-dental": {
+      "slug": "ea-dental",
+      "name": "EA Dental Care",
+      "shortName": "EA Dental",
+      "subName": "by drg. Innis",
+      "tagline": "Praktek Dokter Gigi Ramah, Nyaman, dan Terpercaya di Kowangan Temanggung",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0822-2034-5558",
+        "whatsapp": "6282220345558",
+        "email": "kontak@eadentalcare.com",
+        "address": "Jl. Gerilya No. 51, Argasari, Kowangan, Kec. Temanggung, Kabupaten Temanggung 56218",
+        "mapUrl": "https://maps.google.com/?q=EA+Dental+Care+Temanggung",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=EA+Dental+Care+Temanggung&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "denticious-dental": {
+      "slug": "denticious-dental",
+      "name": "Denticious Dental Care",
+      "shortName": "Denticious",
+      "subName": "by drg. Nindhy Marchelia",
+      "tagline": "Where Beautiful Smiles Begin - Perawatan Gigi Estetik dan Modern di Purworejo",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0857-1357-3713",
+        "whatsapp": "6285713573713",
+        "email": "kontak@denticiousdental.com",
+        "address": "Jl. Ring Road Utara, Dusun IV, Lugosobo, Kec. Gebang, Kabupaten Purworejo 54191",
+        "mapUrl": "https://maps.google.com/?q=Denticious+Dental+Purworejo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Denticious+Dental+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dentalook-purworejo": {
+      "slug": "dentalook-purworejo",
+      "name": "DENTALOOK Praktek Dokter Gigi",
+      "shortName": "DENTALOOK",
+      "subName": "by drg. Yulfa Shinta Dewi",
+      "tagline": "Praktek Dokter Gigi Ramah Anak & Keluarga dengan Pelayanan Presisi di Purworejo",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-2298-6161",
+        "whatsapp": "6281222986161",
+        "email": "kontak@dentalookpurworejo.com",
+        "address": "Gg. Masjid An Nur, Brengkelan, Tegalmalang, Kec. Purworejo, Kabupaten Purworejo 54111",
+        "mapUrl": "https://maps.google.com/?q=DENTALOOK+Purworejo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=DENTALOOK+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "tjk-dental": {
+      "slug": "tjk-dental",
+      "name": "Klinik Gigi TJK",
+      "shortName": "TJK Dental",
+      "subName": "by drg. Riski Nindya Sari",
+      "tagline": "Pilihan Terpercaya Perawatan Gigi dan Mulut Profesional di Purworejo",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0811-2581-951",
+        "whatsapp": "628112581951",
+        "email": "kontak@tjkdental.com",
+        "address": "Jl. Pramuka No. 50, Tegalmalang, Kec. Purworejo, Kabupaten Purworejo 54151",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+TJK+Purworejo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+TJK+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
