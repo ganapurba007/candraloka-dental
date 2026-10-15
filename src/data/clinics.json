@@ -301,44 +301,24 @@
         "mapEmbedUrl": "https://maps.google.com/maps?q=Denticious+Dental+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
     },
-    "dentalook-purworejo": {
-      "slug": "dentalook-purworejo",
-      "name": "DENTALOOK Praktek Dokter Gigi",
-      "shortName": "DENTALOOK",
-      "subName": "by drg. Yulfa Shinta Dewi",
-      "tagline": "Praktek Dokter Gigi Ramah Anak & Keluarga dengan Pelayanan Presisi di Purworejo",
+    "esthetic-dental-kutoarjo": {
+      "slug": "esthetic-dental-kutoarjo",
+      "name": "Esthetic Dental Center Kutoarjo",
+      "shortName": "Esthetic Dental",
+      "subName": "drg. Stefanus Kuntjoro & drg. Nanik Gianti, Sp.KG",
+      "tagline": "Pelayanan Dokter Gigi Spesialis & Perawatan Estetik Berpengalaman di Kutoarjo",
       "logo": "/images/logos/candraloka.svg",
       "colors": {
         "primary": "#1e60d5",
         "navy": "#0e204d"
       },
       "contact": {
-        "phone": "0812-2298-6161",
-        "whatsapp": "6281222986161",
-        "email": "kontak@dentalookpurworejo.com",
-        "address": "Gg. Masjid An Nur, Brengkelan, Tegalmalang, Kec. Purworejo, Kabupaten Purworejo 54111",
-        "mapUrl": "https://maps.google.com/?q=DENTALOOK+Purworejo",
-        "mapEmbedUrl": "https://maps.google.com/maps?q=DENTALOOK+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      }
-    },
-    "tjk-dental": {
-      "slug": "tjk-dental",
-      "name": "Klinik Gigi TJK",
-      "shortName": "TJK Dental",
-      "subName": "by drg. Riski Nindya Sari",
-      "tagline": "Pilihan Terpercaya Perawatan Gigi dan Mulut Profesional di Purworejo",
-      "logo": "/images/logos/candraloka.svg",
-      "colors": {
-        "primary": "#1e60d5",
-        "navy": "#0e204d"
-      },
-      "contact": {
-        "phone": "0811-2581-951",
-        "whatsapp": "628112581951",
-        "email": "kontak@tjkdental.com",
-        "address": "Jl. Pramuka No. 50, Tegalmalang, Kec. Purworejo, Kabupaten Purworejo 54151",
-        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+TJK+Purworejo",
-        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+TJK+Purworejo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        "phone": "0898-7006-161",
+        "whatsapp": "628987006161",
+        "email": "kontak@estheticdentalkutoarjo.com",
+        "address": "Jl. Letjen MT. Haryono No. 95, Kembang Arum, Kutoarjo, Kabupaten Purworejo 54212",
+        "mapUrl": "https://maps.google.com/?q=Esthetic+Dental+Center+Kutoarjo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Esthetic+Dental+Center+Kutoarjo&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
     }
   }
