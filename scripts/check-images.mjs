@@ -53,11 +53,18 @@ async function checkImages() {
   }
 
   for (const imgPath of imagePaths) {
-    // 1. Must be .webp (unless svg/ico favicon/logo)
-    if (!imgPath.endsWith('.webp')) {
-      if (!imgPath.endsWith('.svg') && !imgPath.endsWith('.ico')) {
-        errors.push(`Image path '${imgPath}' must be .webp format as per PRD §12.1`)
+    // 1. Logos & icons (exempt from content 3-variant WebP rule as per PRD §12.1)
+    if (imgPath.startsWith('/images/logos/') || imgPath.endsWith('.svg') || imgPath.endsWith('.ico')) {
+      const fullPath = path.join(PUBLIC_DIR, imgPath)
+      if (!fs.existsSync(fullPath)) {
+        errors.push(`Logo or icon file does not exist: ${imgPath}`)
       }
+      continue
+    }
+
+    // 2. Must be .webp for content images
+    if (!imgPath.endsWith('.webp')) {
+      errors.push(`Image path '${imgPath}' must be .webp format as per PRD §12.1`)
       continue
     }
 

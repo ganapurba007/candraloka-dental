@@ -47,7 +47,7 @@
       "shortName": "Nindya",
       "subName": "Dental Care",
       "tagline": "Praktek Dokter Gigi Ramah, Nyaman, dan Terpercaya di Condongcatur Sleman",
-      "logo": "/images/logos/nindya-dental.svg",
+      "logo": "/images/logos/nindya-dental.jpeg",
       "colors": {
         "primary": "#0284c7",
         "navy": "#0c4a6e"
@@ -67,10 +67,10 @@
       "shortName": "Oktavie Denta",
       "subName": "Cabang Godean",
       "tagline": "Klinik Perawatan Gigi & Estetika Senyum Modern di Area Godean Sleman",
-      "logo": "/images/logos/oktavie-denta.svg",
+      "logo": "/images/logos/oktavie-denta.jpg",
       "colors": {
-        "primary": "#be185d",
-        "navy": "#500724"
+        "primary": "#330C38",
+        "navy": "#EDD1F1"
       },
       "contact": {
         "phone": "0822-6655-6161",
@@ -87,10 +87,10 @@
       "shortName": "Oktavie Denta",
       "subName": "Cabang Bantul",
       "tagline": "Pilihan Utama Perawatan Gigi Keluarga & Behel Nyaman di Bantul Yogyakarta",
-      "logo": "/images/logos/oktavie-denta.svg",
+      "logo": "/images/logos/oktavie-denta.jpeg",
       "colors": {
-        "primary": "#e11d48",
-        "navy": "#4c0519"
+        "primary": "#330C38",
+        "navy": "#EDD1F1"
       },
       "contact": {
         "phone": "0813-7722-6161",
@@ -107,10 +107,10 @@
       "shortName": "drg. Asrofi",
       "subName": "Praktik Dokter Gigi",
       "tagline": "Pelayanan Kesehatan Gigi Profesional, Ramah, dan Berpengalaman di Temanggung",
-      "logo": "/images/logos/drg-asrofi.svg",
+      "logo": "/images/logos/drg-asrofi.jpeg",
       "colors": {
-        "primary": "#0f766e",
-        "navy": "#042f2e"
+        "primary": "#014455",
+        "navy": "#013460"
       },
       "contact": {
         "phone": "0852-2620-3465",
