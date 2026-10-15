@@ -67,7 +67,7 @@
       "shortName": "Oktavie Denta",
       "subName": "Cabang Godean",
       "tagline": "Klinik Perawatan Gigi & Estetika Senyum Modern di Area Godean Sleman",
-      "logo": "/images/logos/oktavie-denta.jpg",
+      "logo": "/images/logos/oktavie-denta.jpeg",
       "colors": {
         "primary": "#1e60d5",
         "navy": "#0e204d"
@@ -139,6 +139,106 @@
         "address": "Kota Salatiga, Jawa Tengah 50711",
         "mapUrl": "https://maps.google.com/?q=Smile+Dental+Care+Salatiga",
         "mapEmbedUrl": "https://maps.google.com/maps?q=Smile+Dental+Care+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dental-setia": {
+      "slug": "dental-setia",
+      "name": "Klinik Gigi Dental Setia",
+      "shortName": "Dental Setia",
+      "subName": "by drg. Sastya Fitri",
+      "tagline": "Praktek Dokter Gigi Ramah, Nyaman, dan Berpengalaman di Tingkir Salatiga",
+      "logo": "/images/logos/dental-setia.jpeg",
+      "colors": {
+        "primary": "#0d9488",
+        "navy": "#134e4a"
+      },
+      "contact": {
+        "phone": "0882-3348-9021",
+        "whatsapp": "6288233489021",
+        "email": "kontak@dentalsetia.com",
+        "address": "Jl. Payaman, RT 01/RW 04, Barukan, Kec. Tingkir, Kota Salatiga, Jawa Tengah 50711",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+Dental+Setia+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+Dental+Setia+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "marsha-dental": {
+      "slug": "marsha-dental",
+      "name": "Marsha Dental Care",
+      "shortName": "Marsha Dental",
+      "subName": "drg. Marshanti Emmadita, Sp.Ort",
+      "tagline": "Praktek Bersama Dokter Gigi & Spesialis Orthodonti Modern di Salatiga",
+      "logo": "/images/logos/marsha-dental.jpeg",
+      "colors": {
+        "primary": "#9333ea",
+        "navy": "#4a044e"
+      },
+      "contact": {
+        "phone": "0838-4282-3502",
+        "whatsapp": "6283842823502",
+        "email": "kontak@marshadental.com",
+        "address": "Perumahan Wahid Blok E No. 5, Kutowinangun Kidul, Kec. Tingkir, Kota Salatiga 50742",
+        "mapUrl": "https://maps.google.com/?q=Marsha+Dental+Care+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Marsha+Dental+Care+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "osmaro-dental": {
+      "slug": "osmaro-dental",
+      "name": "Osmaro Dental Care",
+      "shortName": "Osmaro Dental",
+      "subName": "by drg. Ervyanti Audri Anwar",
+      "tagline": "Praktek Bersama Dokter Gigi Terpercaya & Nyaman untuk Keluarga di Salatiga",
+      "logo": "/images/logos/osmaro-dental.jpeg",
+      "colors": {
+        "primary": "#ea580c",
+        "navy": "#7c2d12"
+      },
+      "contact": {
+        "phone": "0895-3668-03535",
+        "whatsapp": "62895366803535",
+        "email": "kontak@osmarodental.com",
+        "address": "Jl. Argo Boga No. 10, Ledok, Kec. Argomulyo, Kota Salatiga 50732",
+        "mapUrl": "https://maps.google.com/?q=Osmaro+Dental+Care+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Osmaro+Dental+Care+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dala-dental": {
+      "slug": "dala-dental",
+      "name": "DALA Dental Care",
+      "shortName": "DALA Dental",
+      "subName": "Praktek Dokter Gigi",
+      "tagline": "Layanan Pemeriksaan & Perawatan Gigi Profesional di Argomulyo Salatiga",
+      "logo": "/images/logos/dala-dental.jpeg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#075985"
+      },
+      "contact": {
+        "phone": "0877-5269-3304",
+        "whatsapp": "6287752693304",
+        "email": "kontak@daladental.com",
+        "address": "Jl. Merbabu, Noborejo, Kec. Argomulyo, Kota Salatiga 50736",
+        "mapUrl": "https://maps.google.com/?q=DALA+Dental+Care+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=DALA+Dental+Care+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "drg-dedy": {
+      "slug": "drg-dedy",
+      "name": "Praktik drg. Dedy Setyo Prayogo",
+      "shortName": "drg. Dedy Setyo",
+      "subName": "Praktik Dokter Gigi",
+      "tagline": "Pelayanan Gigi Presisi, Bersahabat, dan Terpercaya di Sidomukti Salatiga",
+      "logo": "/images/logos/drg-dedy.svg",
+      "colors": {
+        "primary": "#15803d",
+        "navy": "#14532d"
+      },
+      "contact": {
+        "phone": "0813-3635-0172",
+        "whatsapp": "6281336350172",
+        "email": "kontak@drgdedysetyo.com",
+        "address": "Jl. Hasanudin No. 82, Mangunsari, Kec. Sidomukti, Kota Salatiga 50721",
+        "mapUrl": "https://maps.google.com/?q=drg+Dedy+setyo+prayogo+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=drg+Dedy+setyo+prayogo+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
     }
   }
