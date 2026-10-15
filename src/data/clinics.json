@@ -420,6 +420,106 @@
         "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+drg+Siti+Fatimah+Bantul",
         "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+drg+Siti+Fatimah+Bantul&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "damai-dental": {
+      "slug": "damai-dental",
+      "name": "Damai Dental Care",
+      "shortName": "Damai Dental",
+      "subName": "Klinik Gigi Ngaglik Sleman",
+      "tagline": "Klinik Gigi Modern, Ramah, dan Nyaman untuk Senyum Sehat Keluarga Anda di Sleman",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-1119-6161",
+        "whatsapp": "6281211196161",
+        "email": "kontak@damaidental.com",
+        "address": "Jl. Damai No.98, Banteng, Sinduharjo, Kec. Ngaglik, Kabupaten Sleman, D.I. Yogyakarta 55581",
+        "mapUrl": "https://maps.google.com/?q=Damai+Dental+Care+Ngaglik",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Damai+Dental+Care+Ngaglik&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "khalifa-dental": {
+      "slug": "khalifa-dental",
+      "name": "Khalifa Dental",
+      "shortName": "Khalifa Dental",
+      "subName": "Praktek Dokter Gigi Godean",
+      "tagline": "Praktek Gigi Ortodonti & Estetika Terpercaya di Godean Yogyakarta",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0881-2662-917",
+        "whatsapp": "628812662917",
+        "email": "kontak@khalifadental.com",
+        "address": "Jl. Kramat, Sidoarum, Kec. Godean, Kabupaten Sleman, D.I. Yogyakarta 55264",
+        "mapUrl": "https://maps.google.com/?q=Khalifa+Dental+Godean+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Khalifa+Dental+Godean+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "wafi-dental": {
+      "slug": "wafi-dental",
+      "name": "Wafi Dental Care",
+      "shortName": "Wafi Dental",
+      "subName": "Klinik Gigi Condongcatur",
+      "tagline": "Klinik Gigi Ramah dan Bersahabat di Condongcatur Sleman",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-2828-6161",
+        "whatsapp": "6281228286161",
+        "email": "kontak@wafidental.com",
+        "address": "Jl. Raya Condongcatur, Kec. Depok, Kabupaten Sleman, D.I. Yogyakarta 55281",
+        "mapUrl": "https://maps.google.com/?q=Wafi+Dental+Care+Condongcatur",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Wafi+Dental+Care+Condongcatur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "belle-dente": {
+      "slug": "belle-dente",
+      "name": "Belle Dente Dental Clinic",
+      "shortName": "Belle Dente",
+      "subName": "Klinik Gigi Yogyakarta",
+      "tagline": "Perawatan Gigi Personal dan Estetika Modern di Yogyakarta",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-2766-9191",
+        "whatsapp": "6281227669191",
+        "email": "kontak@belledente.com",
+        "address": "Kota Yogyakarta, D.I. Yogyakarta",
+        "mapUrl": "https://maps.google.com/?q=Belle+Dente+Dental+Clinic+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Belle+Dente+Dental+Clinic+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "say-dental": {
+      "slug": "say-dental",
+      "name": "SAY Dental Care",
+      "shortName": "SAY Dental",
+      "subName": "Klinik Gigi Maguwoharjo",
+      "tagline": "Perawatan Gigi Profesional dan Nyaman di Maguwoharjo Sleman",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0857-2920-6161",
+        "whatsapp": "6285729206161",
+        "email": "kontak@saydental.com",
+        "address": "Maguwoharjo, Kec. Depok, Kabupaten Sleman, D.I. Yogyakarta 55282",
+        "mapUrl": "https://maps.google.com/?q=SAY+Dental+Care+Maguwoharjo+Jogja",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=SAY+Dental+Care+Maguwoharjo+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
