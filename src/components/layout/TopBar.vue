@@ -33,7 +33,7 @@ const waUrl = computed(() => {
         </div>
         <div class="flex items-center space-x-1.5">
           <Clock class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Senin – Sabtu: 09:00 – 20:00 {{ clinicData.timezoneLabel }}</span>
+          <span>Senin – Sabtu: 09:00 – 20:00 {{ clinic.timezoneLabel }}</span>
         </div>
       </div>
 
