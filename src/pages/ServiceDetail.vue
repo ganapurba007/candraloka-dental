@@ -21,23 +21,25 @@ import NotFound from '@/pages/NotFound.vue'
 import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import { formatDuration } from '@/lib/format'
 
 const route = useRoute()
+const { clinic, clinicLink } = useClinic()
 const service = computed(() => servicesData.find((s) => s.slug === route.params.slug))
 
 useHead({
   title: computed(() =>
     service.value
-      ? `${service.value.name} | Candraloka Dental Care`
-      : 'Layanan Tidak Ditemukan | Candraloka Dental Care'
+      ? `${service.value.name} | ${clinic.value.name}`
+      : `Layanan Tidak Ditemukan | ${clinic.value.name}`
   ),
   meta: [
     {
       name: 'description',
       content: computed(() =>
         service.value
-          ? `${service.value.summary} Estimasi durasi: ${service.value.durationMinutes} menit di Candraloka Dental Care.`
+          ? `${service.value.summary} Estimasi durasi: ${service.value.durationMinutes} menit di ${clinic.value.name}.`
           : 'Layanan gigi yang Anda cari tidak ditemukan.'
       ),
     },
@@ -67,9 +69,9 @@ const relatedServices = computed(() => {
 const waConsultUrl = computed(() => {
   if (!service.value) return '#'
   const text = encodeURIComponent(
-    `Halo Candraloka Dental Care, saya ingin konsultasi mengenai layanan ${service.value.name}.`
+    `Halo ${clinic.value.name}, saya ingin konsultasi mengenai layanan ${service.value.name}.`
   )
-  return `https://wa.me/${clinicData.contact.whatsapp}?text=${text}`
+  return `https://wa.me/${clinic.value.contact.whatsapp}?text=${text}`
 })
 </script>
 

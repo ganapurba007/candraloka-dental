@@ -1,16 +1,21 @@
 <script setup>
 import { computed } from 'vue'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import { Phone, MapPin, Clock } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
-const phone = clinicData.contact.phone
-const whatsapp = clinicData.contact.whatsapp
-const addressShort = 'Kebayoran Baru, Jakarta Selatan'
+const { clinic } = useClinic()
+
+const phone = computed(() => clinic.value.contact.phone)
+const whatsapp = computed(() => clinic.value.contact.whatsapp)
+const addressShort = computed(() => {
+  const parts = (clinic.value.contact.address || '').split(',')
+  return parts.length >= 2 ? parts.slice(-2).join(',').trim() : clinic.value.contact.address
+})
 
 const waUrl = computed(() => {
-  const text = encodeURIComponent('Halo Candraloka Dental Care, saya ingin bertanya mengenai layanan klinik.')
-  return `https://wa.me/${whatsapp}?text=${text}`
+  const text = encodeURIComponent(`Halo ${clinic.value.name}, saya ingin bertanya mengenai layanan klinik.`)
+  return `https://wa.me/${whatsapp.value}?text=${text}`
 })
 </script>
 
@@ -18,7 +23,6 @@ const waUrl = computed(() => {
   <aside
     aria-label="Informasi Kontak Cepat"
     class="hidden md:block bg-navy-900 text-slate-300 text-xs py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-800"
-    style="background-color: #0e204d;"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Left side: Location and Hours -->

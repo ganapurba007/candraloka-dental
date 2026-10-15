@@ -15,21 +15,20 @@ import {
 } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
+import { useClinic } from '@/composables/useClinic'
 import homeData from '@/data/home.json'
 
+const { clinic, clinicLink } = useClinic()
 const { hero } = homeData
 
 const slides = computed(() => {
-  if (hero.slides && hero.slides.length > 0) {
-    return hero.slides
-  }
-  return [
+  const baseList = hero.slides && hero.slides.length > 0 ? hero.slides : [
     {
       id: 1,
       layout: 'left',
-      badge: 'Klinik Gigi Ramah & Terpercaya di Jakarta',
-      title: 'Candraloka',
-      subtitle: 'Dental Care Jakarta',
+      badge: 'Klinik Gigi Ramah & Terpercaya',
+      title: clinic.value.shortName,
+      subtitle: `${clinic.value.subName} Modern`,
       headline: hero.headline,
       description: hero.subheadline,
       image: hero.image,
@@ -40,6 +39,23 @@ const slides = computed(() => {
       highlights: ['Jadwal Bebas Antre', '5 Dokter Spesialis', 'Sterilisasi Medis Tinggi'],
     },
   ]
+
+  return baseList.map((s) => {
+    if (s.id === 1) {
+      return {
+        ...s,
+        title: clinic.value.shortName,
+        subtitle: `${clinic.value.subName} Modern`,
+        ctaTo: clinicLink(s.ctaTo),
+        secondaryTo: clinicLink(s.secondaryTo),
+      }
+    }
+    return {
+      ...s,
+      ctaTo: clinicLink(s.ctaTo),
+      secondaryTo: clinicLink(s.secondaryTo),
+    }
+  })
 })
 
 const currentSlideIndex = ref(0)

@@ -1,15 +1,15 @@
 <script setup>
 import { computed } from 'vue'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
-const waNumber = clinicData.contact.whatsapp
+const { clinic } = useClinic()
 
 const waUrl = computed(() => {
   const message = encodeURIComponent(
-    'Halo Candraloka Dental Care, saya ingin bertanya informasi mengenai konsultasi dan jadwal dokter.'
+    `Halo ${clinic.value.name}, saya ingin bertanya informasi mengenai konsultasi dan jadwal dokter.`
   )
-  return `https://wa.me/${waNumber}?text=${message}`
+  return `https://wa.me/${clinic.value.contact.whatsapp}?text=${message}`
 })
 </script>
 

@@ -5,9 +5,10 @@ import { CheckCircle2, ArrowRight, Award, Users, Stethoscope } from 'lucide-vue-
 import Button from '@/components/ui/Button.vue'
 import { useInView } from '@/composables/useInView'
 import { useCountUp } from '@/composables/useCountUp'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import homeData from '@/data/home.json'
 
+const { clinic, clinicLink } = useClinic()
 const { targetRef, isInView } = useInView({ threshold: 0.2, once: true })
 
 // 3 Stats with CountUp animations (FR-2.3)
@@ -35,7 +36,7 @@ const points = [
           <div class="space-y-3">
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary-600">
               <span class="w-1.5 h-1.5 rounded-full bg-primary-600"></span>
-              <span>Tentang Candraloka Dental Care</span>
+              <span>Tentang {{ clinic.name }}</span>
             </div>
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
               Kenyamanan dan Kesehatan Senyum Keluarga adalah Prioritas Kami
@@ -43,7 +44,7 @@ const points = [
           </div>
 
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            {{ clinicData.about.story }}
+            {{ clinic.about.story }}
           </p>
 
           <ul class="space-y-3 pt-1">
@@ -54,7 +55,7 @@ const points = [
           </ul>
 
           <div class="pt-2">
-            <Button to="/tentang" variant="outline" size="md" class="rounded-full font-semibold hover:border-primary-400">
+            <Button :to="clinicLink('/tentang')" variant="outline" size="md" class="rounded-full font-semibold hover:border-primary-400">
               <span>Kenali Kami Lebih Dekat</span>
               <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
@@ -76,7 +77,7 @@ const points = [
                 Tahun Melayani
               </p>
               <p class="text-xs text-slate-500 mt-0.5">
-                Sejak {{ clinicData.establishedYear }} untuk keluarga Indonesia
+                Sejak {{ clinic.establishedYear }} untuk keluarga Indonesia
               </p>
             </div>
           </div>

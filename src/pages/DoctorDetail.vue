@@ -22,25 +22,27 @@ import NotFound from '@/pages/NotFound.vue'
 import doctorsData from '@/data/doctors.json'
 import servicesData from '@/data/services.json'
 import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import { getDayName, formatDate, formatTimeRangeWib } from '@/lib/format'
 import { isDoctorPracticingOn } from '@/lib/schedule'
 import { getIsoDayOfWeek, toIsoDateString } from '@/lib/time'
 
 const route = useRoute()
+const { clinic, clinicLink } = useClinic()
 const doctor = computed(() => doctorsData.find((d) => d.slug === route.params.slug))
 
 useHead({
   title: computed(() =>
     doctor.value
-      ? `${doctor.value.name} | Candraloka Dental Care`
-      : 'Dokter Tidak Ditemukan | Candraloka Dental Care'
+      ? `${doctor.value.name} | ${clinic.value.name}`
+      : `Dokter Tidak Ditemukan | ${clinic.value.name}`
   ),
   meta: [
     {
       name: 'description',
       content: computed(() =>
         doctor.value
-          ? `Profil ${doctor.value.name}, ${doctor.value.specialty} dengan ${doctor.value.experienceYears} tahun pengalaman di Candraloka Dental Care.`
+          ? `Profil ${doctor.value.name}, ${doctor.value.specialty} dengan ${doctor.value.experienceYears} tahun pengalaman di ${clinic.value.name}.`
           : 'Profil dokter yang Anda cari tidak ditemukan.'
       ),
     },
@@ -84,9 +86,9 @@ const isPracticingToday = computed(() => {
 const waDoctorUrl = computed(() => {
   if (!doctor.value) return '#'
   const text = encodeURIComponent(
-    `Halo Candraloka Dental Care, saya ingin membuat janji dengan ${doctor.value.name}.`
+    `Halo ${clinic.value.name}, saya ingin membuat janji dengan ${doctor.value.name}.`
   )
-  return `https://wa.me/${clinicData.contact.whatsapp}?text=${text}`
+  return `https://wa.me/${clinic.value.contact.whatsapp}?text=${text}`
 })
 </script>
 

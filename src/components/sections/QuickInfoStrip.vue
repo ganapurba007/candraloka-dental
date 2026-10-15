@@ -1,21 +1,26 @@
 <script setup>
 import { computed } from 'vue'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { Clock, Phone, MapPin } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
+const { clinic } = useClinic()
+
 const clinicStatus = computed(() => {
-  return getClinicOpenStatus(clinicData.operatingHours, new Date())
+  return getClinicOpenStatus(clinic.value.operatingHours, new Date())
 })
 
-const phone = clinicData.contact.phone
-const whatsapp = clinicData.contact.whatsapp
-const address = 'Kebayoran Baru, Jakarta Selatan'
+const phone = computed(() => clinic.value.contact.phone)
+const whatsapp = computed(() => clinic.value.contact.whatsapp)
+const address = computed(() => {
+  const parts = (clinic.value.contact.address || '').split(',')
+  return parts.length >= 2 ? parts.slice(-2).join(',').trim() : clinic.value.contact.address
+})
 
 const waUrl = computed(() => {
-  const text = encodeURIComponent('Halo Candraloka Dental Care, saya ingin bertanya jam praktek klinik.')
-  return `https://wa.me/${whatsapp}?text=${text}`
+  const text = encodeURIComponent(`Halo ${clinic.value.name}, saya ingin bertanya jam praktek klinik.`)
+  return `https://wa.me/${whatsapp.value}?text=${text}`
 })
 </script>
 
@@ -98,7 +103,7 @@ const waUrl = computed(() => {
             {{ address }}
           </p>
           <a
-            :href="clinicData.contact.mapUrl"
+            :href="clinic.contact.mapUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-block text-xs font-semibold text-primary-600 hover:text-primary-700 hover:underline pt-0.5"

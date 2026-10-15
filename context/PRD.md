@@ -216,6 +216,12 @@ Fase dianggap selesai jika:
 
 > Log semua perubahan/penambahan yang menyimpang dari rencana awal di §3/§4. Setiap entri baru ditambah di ATAS (paling baru di paling atas).
 
+### 2026-10-14 — Fitur Mockup Klien Dinamis & Whitelabel Branding Terpusat
+**Berubah dari:** Profil klinik, logo, dan palet warna Sapphire Blue di-hardcode ke tema Candraloka Dental Care tunggal.
+**Jadi:** Sistem mockup multi-tenant dinamis berbasis Single Source of Truth (`src/data/clinics.json`). URL slug (mis. `/surya-dental` atau `/candraloka-dental/surya-dental`) atau query param `?client=...` secara otomatis menyesuaikan nama klinik, logo vektor SVG, nomor WhatsApp/telepon, alamat, dan meng-inject palet warna Tailwind dinamis (skala 50–950) via CSS variables tanpa merombak komponen UI.
+**Alasan:** Kebutuhan presentasi mockup instan kepada calon klien klinik gigi dengan identitas visual dan kontak mereka masing-masing dalam satu codebase portofolio.
+**FR baru (jika ada):** FR-1.9 — Multi-tenant / Dynamic Client Mockup Routing & Whitelabel Styling
+
 ### 2026-10-12 — Fase 0: Optimasi sejak awal dan gambar WebP
 **Berubah dari:** Format WebP dan target Lighthouse hanya disebut di §5, dan audit performa baru dilakukan di Fase 9 (§6, §8.3)
 **Jadi:** Optimasi menjadi syarat tiap fase. Pipeline gambar WebP (`sharp`), komponen `ResponsiveImage`, font self-host, dan pemeriksa `check:images` disiapkan di Fase 0; anggaran dan aturannya ada di §12. Peta di FR-3.7 menjadi gambar WebP statis atau iframe yang dimuat saat diklik.

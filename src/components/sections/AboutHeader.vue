@@ -1,10 +1,13 @@
 <script setup>
 import { ArrowRight } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
+import { useClinic } from '@/composables/useClinic'
+
+const { clinic, clinicLink } = useClinic()
 </script>
 
 <template>
-  <section class="relative bg-navy-950 text-white py-10 sm:py-12 lg:py-14 overflow-hidden" style="background-color: #081434;">
+  <section class="relative bg-navy-950 text-white py-10 sm:py-12 lg:py-14 overflow-hidden">
     <!-- Photographic Background & Balanced Sapphire Blue Tint -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <img
@@ -22,7 +25,7 @@ import Button from '@/components/ui/Button.vue'
     <!-- Center-aligned Header Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
       <span class="text-xs font-bold uppercase tracking-wider text-blue-200 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-        Tentang Candraloka Dental Care
+        Tentang {{ clinic.name }}
       </span>
 
       <!-- Heading -->
@@ -38,7 +41,7 @@ import Button from '@/components/ui/Button.vue'
       <!-- Action Buttons -->
       <div class="flex flex-wrap items-center justify-center gap-3.5 pt-1.5">
         <Button
-          to="/dokter"
+          :to="clinicLink('/dokter')"
           variant="white"
           size="md"
           class="font-semibold shadow-lg hover:-translate-y-0.5 transition-all text-navy-950"
@@ -48,7 +51,7 @@ import Button from '@/components/ui/Button.vue'
         </Button>
 
         <Button
-          to="/layanan"
+          :to="clinicLink('/layanan')"
           variant="ghost"
           size="md"
           class="font-semibold !text-white border-2 border-white/80 bg-white/10 hover:!bg-white hover:!text-navy-950 shadow-lg hover:-translate-y-0.5 transition-all"

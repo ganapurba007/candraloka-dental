@@ -3,9 +3,11 @@ import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { Menu, X, CalendarCheck } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
+import { useClinic } from '@/composables/useClinic'
 
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
+const { clinic, clinicLink } = useClinic()
 
 const navLinks = [
   { name: 'Beranda', to: '/' },
@@ -58,10 +60,11 @@ onUnmounted(() => {
 })
 
 function isActive(to) {
+  const target = clinicLink(to)
   if (to === '/') {
-    return route.path === '/'
+    return route.path === target || route.path === '/'
   }
-  return route.path.startsWith(to)
+  return route.path === target || route.path.startsWith(target)
 }
 </script>
 
@@ -71,23 +74,23 @@ function isActive(to) {
       <div class="flex items-center justify-between h-16 sm:h-20">
         <!-- Brand Logo -->
         <RouterLink
-          to="/"
+          :to="clinicLink('/')"
           class="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg p-1"
-          aria-label="Candraloka Dental Care Beranda"
+          :aria-label="`${clinic.name} Beranda`"
         >
           <img
-            src="/icon.jpg"
-            alt="Candraloka Dental Care"
+            :src="clinic.logo"
+            :alt="clinic.name"
             class="w-10 h-10 object-contain rounded-xl shadow-xs group-hover:scale-105 transition-transform"
             width="40"
             height="40"
           />
           <div class="flex flex-col">
             <span class="text-base sm:text-lg font-bold text-navy-900 tracking-tight leading-tight group-hover:text-primary-600 transition-colors">
-              Candraloka
+              {{ clinic.shortName }}
             </span>
             <span class="text-[10px] sm:text-xs font-medium text-slate-500 uppercase tracking-widest leading-none">
-              Dental Care
+              {{ clinic.subName }}
             </span>
           </div>
         </RouterLink>
@@ -97,7 +100,7 @@ function isActive(to) {
           <RouterLink
             v-for="link in navLinks"
             :key="link.to"
-            :to="link.to"
+            :to="clinicLink(link.to)"
             :class="[
               'px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150',
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
@@ -114,7 +117,7 @@ function isActive(to) {
         <!-- Desktop CTA Button -->
         <div class="hidden md:flex items-center">
           <Button
-            to="/reservasi"
+            :to="clinicLink('/reservasi')"
             variant="primary"
             size="md"
             class="shadow-sm font-semibold"
@@ -175,7 +178,7 @@ function isActive(to) {
           <RouterLink
             v-for="link in navLinks"
             :key="link.to"
-            :to="link.to"
+            :to="clinicLink(link.to)"
             :class="[
               'px-4 py-3 rounded-xl text-base font-medium transition-colors flex items-center justify-between',
               'min-h-[44px]',
@@ -192,7 +195,7 @@ function isActive(to) {
 
           <div class="pt-3 mt-2 border-t border-slate-100">
             <Button
-              to="/reservasi"
+              :to="clinicLink('/reservasi')"
               variant="primary"
               size="lg"
               class="w-full justify-center text-center font-semibold"

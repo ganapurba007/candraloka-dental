@@ -2,9 +2,30 @@
 
 > Sumber kebenaran struktur data SAAT INI. Proyek ini TIDAK memakai database: "tabel" di bawah adalah struktur file JSON di `src/data/`, ditambah objek runtime yang hidup di browser. Berbeda dari §4 PRD.md yang cuma rencana awal — file ini WAJIB selalu sinkron dengan file JSON dan skema Zod aktual di kode. Update file ini di sesi yang sama setiap kali struktur data berubah.
 
-**Terakhir disinkronkan:** 2026-10-12 — Fase 4 (Tentang selesai)
+**Terakhir disinkronkan:** 2026-10-14 — Amandemen Mockup Klien Dinamis & Whitelabel Branding
 
-**Konvensi umum:** tanggal memakai format ISO `YYYY-MM-DD`; jam memakai `HH:mm` (24 jam); semua waktu diartikan dalam WIB (UTC+7). Nomor hari memakai ISO: 1 = Senin … 7 = Minggu. Path gambar relatif terhadap `/public`, selalu berekstensi `.webp`, dan menunjuk varian terbesar (1280 px); varian `-768` dan `-480` diturunkan oleh komponen `ResponsiveImage` (PRD §12.1). Rasio gambar ditentukan komponen pemakai, bukan JSON.
+**Konvensi umum:** tanggal memakai format ISO `YYYY-MM-DD`; jam memakai `HH:mm` (24 jam); semua waktu diartikan dalam WIB (UTC+7). Nomor hari memakai ISO: 1 = Senin … 7 = Minggu. Path gambar relatif terhadap `/public`, berekstensi `.webp` atau `.svg` (vektor logo). Rasio gambar ditentukan komponen pemakai, bukan JSON.
+
+---
+
+## clinics.json (koleksi multi-tenant mockup)
+Single source of truth untuk konfigurasi preset mockup klinik client.
+| Field | Tipe | Constraint | Keterangan |
+|---|---|---|---|
+| default | string | wajib | Slug klinik default (mis. `"candraloka"`) |
+| clinics | object | wajib | Peta key-value `slug: ClinicProfile` |
+
+**ClinicProfile**
+| Field | Tipe | Constraint | Keterangan |
+|---|---|---|---|
+| slug | string | wajib | Slug rute unik (mis. `"surya-dental"`) |
+| name | string | wajib | Nama lengkap klinik (mis. `"Surya Dental Care"`) |
+| shortName | string | wajib | Nama ringkas brand (mis. `"Surya"`) |
+| subName | string | wajib | Sub-judul brand (mis. `"Dental Care"`) |
+| tagline | string | opsional | Slogan klinik (fallback ke `clinic.json`) |
+| logo | string | wajib | Path gambar logo (`.svg` atau `.webp`) |
+| colors | object | wajib | `{ primary: "#hex", navy: "#hex" }` palet warna brand |
+| contact | object | opsional | Override `{ phone, whatsapp, email, address, mapUrl, mapEmbedUrl }` |
 
 ---
 

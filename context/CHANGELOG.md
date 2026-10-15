@@ -14,6 +14,22 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fitur Mockup Klien Dinamis & Whitelabel Branding Terpusat (2026-10-14)
+**FR terkait:** Amandemen Client Mockup System
+**Yang dikerjakan:**
+- **Single Source of Truth (`src/data/clinics.json`):** Menyediakan satu file terpusat untuk mendaftarkan dan mengubah identitas klinik/klien (nama, logo, warna primer/navy, kontak) tanpa perlu menyentuh komponen UI.
+- **Dinamisasi Tema Tailwind via CSS Variables:** Mengonfigurasi `tailwind.config.js` dan `src/assets/main.css` agar warna `primary` dan `navy` (skala 50–950) reaktif berbasis CSS Variables saat runtime dengan fallback solid Candraloka Blue (`#1e60d5`).
+- **Generator Palet Murni (`src/lib/theme.js`):** Fungsi murni untuk menghasilkan 11 tingkatan shade warna otomatis hanya dari 1 kode heksadesimal warna klien.
+- **Penyelesai Profil Klinik (`src/lib/clinics.js`):** Fungsi murni untuk mengambil dan memadukan preset klien dengan data dasar (`clinic.json`), termasuk fallback otomatis jika slug tidak terdaftar.
+- **State Management & Context Navigation (`src/composables/useClinic.js`):** Mengelola status klinik aktif, menginjeksi CSS variables ke DOM, serta menyediakan `clinicLink()` agar navigasi internal tetap berada dalam rute klien.
+- **Integrasi Routing Dinamis (`src/router/index.js`):** Mendukung rute prefix `/:clinicSlug/...`, rute subpath `/candraloka-dental/:clinicSlug/...`, serta query param `?client=...`.
+- **Dinamisasi Komponen Global:** Menghubungkan Navbar, Footer, TopBar, Floating WhatsApp, Quick Info Strip, Home Hero, Home About, About Header, About Story, dan Booking WhatsApp generator ke `useClinic`.
+- **Aset Logo SVG Vektor:** Membuat logo SVG tajam dan ringan untuk Candraloka (`/images/logos/candraloka.svg`) dan Surya Dental (`/images/logos/surya-dental.svg`).
+- **Unit Testing Lengkap:** Menambahkan unit test `theme.spec.js`, `clinics.spec.js`, dan `useClinic.spec.js`. Total test meningkat dari 93 menjadi 106 passed (100% pass).
+**File yang berubah:** src/data/clinics.json, src/lib/theme.js, src/lib/clinics.js, src/composables/useClinic.js, src/router/index.js, tailwind.config.js, src/assets/main.css, public/images/logos/candraloka.svg, public/images/logos/surya-dental.svg, src/components/layout/Navbar.vue, src/components/layout/Footer.vue, src/components/layout/TopBar.vue, src/components/layout/FloatingWhatsapp.vue, src/components/sections/QuickInfoStrip.vue, src/components/sections/HomeHero.vue, src/components/sections/HomeAboutBrief.vue, src/components/sections/AboutHeader.vue, src/components/sections/AboutStory.vue, src/components/sections/AboutLocation.vue, src/pages/Booking.vue, src/pages/ServiceDetail.vue, src/pages/DoctorDetail.vue, src/lib/whatsapp.js, context/SCHEMA.md, context/CHANGELOG.md, AGENTS.md
+**Test:** 106 passed / 106 total
+**Docs updated:** SCHEMA.md, CHANGELOG.md, AGENTS.md, PRD.md
+
 ## Pembersihan File & Komponen Tidak Digunakan (2026-10-13)
 **FR terkait:** -
 **Yang dikerjakan:**

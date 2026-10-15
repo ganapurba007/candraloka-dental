@@ -8,24 +8,26 @@ import {
   ExternalLink,
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { getDayName } from '@/lib/format'
 
+const { clinic } = useClinic()
+
 const openStatus = computed(() => {
-  return getClinicOpenStatus(clinicData.operatingHours, new Date())
+  return getClinicOpenStatus(clinic.value.operatingHours, new Date())
 })
 
 const daysList = computed(() => {
   // 1 = Senin to 7 = Minggu
   const result = []
   for (let day = 1; day <= 7; day++) {
-    const found = clinicData.operatingHours.find((h) => h.day === day)
+    const found = clinic.value.operatingHours.find((h) => h.day === day)
     result.push({
       day,
       dayName: getDayName(day),
       isOpen: !!found,
-      hours: found ? `${found.open} – ${found.close} ${clinicData.timezoneLabel}` : 'Tutup',
+      hours: found ? `${found.open} – ${found.close} ${clinic.value.timezoneLabel}` : 'Tutup',
     })
   }
   return result
@@ -78,7 +80,7 @@ const daysList = computed(() => {
               <div class="space-y-1">
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Alamat</h4>
                 <p class="text-sm font-medium text-navy-900 leading-relaxed">
-                  {{ clinicData.contact.address }}
+                  {{ clinic.contact.address }}
                 </p>
               </div>
             </div>
@@ -86,18 +88,18 @@ const daysList = computed(() => {
             <!-- Phone & WhatsApp -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <a
-                :href="`tel:${clinicData.contact.phone}`"
+                :href="`tel:${clinic.contact.phone}`"
                 class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-primary-400 text-slate-700 hover:text-primary-700 transition-colors"
               >
                 <Phone class="w-4 h-4 text-primary-600" aria-hidden="true" />
                 <div class="text-xs">
                   <p class="text-slate-400">Telepon</p>
-                  <p class="font-semibold text-navy-900">{{ clinicData.contact.phone }}</p>
+                  <p class="font-semibold text-navy-900">{{ clinic.contact.phone }}</p>
                 </div>
               </a>
 
               <a
-                :href="`https://wa.me/${clinicData.contact.whatsapp}`"
+                :href="`https://wa.me/${clinic.contact.whatsapp}`"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 hover:border-primary-400 text-slate-700 hover:text-primary-700 transition-colors"
@@ -105,7 +107,7 @@ const daysList = computed(() => {
                 <IconWhatsApp class="w-4 h-4 text-emerald-600" />
                 <div class="text-xs">
                   <p class="text-slate-400">WhatsApp</p>
-                  <p class="font-semibold text-navy-900">+{{ clinicData.contact.whatsapp }}</p>
+                  <p class="font-semibold text-navy-900">+{{ clinic.contact.whatsapp }}</p>
                 </div>
               </a>
             </div>
@@ -131,7 +133,7 @@ const daysList = computed(() => {
           <!-- Directions Action Button -->
           <div class="pt-2">
             <a
-              :href="clinicData.contact.mapUrl"
+              :href="clinic.contact.mapUrl"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center w-full px-7 py-3.5 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 gap-2"
@@ -149,8 +151,8 @@ const daysList = computed(() => {
             <!-- Map Container -->
             <div class="relative w-full h-[400px] sm:h-[480px] lg:h-full lg:min-h-[580px] overflow-hidden bg-slate-100">
               <iframe
-                title="Peta Lokasi Candraloka Dental Care"
-                :src="clinicData.contact.mapEmbedUrl"
+                :title="`Peta Lokasi ${clinic.name}`"
+                :src="clinic.contact.mapEmbedUrl"
                 width="100%"
                 height="100%"
                 class="border-0 w-full h-full min-h-[400px] sm:min-h-[480px] lg:min-h-[580px]"
@@ -164,10 +166,10 @@ const daysList = computed(() => {
             <div class="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
               <span class="flex items-center gap-1.5 font-medium text-navy-900">
                 <MapPin class="w-4 h-4 text-primary-600 flex-shrink-0" aria-hidden="true" />
-                {{ clinicData.contact.address }}
+                {{ clinic.contact.address }}
               </span>
               <a
-                :href="clinicData.contact.mapUrl"
+                :href="clinic.contact.mapUrl"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-semibold underline underline-offset-2 flex-shrink-0"

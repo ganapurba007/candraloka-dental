@@ -18,6 +18,7 @@ import { formatDate, formatTimeWib } from './format'
  */
 export function buildReservationWhatsApp({
   clinicWhatsapp,
+  clinicName = 'Candraloka Dental Care',
   code,
   patient,
   serviceName,
@@ -30,7 +31,7 @@ export function buildReservationWhatsApp({
   const statusPatient = patient.isNewPatient ? 'Pasien Baru' : 'Pasien Lama'
 
   const lines = [
-    'Halo Candraloka Dental Care,',
+    `Halo ${clinicName},`,
     '',
     'Saya ingin mengonfirmasi jadwal reservasi online yang telah saya buat melalui website:',
     '',

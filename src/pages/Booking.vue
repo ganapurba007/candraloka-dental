@@ -28,6 +28,7 @@ import { useToast } from '@/composables/useToast'
 import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import {
   formatDate,
   formatDateShort,
@@ -427,11 +428,14 @@ async function submitReservation() {
   window.scrollTo({ top: 100, behavior: 'smooth' })
 }
 
+const { clinic } = useClinic()
+
 // WhatsApp Confirmation Builder (FR-7.8)
 const waConfirmationData = computed(() => {
   if (!confirmedReservation.value) return { text: '', url: '#' }
   return buildReservationWhatsApp({
-    clinicWhatsapp: clinicData.contact.whatsapp,
+    clinicWhatsapp: clinic.value.contact.whatsapp,
+    clinicName: clinic.value.name,
     code: confirmedReservation.value.code,
     patient: confirmedReservation.value.patient,
     serviceName: confirmedReservation.value.serviceName,
@@ -1213,7 +1217,7 @@ function handleClearStoredReservations() {
                       class="w-4 h-4 rounded text-primary-600 focus:ring-primary-500 mt-0.5"
                     />
                     <span class="text-xs text-slate-600 leading-relaxed">
-                      Saya menyetujui bahwa data yang saya masukkan digunakan oleh pihak Candraloka Dental Care untuk keperluan penjadwalan dan konfirmasi janji temu.
+                      Saya menyetujui bahwa data yang saya masukkan digunakan oleh pihak {{ clinic.name }} untuk keperluan penjadwalan dan konfirmasi janji temu.
                     </span>
                   </label>
                   <p v-if="formErrors.agreement" class="text-xs text-rose-600 font-medium">

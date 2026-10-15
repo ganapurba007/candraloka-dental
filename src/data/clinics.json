@@ -1,0 +1,145 @@
+{
+  "default": "candraloka",
+  "clinics": {
+    "candraloka": {
+      "slug": "candraloka",
+      "name": "Candraloka Dental Care",
+      "shortName": "Candraloka",
+      "subName": "Dental Care",
+      "tagline": "Klinik Gigi Modern, Ramah, dan Nyaman untuk Senyum Sehat Keluarga Anda",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "021-5550192",
+        "whatsapp": "6281234567890",
+        "email": "kontak@candralokadental.id",
+        "address": "Jl. Candraloka Raya No. 45, Kebayoran Baru, Jakarta Selatan 12180",
+        "mapUrl": "https://maps.google.com/?q=Jl.+Candraloka+Raya+No.+45+Jakarta",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Jl.+Candraloka+Raya+No.+45,+Kebayoran+Baru,+Jakarta+Selatan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "surya-dental": {
+      "slug": "surya-dental",
+      "name": "Surya Dental Care",
+      "shortName": "Surya",
+      "subName": "Dental Care",
+      "tagline": "Perawatan Gigi Modern, Presisi, dan Nyaman untuk Senyum Sehat Anda",
+      "logo": "/images/logos/surya-dental.svg",
+      "colors": {
+        "primary": "#059669",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "021-77889900",
+        "whatsapp": "6281987654321",
+        "email": "kontak@suryadental.id",
+        "address": "Jl. Surya Kencana No. 12, Kebon Jeruk, Jakarta Barat 11530",
+        "mapUrl": "https://maps.google.com/?q=Jl.+Surya+Kencana+No.+12+Jakarta",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Jl.+Surya+Kencana+No.+12,+Jakarta+Barat&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "nindya-dental": {
+      "slug": "nindya-dental",
+      "name": "Nindya Dental Care",
+      "shortName": "Nindya",
+      "subName": "Dental Care",
+      "tagline": "Praktek Dokter Gigi Ramah, Nyaman, dan Terpercaya di Condongcatur Sleman",
+      "logo": "/images/logos/nindya-dental.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0c4a6e"
+      },
+      "contact": {
+        "phone": "0851-1136-6161",
+        "whatsapp": "6285111366161",
+        "email": "kontak@nindyadental.com",
+        "address": "Jl. Wahid Hasyim, Dabag, Condongcatur, Kec. Depok, Kabupaten Sleman, D.I. Yogyakarta 55281",
+        "mapUrl": "https://maps.google.com/?q=Nindya+Dental+Care+Jl+Wahid+Hasyim+Condongcatur+Sleman",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Nindya+Dental+Care+Condongcatur+Sleman&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "oktavie-denta-godean": {
+      "slug": "oktavie-denta-godean",
+      "name": "Oktavie Denta Jl. Godean",
+      "shortName": "Oktavie Denta",
+      "subName": "Cabang Godean",
+      "tagline": "Klinik Perawatan Gigi & Estetika Senyum Modern di Area Godean Sleman",
+      "logo": "/images/logos/oktavie-denta.svg",
+      "colors": {
+        "primary": "#be185d",
+        "navy": "#500724"
+      },
+      "contact": {
+        "phone": "0822-6655-6161",
+        "whatsapp": "6282266556161",
+        "email": "kontak@oktaviedenta.com",
+        "address": "Ruko Jl. Godean Km 6.5, Sidoarum, Kec. Godean, Kabupaten Sleman, D.I. Yogyakarta 55264",
+        "mapUrl": "https://maps.google.com/?q=Oktavie+Denta+Jl+Godean+Sleman",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Oktavie+Denta+Godean+Sleman&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "oktavie-denta-bantul": {
+      "slug": "oktavie-denta-bantul",
+      "name": "Oktavie Denta Jl. Parangtritis",
+      "shortName": "Oktavie Denta",
+      "subName": "Cabang Bantul",
+      "tagline": "Pilihan Utama Perawatan Gigi Keluarga & Behel Nyaman di Bantul Yogyakarta",
+      "logo": "/images/logos/oktavie-denta.svg",
+      "colors": {
+        "primary": "#e11d48",
+        "navy": "#4c0519"
+      },
+      "contact": {
+        "phone": "0813-7722-6161",
+        "whatsapp": "6281377226161",
+        "email": "bantul@oktaviedenta.com",
+        "address": "Jl. Parangtritis Km 6.5, Sewon, Kabupaten Bantul, D.I. Yogyakarta 55188",
+        "mapUrl": "https://maps.google.com/?q=Oktavie+Denta+Jl+Parangtritis+Bantul",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Oktavie+Denta+Parangtritis+Bantul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "drg-asrofi": {
+      "slug": "drg-asrofi",
+      "name": "Praktik drg. Asrofi",
+      "shortName": "drg. Asrofi",
+      "subName": "Praktik Dokter Gigi",
+      "tagline": "Pelayanan Kesehatan Gigi Profesional, Ramah, dan Berpengalaman di Temanggung",
+      "logo": "/images/logos/drg-asrofi.svg",
+      "colors": {
+        "primary": "#0f766e",
+        "navy": "#042f2e"
+      },
+      "contact": {
+        "phone": "0852-2620-3465",
+        "whatsapp": "6285226203465",
+        "email": "kontak@drgasrofi.com",
+        "address": "Jl. Kadar No. 4 RT 6 RW 6, Skip Baru, Sidorejo, Kec. Temanggung, Kabupaten Temanggung 56221",
+        "mapUrl": "https://maps.google.com/?q=drg.+Asrofi+Sidorejo+Temanggung",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=drg.+Asrofi+Sidorejo+Temanggung&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "smile-dental": {
+      "slug": "smile-dental",
+      "name": "Smile Dental Care",
+      "shortName": "Smile Dental",
+      "subName": "Dental Care Salatiga",
+      "tagline": "Solusi Senyum Sehat, Bersih, dan Percaya Diri untuk Masyarakat Salatiga",
+      "logo": "/images/logos/smile-dental.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#1e3a8a"
+      },
+      "contact": {
+        "phone": "0822-6886-6161",
+        "whatsapp": "6282268866161",
+        "email": "kontak@smiledentalsalatiga.com",
+        "address": "Kota Salatiga, Jawa Tengah 50711",
+        "mapUrl": "https://maps.google.com/?q=Smile+Dental+Care+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Smile+Dental+Care+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    }
+  }
+}

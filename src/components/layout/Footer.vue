@@ -1,16 +1,16 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import servicesData from '@/data/services.json'
 import {
   MapPin,
   Phone,
-  Mail,
   Clock,
   ExternalLink,
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
+const { clinic, clinicLink } = useClinic()
 const currentYear = new Date().getFullYear()
 const featuredServices = servicesData.slice(0, 5)
 
@@ -26,7 +26,7 @@ const navLinks = [
 </script>
 
 <template>
-  <footer class="bg-navy-900 text-slate-300 pt-16 pb-12 border-t border-navy-800" style="background-color: #0e204d;">
+  <footer class="bg-navy-900 text-slate-300 pt-16 pb-12 border-t border-navy-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Main Footer Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
@@ -34,26 +34,26 @@ const navLinks = [
         <div class="space-y-4">
           <div class="flex items-center gap-2.5">
             <img
-              src="/icon.jpg"
-              alt="Candraloka Dental Care"
+              :src="clinic.logo"
+              :alt="clinic.name"
               class="w-9 h-9 object-contain rounded-xl shadow-xs"
               width="36"
               height="36"
             />
             <div>
               <span class="text-lg font-bold text-white tracking-tight leading-none block">
-                Candraloka
+                {{ clinic.shortName }}
               </span>
               <span class="text-[10px] font-medium text-slate-400 uppercase tracking-widest leading-none block mt-0.5">
-                Dental Care
+                {{ clinic.subName }}
               </span>
             </div>
           </div>
           <p class="text-sm text-slate-400 leading-relaxed">
-            {{ clinicData.tagline }}
+            {{ clinic.tagline }}
           </p>
           <div class="text-xs text-slate-500 pt-1">
-            Melayani senyum sehat keluarga Indonesia sejak {{ clinicData.establishedYear }}.
+            Melayani senyum sehat keluarga Indonesia sejak {{ clinic.establishedYear }}.
           </div>
         </div>
 
@@ -65,7 +65,7 @@ const navLinks = [
           <ul class="space-y-2.5 text-sm">
             <li v-for="link in navLinks" :key="link.to">
               <RouterLink
-                :to="link.to"
+                :to="clinicLink(link.to)"
                 class="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:text-primary-400 inline-block py-0.5"
               >
                 {{ link.name }}
@@ -82,7 +82,7 @@ const navLinks = [
           <ul class="space-y-2.5 text-sm">
             <li v-for="srv in featuredServices" :key="srv.id">
               <RouterLink
-                :to="`/layanan/${srv.slug}`"
+                :to="clinicLink(`/layanan/${srv.slug}`)"
                 class="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:text-primary-400 inline-block py-0.5"
               >
                 {{ srv.name }}
@@ -99,34 +99,34 @@ const navLinks = [
           <ul class="space-y-3 text-sm text-slate-400">
             <li class="flex items-start gap-2.5">
               <MapPin class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
-              <span>{{ clinicData.contact.address }}</span>
+              <span>{{ clinic.contact.address }}</span>
             </li>
             <li class="flex items-center gap-2.5">
               <Phone class="w-4 h-4 text-primary-400 flex-shrink-0" aria-hidden="true" />
-              <a :href="`tel:${clinicData.contact.phone}`" class="hover:text-white transition-colors">
-                {{ clinicData.contact.phone }}
+              <a :href="`tel:${clinic.contact.phone}`" class="hover:text-white transition-colors">
+                {{ clinic.contact.phone }}
               </a>
             </li>
             <li class="flex items-center gap-2.5">
               <IconWhatsApp class="w-4 h-4 text-emerald-400 flex-shrink-0" />
               <a
-                :href="`https://wa.me/${clinicData.contact.whatsapp}`"
+                :href="`https://wa.me/${clinic.contact.whatsapp}`"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="hover:text-white transition-colors"
               >
-                +{{ clinicData.contact.whatsapp }}
+                +{{ clinic.contact.whatsapp }}
               </a>
             </li>
             <li class="flex items-center gap-2.5">
               <Clock class="w-4 h-4 text-primary-400 flex-shrink-0" aria-hidden="true" />
-              <span>Senin – Sabtu: 09:00 – 20:00 {{ clinicData.timezoneLabel }}</span>
+              <span>Senin – Sabtu: 09:00 – 20:00 {{ clinic.timezoneLabel }}</span>
             </li>
           </ul>
 
           <div class="pt-2">
             <a
-              :href="clinicData.contact.mapUrl"
+              :href="clinic.contact.mapUrl"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold transition-colors border border-navy-700/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px]"
@@ -140,7 +140,7 @@ const navLinks = [
 
       <!-- Bottom Bar -->
       <div class="pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© {{ currentYear }} Candraloka Dental Care. All rights reserved.</p>
+        <p>© {{ currentYear }} {{ clinic.name }}. All rights reserved.</p>
       </div>
     </div>
   </footer>

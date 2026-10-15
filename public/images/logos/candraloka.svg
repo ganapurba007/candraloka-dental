@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="candraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e60d5" />
+      <stop offset="100%" stop-color="#0e204d" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#93c5fd" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="100" height="100" rx="24" fill="url(#candraGrad)" />
+  <!-- Stylized Tooth Shape -->
+  <path d="M50 22C38 22 28 29 28 42C28 53 34 62 38 74C40 80 43 82 46 82C49 82 50 75 50 71C50 75 51 82 54 82C57 82 60 80 62 74C66 62 72 53 72 42C72 29 62 22 50 22Z" fill="#FFFFFF" fill-opacity="0.95" />
+  <!-- Sparkle Accent -->
+  <path d="M50 32C50 37 54 41 59 41C54 41 50 45 50 50C50 45 46 41 41 41C46 41 50 37 50 32Z" fill="url(#accentGrad)" />
+  <!-- Smile Arc -->
+  <path d="M38 52C42 57 47 59 50 59C53 59 58 57 62 52" stroke="#1e60d5" stroke-width="3" stroke-linecap="round" />
+</svg>

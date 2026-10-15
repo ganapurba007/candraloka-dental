@@ -1,10 +1,12 @@
 <script setup>
+import { computed } from 'vue'
 import { CheckCircle2, Award, Heart, Target, ArrowRight, ShieldCheck } from 'lucide-vue-next'
-import clinicData from '@/data/clinic.json'
+import { useClinic } from '@/composables/useClinic'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import Button from '@/components/ui/Button.vue'
 
-const about = clinicData.about
+const { clinic, clinicLink } = useClinic()
+const about = computed(() => clinic.value.about)
 </script>
 
 <template>
@@ -66,7 +68,7 @@ const about = clinicData.about
           <!-- Medcity Action Row: Meet Our Doctors + Signature / Trust Badge -->
           <div class="flex flex-wrap items-center gap-6 pt-4 border-t border-slate-100">
             <Button
-              to="/dokter"
+              :to="clinicLink('/dokter')"
               variant="primary"
               size="md"
               class="font-semibold shadow-md hover:-translate-y-0.5 transition-all"
@@ -81,7 +83,7 @@ const about = clinicData.about
               </div>
               <div>
                 <p class="text-xs font-bold text-navy-900">Standar Medis Higienis</p>
-                <p class="text-[11px] text-slate-500">Berdiri Sejak {{ clinicData.establishedYear }}</p>
+                <p class="text-[11px] text-slate-500">Berdiri Sejak {{ clinic.establishedYear }}</p>
               </div>
             </div>
           </div>
@@ -92,7 +94,7 @@ const about = clinicData.about
           <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
             <ResponsiveImage
               :src="about.image"
-              alt="Profil Klinik Candraloka Dental Care"
+              :alt="`Profil Klinik ${clinic.name}`"
               aspect-ratio="16/11"
               img-class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -105,8 +107,8 @@ const about = clinicData.about
                 </div>
                 <div>
                   <p class="text-xs font-extrabold uppercase tracking-wider text-primary-700">Dedikasi Portofolio Medis</p>
-                  <p class="text-sm font-bold text-navy-900">Candraloka Dental Care</p>
-                  <p class="text-[11px] text-slate-500">Kebayoran Baru, Jakarta Selatan</p>
+                  <p class="text-sm font-bold text-navy-900">{{ clinic.name }}</p>
+                  <p class="text-[11px] text-slate-500">{{ clinic.contact.address }}</p>
                 </div>
               </div>
             </div>
