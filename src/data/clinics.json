@@ -753,6 +753,101 @@
         "mapUrl": "https://maps.google.com/?q=2+Downey+Dr+Como+WA+6152",
         "mapEmbedUrl": "https://maps.google.com/maps?q=2+Downey+Dr+Como+WA+6152&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "gosnells-dental-centre": {
+      "name": "Gosnells Dental Centre",
+      "address": "2/16 Fremantle Rd, Gosnells WA 6110",
+      "phone": "(08) 9398 4786",
+      "dentist": "Dr. Tasneem Abu Obeida",
+      "title": "BDS, Cosmetic & General Dentistry",
+      "specialties": [
+        "General Dental",
+        "Dental Implants",
+        "Cosmetic Dental",
+        "Kids Dentistry",
+        "Crowns & Bridges",
+        "Emergency Dental"
+      ],
+      "hours": "Mon - Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Gosnells Trusted Family Dental Practice for Over 25 Years",
+      "heroSubtitle": "Gentle, modern and comprehensive dental care for patients of all ages across Gosnells.",
+      "customColor": "#0891b2"
+    },
+    "spearwood-dental-centre": {
+      "name": "Spearwood Dental Centre",
+      "address": "161 Rockingham Rd, Hamilton Hill WA 6163",
+      "phone": "(08) 9434 2829",
+      "dentist": "Dr. Laura Grace Miller",
+      "title": "BDS, Dental Surgeon",
+      "specialties": [
+        "Check-ups & Cleans",
+        "Preventative Dentistry",
+        "Crown & Bridge",
+        "Dental Implants",
+        "Dentures & Aged Care",
+        "Emergency Extractions"
+      ],
+      "hours": "Mon, Wed: 8:30 AM - 6:30 PM | Tue, Thu, Fri: 8:30 AM - 5:00 PM | Sat: 8:30 AM - 1:00 PM",
+      "heroTagline": "Family-Focused Dental Care in Cockburn Since 1980",
+      "heroSubtitle": "Delivering comfortable, high-quality preventative and restorative dental treatments.",
+      "customColor": "#2563eb"
+    },
+    "high-road-dental": {
+      "name": "High Road Dental & Implant Centre",
+      "address": "3/183 High Rd, Willetton WA 6155",
+      "phone": "(08) 9457 9496",
+      "dentist": "Dr. Leonard Tan",
+      "title": "BDS (Singapore), MSc Oral Implantol",
+      "specialties": [
+        "Invisalign Elite",
+        "Oral Implants",
+        "Same Day Crowns",
+        "Root Canal Treatment",
+        "Children Dentistry",
+        "Professional Clean"
+      ],
+      "hours": "Mon - Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Evidence-Based, Quality Dentistry in Willetton",
+      "heroSubtitle": "Advanced implantology and cosmetic smile transformations backed by scientific precision.",
+      "customColor": "#0d9488"
+    },
+    "al-dental-inglewood": {
+      "name": "A.L. Dental Inglewood",
+      "address": "822 Beaufort St, Inglewood WA 6052",
+      "phone": "(08) 9271 9911",
+      "dentist": "Dr. A.L. Team",
+      "title": "BDS, General & Cosmetic Dentist",
+      "specialties": [
+        "Dental Emergencies",
+        "Teeth Whitening Zoom",
+        "Sleep Apnea Appliances",
+        "Invisalign",
+        "Facial Cosmetics",
+        "General Care"
+      ],
+      "hours": "Mon, Wed: 8:30 AM - 5:00 PM | Tue: 8:30 AM - 3:00 PM | Thu: 11:00 AM - 7:00 PM | Fri: 9:00 AM - 2:00 PM",
+      "heroTagline": "Friendly, Gentle Dental Care in Inglewood",
+      "heroSubtitle": "Over 12 years creating healthy smiles along Beaufort Street with dedicated patient-first comfort.",
+      "customColor": "#4f46e5"
+    },
+    "toothbuds-paediatric": {
+      "name": "Toothbuds Paediatric Dentistry",
+      "address": "43 Wellington Rd, Morley WA 6062",
+      "phone": "(08) 6155 9899",
+      "dentist": "Dr. Rod Jennings",
+      "title": "BDSc (Hons), DClinDent, MRACDS (Paed Dent)",
+      "specialties": [
+        "Paediatric Dentistry",
+        "Special Needs Dental Care",
+        "Infant Oral Health",
+        "Early Orthodontics",
+        "Trauma Management",
+        "Sedation Dentistry"
+      ],
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Specialist Paediatric Dental Care in Perth",
+      "heroSubtitle": "Helping kids grow up smiling with gentle, expert care in a warm and friendly environment.",
+      "customColor": "#f59e0b"
     }
   }
 }
