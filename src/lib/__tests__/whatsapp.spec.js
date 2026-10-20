@@ -14,7 +14,7 @@ describe('whatsapp.js', () => {
         isNewPatient: true,
       },
       serviceName: 'Penambalan Gigi Komposit',
-      doctorName: 'drg. Andi Pratama, Sp.KG',
+      doctorName: 'Dr. Andi Pratama, DDS, MS',
       date: '2026-10-15',
       time: '10:00',
     }
@@ -25,7 +25,7 @@ describe('whatsapp.js', () => {
     expect(text).toContain('Budi Santoso')
     expect(text).toContain('Pasien Baru')
     expect(text).toContain('Penambalan Gigi Komposit')
-    expect(text).toContain('drg. Andi Pratama, Sp.KG')
+    expect(text).toContain('Dr. Andi Pratama, DDS, MS')
     expect(text).toContain('10:00 WIB')
     expect(text).toContain('Gigi geraham belakang ngilu')
 

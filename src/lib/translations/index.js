@@ -116,14 +116,44 @@ export function getServicePreparation(service, locale = 'id') {
 
 /**
  * Doctor name formatting for bilingual display.
- * In English, Indonesian prefix 'drg.' (dokter gigi) is localized to 'Dr.'.
+ * Standardized to international post-nominal credential standards (e.g., 'Dr. Andi Pratama, DDS, MS').
  */
-export function getDoctorName(name, locale = 'id') {
+const doctorInternationalNames = {
+  'drg. Andi Pratama, Sp.KG': 'Dr. Andi Pratama, DDS, MS',
+  'Dr. Andi Pratama, Sp.KG': 'Dr. Andi Pratama, DDS, MS',
+  'drg. Andi Pratama': 'Dr. Andi Pratama, DDS, MS',
+  'Dr. Andi Pratama': 'Dr. Andi Pratama, DDS, MS',
+  'Dr. Andi Pratama, DDS, MS': 'Dr. Andi Pratama, DDS, MS',
+
+  'drg. Nadia Safira, Sp.KGA': 'Dr. Nadia Safira, DDS, MS',
+  'Dr. Nadia Safira, Sp.KGA': 'Dr. Nadia Safira, DDS, MS',
+  'drg. Nadia Safira': 'Dr. Nadia Safira, DDS, MS',
+  'Dr. Nadia Safira': 'Dr. Nadia Safira, DDS, MS',
+  'Dr. Nadia Safira, DDS, MS': 'Dr. Nadia Safira, DDS, MS',
+
+  'drg. Farhan Maulana, Sp.Ort': 'Dr. Farhan Maulana, DDS, MS',
+  'Dr. Farhan Maulana, Sp.Ort': 'Dr. Farhan Maulana, DDS, MS',
+  'drg. Farhan Maulana': 'Dr. Farhan Maulana, DDS, MS',
+  'Dr. Farhan Maulana': 'Dr. Farhan Maulana, DDS, MS',
+  'Dr. Farhan Maulana, DDS, MS': 'Dr. Farhan Maulana, DDS, MS',
+
+  'drg. Citra Lestari': 'Dr. Citra Lestari, DDS',
+  'Dr. Citra Lestari': 'Dr. Citra Lestari, DDS',
+  'Dr. Citra Lestari, DDS': 'Dr. Citra Lestari, DDS',
+
+  'drg. Bambang Wicaksono, Sp.BM': 'Dr. Bambang Wicaksono, DDS, OMFS',
+  'Dr. Bambang Wicaksono, Sp.BM': 'Dr. Bambang Wicaksono, DDS, OMFS',
+  'drg. Bambang Wicaksono': 'Dr. Bambang Wicaksono, DDS, OMFS',
+  'Dr. Bambang Wicaksono': 'Dr. Bambang Wicaksono, DDS, OMFS',
+  'Dr. Bambang Wicaksono, DDS, OMFS': 'Dr. Bambang Wicaksono, DDS, OMFS',
+}
+
+export function getDoctorName(name, _locale = 'id') {
   if (!name) return ''
-  if (locale === 'en') {
-    return name.replace(/^drg\.\s*/i, 'Dr. ')
+  if (doctorInternationalNames[name]) {
+    return doctorInternationalNames[name]
   }
-  return name
+  return name.replace(/^drg\.\s*/i, 'Dr. ')
 }
 
 /**
@@ -168,33 +198,58 @@ export function getDoctorSpecialty(specialty, locale = 'id') {
  * Degree mapping for doctor education credentials.
  */
 const degreeTranslations = {
+  'Doctor of Dental Surgery (DDS)': {
+    en: 'Doctor of Dental Surgery (DDS)',
+    id: 'Doctor of Dental Surgery (DDS)',
+  },
+  'Master of Science in Conservative Dentistry & Endodontics (MS)': {
+    en: 'Master of Science in Conservative Dentistry & Endodontics (MS)',
+    id: 'Master of Science in Conservative Dentistry & Endodontics (MS)',
+  },
+  'Master of Science in Pediatric Dentistry (MS)': {
+    en: 'Master of Science in Pediatric Dentistry (MS)',
+    id: 'Master of Science in Pediatric Dentistry (MS)',
+  },
+  'Master of Science in Orthodontics (MS)': {
+    en: 'Master of Science in Orthodontics (MS)',
+    id: 'Master of Science in Orthodontics (MS)',
+  },
+  'Residency in Oral & Maxillofacial Surgery (OMFS)': {
+    en: 'Residency in Oral & Maxillofacial Surgery (OMFS)',
+    id: 'Residency in Oral & Maxillofacial Surgery (OMFS)',
+  },
+  'Bachelor of Dental Surgery (BDS)': {
+    en: 'Bachelor of Dental Surgery (BDS)',
+    id: 'Bachelor of Dental Surgery (BDS)',
+  },
+  // Legacy Indonesian degree formats
   'Dokter Gigi (drg.)': {
     en: 'Doctor of Dental Surgery (DDS)',
-    id: 'Dokter Gigi (drg.)',
+    id: 'Doctor of Dental Surgery (DDS)',
   },
   'Spesialis Konservasi Gigi (Sp.KG)': {
-    en: 'Conservative Dentistry Specialist (Sp.KG)',
-    id: 'Spesialis Konservasi Gigi (Sp.KG)',
+    en: 'Master of Science in Conservative Dentistry & Endodontics (MS)',
+    id: 'Master of Science in Conservative Dentistry & Endodontics (MS)',
   },
   'Spesialis Kedokteran Gigi Anak (Sp.KGA)': {
-    en: 'Pediatric Dentistry Specialist (Sp.KGA)',
-    id: 'Spesialis Kedokteran Gigi Anak (Sp.KGA)',
+    en: 'Master of Science in Pediatric Dentistry (MS)',
+    id: 'Master of Science in Pediatric Dentistry (MS)',
   },
   'Spesialis Gigi Anak (Sp.KGA)': {
-    en: 'Pediatric Dentistry Specialist (Sp.KGA)',
-    id: 'Spesialis Gigi Anak (Sp.KGA)',
+    en: 'Master of Science in Pediatric Dentistry (MS)',
+    id: 'Master of Science in Pediatric Dentistry (MS)',
   },
   'Spesialis Ortodonti (Sp.Ort)': {
-    en: 'Orthodontics Specialist (Sp.Ort)',
-    id: 'Spesialis Ortodonti (Sp.Ort)',
+    en: 'Master of Science in Orthodontics (MS)',
+    id: 'Master of Science in Orthodontics (MS)',
   },
   'Spesialis Bedah Mulut (Sp.BM)': {
-    en: 'Oral & Maxillofacial Surgery Specialist (Sp.BM)',
-    id: 'Spesialis Bedah Mulut (Sp.BM)',
+    en: 'Residency in Oral & Maxillofacial Surgery (OMFS)',
+    id: 'Residency in Oral & Maxillofacial Surgery (OMFS)',
   },
   'Sarjana Kedokteran Gigi (S.KG)': {
     en: 'Bachelor of Dental Surgery (BDS)',
-    id: 'Sarjana Kedokteran Gigi (S.KG)',
+    id: 'Bachelor of Dental Surgery (BDS)',
   },
 }
 

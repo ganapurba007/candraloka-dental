@@ -50,8 +50,8 @@ describe('Schedule.vue (FR-6.1 - FR-6.6)', () => {
     const wrapper = createWrapper()
 
     // Doctor rows
-    expect(wrapper.text()).toContain('drg. Andi Pratama, Sp.KG')
-    expect(wrapper.text()).toContain('drg. Farhan Maulana, Sp.Ort')
+    expect(wrapper.text()).toContain('Dr. Andi Pratama, DDS, MS')
+    expect(wrapper.text()).toContain('Dr. Farhan Maulana, DDS, MS')
 
     // Days
     expect(wrapper.text()).toContain('Senin')
@@ -91,7 +91,7 @@ describe('Schedule.vue (FR-6.1 - FR-6.6)', () => {
     // Select Dr. Andi Pratama
     await select.setValue('drg-andi-pratama-sp-kg')
     const tbody = wrapper.find('tbody')
-    expect(tbody.text()).toContain('drg. Andi Pratama, Sp.KG')
-    expect(tbody.text()).not.toContain('drg. Farhan Maulana, Sp.Ort')
+    expect(tbody.text()).toContain('Dr. Andi Pratama, DDS, MS')
+    expect(tbody.text()).not.toContain('Dr. Farhan Maulana, DDS, MS')
   })
 })

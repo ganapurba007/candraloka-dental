@@ -38,7 +38,7 @@ describe('DoctorDetail.vue (FR-5.2, FR-5.3, FR-5.4)', () => {
     const wrapper = createWrapper()
 
     // Doctor basic info
-    expect(wrapper.text()).toContain('drg. Andi Pratama, Sp.KG')
+    expect(wrapper.text()).toContain('Dr. Andi Pratama, DDS, MS')
     expect(wrapper.text()).toContain('Spesialis Konservasi Gigi')
     expect(wrapper.text()).toContain('9 Tahun Pengalaman')
     expect(wrapper.text()).toContain('Bahasa Indonesia')

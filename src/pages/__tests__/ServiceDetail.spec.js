@@ -49,7 +49,7 @@ describe('ServiceDetail.vue (FR-4.2, FR-4.3, FR-4.4, FR-4.5)', () => {
 
     // Assigned doctors (FR-4.2)
     expect(wrapper.text()).toContain('Dokter yang Menangani')
-    expect(wrapper.text()).toContain('drg. Andi Pratama')
+    expect(wrapper.text()).toContain('Dr. Andi Pratama')
 
     // Related services (FR-4.2)
     expect(wrapper.text()).toContain('Layanan Terkait')

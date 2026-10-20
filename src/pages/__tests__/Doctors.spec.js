@@ -34,12 +34,12 @@ describe('Doctors.vue (FR-5.1)', () => {
     const input = wrapper.find('input[type="search"]')
 
     await input.setValue('Andi')
-    expect(wrapper.text()).toContain('drg. Andi Pratama')
-    expect(wrapper.text()).not.toContain('drg. Farhan Maulana')
+    expect(wrapper.text()).toContain('Dr. Andi Pratama, DDS, MS')
+    expect(wrapper.text()).not.toContain('Dr. Farhan Maulana, DDS, MS')
 
     // Clear input
     await input.setValue('')
-    expect(wrapper.text()).toContain('drg. Farhan Maulana')
+    expect(wrapper.text()).toContain('Dr. Farhan Maulana, DDS, MS')
   })
 
   it('filters doctors based on specialty chip', async () => {
@@ -49,8 +49,8 @@ describe('Doctors.vue (FR-5.1)', () => {
     expect(ortoBtn).toBeDefined()
 
     await ortoBtn.trigger('click')
-    expect(wrapper.text()).toContain('drg. Farhan Maulana')
-    expect(wrapper.text()).not.toContain('drg. Nadia Safira')
+    expect(wrapper.text()).toContain('Dr. Farhan Maulana, DDS, MS')
+    expect(wrapper.text()).not.toContain('Dr. Nadia Safira, DDS, MS')
   })
 
   it('shows empty state when no doctors match search query', async () => {

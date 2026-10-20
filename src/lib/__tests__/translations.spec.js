@@ -82,12 +82,16 @@ describe('translations (Pure Translation Engine)', () => {
   })
 
   it('formats doctor names and degrees for English/Indonesian presentation', () => {
-    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'id')).toBe('drg. Andi Pratama, Sp.KG')
-    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'en')).toBe('Dr. Andi Pratama, Sp.KG')
+    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'id')).toBe('Dr. Andi Pratama, DDS, MS')
+    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'en')).toBe('Dr. Andi Pratama, DDS, MS')
+    expect(getDoctorName('Dr. Andi Pratama, DDS, MS', 'en')).toBe('Dr. Andi Pratama, DDS, MS')
 
-    expect(getDoctorDegree('Dokter Gigi (drg.)', 'en')).toBe('Doctor of Dental Surgery (DDS)')
+    expect(getDoctorDegree('Doctor of Dental Surgery (DDS)', 'en')).toBe('Doctor of Dental Surgery (DDS)')
+    expect(getDoctorDegree('Master of Science in Conservative Dentistry & Endodontics (MS)', 'en')).toBe(
+      'Master of Science in Conservative Dentistry & Endodontics (MS)'
+    )
     expect(getDoctorDegree('Spesialis Konservasi Gigi (Sp.KG)', 'en')).toBe(
-      'Conservative Dentistry Specialist (Sp.KG)'
+      'Master of Science in Conservative Dentistry & Endodontics (MS)'
     )
   })
 

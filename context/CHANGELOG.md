@@ -2,6 +2,28 @@
 
 > Riwayat aktif proyek — hanya simpan ~10-15 fase terbaru di sini. Fase lama dipindahkan ke `CHANGELOG-archive.md` (ringkas, jangan copy-paste detail penuh). Entri terbaru selalu di PALING ATAS.
 
+## Standardisasi Gelar Dokter & Riwayat Pendidikan ke Format Internasional (2026-10-20)
+**FR terkait:** FR-5.1, FR-5.2, FR-6.1, FR-7.8 (Standardisasi Gelar Internasional)
+**Yang dikerjakan:**
+- **Standardisasi Gelar Dokter di Seluruh Bahasa (ID & EN):**
+  - Mengubah nama seluruh 5 dokter di `src/data/doctors.json` menggunakan format gelar post-nominal internasional standar:
+    - `Dr. Andi Pratama, DDS, MS` (Endodontics)
+    - `Dr. Nadia Safira, DDS, MS` (Pediatric)
+    - `Dr. Farhan Maulana, DDS, MS` (Orthodontics)
+    - `Dr. Citra Lestari, DDS` (General Dentistry)
+    - `Dr. Bambang Wicaksono, DDS, OMFS` (Oral & Maxillofacial Surgery)
+  - Mengubah seluruh riwayat pendidikan (`education[].degree`) di `src/data/doctors.json` ke gelar internasional (`Doctor of Dental Surgery (DDS)`, `Master of Science in Conservative Dentistry & Endodontics (MS)`, `Master of Science in Pediatric Dentistry (MS)`, `Master of Science in Orthodontics (MS)`, `Residency in Oral & Maxillofacial Surgery (OMFS)`).
+- **Penguatan Translation Engine (`src/lib/translations/index.js`):**
+  - Mengupdate `getDoctorName` agar menormalisasi nama dokter ke format internasional standar baik pada locale `id` maupun `en`.
+  - Mengupdate `degreeTranslations` dan `getDoctorDegree` untuk mendukung seluruh gelar internasional tanpa embel-embel singkatan lokal.
+- **Pembaruan Pengujian Unit:**
+  - Memperbarui assertions di `Schedule.spec.js`, `Doctors.spec.js`, `DoctorDetail.spec.js`, `ServiceDetail.spec.js`, `Home.spec.js`, `Booking.spec.js`, `whatsapp.spec.js`, dan `translations.spec.js`.
+  - Total test: 124 passed / 124 total (28 test suites, 100% lulus).
+  - Validasi build `npm run build` sukses 100% lolos verifikasi gambar WebP.
+**File yang berubah:** src/data/doctors.json, src/lib/translations/index.js, src/lib/__tests__/translations.spec.js, src/lib/__tests__/whatsapp.spec.js, src/pages/__tests__/Schedule.spec.js, src/pages/__tests__/Doctors.spec.js, src/pages/__tests__/DoctorDetail.spec.js, src/pages/__tests__/ServiceDetail.spec.js, src/pages/__tests__/Home.spec.js, src/pages/__tests__/Booking.spec.js, context/CHANGELOG.md, AGENTS.md
+**Test:** 124 passed / 124 total
+**Docs updated:** CHANGELOG.md, AGENTS.md
+
 ## Audit & Lokalisasi Penuh Bahasa Inggris: Layanan, Menu, Form Reservasi, & Komponen (2026-10-20)
 **FR terkait:** FR-1.10 (Penyempurnaan Bilingual ID/EN Menyeluruh)
 **Yang dikerjakan:**

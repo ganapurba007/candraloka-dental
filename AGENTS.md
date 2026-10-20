@@ -8,7 +8,7 @@
 **Stack:** Vue 3 (Vite, Composition API), Vue Router, Tailwind CSS, VeeValidate + Zod, `sharp` (gambar WebP), data JSON lokal (tanpa backend/database/pembayaran), reservasi di `localStorage`, Vitest + Vue Test Utils
 
 ## Status Saat Ini
-- **Fase aktif:** Fitur Bilingual (ID/EN) & Konfigurasi Default Language per Klinik Selesai
+- **Fase aktif:** Standardisasi Gelar Dokter & Kredensial Internasional (DDS, MS, OMFS) Selesai
 - **Test:** 124 passed / 124 total
 - **Sedang dikerjakan:** Proyek selesai & siap dipublikasikan
 - **Update terakhir:** 2026-10-20

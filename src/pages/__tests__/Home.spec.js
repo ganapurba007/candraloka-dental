@@ -39,7 +39,7 @@ describe('Home.vue (FR-2.x)', () => {
 
     // FR-2.6 Featured Doctors
     expect(wrapper.text()).toContain('Dokter Gigi Unggulan')
-    expect(wrapper.text()).toContain('drg. Andi Pratama')
+    expect(wrapper.text()).toContain('Dr. Andi Pratama')
 
     // FR-2.7 Testimonials
     expect(wrapper.text()).toContain('Apa Kata Mereka Tentang Kami')

@@ -106,7 +106,7 @@ describe('Booking.vue (FR-7.1 - FR-7.11)', () => {
     wrapper.vm.confirmedReservation = {
       code: 'CDC-261015-K79A',
       serviceName: 'Pembersihan Karang Gigi (Scaling)',
-      doctorName: 'drg. Andi Pratama, Sp.KG',
+      doctorName: 'Dr. Andi Pratama, DDS, MS',
       date: '2026-10-15',
       time: '09:00',
       durationMinutes: 30,

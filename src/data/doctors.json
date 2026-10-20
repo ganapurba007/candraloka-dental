@@ -2,14 +2,14 @@
   {
     "id": 1,
     "slug": "drg-andi-pratama-sp-kg",
-    "name": "drg. Andi Pratama, Sp.KG",
+    "name": "Dr. Andi Pratama, DDS, MS",
     "specialty": "Spesialis Konservasi Gigi",
     "experienceYears": 9,
     "languages": ["Bahasa Indonesia", "English"],
     "bio": "Dokter gigi spesialis konservasi gigi yang berfokus pada restorasi estetik, perawatan saluran akar mikro, dan pemulihan fungsi gigi alami dengan pendekatan minim trauma.",
     "education": [
-      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Indonesia", "year": 2015 },
-      { "degree": "Spesialis Konservasi Gigi (Sp.KG)", "institution": "Universitas Indonesia", "year": 2019 }
+      { "degree": "Doctor of Dental Surgery (DDS)", "institution": "Universitas Indonesia", "year": 2015 },
+      { "degree": "Master of Science in Conservative Dentistry & Endodontics (MS)", "institution": "Universitas Indonesia", "year": 2019 }
     ],
     "interests": ["Endodonti Modern", "Restorasi Komposit Estetik", "Smile Enhancement"],
     "serviceIds": [1, 2, 4, 6, 7],
@@ -29,14 +29,14 @@
   {
     "id": 2,
     "slug": "drg-nadia-safira-sp-kga",
-    "name": "drg. Nadia Safira, Sp.KGA",
+    "name": "Dr. Nadia Safira, DDS, MS",
     "specialty": "Spesialis Kedokteran Gigi Anak",
     "experienceYears": 8,
     "languages": ["Bahasa Indonesia", "English"],
     "bio": "Berpengalaman menangani kesehatan gigi balita dan anak-anak dengan metode komunikasi menyenangkan untuk membangun kepercayaan dan kebiasaan gigi sehat bebas rasa takut.",
     "education": [
-      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Airlangga", "year": 2016 },
-      { "degree": "Spesialis Gigi Anak (Sp.KGA)", "institution": "Universitas Indonesia", "year": 2020 }
+      { "degree": "Doctor of Dental Surgery (DDS)", "institution": "Universitas Airlangga", "year": 2016 },
+      { "degree": "Master of Science in Pediatric Dentistry (MS)", "institution": "Universitas Indonesia", "year": 2020 }
     ],
     "interests": ["Perawatan Gigi Anak", "Preventive Dentistry", "Manajemen Kecemasan Dental"],
     "serviceIds": [1, 2, 8],
@@ -55,14 +55,14 @@
   {
     "id": 3,
     "slug": "drg-farhan-maulana-sp-ort",
-    "name": "drg. Farhan Maulana, Sp.Ort",
+    "name": "Dr. Farhan Maulana, DDS, MS",
     "specialty": "Spesialis Ortodonti",
     "experienceYears": 11,
     "languages": ["Bahasa Indonesia", "English"],
     "bio": "Menangani perawatan kawat gigi (behel) dan perataan maloklusi kompleks menggunakan teknik modern untuk mencapai harmonisasi senyum dan profil wajah seimbang.",
     "education": [
-      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Padjadjaran", "year": 2013 },
-      { "degree": "Spesialis Ortodonti (Sp.Ort)", "institution": "Universitas Indonesia", "year": 2017 }
+      { "degree": "Doctor of Dental Surgery (DDS)", "institution": "Universitas Padjadjaran", "year": 2013 },
+      { "degree": "Master of Science in Orthodontics (MS)", "institution": "Universitas Indonesia", "year": 2017 }
     ],
     "interests": ["Braket Self-Ligating", "Koreksi Gigitan Kompleks", "Ortodonti Estetik"],
     "serviceIds": [1, 5],
@@ -81,13 +81,13 @@
   {
     "id": 4,
     "slug": "drg-citra-lestari",
-    "name": "drg. Citra Lestari",
+    "name": "Dr. Citra Lestari, DDS",
     "specialty": "Dokter Gigi Umum",
     "experienceYears": 6,
     "languages": ["Bahasa Indonesia"],
     "bio": "Dokter gigi umum yang teliti dan komunikatif, fokus pada perawatan pencegahan, scaling berkala, penambalan komposit, serta edukasi kesehatan mulut keluarga.",
     "education": [
-      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Gadjah Mada", "year": 2018 }
+      { "degree": "Doctor of Dental Surgery (DDS)", "institution": "Universitas Gadjah Mada", "year": 2018 }
     ],
     "interests": ["Scaling & Polishing", "Penambalan Estetik", "Edukasi Higiene Oral"],
     "serviceIds": [1, 2, 3, 4],
@@ -104,14 +104,14 @@
   {
     "id": 5,
     "slug": "drg-bambang-wicaksono-sp-bm",
-    "name": "drg. Bambang Wicaksono, Sp.BM",
+    "name": "Dr. Bambang Wicaksono, DDS, OMFS",
     "specialty": "Spesialis Bedah Mulut & Maksilofasial",
     "experienceYears": 12,
     "languages": ["Bahasa Indonesia", "English"],
     "bio": "Ahli dalam bedah minor gigi, ekstraksi gigi bungsu impaksi, serta penanganan bedah mulut dengan prosedur anestesi terukur dan pemulihan cepat.",
     "education": [
-      { "degree": "Dokter Gigi (drg.)", "institution": "Universitas Indonesia", "year": 2012 },
-      { "degree": "Spesialis Bedah Mulut (Sp.BM)", "institution": "Universitas Indonesia", "year": 2017 }
+      { "degree": "Doctor of Dental Surgery (DDS)", "institution": "Universitas Indonesia", "year": 2012 },
+      { "degree": "Residency in Oral & Maxillofacial Surgery (OMFS)", "institution": "Universitas Indonesia", "year": 2017 }
     ],
     "interests": ["Odontektomi Gigi Bungsu", "Bedah Minor Preprostetik", "Trauma Dentoalveolar"],
     "serviceIds": [1, 3],
