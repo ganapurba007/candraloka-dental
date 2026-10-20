@@ -5,12 +5,17 @@
 ## Penambahan Konfigurasi Klinik Australia / Perth dengan Bahasa Default English (2026-10-20)
 **FR terkait:** FR-1.10 (Bilingual & Multi-Clinic Dynamic Branding)
 **Yang dikerjakan:**
-- Menambahkan 5 profil klinik gigi kawasan Perth & Fremantle (Western Australia) ke dalam `src/data/clinics.json` dengan konfigurasi `defaultLanguage: "en"`:
+- Menambahkan 10 profil klinik gigi kawasan Perth, Fremantle, Claremont, Victoria Park, Mount Lawley, Como, & South Perth (Western Australia) ke dalam `src/data/clinics.json` dengan konfigurasi `defaultLanguage: "en"`:
   - `fremantle-dentist` (Fremantle Dentist / Yu Cockerill Dentists)
   - `sk-dental-perth` (S.K. Dental Perth, Forrestfield)
   - `cbd-dental-perth` (CBD Dental Perth, St Georges Terrace)
   - `fremantle-smiles` (Fremantle Smiles, Hampton Rd)
   - `subiaco-square-dental` (Subiaco Square Dental, Subiaco)
+  - `mount-lawley-dental` (Mount Lawley Dental, Beaufort Street)
+  - `park-dental-care` (Park Dental Care Victoria Park, Albany Highway)
+  - `bayview-dental-claremont` (Bayview Dental Claremont, Stirling Hwy)
+  - `south-perth-dental` (South Perth Dental Surgery, Coode St)
+  - `jc-dental-como` (JC Dental Como, Downey Dr)
 - Otomatis memuat tampilan antarmuka dan alur booking dalam bahasa Inggris saat klinik-klinik tersebut diakses via query atau subdomain.
 - Validasi 124 unit test lulus 100% dan verifikasi build produksi lolos.
 **File yang berubah:** src/data/clinics.json, context/CHANGELOG.md

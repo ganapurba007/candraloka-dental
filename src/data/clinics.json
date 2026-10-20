@@ -648,6 +648,111 @@
         "mapUrl": "https://maps.google.com/?q=10+Subiaco+Square+Road+Subiaco+WA+6008",
         "mapEmbedUrl": "https://maps.google.com/maps?q=10+Subiaco+Square+Road+Subiaco+WA+6008&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "mount-lawley-dental": {
+      "slug": "mount-lawley-dental",
+      "name": "Mount Lawley Dental",
+      "shortName": "Mount Lawley Dental",
+      "subName": "Family Dental Clinic Mount Lawley",
+      "tagline": "Trusted Family & Preventive Dentistry in Beaufort Street, Mount Lawley",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(08) 9227 8777",
+        "whatsapp": "61892278777",
+        "email": "reception@mountlawleydental.com.au",
+        "address": "2nd Avenue Plaza, 755 Beaufort Street, Mount Lawley WA 6050, Australia",
+        "mapUrl": "https://maps.google.com/?q=755+Beaufort+Street+Mount+Lawley+WA+6050",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=755+Beaufort+Street+Mount+Lawley+WA+6050&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "park-dental-care": {
+      "slug": "park-dental-care",
+      "name": "Park Dental Care Victoria Park",
+      "shortName": "Park Dental Care",
+      "subName": "Cosmetic & Family Dental Clinic",
+      "tagline": "Personalised Dental Care & Natural Smiles in Victoria Park, Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(08) 9472 6688",
+        "whatsapp": "61894726688",
+        "email": "reception@parkdentalcare.com.au",
+        "address": "1/395 Albany Highway, Victoria Park WA 6100, Australia",
+        "mapUrl": "https://maps.google.com/?q=1/395+Albany+Highway+Victoria+Park+WA+6100",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1/395+Albany+Highway+Victoria+Park+WA+6100&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "bayview-dental-claremont": {
+      "slug": "bayview-dental-claremont",
+      "name": "Bayview Dental Claremont",
+      "shortName": "Bayview Dental",
+      "subName": "Cosmetic, Surgical & General Dentistry",
+      "tagline": "Warm, Gentle, and Highest-Quality Dental Care in Claremont, Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0ea5e9",
+        "navy": "#0369a1"
+      },
+      "contact": {
+        "phone": "(08) 9284 2995",
+        "whatsapp": "61892842995",
+        "email": "info@bayviewdental.com.au",
+        "address": "1/324 Stirling Hwy, Claremont WA 6010, Australia",
+        "mapUrl": "https://maps.google.com/?q=1/324+Stirling+Hwy+Claremont+WA+6010",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1/324+Stirling+Hwy+Claremont+WA+6010&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "south-perth-dental": {
+      "slug": "south-perth-dental",
+      "name": "South Perth Dental Surgery",
+      "shortName": "South Perth Dental",
+      "subName": "Dental Surgery South Perth",
+      "tagline": "Dedicated Family Oral Health & Restorative Dentistry in South Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#059669",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "(08) 9474 2391",
+        "whatsapp": "61894742391",
+        "email": "reception@southperthdental.com.au",
+        "address": "48 Coode St, South Perth WA 6151, Australia",
+        "mapUrl": "https://maps.google.com/?q=48+Coode+St+South+Perth+WA+6151",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=48+Coode+St+South+Perth+WA+6151&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "jc-dental-como": {
+      "slug": "jc-dental-como",
+      "name": "JC Dental Como",
+      "shortName": "JC Dental",
+      "subName": "Modern Family Dental Practice",
+      "tagline": "Clear, Comfortable, and Stress-Free Dental Appointments in Como, Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1d4ed8",
+        "navy": "#1e1b4b"
+      },
+      "contact": {
+        "phone": "(08) 6117 6705",
+        "whatsapp": "61861176705",
+        "email": "contact@jcdental.com.au",
+        "address": "Suite 2 & 3, 2 Downey Dr, Como WA 6152, Australia",
+        "mapUrl": "https://maps.google.com/?q=2+Downey+Dr+Como+WA+6152",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=2+Downey+Dr+Como+WA+6152&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
