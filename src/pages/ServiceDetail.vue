@@ -22,10 +22,12 @@ import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import { formatDuration } from '@/lib/format'
 
 const route = useRoute()
 const { clinic, clinicLink } = useClinic()
+const { t, getDoctorName, getDoctorSpecialty, getServiceName, getCategoryLabel, isEnglish } = useI18n()
 const service = computed(() => servicesData.find((s) => s.slug === route.params.slug))
 
 useHead({
@@ -317,17 +319,17 @@ const waConsultUrl = computed(() => {
                 </div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-bold text-navy-900 group-hover:text-primary-700 truncate transition-colors">
-                    {{ doc.name }}
+                    {{ getDoctorName(doc.name) }}
                   </p>
                   <p class="text-xs text-slate-500 truncate">
-                    {{ doc.specialty }}
+                    {{ getDoctorSpecialty(doc.specialty) }}
                   </p>
                 </div>
                 <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-primary-600 transition-colors flex-shrink-0" aria-hidden="true" />
               </RouterLink>
             </div>
             <p v-else class="text-xs text-slate-500 italic">
-              Ditangani oleh seluruh tim dokter klinik.
+              {{ isEnglish ? 'Handled by the clinic complete dental team.' : 'Ditangani oleh seluruh tim dokter klinik.' }}
             </p>
           </div>
 

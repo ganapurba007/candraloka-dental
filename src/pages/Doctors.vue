@@ -16,12 +16,11 @@ import Card from '@/components/ui/Card.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import doctorsData from '@/data/doctors.json'
-import { formatPracticeDaysSummary } from '@/lib/format'
 import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
 
 const { clinic, clinicLink } = useClinic()
-const { t, getDoctorSpecialty, isEnglish } = useI18n()
+const { t, getDoctorSpecialty, getDoctorName, formatPracticeDaysSummary, isEnglish } = useI18n()
 
 useHead({
   title: computed(() => isEnglish.value ? `Our Professional Dental Team | ${clinic.value.name}` : `Tim Dokter Gigi | ${clinic.value.name}`),
@@ -171,7 +170,7 @@ function clearFilters() {
               </p>
               <h2 class="text-lg font-bold text-navy-900 group-hover:text-primary-700 transition-colors leading-snug">
                 <RouterLink :to="clinicLink(`/dokter/${doc.slug}`)" class="focus-visible:outline-none focus-visible:underline">
-                  {{ doc.name }}
+                  {{ getDoctorName(doc.name) }}
                 </RouterLink>
               </h2>
 
@@ -219,12 +218,12 @@ function clearFilters() {
         <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
           <SearchX class="w-8 h-8" aria-hidden="true" />
         </div>
-        <h3 class="text-lg font-bold text-navy-900">Dokter tidak ditemukan</h3>
+        <h3 class="text-lg font-bold text-navy-900">{{ isEnglish ? 'Dentist not found' : 'Dokter tidak ditemukan' }}</h3>
         <p class="text-sm text-slate-500 leading-relaxed">
-          Tidak ada dokter yang cocok dengan kriteria pencarian "{{ searchQuery }}".
+          {{ isEnglish ? `No dentist matches the search query "${searchQuery}".` : `Tidak ada dokter yang cocok dengan kriteria pencarian "${searchQuery}".` }}
         </p>
         <Button variant="outline" size="sm" class="font-semibold" @click="clearFilters">
-          Reset Filter & Pencarian
+          {{ isEnglish ? 'Reset Filters & Search' : 'Reset Filter & Pencarian' }}
         </Button>
       </div>
     </main>

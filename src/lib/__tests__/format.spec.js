@@ -55,4 +55,22 @@ describe('format.js', () => {
     expect(formatPracticeDaysSummary(hours)).toBe('Senin, Rabu, Jumat')
     expect(formatPracticeDaysSummary([])).toBe('Sesuai perjanjian')
   })
+
+  it('formats dates, durations, and days in English when locale is en', () => {
+    expect(formatDate('2026-10-15', true, 'en')).toBe('Thursday, 15 October 2026')
+    expect(formatDate('2026-10-15', false, 'en')).toBe('15 October 2026')
+    expect(formatDateShort('2026-10-15', 'en')).toBe('15 Oct')
+    expect(getDayName(1, 'en')).toBe('Monday')
+    expect(getDayName(7, 'en')).toBe('Sunday')
+    expect(formatDuration(30, 'en')).toBe('30 minutes')
+    expect(formatDuration(60, 'en')).toBe('60 minutes (1 hour)')
+    expect(formatDuration(120, 'en')).toBe('120 minutes (2 hours)')
+
+    const hours = [
+      { day: 1, start: '09:00', end: '14:00' },
+      { day: 3, start: '09:00', end: '14:00' },
+    ]
+    expect(formatPracticeDaysSummary(hours, 'en')).toBe('Monday, Wednesday')
+    expect(formatPracticeDaysSummary([], 'en')).toBe('By appointment')
+  })
 })

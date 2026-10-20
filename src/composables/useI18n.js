@@ -6,8 +6,23 @@ import {
   DEFAULT_LOCALE,
   getServiceName,
   getDoctorSpecialty,
+  getDoctorName,
+  getDoctorDegree,
+  getDoctorInterest,
+  getDoctorBio,
   getCategoryLabel,
 } from '@/lib/translations'
+import {
+  getDayName,
+  formatDate,
+  formatDateShort,
+  formatDuration,
+  formatPracticeDaysSummary,
+} from '@/lib/format'
+import {
+  getClinicOpenStatus,
+  groupSlotsByPeriod,
+} from '@/lib/schedule'
 import clinicsRegistry from '@/data/clinics.json'
 
 // Global reactive state
@@ -89,6 +104,17 @@ export function useI18n() {
     t,
     getServiceName: (svc) => getServiceName(svc, currentLocale.value),
     getDoctorSpecialty: (spec) => getDoctorSpecialty(spec, currentLocale.value),
+    getDoctorName: (name) => getDoctorName(name, currentLocale.value),
+    getDoctorDegree: (deg) => getDoctorDegree(deg, currentLocale.value),
+    getDoctorInterest: (interest) => getDoctorInterest(interest, currentLocale.value),
+    getDoctorBio: (doc) => getDoctorBio(doc, currentLocale.value),
     getCategoryLabel: (cat) => getCategoryLabel(cat, currentLocale.value),
+    getDayName: (day) => getDayName(day, currentLocale.value),
+    formatDate: (iso, incDay = true) => formatDate(iso, incDay, currentLocale.value),
+    formatDateShort: (iso) => formatDateShort(iso, currentLocale.value),
+    formatDuration: (min) => formatDuration(min, currentLocale.value),
+    formatPracticeDaysSummary: (hours) => formatPracticeDaysSummary(hours, currentLocale.value),
+    getClinicOpenStatus: (hours, date = new Date()) => getClinicOpenStatus(hours, date, currentLocale.value),
+    groupSlotsByPeriod: (slots) => groupSlotsByPeriod(slots, currentLocale.value),
   }
 }

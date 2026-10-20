@@ -42,15 +42,32 @@ export function getTimePeriod(timeStr) {
 }
 
 /**
- * Mengelompokkan daftar slot ke dalam 3 periode: Pagi, Siang, Sore.
+ * Mengelompokkan daftar slot ke dalam 3 periode: Pagi, Siang, Sore (ID/EN).
  * @param {Array<{ time: string, [key: string]: any }>} slots
- * @returns {Array<{ id: string, name: string, slots: any[] }>}
+ * @param {string} [locale='id']
+ * @returns {Array<{ id: string, name: string, label: string, slots: any[] }>}
  */
-export function groupSlotsByPeriod(slots) {
+export function groupSlotsByPeriod(slots, locale = 'id') {
+  const isEn = locale === 'en'
   const periods = [
-    { id: 'pagi', name: 'Pagi', label: 'Pagi (Sebelum 12:00)', slots: [] },
-    { id: 'siang', name: 'Siang', label: 'Siang (12:00 – 15:00)', slots: [] },
-    { id: 'sore', name: 'Sore & Malam', label: 'Sore & Malam (15:00 ke atas)', slots: [] },
+    {
+      id: 'pagi',
+      name: isEn ? 'Morning' : 'Pagi',
+      label: isEn ? 'Morning (Before 12:00)' : 'Pagi (Sebelum 12:00)',
+      slots: [],
+    },
+    {
+      id: 'siang',
+      name: isEn ? 'Afternoon' : 'Siang',
+      label: isEn ? 'Afternoon (12:00 – 15:00)' : 'Siang (12:00 – 15:00)',
+      slots: [],
+    },
+    {
+      id: 'sore',
+      name: isEn ? 'Evening' : 'Sore & Malam',
+      label: isEn ? 'Evening (15:00 onwards)' : 'Sore & Malam (15:00 ke atas)',
+      slots: [],
+    },
   ]
 
   for (const slot of slots) {
@@ -69,12 +86,14 @@ export function groupSlotsByPeriod(slots) {
 }
 
 /**
- * Menghitung status buka/tutup klinik hari ini berdasarkan jam operasional dan waktu WIB.
+ * Menghitung status buka/tutup klinik hari ini berdasarkan jam operasional dan waktu WIB (ID/EN).
  * @param {Array<{ day: number, open: string, close: string }>} operatingHours
  * @param {Date|string} [now=new Date()]
+ * @param {string} [locale='id']
  * @returns {{ isOpen: boolean, statusBadge: string, hoursText: string }}
  */
-export function getClinicOpenStatus(operatingHours = [], now = new Date()) {
+export function getClinicOpenStatus(operatingHours = [], now = new Date(), locale = 'id') {
+  const isEn = locale === 'en'
   const todayIso = toIsoDateString(now)
   const dayOfWeek = getIsoDayOfWeek(todayIso)
 
@@ -82,8 +101,8 @@ export function getClinicOpenStatus(operatingHours = [], now = new Date()) {
   if (!schedule) {
     return {
       isOpen: false,
-      statusBadge: 'Tutup Hari Ini',
-      hoursText: 'Klinik libur hari ini',
+      statusBadge: isEn ? 'Closed Today' : 'Tutup Hari Ini',
+      hoursText: isEn ? 'Clinic is closed today' : 'Klinik libur hari ini',
     }
   }
 
@@ -95,23 +114,27 @@ export function getClinicOpenStatus(operatingHours = [], now = new Date()) {
   if (currentMin >= openMin && currentMin < closeMin) {
     return {
       isOpen: true,
-      statusBadge: 'Buka Sekarang',
-      hoursText: `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
+      statusBadge: isEn ? 'Open Now' : 'Buka Sekarang',
+      hoursText: isEn
+        ? `Today: ${schedule.open} – ${schedule.close} WIB`
+        : `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
     }
   }
 
   if (currentMin < openMin) {
     return {
       isOpen: false,
-      statusBadge: `Buka ${schedule.open} WIB`,
-      hoursText: `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
+      statusBadge: isEn ? `Opens at ${schedule.open} WIB` : `Buka ${schedule.open} WIB`,
+      hoursText: isEn
+        ? `Today: ${schedule.open} – ${schedule.close} WIB`
+        : `Hari ini: ${schedule.open} – ${schedule.close} WIB`,
     }
   }
 
   return {
     isOpen: false,
-    statusBadge: 'Sudah Tutup',
-    hoursText: `Buka kembali besok`,
+    statusBadge: isEn ? 'Closed' : 'Sudah Tutup',
+    hoursText: isEn ? 'Reopens tomorrow' : 'Buka kembali besok',
   }
 }
 

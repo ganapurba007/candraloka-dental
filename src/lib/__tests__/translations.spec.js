@@ -3,6 +3,10 @@ import {
   translate,
   getServiceName,
   getDoctorSpecialty,
+  getDoctorName,
+  getDoctorDegree,
+  getDoctorBio,
+  getDoctorInterest,
   getCategoryLabel,
   dictionaries,
 } from '../translations'
@@ -47,6 +51,27 @@ describe('translations (Pure Translation Engine)', () => {
     expect(getDoctorSpecialty('Spesialis Kedokteran Gigi Anak', 'en')).toBe(
       'Pediatric Dentistry Specialist'
     )
+    expect(getDoctorSpecialty('Spesialis Bedah Mulut & Maksilofasial', 'en')).toBe(
+      'Oral & Maxillofacial Surgery Specialist'
+    )
+  })
+
+  it('formats doctor names and degrees for English/Indonesian presentation', () => {
+    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'id')).toBe('drg. Andi Pratama, Sp.KG')
+    expect(getDoctorName('drg. Andi Pratama, Sp.KG', 'en')).toBe('Dr. Andi Pratama, Sp.KG')
+
+    expect(getDoctorDegree('Dokter Gigi (drg.)', 'en')).toBe('Doctor of Dental Surgery (DDS)')
+    expect(getDoctorDegree('Spesialis Konservasi Gigi (Sp.KG)', 'en')).toBe(
+      'Conservative Dentistry Specialist (Sp.KG)'
+    )
+  })
+
+  it('translates doctor interests and bios', () => {
+    expect(getDoctorInterest('Endodonti Modern', 'en')).toBe('Modern Endodontics')
+    expect(getDoctorInterest('Endodonti Modern', 'id')).toBe('Endodonti Modern')
+
+    const doc = { slug: 'drg-andi-pratama-sp-kg', bio: 'Bio ID' }
+    expect(getDoctorBio(doc, 'en')).toContain('Dental specialist in conservative dentistry')
   })
 
   it('translates categories', () => {

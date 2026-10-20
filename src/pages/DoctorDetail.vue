@@ -23,32 +23,48 @@ import doctorsData from '@/data/doctors.json'
 import servicesData from '@/data/services.json'
 import clinicData from '@/data/clinic.json'
 import { useClinic } from '@/composables/useClinic'
-import { getDayName, formatDate, formatTimeRangeWib } from '@/lib/format'
+import { useI18n } from '@/composables/useI18n'
+import { formatTimeRangeWib } from '@/lib/format'
 import { isDoctorPracticingOn } from '@/lib/schedule'
 import { getIsoDayOfWeek, toIsoDateString } from '@/lib/time'
 
 const route = useRoute()
 const { clinic, clinicLink } = useClinic()
+const {
+  t,
+  getDoctorName,
+  getDoctorSpecialty,
+  getDoctorDegree,
+  getDoctorBio,
+  getDoctorInterest,
+  getServiceName,
+  getCategoryLabel,
+  getDayName,
+  formatDate,
+  isEnglish,
+} = useI18n()
+
 const doctor = computed(() => doctorsData.find((d) => d.slug === route.params.slug))
 
 useHead({
   title: computed(() =>
     doctor.value
-      ? `${doctor.value.name} | ${clinic.value.name}`
-      : `Dokter Tidak Ditemukan | ${clinic.value.name}`
+      ? `${getDoctorName(doctor.value.name)} | ${clinic.value.name}`
+      : `${t('doctorDetail.notFoundTitle')} | ${clinic.value.name}`
   ),
   meta: [
     {
       name: 'description',
       content: computed(() =>
         doctor.value
-          ? `Profil ${doctor.value.name}, ${doctor.value.specialty} dengan ${doctor.value.experienceYears} tahun pengalaman di ${clinic.value.name}.`
-          : 'Profil dokter yang Anda cari tidak ditemukan.'
+          ? (isEnglish.value
+              ? `Profile of ${getDoctorName(doctor.value.name)}, ${getDoctorSpecialty(doctor.value.specialty)} with ${doctor.value.experienceYears} years of experience at ${clinic.value.name}.`
+              : `Profil ${doctor.value.name}, ${doctor.value.specialty} dengan ${doctor.value.experienceYears} tahun pengalaman di ${clinic.value.name}.`)
+          : (isEnglish.value ? 'The requested doctor profile could not be found.' : 'Profil dokter yang Anda cari tidak ditemukan.')
       ),
     },
   ],
 })
-
 
 // Services handled by this doctor (FR-5.2)
 const handledServices = computed(() => {
@@ -72,7 +88,7 @@ const weeklySchedule = computed(() => {
       sessionsText:
         sessions.length > 0
           ? sessions.map((s) => formatTimeRangeWib(s.start, s.end)).join(', ')
-          : 'Tidak ada praktek',
+          : t('doctorDetail.noPracticeDay'),
     })
   }
   return days
@@ -85,9 +101,10 @@ const isPracticingToday = computed(() => {
 // WhatsApp consultation URL
 const waDoctorUrl = computed(() => {
   if (!doctor.value) return '#'
-  const text = encodeURIComponent(
-    `Halo ${clinic.value.name}, saya ingin membuat janji dengan ${doctor.value.name}.`
-  )
+  const greeting = isEnglish.value
+    ? `Hello ${clinic.value.name}, I would like to make an appointment with ${getDoctorName(doctor.value.name)}.`
+    : `Halo ${clinic.value.name}, saya ingin membuat janji dengan ${doctor.value.name}.`
+  const text = encodeURIComponent(greeting)
   return `https://wa.me/${clinic.value.contact.whatsapp}?text=${text}`
 })
 </script>
@@ -131,40 +148,40 @@ const waDoctorUrl = computed(() => {
           <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <span class="text-xs font-semibold text-primary-300 uppercase tracking-wider">
-                {{ doctor.specialty }}
+                {{ getDoctorSpecialty(doctor.specialty) }}
               </span>
               <span class="text-xs text-primary-200 flex items-center gap-1">
                 <Award class="w-4 h-4 text-primary-400" aria-hidden="true" />
-                <span>{{ doctor.experienceYears }} Tahun Pengalaman</span>
+                <span>{{ t('doctorDetail.experienceYears', { years: doctor.experienceYears }) }}</span>
               </span>
             </div>
 
             <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              {{ doctor.name }}
+              {{ getDoctorName(doctor.name) }}
             </h1>
 
             <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-              {{ doctor.bio }}
+              {{ getDoctorBio(doctor) }}
             </p>
 
             <!-- Language and Specialization Strip -->
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm text-slate-300">
               <div class="flex items-center gap-1.5">
                 <Globe class="w-4 h-4 text-primary-400" aria-hidden="true" />
-                <span>Bahasa: {{ doctor.languages.join(', ') }}</span>
+                <span>{{ t('doctorDetail.languages', { languages: doctor.languages.join(', ') }) }}</span>
               </div>
             </div>
 
             <!-- CTAs -->
             <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
               <Button
-                :to="`/reservasi?dokter=${doctor.slug}`"
+                :to="clinicLink(`/reservasi?dokter=${doctor.slug}`)"
                 variant="primary"
                 size="lg"
                 class="font-semibold shadow-lg"
               >
                 <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
-                <span>Reservasi dengan Dokter Ini</span>
+                <span>{{ t('doctorDetail.bookWithDoctor') }}</span>
               </Button>
               <a
                 :href="waDoctorUrl"
@@ -173,7 +190,7 @@ const waDoctorUrl = computed(() => {
                 class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-navy-700 bg-navy-800/80 hover:bg-navy-700 text-white font-medium text-sm transition-colors"
               >
                 <IconWhatsApp class="w-4 h-4 mr-2 text-emerald-400" />
-                <span>Tanya via WhatsApp</span>
+                <span>{{ t('doctorDetail.askWhatsApp') }}</span>
               </a>
             </div>
           </div>
@@ -190,7 +207,7 @@ const waDoctorUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-5">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
               <GraduationCap class="w-6 h-6 text-primary-600" aria-hidden="true" />
-              <span>Riwayat Pendidikan & Gelar</span>
+              <span>{{ t('doctorDetail.educationTitle') }}</span>
             </h2>
 
             <div class="divide-y divide-slate-100">
@@ -204,10 +221,10 @@ const waDoctorUrl = computed(() => {
                 </div>
                 <div>
                   <h3 class="text-base font-bold text-navy-900">
-                    {{ edu.degree }}
+                    {{ getDoctorDegree(edu.degree) }}
                   </h3>
                   <p class="text-sm text-slate-600">
-                    {{ edu.institution }} • Lulus {{ edu.year }}
+                    {{ edu.institution }} • {{ t('doctorDetail.graduated', { year: edu.year }) }}
                   </p>
                 </div>
               </div>
@@ -218,7 +235,7 @@ const waDoctorUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
               <Stethoscope class="w-6 h-6 text-primary-600" aria-hidden="true" />
-              <span>Fokus & Minat Klinis</span>
+              <span>{{ t('doctorDetail.interestsTitle') }}</span>
             </h2>
 
             <div class="flex flex-wrap gap-2.5 pt-1">
@@ -227,7 +244,7 @@ const waDoctorUrl = computed(() => {
                 :key="idx"
                 class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-surface-100 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium"
               >
-                {{ interest }}
+                {{ getDoctorInterest(interest) }}
               </span>
             </div>
           </section>
@@ -237,10 +254,10 @@ const waDoctorUrl = computed(() => {
             <div class="space-y-1">
               <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
                 <ShieldCheck class="w-6 h-6 text-primary-600" aria-hidden="true" />
-                <span>Layanan yang Ditangani</span>
+                <span>{{ t('doctorDetail.servicesTitle') }}</span>
               </h2>
               <p class="text-sm text-slate-500">
-                Pilih layanan terkait untuk melihat prosedur lengkap dan membuat reservasi.
+                {{ t('doctorDetail.servicesSubtitle') }}
               </p>
             </div>
 
@@ -248,13 +265,13 @@ const waDoctorUrl = computed(() => {
               <RouterLink
                 v-for="srv in handledServices"
                 :key="srv.id"
-                :to="`/layanan/${srv.slug}`"
+                :to="clinicLink(`/layanan/${srv.slug}`)"
                 class="group p-4 rounded-2xl bg-surface-50 border border-slate-200/60 hover:border-primary-300 hover:bg-white transition-all flex items-center justify-between gap-3"
               >
                 <div class="space-y-1 min-w-0">
-                  <span class="text-xs font-semibold text-primary-600 uppercase">{{ srv.category }}</span>
+                  <span class="text-xs font-semibold text-primary-600 uppercase">{{ getCategoryLabel(srv.category) }}</span>
                   <p class="text-sm font-bold text-navy-900 group-hover:text-primary-700 transition-colors truncate">
-                    {{ srv.name }}
+                    {{ getServiceName(srv) }}
                   </p>
                 </div>
                 <ArrowRight class="w-4 h-4 text-slate-400 group-hover:text-primary-600 transition-colors flex-shrink-0" aria-hidden="true" />
@@ -270,10 +287,10 @@ const waDoctorUrl = computed(() => {
             <div class="space-y-1.5">
               <div class="flex items-center gap-2 text-primary-600">
                 <Calendar class="w-5 h-5" aria-hidden="true" />
-                <span class="text-xs font-bold uppercase tracking-wider">Jadwal Mingguan</span>
+                <span class="text-xs font-bold uppercase tracking-wider">{{ t('doctorDetail.weeklyScheduleTitle') }}</span>
               </div>
               <h3 class="text-lg font-bold text-navy-900">
-                Waktu Praktek di Klinik
+                {{ t('doctorDetail.weeklyScheduleSubtitle') }}
               </h3>
             </div>
 
@@ -290,7 +307,7 @@ const waDoctorUrl = computed(() => {
                     v-if="item.isToday"
                     class="px-1.5 py-0.5 rounded text-[10px] bg-primary-600 text-white font-bold"
                   >
-                    Hari ini
+                    {{ isEnglish ? 'Today' : 'Hari ini' }}
                   </span>
                 </div>
                 <span :class="item.hasPractice ? 'text-slate-700 font-medium' : 'text-slate-400 italic'">
@@ -306,9 +323,9 @@ const waDoctorUrl = computed(() => {
             >
               <AlertCircle class="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div class="space-y-1">
-                <span class="font-bold">Pemberitahuan Cuti:</span>
+                <span class="font-bold">{{ t('doctorDetail.leaveNoticeTitle') }}</span>
                 <p>
-                  Dokter tidak praktek pada:
+                  {{ t('doctorDetail.leaveNoticeDesc') }}
                   <span class="font-medium">
                     {{ doctor.leaveDates.map((d) => formatDate(d, true)).join(', ') }}
                   </span>
@@ -318,13 +335,13 @@ const waDoctorUrl = computed(() => {
 
             <!-- Book with Doctor CTA Button -->
             <Button
-              :to="`/reservasi?dokter=${doctor.slug}`"
+              :to="clinicLink(`/reservasi?dokter=${doctor.slug}`)"
               variant="primary"
               size="md"
               class="w-full justify-center font-semibold shadow-md"
             >
               <CalendarCheck class="w-4 h-4 mr-2" aria-hidden="true" />
-              <span>Buat Janji dengan Dokter Ini</span>
+              <span>{{ t('doctorDetail.bookNowAction') }}</span>
             </Button>
           </Card>
         </aside>
@@ -335,17 +352,17 @@ const waDoctorUrl = computed(() => {
     <div class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 sm:p-4 z-40 lg:hidden shadow-lg">
       <div class="max-w-md mx-auto flex items-center justify-between gap-3">
         <div class="min-w-0 flex-1">
-          <p class="text-xs text-slate-500 truncate">Dokter Terpilih</p>
-          <p class="text-sm font-bold text-navy-900 truncate">{{ doctor.name }}</p>
+          <p class="text-xs text-slate-500 truncate">{{ t('doctorDetail.selectedDoctor') }}</p>
+          <p class="text-sm font-bold text-navy-900 truncate">{{ getDoctorName(doctor.name) }}</p>
         </div>
         <Button
-          :to="`/reservasi?dokter=${doctor.slug}`"
+          :to="clinicLink(`/reservasi?dokter=${doctor.slug}`)"
           variant="primary"
           size="sm"
           class="font-semibold flex-shrink-0 shadow-md"
         >
           <CalendarCheck class="w-4 h-4 mr-1.5" aria-hidden="true" />
-          <span>Reservasi</span>
+          <span>{{ isEnglish ? 'Book' : 'Reservasi' }}</span>
         </Button>
       </div>
     </div>

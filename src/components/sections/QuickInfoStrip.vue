@@ -7,10 +7,10 @@ import { Clock, Phone, MapPin } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
 const { clinic } = useClinic()
-const { t } = useI18n()
+const { t, isEnglish } = useI18n()
 
 const clinicStatus = computed(() => {
-  return getClinicOpenStatus(clinic.value.operatingHours, new Date())
+  return getClinicOpenStatus(clinic.value.operatingHours, new Date(), isEnglish.value ? 'en' : 'id')
 })
 
 const phone = computed(() => clinic.value.contact.phone)
@@ -21,7 +21,10 @@ const address = computed(() => {
 })
 
 const waUrl = computed(() => {
-  const text = encodeURIComponent(`Halo ${clinic.value.name}, saya ingin bertanya jam praktek klinik.`)
+  const greeting = isEnglish.value
+    ? `Hello ${clinic.value.name}, I would like to inquire about the clinic operating hours.`
+    : `Halo ${clinic.value.name}, saya ingin bertanya jam praktek klinik.`
+  const text = encodeURIComponent(greeting)
   return `https://wa.me/${whatsapp.value}?text=${text}`
 })
 </script>
@@ -37,7 +40,7 @@ const waUrl = computed(() => {
         <div class="space-y-1">
           <div class="flex items-center gap-2">
             <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Praktek Hari Ini
+              {{ t('quickInfo.todayPractice') }}
             </span>
             <span
               class="inline-flex items-center gap-1.5 text-xs font-semibold"
@@ -54,7 +57,7 @@ const waUrl = computed(() => {
             {{ clinicStatus.hoursText }}
           </p>
           <p class="text-xs text-slate-500">
-            Pendaftaran reservasi online 24 jam
+            {{ t('quickInfo.online24h') }}
           </p>
         </div>
       </div>

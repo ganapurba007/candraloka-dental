@@ -25,7 +25,7 @@ const props = defineProps({
 })
 
 const { clinicLink } = useClinic()
-const { t, getDoctorSpecialty, isEnglish } = useI18n()
+const { t, getDoctorSpecialty, getDoctorName, getDoctorBio, isEnglish } = useI18n()
 
 // 3 Featured doctors (FR-2.6 / FR-3.6)
 const featuredDoctors = computed(() => {
@@ -91,10 +91,10 @@ const featuredDoctors = computed(() => {
                   {{ getDoctorSpecialty(doc.specialty) }}
                 </span>
                 <h3 class="text-lg font-bold text-navy-900 group-hover:text-primary-600 transition-colors">
-                  {{ doc.name }}
+                  {{ getDoctorName(doc.name) }}
                 </h3>
                 <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed pt-1">
-                  {{ doc.bio }}
+                  {{ getDoctorBio(doc) }}
                 </p>
               </div>
 

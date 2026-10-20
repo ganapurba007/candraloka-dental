@@ -26,7 +26,7 @@ import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
 
 const { clinic, clinicLink } = useClinic()
-const { t, getDoctorSpecialty, isEnglish } = useI18n()
+const { t, getDoctorSpecialty, getDoctorName, isEnglish } = useI18n()
 
 useHead({
   title: computed(() => isEnglish.value ? `Doctor Practice Schedule | ${clinic.value.name}` : `Jadwal Praktek Dokter | ${clinic.value.name}`),
@@ -79,7 +79,7 @@ function resetFilters() {
 }
 
 const clinicStatus = computed(() => {
-  return getClinicOpenStatus(clinicData.operatingHours, now)
+  return getClinicOpenStatus(clinicData.operatingHours, now, isEnglish.value ? 'en' : 'id')
 })
 
 // Filtered doctors list
@@ -165,7 +165,7 @@ const mobileDayDoctors = computed(() => {
         <div class="pt-2 flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm">
           <div class="px-4 py-2 rounded-xl bg-navy-950/60 border border-primary-300/30 text-blue-100 flex items-center gap-2 backdrop-blur-md shadow-sm">
             <Clock class="w-4 h-4 text-blue-300 flex-shrink-0" aria-hidden="true" />
-            <span class="font-medium">Operasional: Senin–Jumat 09:00–20:00, Sabtu 09:00–17:00 ({{ clinicData.timezoneLabel }})</span>
+            <span class="font-medium">{{ t('schedule.operatingHoursBanner', { hours: t('schedule.operatingHoursText'), tz: clinicData.timezoneLabel }) }}</span>
           </div>
 
           <div
@@ -193,16 +193,16 @@ const mobileDayDoctors = computed(() => {
             <div>
               <label for="doctor-filter" class="flex items-center gap-1.5 text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
                 <Stethoscope class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
-                <span>Pilih Dokter</span>
+                <span>{{ t('schedule.selectDoctor') }}</span>
               </label>
               <select
                 id="doctor-filter"
                 v-model="selectedDoctorSlug"
                 class="w-full px-3.5 py-2.5 bg-surface-50 hover:bg-white focus:bg-white border border-slate-300 hover:border-slate-400 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none transition-colors min-h-[44px]"
               >
-                <option value="all">Semua Dokter ({{ doctorsData.length }} dokter)</option>
+                <option value="all">{{ t('schedule.allDoctorsCount', { count: doctorsData.length }) }}</option>
                 <option v-for="d in doctorsData" :key="d.id" :value="d.slug">
-                  {{ d.name }}
+                  {{ getDoctorName(d.name) }}
                 </option>
               </select>
             </div>
@@ -211,16 +211,16 @@ const mobileDayDoctors = computed(() => {
             <div>
               <label for="day-filter" class="flex items-center gap-1.5 text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
                 <Calendar class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
-                <span>Pilih Hari</span>
+                <span>{{ t('schedule.selectDay') }}</span>
               </label>
               <select
                 id="day-filter"
                 v-model="selectedDay"
                 class="w-full px-3.5 py-2.5 bg-surface-50 hover:bg-white focus:bg-white border border-slate-300 hover:border-slate-400 rounded-xl text-navy-900 text-sm font-medium focus:ring-2 focus:ring-primary-500 focus:outline-none transition-colors min-h-[44px]"
               >
-                <option value="all">Semua Hari (Senin–Minggu)</option>
+                <option value="all">{{ t('schedule.allDaysRange') }}</option>
                 <option v-for="d in daysList" :key="d.day" :value="d.day">
-                  {{ d.dayName }} {{ d.isToday ? '(Hari Ini)' : '' }}
+                  {{ d.dayName }} {{ d.isToday ? (isEnglish ? '(Today)' : '(Hari Ini)') : '' }}
                 </option>
               </select>
             </div>
@@ -229,7 +229,7 @@ const mobileDayDoctors = computed(() => {
           <!-- Status & Reset Actions -->
           <div class="flex items-center justify-between lg:justify-end gap-3 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100">
             <span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-surface-100 text-xs text-slate-600 font-medium border border-slate-200/60">
-              Menampilkan&nbsp;<strong class="text-navy-900 font-bold">{{ displayedDoctors.length }}</strong>&nbsp;dokter
+              {{ isEnglish ? 'Showing ' : 'Menampilkan ' }}&nbsp;<strong class="text-navy-900 font-bold">{{ displayedDoctors.length }}</strong>&nbsp;{{ isEnglish ? 'dentists' : 'dokter' }}
             </span>
 
             <button
@@ -239,21 +239,21 @@ const mobileDayDoctors = computed(() => {
               @click="resetFilters"
             >
               <RotateCcw class="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Reset Filter</span>
+              <span>{{ t('schedule.resetFilter') }}</span>
             </button>
           </div>
         </div>
 
         <!-- Quick Day Filter Tabs (Desktop & Tablet) -->
         <div class="hidden md:flex items-center gap-1.5 pt-4 mt-4 border-t border-slate-100 overflow-x-auto">
-          <span class="text-xs font-bold text-slate-500 mr-2 flex-shrink-0">Filter Cepat:</span>
+          <span class="text-xs font-bold text-slate-500 mr-2 flex-shrink-0">{{ t('schedule.quickFilter') }}</span>
           <button
             type="button"
             class="px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer flex-shrink-0"
             :class="selectedDay === 'all' ? 'bg-primary-600 text-white shadow-xs' : 'bg-surface-100 text-slate-700 hover:bg-surface-200 border border-slate-200/80'"
             @click="selectedDay = 'all'"
           >
-            Semua Hari
+            {{ t('schedule.allDays') }}
           </button>
           <button
             v-for="d in daysList"
@@ -273,7 +273,7 @@ const mobileDayDoctors = computed(() => {
               class="px-1.5 py-0.2 rounded text-[9px] font-extrabold uppercase"
               :class="selectedDay === d.day ? 'bg-white/20 text-white' : 'bg-primary-100 text-primary-800'"
             >
-              Hari Ini
+              {{ isEnglish ? 'Today' : 'Hari Ini' }}
             </span>
           </button>
         </div>
@@ -289,7 +289,7 @@ const mobileDayDoctors = computed(() => {
                   class="p-3 lg:p-4 font-bold border-r border-navy-900/60"
                   :class="displayedDays.length > 1 ? 'w-[23%]' : 'w-1/2'"
                 >
-                  Dokter Gigi
+                  {{ t('schedule.dentistColumn') }}
                 </th>
                 <th
                   v-for="d in displayedDays"
@@ -306,7 +306,7 @@ const mobileDayDoctors = computed(() => {
                       v-if="d.isToday"
                       class="inline-block px-1.5 py-0.2 rounded-full text-[8px] lg:text-[9px] font-extrabold bg-primary-500 text-white uppercase shadow-xs"
                     >
-                      Hari Ini
+                      {{ isEnglish ? 'Today' : 'Hari Ini' }}
                     </span>
                   </div>
                 </th>
@@ -314,7 +314,7 @@ const mobileDayDoctors = computed(() => {
                   class="p-3 lg:p-4 font-bold text-center"
                   :class="displayedDays.length > 1 ? 'w-[10.5%]' : 'w-1/4'"
                 >
-                  Aksi
+                  {{ t('schedule.actionColumn') }}
                 </th>
               </tr>
             </thead>
@@ -338,14 +338,14 @@ const mobileDayDoctors = computed(() => {
                     </div>
                     <div class="space-y-0.5 min-w-0 flex-1">
                       <RouterLink
-                        :to="`/dokter/${doc.slug}`"
+                        :to="clinicLink(`/dokter/${doc.slug}`)"
                         class="font-bold text-navy-900 hover:text-primary-700 transition-colors leading-snug block text-xs lg:text-sm truncate"
                         :title="doc.name"
                       >
-                        {{ doc.name }}
+                        {{ getDoctorName(doc.name) }}
                       </RouterLink>
-                      <p class="text-[10px] lg:text-[11px] text-slate-500 font-medium leading-tight truncate" :title="doc.specialty">
-                        {{ doc.specialty }}
+                      <p class="text-[10px] lg:text-[11px] text-slate-500 font-medium leading-tight truncate" :title="getDoctorSpecialty(doc.specialty)">
+                        {{ getDoctorSpecialty(doc.specialty) }}
                       </p>
 
                       <!-- Leave notice badge (FR-6.4) -->
@@ -354,7 +354,7 @@ const mobileDayDoctors = computed(() => {
                         class="inline-flex items-center gap-1 px-1.5 py-0.2 rounded bg-amber-50 border border-amber-200/80 text-[9px] lg:text-[10px] text-amber-800 font-semibold mt-0.5 max-w-full truncate"
                       >
                         <AlertCircle class="w-2.5 h-2.5 text-amber-600 flex-shrink-0" aria-hidden="true" />
-                        <span class="truncate">Cuti: {{ doc.leaveDates.map((ld) => formatDate(ld, false)).join(', ') }}</span>
+                        <span class="truncate">{{ isEnglish ? 'On Leave: ' : 'Cuti: ' }}{{ doc.leaveDates.map((ld) => formatDate(ld, false, isEnglish ? 'en' : 'id')).join(', ') }}</span>
                       </div>
                     </div>
                   </div>
@@ -385,7 +385,7 @@ const mobileDayDoctors = computed(() => {
                         >
                           <span class="inline-flex items-center justify-center gap-1 px-1 py-0.2 rounded text-[8px] lg:text-[9px] font-bold bg-emerald-600 text-white shadow-xs w-full truncate">
                             <span class="w-1 h-1 rounded-full bg-white animate-pulse" />
-                            Sedang Praktek
+                            {{ t('schedule.practicingNow') }}
                           </span>
                         </div>
                       </div>
@@ -401,12 +401,12 @@ const mobileDayDoctors = computed(() => {
                 <!-- Reservation Action Column (Centered Vertically) -->
                 <td class="p-2 lg:p-3 align-middle text-center">
                   <Button
-                    :to="`/reservasi?dokter=${doc.slug}`"
+                    :to="clinicLink(`/reservasi?dokter=${doc.slug}`)"
                     variant="primary"
                     size="sm"
                     class="w-full justify-center font-bold text-[11px] lg:text-xs py-1.5 px-2 shadow-xs"
                   >
-                    <span>Reservasi</span>
+                    <span>{{ isEnglish ? 'Book' : 'Reservasi' }}</span>
                   </Button>
                 </td>
               </tr>
@@ -437,7 +437,7 @@ const mobileDayDoctors = computed(() => {
               class="px-1.5 py-0.2 rounded-full text-[9px] uppercase tracking-wider font-extrabold mt-0.5"
               :class="mobileSelectedDay === d.day ? 'bg-white text-primary-800' : 'bg-primary-100 text-primary-800'"
             >
-              Hari Ini
+              {{ isEnglish ? 'Today' : 'Hari Ini' }}
             </span>
             <span v-else class="text-[9px] text-transparent leading-tight mt-0.5 select-none">-</span>
           </button>
@@ -461,13 +461,13 @@ const mobileDayDoctors = computed(() => {
               </div>
               <div class="flex-1 min-w-0 space-y-1">
                 <RouterLink
-                  :to="`/dokter/${doc.slug}`"
+                  :to="clinicLink(`/dokter/${doc.slug}`)"
                   class="text-base font-bold text-navy-900 hover:text-primary-700 transition-colors leading-snug block"
                 >
-                  {{ doc.name }}
+                  {{ getDoctorName(doc.name) }}
                 </RouterLink>
                 <p class="text-xs text-slate-500 font-medium">
-                  {{ doc.specialty }}
+                  {{ getDoctorSpecialty(doc.specialty) }}
                 </p>
               </div>
             </div>
@@ -475,7 +475,7 @@ const mobileDayDoctors = computed(() => {
             <!-- Sessions info -->
             <div class="p-3.5 rounded-2xl bg-surface-100 border border-slate-200/80 space-y-2.5">
               <div class="flex items-start justify-between text-xs gap-3">
-                <span class="text-slate-500 font-medium pt-0.5">Jam Praktek:</span>
+                <span class="text-slate-500 font-medium pt-0.5">{{ t('schedule.practiceHoursLabel') }}</span>
                 <div class="space-y-1.5 text-right flex-1">
                   <div
                     v-for="(session, sIdx) in doc.sessions"
@@ -487,7 +487,7 @@ const mobileDayDoctors = computed(() => {
                       v-if="isDoctorSessionActiveNow(doc, session, now)"
                       class="px-1.5 py-0.5 rounded-md text-[10px] bg-emerald-600 text-white font-bold shadow-xs"
                     >
-                      Sedang Praktek
+                      {{ t('schedule.practicingNow') }}
                     </span>
                   </div>
                 </div>
@@ -499,19 +499,19 @@ const mobileDayDoctors = computed(() => {
                 class="pt-2 border-t border-slate-200 text-xs text-amber-700 font-semibold flex items-center gap-1.5"
               >
                 <AlertCircle class="w-4 h-4 text-amber-600 flex-shrink-0" aria-hidden="true" />
-                <span>Dokter cuti pada hari ini</span>
+                <span>{{ t('schedule.doctorOnLeaveToday') }}</span>
               </div>
             </div>
 
             <!-- Action button -->
             <Button
-              :to="`/reservasi?dokter=${doc.slug}`"
+              :to="clinicLink(`/reservasi?dokter=${doc.slug}`)"
               variant="primary"
               size="md"
               class="w-full justify-center font-bold text-sm shadow-xs"
             >
               <CalendarCheck class="w-4 h-4 mr-2" aria-hidden="true" />
-              <span>Reservasi Jadwal Ini</span>
+              <span>{{ t('schedule.bookThisSchedule') }}</span>
             </Button>
           </div>
         </div>
@@ -520,9 +520,9 @@ const mobileDayDoctors = computed(() => {
           v-else
           class="p-8 text-center bg-white rounded-3xl border border-slate-200 shadow-sm space-y-2"
         >
-          <p class="text-sm font-bold text-navy-900">Tidak ada jadwal praktek</p>
+          <p class="text-sm font-bold text-navy-900">{{ t('schedule.noPracticeSchedule') }}</p>
           <p class="text-xs text-slate-500">
-            Tidak ada dokter yang berpraktek pada hari {{ getDayName(mobileSelectedDay) }}.
+            {{ t('schedule.noDoctorPracticingDay', { day: isEnglish ? englishDays[mobileSelectedDay - 1] : getDayName(mobileSelectedDay) }) }}
           </p>
         </div>
       </div>

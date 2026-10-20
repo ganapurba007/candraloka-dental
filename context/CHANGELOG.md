@@ -14,6 +14,27 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Lokalisasi Komprehensif Gelar Dokter, Kredensial, Bio, dan Jadwal Praktek (2026-10-20)
+**FR terkait:** FR-1.10 (Penyempurnaan Bilingual ID/EN)
+**Yang dikerjakan:**
+- **Lokalisasi Gelar & Kredensial Dokter:**
+  - Menambahkan normalisasi gelar prefix `drg.` menjadi `Dr.` saat bahasa aktif English (`getDoctorName`).
+  - Menambahkan penerjemah gelar pendidikan (`getDoctorDegree`), seperti `Dokter Gigi (drg.)` -> `Doctor of Dental Surgery (DDS)`, `Spesialis Konservasi Gigi (Sp.KG)` -> `Endodontics Specialist (Sp.KG)`, dll.
+  - Menambahkan penerjemah minat klinis (`getDoctorInterest`) dan bio/deskripsi dokter (`getDoctorBio`) untuk bahasa Indonesia dan Inggris.
+  - Memperbaiki pemetaan spesialisasi `'Spesialis Bedah Mulut & Maksilofasial'` & `'Spesialis Bedah Mulut'` -> `'Oral & Maxillofacial Surgery Specialist'`.
+- **Lokalisasi Komponen Jadwal Praktek & Jam Operasional:**
+  - Memperbarui `getClinicOpenStatus` dan `groupSlotsByPeriod` di `src/lib/schedule.js` dengan parameter `locale` ("Buka Sekarang"/"Open Now", "Tutup Hari Ini"/"Closed Today", periode slot "Pagi/Siang/Sore" vs "Morning/Afternoon/Evening").
+  - Memperbarui format tanggal dan ringkasan hari kerja (`formatPracticeDaysSummary`, `getDayName`, `formatDate`, `formatDateShort`, `formatDuration`) di `src/lib/format.js` agar mendukung `locale`.
+  - Melokalisasi seluruh tampilan tabel jadwal dokter desktop & kartu mobile di `Schedule.vue` (badge status, header kolom, filter hari, jam operasional).
+- **Lokalisasi Halaman Terkait Dokter & Booking:**
+  - Melokalisasi `DoctorDetail.vue`, `Doctors.vue`, `FeaturedDoctors.vue`, `ServiceDetail.vue`, dan `Booking.vue` (nama dokter, gelar, bio, layanan yang ditangani, status jadwal, info cuti dokter).
+- **Pengujian & Validasi:**
+  - Memperbarui unit test pada `translations.spec.js` dan `format.spec.js`.
+  - Total test: 122 passed / 122 total (100% pass). Production build verified.
+**File yang berubah:** src/lib/translations/index.js, src/lib/translations/id.js, src/lib/translations/en.js, src/lib/format.js, src/lib/schedule.js, src/composables/useI18n.js, src/pages/Schedule.vue, src/pages/DoctorDetail.vue, src/pages/Doctors.vue, src/pages/ServiceDetail.vue, src/pages/Booking.vue, src/components/sections/FeaturedDoctors.vue, src/components/sections/QuickInfoStrip.vue, src/lib/__tests__/translations.spec.js, src/lib/__tests__/format.spec.js, context/CHANGELOG.md, AGENTS.md
+**Test:** 122 passed / 122 total
+**Docs updated:** CHANGELOG.md, AGENTS.md
+
 ## Fitur Bilingual (ID & EN) & Konfigurasi Default Language per Klinik di clinics.json (2026-10-20)
 **FR terkait:** FR-1.10 (Amandemen)
 **Yang dikerjakan:**

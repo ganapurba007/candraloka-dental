@@ -30,19 +30,12 @@ import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
 import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
-import {
-  formatDate,
-  formatDateShort,
-  formatTimeWib,
-  formatDuration,
-  getDayName,
-} from '@/lib/format'
+import { formatTimeWib } from '@/lib/format'
 import {
   getSlotsForDoctor,
   getSlotsForAnyDoctor,
   getDateAvailabilityStatus,
 } from '@/lib/availability'
-import { groupSlotsByPeriod } from '@/lib/schedule'
 import {
   generateReservationCode,
   getStoredReservations,
@@ -57,7 +50,18 @@ import { patientFormSchema } from '@/lib/schemas'
 import { addDaysToIso, toIsoDateString } from '@/lib/time'
 
 const { clinic } = useClinic()
-const { t, getServiceName, getDoctorSpecialty, isEnglish } = useI18n()
+const {
+  t,
+  getServiceName,
+  getDoctorSpecialty,
+  getDoctorName,
+  formatDate,
+  formatDateShort,
+  formatDuration,
+  getDayName,
+  groupSlotsByPeriod,
+  isEnglish,
+} = useI18n()
 
 useHead({
   title: computed(() =>
@@ -755,12 +759,12 @@ function handleClearStoredReservations() {
                     <div>
                       <div class="flex items-center gap-2">
                         <h3 class="text-base font-bold text-navy-900 group-hover:text-primary-700 transition-colors">
-                          Dokter Mana Saja yang Tersedia
+                          {{ isEnglish ? 'Any Available Dentist' : 'Dokter Mana Saja yang Tersedia' }}
                         </h3>
-                        <span class="text-xs font-bold text-primary-600 uppercase tracking-wider">(Rekomendasi)</span>
+                        <span class="text-xs font-bold text-primary-600 uppercase tracking-wider">{{ isEnglish ? '(Recommended)' : '(Rekomendasi)' }}</span>
                       </div>
                       <p class="text-xs text-slate-500 leading-relaxed">
-                        Sistem menetapkan dokter yang paling optimal secara otomatis saat Anda memilih jam.
+                        {{ isEnglish ? 'The system automatically assigns the optimal available dentist when you select your slot.' : 'Sistem menetapkan dokter yang paling optimal secara otomatis saat Anda memilih jam.' }}
                       </p>
                     </div>
                   </div>
@@ -800,10 +804,10 @@ function handleClearStoredReservations() {
                     </div>
                     <div>
                       <h3 class="text-base font-bold text-navy-900 group-hover:text-primary-700 transition-colors">
-                        {{ doc.name }}
+                        {{ getDoctorName(doc.name) }}
                       </h3>
                       <p class="text-xs text-slate-500">
-                        {{ doc.specialty }} • {{ doc.experienceYears }} Thn Pengalaman
+                        {{ getDoctorSpecialty(doc.specialty) }} • {{ doc.experienceYears }} {{ isEnglish ? 'Yrs Experience' : 'Thn Pengalaman' }}
                       </p>
                     </div>
                   </div>
@@ -883,7 +887,7 @@ function handleClearStoredReservations() {
                     role="radio"
                     :aria-checked="selectedDate === d.isoDate"
                     :tabindex="selectedDate === d.isoDate ? 0 : -1"
-                    :aria-label="`${d.dayNameShort}, ${d.shortDate}, status: ${d.status === 'tersedia' ? 'Tersedia' : d.status === 'penuh' ? 'Penuh' : 'Libur'}`"
+                    :aria-label="`${d.dayNameShort}, ${d.shortDate}, status: ${d.status === 'tersedia' ? (isEnglish ? 'Available' : 'Tersedia') : d.status === 'penuh' ? (isEnglish ? 'Full' : 'Penuh') : (isEnglish ? 'Closed' : 'Libur')}`"
                     class="p-3 rounded-2xl text-xs font-bold flex flex-col items-center gap-1.5 flex-shrink-0 min-w-[76px] transition-all cursor-pointer border"
                     :class="[
                       selectedDate === d.isoDate
@@ -913,7 +917,7 @@ function handleClearStoredReservations() {
                           : 'bg-slate-200 text-slate-600',
                       ]"
                     >
-                      {{ d.status === 'tersedia' ? 'Tersedia' : d.status === 'penuh' ? 'Penuh' : 'Libur' }}
+                      {{ d.status === 'tersedia' ? (isEnglish ? 'Available' : 'Tersedia') : d.status === 'penuh' ? (isEnglish ? 'Full' : 'Penuh') : (isEnglish ? 'Closed' : 'Libur') }}
                     </span>
                   </button>
                 </div>
@@ -924,10 +928,10 @@ function handleClearStoredReservations() {
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                   <div>
                     <h3 class="text-base font-bold text-navy-900">
-                      Slot Jam Tersedia: {{ formatDate(selectedDate, true) }}
+                      {{ isEnglish ? 'Available Time Slots:' : 'Slot Jam Tersedia:' }} {{ formatDate(selectedDate, true) }}
                     </h3>
                     <p class="text-xs text-slate-500">
-                      Estimasi durasi: {{ selectedService ? formatDuration(selectedService.durationMinutes) : '30 menit' }}
+                      {{ isEnglish ? 'Estimated duration:' : 'Estimasi durasi:' }} {{ selectedService ? formatDuration(selectedService.durationMinutes) : (isEnglish ? '30 minutes' : '30 menit') }}
                     </p>
                   </div>
                 </div>
@@ -1012,10 +1016,10 @@ function handleClearStoredReservations() {
                   </div>
                   <div class="text-xs space-y-0.5">
                     <span class="font-bold text-navy-900">
-                      Dokter yang Ditetapkan: {{ selectedDoctor ? selectedDoctor.name : '' }}
+                      {{ isEnglish ? 'Assigned Dentist:' : 'Dokter yang Ditetapkan:' }} {{ selectedDoctor ? getDoctorName(selectedDoctor.name) : '' }}
                     </span>
                     <p class="text-slate-600">
-                      {{ selectedDoctor ? selectedDoctor.specialty : '' }}
+                      {{ selectedDoctor ? getDoctorSpecialty(selectedDoctor.specialty) : '' }}
                     </p>
                   </div>
                 </div>
@@ -1278,47 +1282,47 @@ function handleClearStoredReservations() {
                 </p>
                 <p v-else class="text-xs text-slate-400 italic">Belum dipilih</p>
                 <span v-if="selectedService" class="text-xs text-slate-500">
-                  Estimasi durasi: {{ formatDuration(selectedService.durationMinutes) }}
+                  {{ isEnglish ? 'Estimated duration:' : 'Estimasi durasi:' }} {{ formatDuration(selectedService.durationMinutes) }}
                 </span>
               </div>
 
               <!-- Doctor summary -->
               <div class="space-y-1 border-t border-slate-100 pt-3">
-                <span class="text-xs text-slate-400 font-medium block">Dokter:</span>
+                <span class="text-xs text-slate-400 font-medium block">{{ isEnglish ? 'Dentist:' : 'Dokter:' }}</span>
                 <template v-if="selectedDoctor">
                   <p class="text-sm font-bold text-navy-900">
-                    {{ selectedDoctor.name }}
+                    {{ getDoctorName(selectedDoctor.name) }}
                   </p>
                   <p class="text-xs text-slate-500">
-                    {{ selectedDoctor.specialty }}
+                    {{ getDoctorSpecialty(selectedDoctor.specialty) }}
                   </p>
                 </template>
                 <template v-else-if="selectedDoctorId === 'any'">
                   <p class="text-sm font-semibold text-navy-900">
-                    Dokter mana saja (Otomatis)
+                    {{ isEnglish ? 'Any available dentist (Automatic)' : 'Dokter mana saja (Otomatis)' }}
                   </p>
                 </template>
-                <p v-else class="text-xs text-slate-400 italic">Belum dipilih</p>
+                <p v-else class="text-xs text-slate-400 italic">{{ isEnglish ? 'Not selected' : 'Belum dipilih' }}</p>
               </div>
 
               <!-- Schedule summary -->
               <div class="space-y-1 border-t border-slate-100 pt-3">
-                <span class="text-xs text-slate-400 font-medium block">Waktu Kunjungan:</span>
+                <span class="text-xs text-slate-400 font-medium block">{{ isEnglish ? 'Visit Time:' : 'Waktu Kunjungan:' }}</span>
                 <template v-if="selectedDate && selectedTime">
                   <p class="text-sm font-bold text-navy-900">
                     {{ formatDate(selectedDate, true) }}
                   </p>
                   <p class="text-xs font-bold text-primary-700">
-                    Jam: {{ selectedTime }} WIB
+                    {{ isEnglish ? 'Time: ' : 'Jam: ' }}{{ selectedTime }} WIB
                   </p>
                 </template>
                 <template v-else-if="selectedDate">
                   <p class="text-sm font-bold text-navy-900">
                     {{ formatDate(selectedDate, true) }}
                   </p>
-                  <p class="text-xs text-slate-400 italic">Jam belum dipilih</p>
+                  <p class="text-xs text-slate-400 italic">{{ isEnglish ? 'Time not selected' : 'Jam belum dipilih' }}</p>
                 </template>
-                <p v-else class="text-xs text-slate-400 italic">Belum dipilih</p>
+                <p v-else class="text-xs text-slate-400 italic">{{ isEnglish ? 'Not selected' : 'Belum dipilih' }}</p>
               </div>
 
               <!-- Info Notice -->
