@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 
 const basePageRoutes = [
   { path: '', nameSuffix: 'home', component: () => import('@/pages/Home.vue') },
@@ -55,11 +56,20 @@ const router = createRouter({
 // Navigation Guard: Synchronize active clinic state on route navigation
 router.beforeEach((to, from, next) => {
   const { setClinic } = useClinic()
+  const { setLocale } = useI18n()
 
-  // 1. Extract from route param
+  // 1. Language query override (?lang=en or ?lang=id)
+  if (to.query.lang && typeof to.query.lang === 'string') {
+    const targetLang = to.query.lang.trim().toLowerCase()
+    if (['id', 'en'].includes(targetLang)) {
+      setLocale(targetLang, true)
+    }
+  }
+
+  // 2. Extract clinic slug from route param
   let slug = to.params.clinicSlug
 
-  // 2. Fallback to query param (?client=... or ?mockup=... or ?clinic=...)
+  // 3. Fallback to query param (?client=... or ?mockup=... or ?clinic=...)
   if (!slug && (to.query.client || to.query.mockup || to.query.clinic)) {
     slug = to.query.client || to.query.mockup || to.query.clinic
   }

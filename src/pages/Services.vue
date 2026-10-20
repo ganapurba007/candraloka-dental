@@ -14,21 +14,32 @@ import Card from '@/components/ui/Card.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import servicesData from '@/data/services.json'
-import { formatDuration } from '@/lib/format'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
+
+const { clinic, clinicLink } = useClinic()
+const { t, getServiceName, isEnglish } = useI18n()
 
 useHead({
-  title: 'Layanan Perawatan Gigi | Candraloka Dental Care',
-  meta: [
-    {
-      name: 'description',
-      content: 'Daftar lengkap layanan perawatan gigi komprehensif di Candraloka Dental Care: scaling, tambal gigi, behel ortodonti, bleaching, cabut gigi, dan perawatan anak.',
-    },
-  ],
+  title: computed(() => isEnglish.value ? `Dental Care Services | ${clinic.value.name}` : `Layanan Perawatan Gigi | ${clinic.value.name}`),
 })
 
 const categories = ['Semua', 'Umum', 'Estetika', 'Ortodonti', 'Bedah', 'Anak']
 const selectedCategory = ref('Semua')
 const searchQuery = ref('')
+
+const categoryLabels = {
+  Semua: { en: 'All', id: 'Semua' },
+  Umum: { en: 'General', id: 'Umum' },
+  Estetika: { en: 'Aesthetic', id: 'Estetika' },
+  Ortodonti: { en: 'Orthodontics', id: 'Ortodonti' },
+  Bedah: { en: 'Surgery', id: 'Bedah' },
+  Anak: { en: 'Pediatric', id: 'Anak' },
+}
+
+function getCategoryDisplay(cat) {
+  return isEnglish.value ? categoryLabels[cat]?.en || cat : categoryLabels[cat]?.id || cat
+}
 
 const filteredServices = computed(() => {
   let list = servicesData
@@ -42,7 +53,9 @@ const filteredServices = computed(() => {
   const q = searchQuery.value.trim().toLowerCase()
   if (q) {
     list = list.filter((s) => {
+      const name = getServiceName(s).toLowerCase()
       return (
+        name.includes(q) ||
         s.name.toLowerCase().includes(q) ||
         s.summary.toLowerCase().includes(q) ||
         s.category.toLowerCase().includes(q)
@@ -84,11 +97,11 @@ function clearFilters() {
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-2.5">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Layanan Perawatan Gigi Komprehensif
+          {{ t('services.title') }}
         </h1>
 
         <p class="text-sm sm:text-base text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          Pilihan perawatan gigi preventif hingga estetika yang dirancang khusus untuk kenyamanan dan senyum sehat keluarga Anda.
+          {{ t('services.subtitle') }}
         </p>
       </div>
     </section>
@@ -105,14 +118,14 @@ function clearFilters() {
           <input
             v-model="searchQuery"
             type="search"
-            placeholder="Cari layanan (mis. scaling, tambal, behel)..."
-            aria-label="Cari nama layanan gigi"
+            :placeholder="isEnglish ? 'Search services (e.g. scaling, filling, braces)...' : 'Cari layanan (mis. scaling, tambal, behel)...'"
+            :aria-label="isEnglish ? 'Search dental service name' : 'Cari nama layanan gigi'"
             class="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl text-navy-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm transition-all text-base"
           />
           <button
             v-if="searchQuery"
             type="button"
-            aria-label="Hapus kata kunci pencarian"
+            :aria-label="isEnglish ? 'Clear search query' : 'Hapus kata kunci pencarian'"
             class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
             @click="searchQuery = ''"
           >
@@ -134,7 +147,7 @@ function clearFilters() {
             "
             @click="selectedCategory = cat"
           >
-            <span>{{ cat }}</span>
+            <span>{{ getCategoryDisplay(cat) }}</span>
             <span
               class="px-2 py-0.5 rounded-full text-xs"
               :class="selectedCategory === cat ? 'bg-primary-700 text-white' : 'bg-slate-100 text-slate-500'"
@@ -158,7 +171,7 @@ function clearFilters() {
           <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
             <ResponsiveImage
               :src="srv.image"
-              :alt="srv.name"
+              :alt="getServiceName(srv)"
               aspect-ratio="16/9"
               img-class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -168,8 +181,8 @@ function clearFilters() {
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div class="space-y-2.5">
               <h2 class="text-lg font-bold text-navy-900 group-hover:text-primary-700 transition-colors leading-snug">
-                <RouterLink :to="`/layanan/${srv.slug}`" class="focus-visible:outline-none focus-visible:underline">
-                  {{ srv.name }}
+                <RouterLink :to="clinicLink(`/layanan/${srv.slug}`)" class="focus-visible:outline-none focus-visible:underline">
+                  {{ getServiceName(srv) }}
                 </RouterLink>
               </h2>
               <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
@@ -181,27 +194,27 @@ function clearFilters() {
             <div class="pt-4 border-t border-slate-100 space-y-4">
               <div class="flex items-center gap-2 text-xs font-medium text-slate-500">
                 <Clock class="w-4 h-4 text-primary-600" aria-hidden="true" />
-                <span>Estimasi durasi: {{ formatDuration(srv.durationMinutes) }}</span>
+                <span>{{ t('services.duration') }}: {{ t('services.durationMinutes', { min: srv.durationMinutes }) }}</span>
               </div>
 
               <div class="grid grid-cols-2 gap-2.5">
                 <Button
-                  :to="`/layanan/${srv.slug}`"
+                  :to="clinicLink(`/layanan/${srv.slug}`)"
                   variant="outline"
                   size="sm"
                   class="w-full justify-center text-xs font-semibold"
                 >
-                  <span>Detail</span>
+                  <span>{{ t('services.viewDetail') }}</span>
                   <ArrowRight class="w-3.5 h-3.5 ml-1" aria-hidden="true" />
                 </Button>
                 <Button
-                  :to="`/reservasi?layanan=${srv.slug}`"
+                  :to="clinicLink(`/reservasi?layanan=${srv.slug}`)"
                   variant="primary"
                   size="sm"
                   class="w-full justify-center text-xs font-semibold"
                 >
                   <CalendarCheck class="w-3.5 h-3.5 mr-1" aria-hidden="true" />
-                  <span>Reservasi</span>
+                  <span>{{ t('nav.bookNow') }}</span>
                 </Button>
               </div>
             </div>

@@ -1,12 +1,35 @@
 {
   "default": "candraloka",
+  "defaultLanguage": "id",
   "clinics": {
+    "lumina-dental": {
+      "slug": "lumina-dental",
+      "name": "Lumina Dental Studio",
+      "shortName": "Lumina",
+      "subName": "Dental Studio",
+      "tagline": "Modern, Gentle, and Comprehensive Dental Care for You & Your Family",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6789 0123",
+        "whatsapp": "6567890123",
+        "email": "hello@luminadental.sg",
+        "address": "10 Orchard Road, #04-12, Orchard Central, Singapore 238841",
+        "mapUrl": "https://maps.google.com/?q=Orchard+Central+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Orchard+Central+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
     "candraloka": {
       "slug": "candraloka",
       "name": "Candraloka Dental Care",
       "shortName": "Candraloka",
       "subName": "Dental Care",
       "tagline": "Klinik Gigi Modern, Ramah, dan Nyaman untuk Senyum Sehat Keluarga Anda",
+      "defaultLanguage": "id",
       "logo": "/images/logos/candraloka.svg",
       "colors": {
         "primary": "#1e60d5",

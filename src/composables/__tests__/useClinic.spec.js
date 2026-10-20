@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { useClinic } from '../useClinic'
+import { useI18n } from '../useI18n'
 
 describe('useClinic Composable', () => {
   beforeEach(() => {
@@ -43,6 +44,18 @@ describe('useClinic Composable', () => {
     expect(clinicLink('/')).toBe('/surya-dental')
     expect(clinicLink('/layanan')).toBe('/surya-dental/layanan')
     expect(clinicLink('/reservasi')).toBe('/surya-dental/reservasi')
+  })
+
+  it('switches to lumina-dental and synchronizes locale to en', () => {
+    const { clinic, setClinic, currentSlug } = useClinic()
+    const { locale, resetExplicitFlag } = useI18n()
+    resetExplicitFlag()
+
+    setClinic('lumina-dental')
+    expect(currentSlug.value).toBe('lumina-dental')
+    expect(clinic.value.name).toBe('Lumina Dental Studio')
+    expect(clinic.value.defaultLanguage).toBe('en')
+    expect(locale.value).toBe('en')
   })
 
   it('safely falls back to default candraloka when given unknown slug', () => {

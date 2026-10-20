@@ -22,15 +22,14 @@ import {
   isDoctorPracticingOn,
 } from '@/lib/schedule'
 import { getIsoDayOfWeek, toIsoDateString } from '@/lib/time'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
+
+const { clinic, clinicLink } = useClinic()
+const { t, getDoctorSpecialty, isEnglish } = useI18n()
 
 useHead({
-  title: 'Jadwal Praktek Dokter | Candraloka Dental Care',
-  meta: [
-    {
-      name: 'description',
-      content: 'Jadwal praktek mingguan dokter gigi umum dan spesialis di Candraloka Dental Care. Cek waktu praktek hari ini dan reservasi online berbasis WIB.',
-    },
-  ],
+  title: computed(() => isEnglish.value ? `Doctor Practice Schedule | ${clinic.value.name}` : `Jadwal Praktek Dokter | ${clinic.value.name}`),
 })
 
 const route = useRoute()
@@ -92,19 +91,23 @@ const displayedDoctors = computed(() => {
   return list
 })
 
+const englishDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
 // 7 days definition
-const daysList = [1, 2, 3, 4, 5, 6, 7].map((day) => ({
-  day,
-  dayName: getDayName(day),
-  isToday: day === currentIsoDay,
-}))
+const daysList = computed(() =>
+  [1, 2, 3, 4, 5, 6, 7].map((day) => ({
+    day,
+    dayName: isEnglish.value ? englishDays[day - 1] : getDayName(day),
+    isToday: day === currentIsoDay,
+  }))
+)
 
 // Filtered columns for desktop
 const displayedDays = computed(() => {
   if (selectedDay.value !== 'all') {
-    return daysList.filter((d) => d.day === Number(selectedDay.value))
+    return daysList.value.filter((d) => d.day === Number(selectedDay.value))
   }
-  return daysList
+  return daysList.value
 })
 
 // Helper for doctor sessions in a day
@@ -151,11 +154,11 @@ const mobileDayDoctors = computed(() => {
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Jadwal Praktek Dokter Mingguan
+          {{ t('schedule.title') }}
         </h1>
 
         <p class="text-sm sm:text-base text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          Temukan waktu konsultasi yang tepat bersama dokter pilihan Anda. Seluruh jadwal mengacu pada waktu Indonesia Barat (WIB).
+          {{ t('schedule.subtitle') }}
         </p>
 
         <!-- Clinic Operating Hours & Timezone Strip (FR-6.6) -->

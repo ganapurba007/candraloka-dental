@@ -1,6 +1,8 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import servicesData from '@/data/services.json'
 import {
   MapPin,
@@ -11,18 +13,19 @@ import {
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
 const { clinic, clinicLink } = useClinic()
+const { t, getServiceName } = useI18n()
 const currentYear = new Date().getFullYear()
 const featuredServices = servicesData.slice(0, 5)
 
-const navLinks = [
-  { name: 'Beranda', to: '/' },
-  { name: 'Tentang Kami', to: '/tentang' },
-  { name: 'Semua Layanan', to: '/layanan' },
-  { name: 'Tim Dokter Gigi', to: '/dokter' },
-  { name: 'Jadwal Praktek', to: '/jadwal' },
-  { name: 'Reservasi Online', to: '/reservasi' },
-  { name: 'Kontak & Lokasi', to: '/kontak' },
-]
+const navLinks = computed(() => [
+  { name: t('nav.home'), to: '/' },
+  { name: t('nav.about'), to: '/tentang' },
+  { name: t('nav.services'), to: '/layanan' },
+  { name: t('nav.doctors'), to: '/dokter' },
+  { name: t('nav.schedule'), to: '/jadwal' },
+  { name: t('nav.bookNow'), to: '/reservasi' },
+  { name: t('nav.contact'), to: '/kontak' },
+])
 </script>
 
 <template>
@@ -60,7 +63,7 @@ const navLinks = [
         <!-- Col 2: Quick Links -->
         <div>
           <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-            Navigasi Cepat
+            {{ t('footer.quickLinks') }}
           </h3>
           <ul class="space-y-2.5 text-sm">
             <li v-for="link in navLinks" :key="link.to">
@@ -77,7 +80,7 @@ const navLinks = [
         <!-- Col 3: Services List -->
         <div>
           <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-            Layanan Unggulan
+            {{ t('footer.services') }}
           </h3>
           <ul class="space-y-2.5 text-sm">
             <li v-for="srv in featuredServices" :key="srv.id">
@@ -85,7 +88,7 @@ const navLinks = [
                 :to="clinicLink(`/layanan/${srv.slug}`)"
                 class="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:text-primary-400 inline-block py-0.5"
               >
-                {{ srv.name }}
+                {{ getServiceName(srv) }}
               </RouterLink>
             </li>
           </ul>
@@ -94,7 +97,7 @@ const navLinks = [
         <!-- Col 4: Contact & Directions -->
         <div class="space-y-4">
           <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-            Kontak & Lokasi
+            {{ t('footer.contactInfo') }}
           </h3>
           <ul class="space-y-3 text-sm text-slate-400">
             <li class="flex items-start gap-2.5">
@@ -120,7 +123,7 @@ const navLinks = [
             </li>
             <li class="flex items-center gap-2.5">
               <Clock class="w-4 h-4 text-primary-400 flex-shrink-0" aria-hidden="true" />
-              <span>Senin – Sabtu: 09:00 – 20:00 {{ clinic.timezoneLabel }}</span>
+              <span>{{ t('topbar.operatingHours', { tz: clinic.timezoneLabel }) }}</span>
             </li>
           </ul>
 
@@ -131,7 +134,7 @@ const navLinks = [
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold transition-colors border border-navy-700/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px]"
             >
-              <span>Petunjuk Arah</span>
+              <span>{{ t('about.directions') }}</span>
               <ExternalLink class="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
             </a>
           </div>
@@ -140,7 +143,7 @@ const navLinks = [
 
       <!-- Bottom Bar -->
       <div class="pt-6 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© {{ currentYear }} {{ clinic.name }}. All rights reserved.</p>
+        <p>© {{ currentYear }} {{ clinic.name }}. {{ t('footer.allRightsReserved') }}</p>
       </div>
     </div>
   </footer>

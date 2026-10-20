@@ -1,10 +1,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import { Phone, MapPin, Clock } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 
 const { clinic } = useClinic()
+const { t } = useI18n()
 
 const phone = computed(() => clinic.value.contact.phone)
 const whatsapp = computed(() => clinic.value.contact.whatsapp)
@@ -21,8 +24,8 @@ const waUrl = computed(() => {
 
 <template>
   <aside
-    aria-label="Informasi Kontak Cepat"
-    class="hidden md:block bg-navy-900 text-slate-300 text-xs py-2.5 px-4 sm:px-6 lg:px-8 border-b border-navy-800"
+    :aria-label="t('topbar.ariaLabel')"
+    class="hidden md:block bg-navy-900 text-slate-300 text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-navy-800"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Left side: Location and Hours -->
@@ -33,11 +36,11 @@ const waUrl = computed(() => {
         </div>
         <div class="flex items-center space-x-1.5">
           <Clock class="w-3.5 h-3.5 text-primary-400" aria-hidden="true" />
-          <span>Senin – Sabtu: 09:00 – 20:00 {{ clinic.timezoneLabel }}</span>
+          <span>{{ t('topbar.operatingHours', { tz: clinic.timezoneLabel }) }}</span>
         </div>
       </div>
 
-      <!-- Right side: Phone & WhatsApp click-to-contact -->
+      <!-- Right side: Phone, WhatsApp, and Language Switcher -->
       <div class="flex items-center space-x-5">
         <a
           :href="`tel:${phone}`"
@@ -53,8 +56,13 @@ const waUrl = computed(() => {
           class="flex items-center space-x-1.5 text-emerald-400 hover:text-emerald-300 transition-colors focus-visible:outline-none focus-visible:text-white"
         >
           <IconWhatsApp class="w-3.5 h-3.5" />
-          <span>WhatsApp Kami</span>
+          <span>{{ t('topbar.whatsappUs') }}</span>
         </a>
+
+        <!-- Language Switcher -->
+        <div class="pl-2 border-l border-navy-800">
+          <LanguageSwitcher variant="dark" size="xs" />
+        </div>
       </div>
     </div>
   </aside>

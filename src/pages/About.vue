@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { useHead } from '@unhead/vue'
 import AboutHeader from '@/components/sections/AboutHeader.vue'
 import AboutStory from '@/components/sections/AboutStory.vue'
@@ -6,15 +7,14 @@ import AboutValues from '@/components/sections/AboutValues.vue'
 import AboutFacilities from '@/components/sections/AboutFacilities.vue'
 import AboutVisitFlow from '@/components/sections/AboutVisitFlow.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
+
+const { clinic } = useClinic()
+const { isEnglish } = useI18n()
 
 useHead({
-  title: 'Tentang Kami | Candraloka Dental Care',
-  meta: [
-    {
-      name: 'description',
-      content: 'Mengenal klinik gigi Candraloka Dental Care, visi, misi, nilai pelayanan, fasilitas higienis modern, dan dokter gigi berdedikasi kami.',
-    },
-  ],
+  title: computed(() => isEnglish.value ? `About Us | ${clinic.value.name}` : `Tentang Kami | ${clinic.value.name}`),
 })
 </script>
 

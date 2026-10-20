@@ -216,6 +216,12 @@ Fase dianggap selesai jika:
 
 > Log semua perubahan/penambahan yang menyimpang dari rencana awal di §3/§4. Setiap entri baru ditambah di ATAS (paling baru di paling atas).
 
+### 2026-10-20 — Fitur Bilingual (ID & EN) & Konfigurasi Default Language per Klinik di clinics.json
+**Berubah dari:** Teks antarmuka sepenuhnya hardcoded dalam Bahasa Indonesia tanpa opsi pergantian bahasa dan tanpa dukungan klien internasional.
+**Jadi:** Sistem lokalisasi bilingual (Bahasa Indonesia `id` & English `en`) dengan kamus terjemahan modular (`src/lib/translations/`), reactive composable `useI18n`, komponen visual `LanguageSwitcher` (desktop TopBar/Navbar & mobile drawer), serta hierarki penentuan bahasa: query param `?lang=...` > session/localStorage > preset klinik `defaultLanguage` di `clinics.json` > fallback root `id`.
+**Alasan:** Portfolio ditargetkan untuk klien luar negeri dan Indonesia secara bersamaan, sehingga klien internasional dapat langsung membuka versi bahasa Inggris tanpa kehilangan konteks branding klinik.
+**FR baru (jika ada):** FR-1.10 — Bilingual Support (ID/EN) with Clinic Default Language Configuration
+
 ### 2026-10-14 — Fitur Mockup Klien Dinamis & Whitelabel Branding Terpusat
 **Berubah dari:** Profil klinik, logo, dan palet warna Sapphire Blue di-hardcode ke tema Candraloka Dental Care tunggal.
 **Jadi:** Sistem mockup multi-tenant dinamis berbasis Single Source of Truth (`src/data/clinics.json`). URL slug (mis. `/surya-dental` atau `/candraloka-dental/surya-dental`) atau query param `?client=...` secara otomatis menyesuaikan nama klinik, logo vektor SVG, nomor WhatsApp/telepon, alamat, dan meng-inject palet warna Tailwind dinamis (skala 50–950) via CSS variables tanpa merombak komponen UI.

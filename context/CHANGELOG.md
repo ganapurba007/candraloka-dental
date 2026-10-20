@@ -14,6 +14,21 @@ Format tiap entri:
 **Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
 -->
 
+## Fitur Bilingual (ID & EN) & Konfigurasi Default Language per Klinik di clinics.json (2026-10-20)
+**FR terkait:** FR-1.10 (Amandemen)
+**Yang dikerjakan:**
+- **Konfigurasi Default Language Terpusat (`src/data/clinics.json`):** Menambahkan field `"defaultLanguage"` di level root (default `"id"`) dan per-klinik (misal `"lumina-dental"` dengan `"defaultLanguage": "en"`).
+- **Resolver & Preset Multi-Klinik (`src/lib/clinics.js`):** Memperbarui `getClinicBySlug` dan `getRegisteredClinics` untuk memetakan `defaultLanguage` dengan fallback bertingkat. Menambahkan preset internasional "Lumina Dental Studio" (Singapura) dengan bahasa default Inggris.
+- **Kamus Terjemahan Komprehensif (`src/lib/translations/`):** Menyediakan kamus terjemahan modular untuk Bahasa Indonesia (`id.js`) dan English (`en.js`) meliputi navigasi, tombol aksi, hero, statistik, layanan, dokter, jadwal praktek, alur reservasi, info kontak, nama-nama hari, dan footer. Serta fungsi helper terjemahan murni dengan interpolasi parameter `{key}` dan penerjemah spesialisasi/kategori dokter & layanan (`index.js`).
+- **Reactive i18n Composable (`src/composables/useI18n.js`):** Mengelola state reaktif locale global (`id` atau `en`), sinkronisasi otomatis dengan konfigurasi klinik aktif (`syncLocaleWithClinic`), serta persistensi preferensi user di `localStorage`.
+- **Komponen Language Switcher Aksesibel (`src/components/ui/LanguageSwitcher.vue`):** Komponen toggle pill ID/EN dengan ikon globe, mendukung tema gelap (TopBar) dan terang (Navbar desktop & drawer mobile), lengkap dengan atribut ARIA aksesibel.
+- **Dukungan Routing URL Query Parameter (`src/router/index.js`):** Memungkinkan perpindahan bahasa instan via query parameter `?lang=en` atau `?lang=id` untuk kemudahan sharing tautan ke klien luar negeri.
+- **Lokalisasi Komponen Aplikasi:** Mengintegrasikan terjemahan reaktif dan navigasi `clinicLink()` ke seluruh komponen: TopBar, Navbar, Footer, QuickInfoStrip, HomeHero, HomeAboutBrief, FeaturedServices, FeaturedDoctors, Services, Doctors, Schedule, Contact, AboutHeader, AboutLocation, About, Home, dan Booking.
+- **Unit Testing Lengkap:** Menambahkan unit test `translations.spec.js` (6 test) dan `useI18n.spec.js` (5 test), serta memperbarui test `clinics.spec.js` dan `useClinic.spec.js`. Total test meningkat dari 106 menjadi 119 passed (100% pass).
+**File yang berubah:** src/data/clinics.json, src/lib/clinics.js, src/lib/translations/id.js, src/lib/translations/en.js, src/lib/translations/index.js, src/lib/__tests__/translations.spec.js, src/lib/__tests__/clinics.spec.js, src/composables/useI18n.js, src/composables/useClinic.js, src/composables/__tests__/useI18n.spec.js, src/composables/__tests__/useClinic.spec.js, src/components/ui/LanguageSwitcher.vue, src/components/layout/TopBar.vue, src/components/layout/Navbar.vue, src/components/layout/Footer.vue, src/components/sections/QuickInfoStrip.vue, src/components/sections/HomeHero.vue, src/components/sections/HomeAboutBrief.vue, src/components/sections/FeaturedServices.vue, src/components/sections/FeaturedDoctors.vue, src/components/sections/AboutHeader.vue, src/components/sections/AboutLocation.vue, src/pages/Home.vue, src/pages/About.vue, src/pages/Services.vue, src/pages/Doctors.vue, src/pages/Schedule.vue, src/pages/Contact.vue, src/pages/Booking.vue, src/router/index.js, context/SCHEMA.md, context/PRD.md, context/CHANGELOG.md, AGENTS.md
+**Test:** 119 passed / 119 total
+**Docs updated:** SCHEMA.md, PRD.md §9, CHANGELOG.md, AGENTS.md
+
 ## Fitur Mockup Klien Dinamis & Whitelabel Branding Terpusat (2026-10-14)
 **FR terkait:** Amandemen Client Mockup System
 **Yang dikerjakan:**

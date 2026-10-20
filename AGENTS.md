@@ -8,10 +8,10 @@
 **Stack:** Vue 3 (Vite, Composition API), Vue Router, Tailwind CSS, VeeValidate + Zod, `sharp` (gambar WebP), data JSON lokal (tanpa backend/database/pembayaran), reservasi di `localStorage`, Vitest + Vue Test Utils
 
 ## Status Saat Ini
-- **Fase aktif:** Fitur Mockup Klien Dinamis & Whitelabel Branding Selesai
-- **Test:** 106 passed / 106 total
+- **Fase aktif:** Fitur Bilingual (ID/EN) & Konfigurasi Default Language per Klinik Selesai
+- **Test:** 119 passed / 119 total
 - **Sedang dikerjakan:** Proyek selesai & siap dipublikasikan
-- **Update terakhir:** 2026-10-14
+- **Update terakhir:** 2026-10-20
 
 > Update 3 baris di atas setiap kali fase/task berubah. Jangan biarkan basi.
 

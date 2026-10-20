@@ -6,21 +6,26 @@ import doctorsData from '@/data/doctors.json'
 import Card from '@/components/ui/Card.vue'
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 
 const props = defineProps({
   badge: {
     type: String,
-    default: 'Tenaga Medis Berdedikasi',
+    default: '',
   },
   title: {
     type: String,
-    default: 'Dokter Gigi Unggulan',
+    default: '',
   },
   description: {
     type: String,
-    default: 'Didukung dokter gigi umum dan spesialis berpengalaman yang siap memberikan perawatan terbaik untuk Anda.',
+    default: '',
   },
 })
+
+const { clinicLink } = useClinic()
+const { t, getDoctorSpecialty, isEnglish } = useI18n()
 
 // 3 Featured doctors (FR-2.6 / FR-3.6)
 const featuredDoctors = computed(() => {
@@ -35,18 +40,18 @@ const featuredDoctors = computed(() => {
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div class="max-w-2xl space-y-2">
           <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-            {{ badge }}
+            {{ badge || (isEnglish ? 'Dedicated Medical Specialists' : 'Tenaga Medis Berdedikasi') }}
           </span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
-            {{ title }}
+            {{ title || (isEnglish ? 'Featured Dental Specialists' : 'Dokter Gigi Unggulan') }}
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            {{ description }}
+            {{ description || t('doctors.subtitle') }}
           </p>
         </div>
         <div class="flex-shrink-0">
-          <Button to="/dokter" variant="outline" size="md" class="font-semibold hover:border-primary-400">
-            <span>Lihat Semua Dokter</span>
+          <Button :to="clinicLink('/dokter')" variant="outline" size="md" class="font-semibold hover:border-primary-400">
+            <span>{{ t('doctors.allDoctors') }}</span>
             <ArrowRight class="w-4 h-4 ml-1.5" aria-hidden="true" />
           </Button>
         </div>
@@ -57,7 +62,7 @@ const featuredDoctors = computed(() => {
         <RouterLink
           v-for="doc in featuredDoctors"
           :key="doc.id"
-          :to="`/dokter/${doc.slug}`"
+          :to="clinicLink(`/dokter/${doc.slug}`)"
           class="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-2xl"
         >
           <Card
@@ -75,7 +80,7 @@ const featuredDoctors = computed(() => {
               />
               <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm flex items-center gap-1.5 text-xs font-semibold text-navy-900">
                 <Award class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
-                <span>{{ doc.experienceYears }}+ Tahun Pengalaman</span>
+                <span>{{ t('doctors.experienceYears', { years: doc.experienceYears }) }}</span>
               </div>
             </div>
 
@@ -83,7 +88,7 @@ const featuredDoctors = computed(() => {
             <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
               <div class="space-y-1.5">
                 <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider block">
-                  {{ doc.specialty }}
+                  {{ getDoctorSpecialty(doc.specialty) }}
                 </span>
                 <h3 class="text-lg font-bold text-navy-900 group-hover:text-primary-600 transition-colors">
                   {{ doc.name }}
@@ -94,7 +99,7 @@ const featuredDoctors = computed(() => {
               </div>
 
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-primary-600 group-hover:text-primary-700">
-                <span>Lihat Profil & Jadwal</span>
+                <span>{{ t('doctors.viewDetail') }}</span>
                 <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </div>
             </div>

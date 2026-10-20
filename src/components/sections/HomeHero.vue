@@ -16,10 +16,43 @@ import {
 import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import homeData from '@/data/home.json'
 
 const { clinic, clinicLink } = useClinic()
+const { t, isEnglish } = useI18n()
 const { hero } = homeData
+
+const englishSlidesMap = {
+  1: {
+    badge: 'Modern & Trusted Dental Care',
+    headline: 'Healthy and Confident Smiles Start Here',
+    description: 'Comprehensive dental care with experienced dentists, modern technology, and on-time scheduling without long queues.',
+    ctaText: 'Book Online Appointment',
+    secondaryText: 'View Practice Schedule',
+    highlights: ['No Waiting Queues', '5 Specialist Dentists', 'High Medical Sterilization'],
+  },
+  2: {
+    badge: 'Gentle & Empathetic Care',
+    title: 'Family Dental Care',
+    subtitle: 'Comfortable & Anxiety-Free',
+    headline: 'A Relaxing & Gentle Dentist Experience',
+    description: 'From pediatric care to adult orthodontics, we prioritize patient comfort, open communication, and personalized dental treatments.',
+    ctaText: 'Meet Our Specialists',
+    secondaryText: 'View All Services',
+    highlights: ['Kids Friendly Corner', 'Open Consultation', 'Clear Treatment Plan'],
+  },
+  3: {
+    badge: 'Medical Sterilization & Technology',
+    title: 'Digital & Hygienic Tech',
+    subtitle: 'State-of-the-Art Ergonomics',
+    headline: 'Precision Care with Modern Ergonomic Facilities',
+    description: 'Equipped with modern dental units, digital panoramic radiography, and medical-grade sterilization for maximum patient safety.',
+    ctaText: 'Explore Our Services',
+    secondaryText: 'Book an Appointment',
+    highlights: ['Digital Radiography', 'Autoclave Sterilization', 'Ergonomic Dental Chair'],
+  },
+}
 
 const slides = computed(() => {
   const baseList = hero.slides && hero.slides.length > 0 ? hero.slides : [
@@ -41,17 +74,20 @@ const slides = computed(() => {
   ]
 
   return baseList.map((s) => {
-    if (s.id === 1) {
-      return {
-        ...s,
-        title: clinic.value.shortName,
-        subtitle: `${clinic.value.subName} Modern`,
-        ctaTo: clinicLink(s.ctaTo),
-        secondaryTo: clinicLink(s.secondaryTo),
-      }
-    }
+    const en = isEnglish.value ? englishSlidesMap[s.id] : null
+    const title = s.id === 1 ? clinic.value.shortName : (en?.title || s.title)
+    const subtitle = s.id === 1 ? `${clinic.value.subName} Modern` : (en?.subtitle || s.subtitle)
+
     return {
       ...s,
+      badge: en?.badge || s.badge,
+      title,
+      subtitle,
+      headline: en?.headline || s.headline,
+      description: en?.description || s.description,
+      ctaText: en?.ctaText || s.ctaText,
+      secondaryText: en?.secondaryText || s.secondaryText,
+      highlights: en?.highlights || s.highlights,
       ctaTo: clinicLink(s.ctaTo),
       secondaryTo: clinicLink(s.secondaryTo),
     }

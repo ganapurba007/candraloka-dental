@@ -17,16 +17,14 @@ import Button from '@/components/ui/Button.vue'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import doctorsData from '@/data/doctors.json'
 import { formatPracticeDaysSummary } from '@/lib/format'
-import { isDoctorPracticingOn } from '@/lib/schedule'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
+
+const { clinic, clinicLink } = useClinic()
+const { t, getDoctorSpecialty, isEnglish } = useI18n()
 
 useHead({
-  title: 'Tim Dokter Gigi | Candraloka Dental Care',
-  meta: [
-    {
-      name: 'description',
-      content: 'Temui tim dokter gigi umum dan spesialis berpengalaman di Candraloka Dental Care: spesialis konservasi gigi, ortodonti, bedah mulut, dan dokter gigi anak.',
-    },
-  ],
+  title: computed(() => isEnglish.value ? `Our Professional Dental Team | ${clinic.value.name}` : `Tim Dokter Gigi | ${clinic.value.name}`),
 })
 
 const selectedSpecialty = ref('Semua')
@@ -36,6 +34,11 @@ const specialties = computed(() => [
   'Semua',
   ...new Set(doctorsData.map((d) => d.specialty)),
 ])
+
+function getSpecialtyDisplay(spec) {
+  if (spec === 'Semua') return isEnglish.value ? 'All' : 'Semua'
+  return getDoctorSpecialty(spec)
+}
 
 const filteredDoctors = computed(() => {
   let list = doctorsData
@@ -51,6 +54,7 @@ const filteredDoctors = computed(() => {
     list = list.filter(
       (d) =>
         d.name.toLowerCase().includes(q) ||
+        getDoctorSpecialty(d.specialty).toLowerCase().includes(q) ||
         d.specialty.toLowerCase().includes(q) ||
         d.bio.toLowerCase().includes(q)
     )
@@ -85,11 +89,11 @@ function clearFilters() {
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-2.5">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Tim Dokter Gigi Berpengalaman & Terpercaya
+          {{ t('doctors.title') }}
         </h1>
 
         <p class="text-sm sm:text-base text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          Dokter gigi umum dan spesialis berdedikasi tinggi dengan pendekatan komunikatif, teliti, dan bebas trauma.
+          {{ t('doctors.subtitle') }}
         </p>
       </div>
     </section>
@@ -106,14 +110,14 @@ function clearFilters() {
           <input
             v-model="searchQuery"
             type="search"
-            placeholder="Cari nama dokter atau keahlian..."
-            aria-label="Cari nama dokter gigi"
+            :placeholder="isEnglish ? 'Search dentist name or specialty...' : 'Cari nama dokter atau keahlian...'"
+            :aria-label="isEnglish ? 'Search dentist name' : 'Cari nama dokter gigi'"
             class="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-300 rounded-2xl text-navy-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 shadow-sm transition-all text-base"
           />
           <button
             v-if="searchQuery"
             type="button"
-            aria-label="Hapus kata kunci pencarian"
+            :aria-label="isEnglish ? 'Clear search' : 'Hapus kata kunci pencarian'"
             class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
             @click="searchQuery = ''"
           >
@@ -135,7 +139,7 @@ function clearFilters() {
             "
             @click="selectedSpecialty = spec"
           >
-            <span>{{ spec }}</span>
+            <span>{{ getSpecialtyDisplay(spec) }}</span>
           </button>
         </div>
       </div>
@@ -163,44 +167,44 @@ function clearFilters() {
           <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
             <div class="space-y-2">
               <p class="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                {{ doc.specialty }}
+                {{ getDoctorSpecialty(doc.specialty) }}
               </p>
               <h2 class="text-lg font-bold text-navy-900 group-hover:text-primary-700 transition-colors leading-snug">
-                <RouterLink :to="`/dokter/${doc.slug}`" class="focus-visible:outline-none focus-visible:underline">
+                <RouterLink :to="clinicLink(`/dokter/${doc.slug}`)" class="focus-visible:outline-none focus-visible:underline">
                   {{ doc.name }}
                 </RouterLink>
               </h2>
 
               <div class="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
                 <Award class="w-4 h-4 text-primary-600 flex-shrink-0" aria-hidden="true" />
-                <span>{{ doc.experienceYears }} Tahun Pengalaman</span>
+                <span>{{ t('doctors.experienceYears', { years: doc.experienceYears }) }}</span>
               </div>
 
               <div class="flex items-start gap-1.5 text-xs text-slate-600 pt-1">
                 <Calendar class="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <span class="leading-relaxed">Hari praktek: {{ formatPracticeDaysSummary(doc.practiceHours) }}</span>
+                <span class="leading-relaxed">{{ isEnglish ? 'Practice days: ' : 'Hari praktek: ' }}{{ formatPracticeDaysSummary(doc.practiceHours) }}</span>
               </div>
             </div>
 
             <!-- Actions (FR-5.1) -->
             <div class="pt-4 border-t border-slate-100 grid grid-cols-2 gap-2.5">
               <Button
-                :to="`/dokter/${doc.slug}`"
+                :to="clinicLink(`/dokter/${doc.slug}`)"
                 variant="outline"
                 size="sm"
                 class="w-full justify-center text-xs font-semibold"
               >
-                <span>Lihat Profil</span>
+                <span>{{ t('doctors.viewDetail') }}</span>
                 <ArrowRight class="w-3.5 h-3.5 ml-1" aria-hidden="true" />
               </Button>
               <Button
-                :to="`/reservasi?dokter=${doc.slug}`"
+                :to="clinicLink(`/reservasi?dokter=${doc.slug}`)"
                 variant="primary"
                 size="sm"
                 class="w-full justify-center text-xs font-semibold"
               >
                 <CalendarCheck class="w-3.5 h-3.5 mr-1" aria-hidden="true" />
-                <span>Reservasi</span>
+                <span>{{ t('doctors.book') }}</span>
               </Button>
             </div>
           </div>

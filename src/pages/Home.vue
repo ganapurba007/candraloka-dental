@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { useHead } from '@unhead/vue'
 import HomeHero from '@/components/sections/HomeHero.vue'
 import QuickInfoStrip from '@/components/sections/QuickInfoStrip.vue'
@@ -7,15 +8,18 @@ import FeaturedServices from '@/components/sections/FeaturedServices.vue'
 import ReservationSteps from '@/components/sections/ReservationSteps.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
 import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
+
+const { clinic } = useClinic()
+const { isEnglish } = useI18n()
 
 useHead({
-  title: 'Beranda | Candraloka Dental Care — Klinik Gigi Modern & Ramah',
-  meta: [
-    {
-      name: 'description',
-      content: 'Klinik gigi keluarga dengan layanan modern, dokter gigi umum & spesialis berpengalaman, dan sistem reservasi online jadwal waktu nyata.',
-    },
-  ],
+  title: computed(() =>
+    isEnglish.value
+      ? `${clinic.value.name} — Modern & Friendly Dental Care`
+      : `${clinic.value.name} — ${clinic.value.tagline || 'Klinik Gigi Modern & Ramah'}`
+  ),
 })
 </script>
 

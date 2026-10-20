@@ -2,8 +2,10 @@
 import { ArrowRight } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 
 const { clinic, clinicLink } = useClinic()
+const { t, isEnglish } = useI18n()
 </script>
 
 <template>
@@ -25,17 +27,17 @@ const { clinic, clinicLink } = useClinic()
     <!-- Center-aligned Header Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-3">
       <span class="text-xs font-bold uppercase tracking-wider text-blue-200 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-        Tentang {{ clinic.name }}
+        {{ isEnglish ? `About ${clinic.name}` : `Tentang ${clinic.name}` }}
       </span>
 
       <!-- Heading -->
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-        Tentang Kami
+        {{ t('about.title') }}
       </h1>
 
       <!-- Description / Subtitle -->
       <p class="text-sm sm:text-base text-slate-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-        Merawat kesehatan gigi dan senyum bahagia keluarga dengan pelayanan medis terpercaya, pendekatan ramah, dan suasana klinik yang menenangkan.
+        {{ t('about.subtitle') }}
       </p>
 
       <!-- Action Buttons -->
@@ -46,7 +48,7 @@ const { clinic, clinicLink } = useClinic()
           size="md"
           class="font-semibold shadow-lg hover:-translate-y-0.5 transition-all text-navy-950"
         >
-          <span>Lihat Dokter</span>
+          <span>{{ isEnglish ? 'Meet Our Doctors' : 'Lihat Dokter' }}</span>
           <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
         </Button>
 
@@ -56,7 +58,7 @@ const { clinic, clinicLink } = useClinic()
           size="md"
           class="font-semibold !text-white border-2 border-white/80 bg-white/10 hover:!bg-white hover:!text-navy-950 shadow-lg hover:-translate-y-0.5 transition-all"
         >
-          <span>Layanan Kami</span>
+          <span>{{ isEnglish ? 'Our Services' : 'Layanan Kami' }}</span>
           <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
         </Button>
       </div>

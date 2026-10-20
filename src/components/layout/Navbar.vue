@@ -1,22 +1,25 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { Menu, X, CalendarCheck } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
 const { clinic, clinicLink } = useClinic()
+const { t } = useI18n()
 
-const navLinks = [
-  { name: 'Beranda', to: '/' },
-  { name: 'Tentang', to: '/tentang' },
-  { name: 'Layanan', to: '/layanan' },
-  { name: 'Dokter', to: '/dokter' },
-  { name: 'Jadwal Praktek', to: '/jadwal' },
-  { name: 'Kontak', to: '/kontak' },
-]
+const navLinks = computed(() => [
+  { name: t('nav.home'), to: '/' },
+  { name: t('nav.about'), to: '/tentang' },
+  { name: t('nav.services'), to: '/layanan' },
+  { name: t('nav.doctors'), to: '/dokter' },
+  { name: t('nav.schedule'), to: '/jadwal' },
+  { name: t('nav.contact'), to: '/kontak' },
+])
 
 function toggleMobileMenu() {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -114,8 +117,9 @@ function isActive(to) {
           </RouterLink>
         </nav>
 
-        <!-- Desktop CTA Button -->
-        <div class="hidden md:flex items-center">
+        <!-- Desktop CTA Button & Language Switcher -->
+        <div class="hidden md:flex items-center space-x-3">
+          <LanguageSwitcher variant="light" size="sm" class="hidden lg:inline-flex" />
           <Button
             :to="clinicLink('/reservasi')"
             variant="primary"
@@ -123,12 +127,13 @@ function isActive(to) {
             class="shadow-sm font-semibold"
           >
             <CalendarCheck class="w-4 h-4 mr-1.5" aria-hidden="true" />
-            Buat Reservasi
+            {{ t('nav.bookNow') }}
           </Button>
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <div class="flex md:hidden items-center">
+        <div class="flex md:hidden items-center gap-2">
+          <LanguageSwitcher variant="light" size="xs" />
           <button
             type="button"
             :aria-expanded="isMobileMenuOpen"
@@ -193,7 +198,11 @@ function isActive(to) {
             <span v-if="isActive(link.to)" class="w-1.5 h-1.5 rounded-full bg-primary-600" />
           </RouterLink>
 
-          <div class="pt-3 mt-2 border-t border-slate-100">
+          <div class="pt-3 mt-2 border-t border-slate-100 flex flex-col gap-3">
+            <div class="flex items-center justify-between px-2">
+              <span class="text-xs font-medium text-slate-500">{{ t('common.switchLanguage') }}</span>
+              <LanguageSwitcher variant="light" size="sm" />
+            </div>
             <Button
               :to="clinicLink('/reservasi')"
               variant="primary"
@@ -202,7 +211,7 @@ function isActive(to) {
               @click="closeMobileMenu"
             >
               <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
-              Buat Reservasi Online
+              {{ t('nav.bookNow') }}
             </Button>
           </div>
         </nav>

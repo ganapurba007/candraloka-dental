@@ -7,11 +7,12 @@ import clinicsRegistry from '@/data/clinics.json'
 /**
  * Get the list of all registered clinic presets.
  *
- * @returns {Array<{ slug: string, name: string, shortName: string, logo: string, primaryColor: string }>}
+ * @returns {Array<{ slug: string, name: string, shortName: string, logo: string, primaryColor: string, defaultLanguage: string }>}
  */
 export function getRegisteredClinics() {
   const list = []
   const clinics = clinicsRegistry?.clinics || {}
+  const fallbackLang = clinicsRegistry?.defaultLanguage || 'id'
 
   for (const [slug, item] of Object.entries(clinics)) {
     list.push({
@@ -20,6 +21,7 @@ export function getRegisteredClinics() {
       shortName: item.shortName || item.name || slug,
       logo: item.logo || baseClinicData.about?.image || '/icon.jpg',
       primaryColor: item.colors?.primary || '#1e60d5',
+      defaultLanguage: item.defaultLanguage || fallbackLang,
     })
   }
 
@@ -35,6 +37,7 @@ export function getRegisteredClinics() {
  */
 export function getClinicBySlug(slug) {
   const defaultSlug = clinicsRegistry?.default || 'candraloka'
+  const fallbackLang = clinicsRegistry?.defaultLanguage || 'id'
   const targetSlug = slug && typeof slug === 'string' ? slug.trim().toLowerCase() : defaultSlug
   const isFound = Boolean(clinicsRegistry?.clinics?.[targetSlug])
   const activeSlug = isFound ? targetSlug : defaultSlug
@@ -50,6 +53,7 @@ export function getClinicBySlug(slug) {
       shortName: 'Candraloka',
       subName: 'Dental Care',
       logo: '/images/logos/candraloka.svg',
+      defaultLanguage: fallbackLang,
       colors: {
         primary: '#1e60d5',
         navy: '#0e204d',
@@ -64,6 +68,7 @@ export function getClinicBySlug(slug) {
   merged.subName = registered.subName || 'Dental Care'
   if (registered.tagline) merged.tagline = registered.tagline
   merged.logo = registered.logo || '/images/logos/candraloka.svg'
+  merged.defaultLanguage = registered.defaultLanguage || fallbackLang
 
   // Colors
   merged.colors = {

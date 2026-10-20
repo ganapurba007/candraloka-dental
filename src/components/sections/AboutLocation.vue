@@ -9,14 +9,18 @@ import {
 } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { getDayName } from '@/lib/format'
 
 const { clinic } = useClinic()
+const { t, isEnglish } = useI18n()
 
 const openStatus = computed(() => {
   return getClinicOpenStatus(clinic.value.operatingHours, new Date())
 })
+
+const englishDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 const daysList = computed(() => {
   // 1 = Senin to 7 = Minggu
@@ -25,9 +29,13 @@ const daysList = computed(() => {
     const found = clinic.value.operatingHours.find((h) => h.day === day)
     result.push({
       day,
-      dayName: getDayName(day),
+      dayName: isEnglish.value ? englishDays[day - 1] : getDayName(day),
       isOpen: !!found,
-      hours: found ? `${found.open} – ${found.close} ${clinic.value.timezoneLabel}` : 'Tutup',
+      hours: found
+        ? `${found.open} – ${found.close} ${clinic.value.timezoneLabel}`
+        : isEnglish.value
+          ? 'Closed'
+          : 'Tutup',
     })
   }
   return result
@@ -174,7 +182,7 @@ const daysList = computed(() => {
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 text-primary-700 hover:text-primary-800 font-semibold underline underline-offset-2 flex-shrink-0"
               >
-                <span>Buka di Google Maps</span>
+                <span>{{ t('about.openInMaps') }}</span>
                 <ExternalLink class="w-3.5 h-3.5" aria-hidden="true" />
               </a>
             </div>

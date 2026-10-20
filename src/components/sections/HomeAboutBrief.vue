@@ -6,9 +6,11 @@ import Button from '@/components/ui/Button.vue'
 import { useInView } from '@/composables/useInView'
 import { useCountUp } from '@/composables/useCountUp'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import homeData from '@/data/home.json'
 
 const { clinic, clinicLink } = useClinic()
+const { t, isEnglish } = useI18n()
 const { targetRef, isInView } = useInView({ threshold: 0.2, once: true })
 
 // 3 Stats with CountUp animations (FR-2.3)
@@ -20,11 +22,19 @@ const { displayValue: stat1Display } = useCountUp(stat1Target, isInView, 1600)
 const { displayValue: stat2Display } = useCountUp(stat2Target, isInView, 1800)
 const { displayValue: stat3Display } = useCountUp(stat3Target, isInView, 1400)
 
-const points = [
-  'Pendekatan perawatan ramah & bebas rasa cemas',
-  'Peralatan dan teknologi sterilisasi bertaraf medis tinggi',
-  'Sistem reservasi transparan dengan dokter spesialis',
-]
+const points = computed(() =>
+  isEnglish.value
+    ? [
+        'Gentle and anxiety-free patient-centered care',
+        'State-of-the-art medical grade sterilization',
+        'Transparent appointment scheduling with specialist dentists',
+      ]
+    : [
+        'Pendekatan perawatan ramah & bebas rasa cemas',
+        'Peralatan dan teknologi sterilisasi bertaraf medis tinggi',
+        'Sistem reservasi transparan dengan dokter spesialis',
+      ]
+)
 </script>
 
 <template>
@@ -74,10 +84,10 @@ const points = [
                 {{ stat1Display }}<span class="text-primary-600">+</span>
               </div>
               <p class="text-sm sm:text-base font-bold text-slate-800 leading-snug">
-                Tahun Melayani
+                {{ t('hero.yearsExp') }}
               </p>
               <p class="text-xs text-slate-500 mt-0.5">
-                Sejak {{ clinic.establishedYear }} untuk keluarga Indonesia
+                {{ isEnglish ? `Serving smiles since ${clinic.establishedYear}` : `Sejak ${clinic.establishedYear} untuk keluarga Indonesia` }}
               </p>
             </div>
           </div>
@@ -92,10 +102,10 @@ const points = [
                 {{ stat2Display.toLocaleString('id-ID') }}<span class="text-primary-600">+</span>
               </div>
               <p class="text-sm sm:text-base font-bold text-slate-800 leading-snug">
-                Pasien Terlayani
+                {{ t('hero.patients') }}
               </p>
               <p class="text-xs text-slate-500 mt-0.5">
-                Tindakan pencegahan & pemulihan gigi
+                {{ isEnglish ? 'Preventive & restorative dental treatments' : 'Tindakan pencegahan & pemulihan gigi' }}
               </p>
             </div>
           </div>
@@ -110,10 +120,10 @@ const points = [
                 {{ stat3Display }}
               </div>
               <p class="text-sm sm:text-base font-bold text-slate-800 leading-snug">
-                Tim Dokter Gigi
+                {{ t('hero.specialists') }}
               </p>
               <p class="text-xs text-slate-500 mt-0.5">
-                Dokter gigi umum dan spesialis berdedikasi
+                {{ isEnglish ? 'Dedicated general dentists and specialists' : 'Dokter gigi umum dan spesialis berdedikasi' }}
               </p>
             </div>
           </div>

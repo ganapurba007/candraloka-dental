@@ -29,6 +29,7 @@ import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
 import clinicData from '@/data/clinic.json'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import {
   formatDate,
   formatDateShort,
@@ -55,27 +56,27 @@ import { buildReservationWhatsApp } from '@/lib/whatsapp'
 import { patientFormSchema } from '@/lib/schemas'
 import { addDaysToIso, toIsoDateString } from '@/lib/time'
 
+const { clinic } = useClinic()
+const { t, getServiceName, getDoctorSpecialty, isEnglish } = useI18n()
+
 useHead({
-  title: 'Reservasi Online | Candraloka Dental Care',
-  meta: [
-    {
-      name: 'description',
-      content: 'Buat janji temu reservasi online klinik gigi Candraloka Dental Care dalam 4 langkah mudah berbasis ketersediaan waktu nyata.',
-    },
-  ],
+  title: computed(() =>
+    isEnglish.value
+      ? `Online Appointment Booking | ${clinic.value.name}`
+      : `Reservasi Online | ${clinic.value.name}`
+  ),
 })
 
 const route = useRoute()
 const router = useRouter()
 const { success: toastSuccess, error: toastError, info: toastInfo } = useToast()
 
-
-const steps = [
-  { number: 1, title: 'Layanan' },
-  { number: 2, title: 'Dokter' },
-  { number: 3, title: 'Jadwal' },
-  { number: 4, title: 'Data Pasien' },
-]
+const steps = computed(() => [
+  { number: 1, title: t('booking.step1') },
+  { number: 2, title: t('booking.step2') },
+  { number: 3, title: t('booking.step3') },
+  { number: 4, title: t('booking.step4') },
+])
 
 // State variables
 const currentStep = ref(1)
@@ -428,8 +429,6 @@ async function submitReservation() {
   window.scrollTo({ top: 100, behavior: 'smooth' })
 }
 
-const { clinic } = useClinic()
-
 // WhatsApp Confirmation Builder (FR-7.8)
 const waConfirmationData = computed(() => {
   if (!confirmedReservation.value) return { text: '', url: '#' }
@@ -524,11 +523,11 @@ function handleClearStoredReservations() {
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-2.5">
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Buat Janji Temu Perawatan Gigi
+          {{ t('booking.title') }}
         </h1>
 
         <p class="text-sm sm:text-base text-slate-100 max-w-xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          Pilih layanan, dokter, serta tanggal dan jam yang sesuai. Terjadwal rapi dan transparan.
+          {{ t('booking.subtitle') }}
         </p>
       </div>
     </section>

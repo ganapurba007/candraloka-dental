@@ -9,6 +9,11 @@ describe('clinics.js (Clinic Registry & Fallback Functions)', () => {
     const candraloka = list.find((c) => c.slug === 'candraloka')
     expect(candraloka).toBeDefined()
     expect(candraloka.name).toBe('Candraloka Dental Care')
+    expect(candraloka.defaultLanguage).toBe('id')
+
+    const lumina = list.find((c) => c.slug === 'lumina-dental')
+    expect(lumina).toBeDefined()
+    expect(lumina.defaultLanguage).toBe('en')
 
     const surya = list.find((c) => c.slug === 'surya-dental')
     expect(surya).toBeDefined()
@@ -23,9 +28,18 @@ describe('clinics.js (Clinic Registry & Fallback Functions)', () => {
     expect(clinic.colors.primary).toBe('#059669')
     expect(clinic.logo).toBe('/images/logos/surya-dental.svg')
     expect(clinic.contact.phone).toBe('021-77889900')
+    expect(clinic.defaultLanguage).toBe('id')
     // Fallback fields inherited from base clinic
     expect(clinic.operatingHours.length).toBeGreaterThan(0)
     expect(clinic.about.values.length).toBe(6)
+  })
+
+  it('getClinicBySlug loads international preset correctly for lumina-dental with english default', () => {
+    const clinic = getClinicBySlug('lumina-dental')
+    expect(clinic.slug).toBe('lumina-dental')
+    expect(clinic.name).toBe('Lumina Dental Studio')
+    expect(clinic.defaultLanguage).toBe('en')
+    expect(clinic.contact.phone).toBe('+65 6789 0123')
   })
 
   it('getClinicBySlug safely falls back to default candraloka when slug is unknown or empty', () => {

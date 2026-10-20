@@ -1,11 +1,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import { getClinicOpenStatus } from '@/lib/schedule'
 import { Clock, Phone, MapPin } from 'lucide-vue-next'
 import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 
 const { clinic } = useClinic()
+const { t } = useI18n()
 
 const clinicStatus = computed(() => {
   return getClinicOpenStatus(clinic.value.operatingHours, new Date())

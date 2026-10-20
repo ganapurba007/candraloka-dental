@@ -5,6 +5,7 @@ import {
   shadesToCssVariables,
   applyCssVariablesToElement,
 } from '@/lib/theme'
+import { useI18n } from '@/composables/useI18n'
 
 // Shared reactive state
 const currentSlug = ref('candraloka')
@@ -22,6 +23,10 @@ export function useClinic() {
   function setClinic(slug) {
     const resolved = getClinicBySlug(slug)
     currentSlug.value = resolved.slug
+
+    // Sync default language configured for this clinic preset
+    const { syncLocaleWithClinic } = useI18n()
+    syncLocaleWithClinic(resolved.defaultLanguage)
 
     // Apply CSS Variables in browser
     if (typeof document !== 'undefined') {
