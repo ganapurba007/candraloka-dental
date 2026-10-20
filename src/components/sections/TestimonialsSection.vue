@@ -3,6 +3,28 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import testimonialsData from '@/data/testimonials.json'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
+import { useI18n } from '@/composables/useI18n'
+
+const { isEnglish } = useI18n()
+
+const testimonialsTranslations = {
+  1: {
+    service: 'Dental Scaling & Polishing',
+    quote: 'The scaling procedure at Candraloka was very gentle and comfortable. The dentist was extremely meticulous and careful. The clinic is clean, modern, and very relaxing.',
+  },
+  2: {
+    service: 'Orthodontic Braces Care',
+    quote: 'The dentist thoroughly explained my entire braces treatment roadmap. Control visits are always strictly on-schedule without long waiting times.',
+  },
+  3: {
+    service: 'Composite Dental Filling',
+    quote: 'The filling matches my natural tooth color seamlessly. I no longer feel any pain or sensitivity when enjoying cold drinks or meals.',
+  },
+  4: {
+    service: 'Pediatric Dental Care',
+    quote: 'My child, who usually gets anxious at dental visits, was completely calm and happy thanks to the warm and communicative doctor.',
+  },
+}
 
 // Auto-sliding Testimonials Carousel (FR-2.7)
 const currentIndex = ref(0)
@@ -11,7 +33,18 @@ const isPaused = ref(false)
 let timer = null
 
 const totalSlides = testimonialsData.length
-const currentTestimonial = computed(() => testimonialsData[currentIndex.value])
+const currentTestimonial = computed(() => {
+  const item = testimonialsData[currentIndex.value]
+  if (!item) return {}
+  if (isEnglish.value && testimonialsTranslations[item.id]) {
+    return {
+      ...item,
+      service: testimonialsTranslations[item.id].service,
+      quote: testimonialsTranslations[item.id].quote,
+    }
+  }
+  return item
+})
 
 function nextSlide() {
   slideDirection.value = 'next'
@@ -82,13 +115,13 @@ onUnmounted(() => {
       <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-          Ulasan Pasien
+          {{ isEnglish ? 'Patient Testimonials' : 'Ulasan Pasien' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
-          Apa Kata Mereka Tentang Kami
+          {{ isEnglish ? 'What Patients Say About Us' : 'Apa Kata Mereka Tentang Kami' }}
         </h2>
         <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Pengalaman nyata pasien yang telah mempercayakan senyum sehat mereka di Candraloka Dental Care.
+          {{ isEnglish ? 'Real patient experiences who trusted their healthy smiles to Candraloka Dental Care.' : 'Pengalaman nyata pasien yang telah mempercayakan senyum sehat mereka di Candraloka Dental Care.' }}
         </p>
       </div>
 
@@ -158,7 +191,7 @@ onUnmounted(() => {
         <button
           type="button"
           class="cursor-pointer absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-lg text-slate-700 hover:text-primary-600 hover:bg-white hover:border-primary-300 hover:scale-105 active:scale-95 transition-all flex items-center justify-center z-20 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          aria-label="Ulasan sebelumnya"
+          :aria-label="isEnglish ? 'Previous testimonial' : 'Ulasan sebelumnya'"
           @click="handleManualPrev"
         >
           <ChevronLeft class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
@@ -167,21 +200,21 @@ onUnmounted(() => {
         <button
           type="button"
           class="cursor-pointer absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-lg text-slate-700 hover:text-primary-600 hover:bg-white hover:border-primary-300 hover:scale-105 active:scale-95 transition-all flex items-center justify-center z-20 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          aria-label="Ulasan berikutnya"
+          :aria-label="isEnglish ? 'Next testimonial' : 'Ulasan berikutnya'"
           @click="handleManualNext"
         >
           <ChevronRight class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />
         </button>
 
         <!-- Pagination Dots -->
-        <div class="flex items-center justify-center gap-2 mt-8" role="tablist" aria-label="Navigasi ulasan">
+        <div class="flex items-center justify-center gap-2 mt-8" role="tablist" :aria-label="isEnglish ? 'Testimonials navigation' : 'Navigasi ulasan'">
           <button
             v-for="(item, index) in testimonialsData"
             :key="item.id"
             type="button"
             role="tab"
             :aria-selected="currentIndex === index"
-            :aria-label="`Ulasan ${index + 1}: ${item.name}`"
+            :aria-label="`${isEnglish ? 'Testimonial' : 'Ulasan'} ${index + 1}: ${item.name}`"
             class="cursor-pointer transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             :class="[
               currentIndex === index
@@ -200,7 +233,7 @@ onUnmounted(() => {
           <div class="flex items-center text-amber-400 gap-0.5">
             <Star v-for="i in 5" :key="i" class="w-3.5 h-3.5 fill-current" aria-hidden="true" />
           </div>
-          <span class="text-slate-500 font-medium">Tingkat Kepuasan &amp; Ulasan Positif Pasien</span>
+          <span class="text-slate-500 font-medium">{{ isEnglish ? 'Patient Satisfaction & Positive Reviews' : 'Tingkat Kepuasan & Ulasan Positif Pasien' }}</span>
         </div>
       </div>
     </div>

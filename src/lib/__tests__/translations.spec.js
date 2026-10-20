@@ -2,6 +2,11 @@ import { describe, it, expect } from 'vitest'
 import {
   translate,
   getServiceName,
+  getServiceSummary,
+  getServiceDescription,
+  getServiceWhenNeeded,
+  getServiceProcedure,
+  getServicePreparation,
   getDoctorSpecialty,
   getDoctorName,
   getDoctorDegree,
@@ -41,6 +46,26 @@ describe('translations (Pure Translation Engine)', () => {
 
     const filling = { slug: 'penambalan-gigi', name: 'Penambalan Gigi Komposit' }
     expect(getServiceName(filling, 'en')).toBe('Composite Tooth Filling')
+  })
+
+  it('translates full service details (summary, description, procedures)', () => {
+    const scaling = {
+      slug: 'pembersihan-karang-gigi',
+      name: 'Pembersihan Karang Gigi (Scaling)',
+      summary: 'Ringkasan ID',
+      description: 'Deskripsi ID',
+      whenNeeded: ['Indikasi 1'],
+      procedure: [{ title: 'Tahap 1', description: 'Detail 1' }],
+      preparation: ['Persiapan 1'],
+    }
+
+    expect(getServiceSummary(scaling, 'en')).toContain('Ultrasonic plaque and calculus removal')
+    expect(getServiceSummary(scaling, 'id')).toContain('Pembersihan plak dan karang gigi')
+
+    expect(getServiceDescription(scaling, 'en')).toContain('Calculus and hardened bacterial plaque removal')
+    expect(getServiceWhenNeeded(scaling, 'en').length).toBeGreaterThan(0)
+    expect(getServiceProcedure(scaling, 'en')[0].title).toBe('Initial Examination')
+    expect(getServicePreparation(scaling, 'en').length).toBeGreaterThan(0)
   })
 
   it('translates doctor specialties', () => {

@@ -46,13 +46,15 @@ import {
   clearBookingDraft,
 } from '@/lib/reservation'
 import { buildReservationWhatsApp } from '@/lib/whatsapp'
-import { patientFormSchema } from '@/lib/schemas'
+import { createPatientFormSchema, patientFormSchema } from '@/lib/schemas'
 import { addDaysToIso, toIsoDateString } from '@/lib/time'
 
 const { clinic } = useClinic()
 const {
   t,
   getServiceName,
+  getServiceSummary,
+  getCategoryLabel,
   getDoctorSpecialty,
   getDoctorName,
   formatDate,
@@ -324,7 +326,11 @@ function jumpToNextAvailableDate() {
     selectedDate.value = nextAvail.isoDate
     selectedTime.value = ''
   } else {
-    toastInfo('Tidak ada tanggal tersedia lainnya dalam 14 hari ke depan.')
+    toastInfo(
+      isEnglish.value
+        ? 'No other available dates in the next 14 days.'
+        : 'Tidak ada tanggal tersedia lainnya dalam 14 hari ke depan.'
+    )
   }
 }
 
@@ -352,10 +358,13 @@ function validatePatientForm() {
 
   // Agreement check
   if (!patientForm.value.agreement) {
-    formErrors.value.agreement = 'Centang persetujuan untuk melanjutkan'
+    formErrors.value.agreement = isEnglish.value
+      ? 'Check the agreement to continue'
+      : 'Centang persetujuan untuk melanjutkan'
   }
 
-  const result = patientFormSchema.safeParse({
+  const schema = createPatientFormSchema(isEnglish.value ? 'en' : 'id')
+  const result = schema.safeParse({
     name: patientForm.value.name,
     whatsapp: patientForm.value.whatsapp,
     email: patientForm.value.email,
@@ -390,7 +399,11 @@ async function submitReservation() {
 
   if (!targetSlot || targetSlot.status !== 'tersedia') {
     isSubmitting.value = false
-    toastError('Jam ini baru saja terisi, silakan pilih jam lain.')
+    toastError(
+      isEnglish.value
+        ? 'This time slot was just booked, please choose another slot.'
+        : 'Jam ini baru saja terisi, silakan pilih jam lain.'
+    )
     currentStep.value = 3
     selectedTime.value = ''
     return
@@ -429,7 +442,7 @@ async function submitReservation() {
 
   confirmedReservation.value = newReservation
   isSubmitting.value = false
-  toastSuccess('Reservasi berhasil dibuat!')
+  toastSuccess(isEnglish.value ? 'Reservation successfully created!' : 'Reservasi berhasil dibuat!')
   window.scrollTo({ top: 100, behavior: 'smooth' })
 }
 
@@ -445,6 +458,7 @@ const waConfirmationData = computed(() => {
     doctorName: confirmedReservation.value.doctorName,
     date: confirmedReservation.value.date,
     time: confirmedReservation.value.time,
+    locale: isEnglish.value ? 'en' : 'id',
   })
 })
 
@@ -453,12 +467,12 @@ async function copyReservationCode() {
   try {
     await navigator.clipboard.writeText(confirmedReservation.value.code)
     copiedCode.value = true
-    toastSuccess('Kode reservasi berhasil disalin!')
+    toastSuccess(isEnglish.value ? 'Booking code copied to clipboard!' : 'Kode reservasi berhasil disalin!')
     setTimeout(() => {
       copiedCode.value = false
     }, 2000)
   } catch {
-    toastError('Gagal menyalin kode.')
+    toastError(isEnglish.value ? 'Failed to copy code.' : 'Gagal menyalin kode.')
   }
 }
 
@@ -467,12 +481,12 @@ async function copyReservationSummary() {
   try {
     await navigator.clipboard.writeText(waConfirmationData.value.text)
     copiedSummary.value = true
-    toastSuccess('Ringkasan reservasi berhasil disalin!')
+    toastSuccess(isEnglish.value ? 'Reservation summary copied to clipboard!' : 'Ringkasan reservasi berhasil disalin!')
     setTimeout(() => {
       copiedSummary.value = false
     }, 2000)
   } catch {
-    toastError('Gagal menyalin ringkasan.')
+    toastError(isEnglish.value ? 'Failed to copy summary.' : 'Gagal menyalin ringkasan.')
   }
 }
 
@@ -499,10 +513,17 @@ function makeAnotherReservation() {
 
 // Clear stored reservations on device (FR-7.10)
 function handleClearStoredReservations() {
-  if (confirm('Hapus seluruh data riwayat reservasi tersimpan di browser ini?')) {
+  const confirmMsg = isEnglish.value
+    ? 'Clear all saved reservation history on this browser?'
+    : 'Hapus seluruh data riwayat reservasi tersimpan di browser ini?'
+  if (confirm(confirmMsg)) {
     clearStoredReservations()
     storageVersion.value++
-    toastSuccess('Data reservasi di perangkat ini berhasil dikosongkan.')
+    toastSuccess(
+      isEnglish.value
+        ? 'Stored reservation data on this device has been cleared.'
+        : 'Data reservasi di perangkat ini berhasil dikosongkan.'
+    )
   }
 }
 </script>
@@ -548,20 +569,22 @@ function handleClearStoredReservations() {
 
           <div class="space-y-2">
             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
-              Menunggu Konfirmasi Klinik
+              {{ isEnglish ? 'Awaiting Clinic Confirmation' : 'Menunggu Konfirmasi Klinik' }}
             </span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 tracking-tight">
-              Reservasi Berhasil Dibuat!
+              {{ isEnglish ? 'Reservation Successfully Created!' : 'Reservasi Berhasil Dibuat!' }}
             </h2>
             <p class="text-sm text-slate-600 max-w-lg mx-auto">
-              Simpan kode reservasi Anda atau langsung kirimkan rincian reservasi melalui WhatsApp resmi klinik.
+              {{ isEnglish ? 'Save your reservation code or send details directly via official clinic WhatsApp.' : 'Simpan kode reservasi Anda atau langsung kirimkan rincian reservasi melalui WhatsApp resmi klinik.' }}
             </p>
           </div>
 
           <!-- Code Box -->
           <div class="p-4 sm:p-5 rounded-2xl bg-surface-100 border-2 border-dashed border-primary-300 flex items-center justify-between gap-4 max-w-md mx-auto">
             <div class="text-left space-y-0.5">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Kode Reservasi</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">
+                {{ isEnglish ? 'Reservation Code' : 'Kode Reservasi' }}
+              </span>
               <p class="text-xl sm:text-2xl font-black text-navy-900 tracking-wide font-mono">
                 {{ confirmedReservation.code }}
               </p>
@@ -573,38 +596,38 @@ function handleClearStoredReservations() {
             >
               <Check v-if="copiedCode" class="w-4 h-4 text-emerald-600" aria-hidden="true" />
               <Copy v-else class="w-4 h-4 text-primary-600" aria-hidden="true" />
-              <span>{{ copiedCode ? 'Tersalin' : 'Salin Kode' }}</span>
+              <span>{{ copiedCode ? (isEnglish ? 'Copied' : 'Tersalin') : (isEnglish ? 'Copy Code' : 'Salin Kode') }}</span>
             </button>
           </div>
 
           <!-- Details Summary Table -->
           <div class="p-6 rounded-2xl bg-surface-50 border border-slate-200/80 text-left space-y-3.5 text-sm">
             <h3 class="font-bold text-navy-900 border-b border-slate-200 pb-2">
-              Ringkasan Jadwal Kunjungan
+              {{ isEnglish ? 'Appointment Schedule Summary' : 'Ringkasan Jadwal Kunjungan' }}
             </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-700">
               <div>
-                <span class="text-xs text-slate-400 block">Layanan:</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'Service:' : 'Layanan:' }}</span>
                 <span class="font-semibold text-navy-900">{{ confirmedReservation.serviceName }}</span>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">Dokter:</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'Dentist:' : 'Dokter:' }}</span>
                 <span class="font-semibold text-navy-900">{{ confirmedReservation.doctorName }}</span>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">Hari & Tanggal:</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'Day & Date:' : 'Hari & Tanggal:' }}</span>
                 <span class="font-semibold text-navy-900">{{ formatDate(confirmedReservation.date, true) }}</span>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">Jam Praktek:</span>
-                <span class="font-semibold text-navy-900">{{ formatTimeWib(confirmedReservation.time) }} (±{{ confirmedReservation.durationMinutes }} mnt)</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'Practice Time:' : 'Jam Praktek:' }}</span>
+                <span class="font-semibold text-navy-900">{{ formatTimeWib(confirmedReservation.time) }} (±{{ confirmedReservation.durationMinutes }} {{ isEnglish ? 'min' : 'mnt' }})</span>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">Nama Pasien:</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'Patient Name:' : 'Nama Pasien:' }}</span>
                 <span class="font-semibold text-navy-900">{{ confirmedReservation.patient.name }}</span>
               </div>
               <div>
-                <span class="text-xs text-slate-400 block">No. WhatsApp:</span>
+                <span class="text-xs text-slate-400 block">{{ isEnglish ? 'WhatsApp No.:' : 'No. WhatsApp:' }}</span>
                 <span class="font-semibold text-navy-900">{{ confirmedReservation.patient.whatsapp }}</span>
               </div>
             </div>
@@ -619,7 +642,7 @@ function handleClearStoredReservations() {
               class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base transition-colors shadow-lg gap-2"
             >
               <IconWhatsApp class="w-5 h-5" />
-              <span>Kirim Konfirmasi via WhatsApp</span>
+              <span>{{ isEnglish ? 'Send Confirmation via WhatsApp' : 'Kirim Konfirmasi via WhatsApp' }}</span>
             </a>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -630,7 +653,7 @@ function handleClearStoredReservations() {
                 @click="copyReservationSummary"
               >
                 <Copy class="w-4 h-4 mr-1.5" aria-hidden="true" />
-                <span>{{ copiedSummary ? 'Ringkasan Tersalin' : 'Salin Ringkasan' }}</span>
+                <span>{{ copiedSummary ? (isEnglish ? 'Summary Copied' : 'Ringkasan Tersalin') : (isEnglish ? 'Copy Summary' : 'Salin Ringkasan') }}</span>
               </Button>
 
               <Button
@@ -639,14 +662,14 @@ function handleClearStoredReservations() {
                 class="w-full sm:w-auto text-xs font-semibold"
                 @click="makeAnotherReservation"
               >
-                <span>Buat Reservasi Lain</span>
+                <span>{{ isEnglish ? 'Make Another Booking' : 'Buat Reservasi Lain' }}</span>
               </Button>
             </div>
           </div>
 
           <!-- Portfolio Project Disclaimer (FR-7.8) -->
           <p class="text-xs text-slate-400 italic pt-4 border-t border-slate-100">
-            Situs ini adalah proyek portofolio; reservasi ini disimpan di browser Anda untuk keperluan demonstrasi dan tidak diproses oleh klinik sungguhan.
+            {{ isEnglish ? 'This site is a portfolio project; reservations are stored in your browser for demonstration purposes and are not processed by a real clinic.' : 'Situs ini adalah proyek portofolio; reservasi ini disimpan di browser Anda untuk keperluan demonstrasi dan tidak diproses oleh klinik sungguhan.' }}
           </p>
         </div>
       </div>
@@ -665,10 +688,10 @@ function handleClearStoredReservations() {
             <section v-if="currentStep === 1" class="space-y-6">
               <div class="space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
-                  Langkah 1: Pilih Layanan Perawatan
+                  {{ isEnglish ? 'Step 1: Choose Dental Service' : 'Langkah 1: Pilih Layanan Perawatan' }}
                 </h2>
                 <p class="text-sm text-slate-500">
-                  Pilih salah satu layanan gigi yang Anda butuhkan.
+                  {{ isEnglish ? 'Select the dental care you or your family need.' : 'Pilih salah satu layanan gigi yang Anda butuhkan.' }}
                 </p>
               </div>
 
@@ -687,7 +710,7 @@ function handleClearStoredReservations() {
                   <div class="space-y-2">
                     <div class="flex items-center justify-between">
                       <span class="text-xs font-semibold uppercase tracking-wider text-primary-600">
-                        {{ srv.category }}
+                        {{ getCategoryLabel(srv.category) }}
                       </span>
                       <div
                         class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors"
@@ -701,16 +724,16 @@ function handleClearStoredReservations() {
                       </div>
                     </div>
                     <h3 class="text-base font-bold text-navy-900 group-hover:text-primary-700 transition-colors">
-                      {{ srv.name }}
+                      {{ getServiceName(srv) }}
                     </h3>
                     <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
-                      {{ srv.summary }}
+                      {{ getServiceSummary(srv) }}
                     </p>
                   </div>
 
                   <div class="flex items-center gap-1.5 text-xs text-slate-500 pt-2 border-t border-slate-100 font-medium">
                     <Clock class="w-3.5 h-3.5 text-primary-600" aria-hidden="true" />
-                    <span>Durasi: {{ formatDuration(srv.durationMinutes) }}</span>
+                    <span>{{ t('services.duration') }}: {{ formatDuration(srv.durationMinutes) }}</span>
                   </div>
                 </div>
               </div>
@@ -724,7 +747,7 @@ function handleClearStoredReservations() {
                   class="font-semibold shadow-md"
                   @click="goToStep(2)"
                 >
-                  <span>Lanjut Pilih Dokter</span>
+                  <span>{{ isEnglish ? 'Continue to Dentists' : 'Lanjut Pilih Dokter' }}</span>
                   <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
                 </Button>
               </div>
@@ -734,10 +757,12 @@ function handleClearStoredReservations() {
             <section v-else-if="currentStep === 2" class="space-y-6">
               <div class="space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
-                  Langkah 2: Pilih Dokter Gigi
+                  {{ isEnglish ? 'Step 2: Choose Dentist' : 'Langkah 2: Pilih Dokter Gigi' }}
                 </h2>
                 <p class="text-sm text-slate-500">
-                  Pilih dokter yang menangani {{ selectedService ? selectedService.name : 'layanan ini' }}, atau pilih dokter mana saja yang tersedia.
+                  {{ isEnglish
+                    ? `Choose a dentist who performs ${selectedService ? getServiceName(selectedService) : 'this service'}, or select any available dentist.`
+                    : `Pilih dokter yang menangani ${selectedService ? getServiceName(selectedService) : 'layanan ini'}, atau pilih dokter mana saja yang tersedia.` }}
                 </p>
               </div>
 
@@ -834,7 +859,7 @@ function handleClearStoredReservations() {
                   @click="goToStep(1)"
                 >
                   <ArrowLeft class="w-4 h-4 mr-1.5" aria-hidden="true" />
-                  <span>Kembali ke Layanan</span>
+                  <span>{{ isEnglish ? 'Back to Services' : 'Kembali ke Layanan' }}</span>
                 </Button>
 
                 <Button
@@ -843,7 +868,7 @@ function handleClearStoredReservations() {
                   class="font-semibold shadow-md"
                   @click="goToStep(3)"
                 >
-                  <span>Lanjut Pilih Jadwal</span>
+                  <span>{{ isEnglish ? 'Continue to Schedule' : 'Lanjut Pilih Jadwal' }}</span>
                   <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
                 </Button>
               </div>
@@ -853,10 +878,10 @@ function handleClearStoredReservations() {
             <section v-else-if="currentStep === 3" class="space-y-8">
               <div class="space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
-                  Langkah 3: Pilih Tanggal & Jam Praktek
+                  {{ isEnglish ? 'Step 3: Select Date & Time' : 'Langkah 3: Pilih Tanggal & Jam Praktek' }}
                 </h2>
                 <p class="text-sm text-slate-500">
-                  Pilih tanggal dalam 14 hari ke depan dan slot jam yang masih tersedia.
+                  {{ isEnglish ? 'Choose a date within the next 14 days and an available appointment time slot.' : 'Pilih tanggal dalam 14 hari ke depan dan slot jam yang masih tersedia.' }}
                 </p>
               </div>
 
@@ -864,20 +889,20 @@ function handleClearStoredReservations() {
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
                   <span class="text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Pilih Tanggal Kunjungan:
+                    {{ isEnglish ? 'Select Visit Date:' : 'Pilih Tanggal Kunjungan:' }}
                   </span>
                   <button
                     type="button"
                     class="text-xs font-semibold text-primary-700 hover:text-primary-800 underline underline-offset-2"
                     @click="jumpToNextAvailableDate"
                   >
-                    Ke Tanggal Tersedia Berikutnya
+                    {{ isEnglish ? 'Jump to Next Available Date' : 'Ke Tanggal Tersedia Berikutnya' }}
                   </button>
                 </div>
 
                 <div
                   role="radiogroup"
-                  aria-label="Pilih tanggal kunjungan"
+                  :aria-label="isEnglish ? 'Select visit date' : 'Pilih tanggal kunjungan'"
                   class="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none"
                 >
                   <button
@@ -948,7 +973,7 @@ function handleClearStoredReservations() {
 
                     <div
                       role="radiogroup"
-                      :aria-label="`Pilih jam kunjungan sesi ${period.label}`"
+                      :aria-label="`${isEnglish ? 'Select appointment time slot for' : 'Pilih jam kunjungan sesi'} ${period.label}`"
                       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5"
                     >
                       <button
@@ -958,7 +983,7 @@ function handleClearStoredReservations() {
                         role="radio"
                         :aria-checked="selectedTime === slot.time"
                         :aria-disabled="slot.status !== 'tersedia'"
-                        :aria-label="`${slot.time} WIB, ${slot.status === 'tersedia' ? 'Tersedia' : slot.reason || 'Penuh'}`"
+                        :aria-label="`${slot.time} WIB, ${slot.status === 'tersedia' ? (isEnglish ? 'Available' : 'Tersedia') : (slot.reason ? (isEnglish && slot.reason === 'Lewat jam praktek' ? 'Passed' : slot.reason) : (isEnglish ? 'Full' : 'Penuh'))}`"
                         :disabled="slot.status !== 'tersedia'"
                         class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center justify-center gap-1 min-h-[44px]"
                         :class="[
@@ -981,7 +1006,7 @@ function handleClearStoredReservations() {
                               : 'text-slate-400'
                           "
                         >
-                          {{ slot.status === 'tersedia' ? 'Tersedia' : slot.reason || 'Penuh' }}
+                          {{ slot.status === 'tersedia' ? (isEnglish ? 'Available' : 'Tersedia') : (slot.reason ? (isEnglish && slot.reason === 'Lewat jam praktek' ? 'Passed' : slot.reason) : (isEnglish ? 'Full' : 'Penuh')) }}
                         </span>
                       </button>
                     </div>
@@ -992,9 +1017,9 @@ function handleClearStoredReservations() {
                   v-else
                   class="p-8 text-center bg-surface-50 rounded-2xl border border-slate-200 space-y-2"
                 >
-                  <p class="text-sm font-bold text-navy-900">Tidak ada jam praktek tersedia</p>
+                  <p class="text-sm font-bold text-navy-900">{{ isEnglish ? 'No practice hours available' : 'Tidak ada jam praktek tersedia' }}</p>
                   <p class="text-xs text-slate-500">
-                    Tidak ada dokter yang berpraktek atau seluruh slot pada tanggal ini sudah terisi.
+                    {{ isEnglish ? 'No dentists on duty or all slots for this date are fully booked.' : 'Tidak ada dokter yang berpraktek atau seluruh slot pada tanggal ini sudah terisi.' }}
                   </p>
                   <Button
                     variant="outline"
@@ -1002,7 +1027,7 @@ function handleClearStoredReservations() {
                     class="font-semibold text-xs mt-2"
                     @click="jumpToNextAvailableDate"
                   >
-                    Cari Tanggal Lain yang Tersedia
+                    {{ isEnglish ? 'Find Another Available Date' : 'Cari Tanggal Lain yang Tersedia' }}
                   </Button>
                 </div>
 
@@ -1034,7 +1059,7 @@ function handleClearStoredReservations() {
                   @click="goToStep(2)"
                 >
                   <ArrowLeft class="w-4 h-4 mr-1.5" aria-hidden="true" />
-                  <span>Kembali ke Dokter</span>
+                  <span>{{ isEnglish ? 'Back to Dentists' : 'Kembali ke Dokter' }}</span>
                 </Button>
 
                 <Button
@@ -1044,7 +1069,7 @@ function handleClearStoredReservations() {
                   class="font-semibold shadow-md"
                   @click="goToStep(4)"
                 >
-                  <span>Lanjut Isi Data Pasien</span>
+                  <span>{{ isEnglish ? 'Continue to Patient Info' : 'Lanjut Isi Data Pasien' }}</span>
                   <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
                 </Button>
               </div>
@@ -1054,10 +1079,10 @@ function handleClearStoredReservations() {
             <section v-else-if="currentStep === 4" class="space-y-8">
               <div class="space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
-                  Langkah 4: Data Pasien & Konfirmasi
+                  {{ isEnglish ? 'Step 4: Patient Details & Confirmation' : 'Langkah 4: Data Pasien & Konfirmasi' }}
                 </h2>
                 <p class="text-sm text-slate-500">
-                  Lengkapi identitas pasien untuk memproses reservasi janji temu.
+                  {{ isEnglish ? 'Complete patient details to process your appointment reservation.' : 'Lengkapi identitas pasien untuk memproses reservasi janji temu.' }}
                 </p>
               </div>
 
@@ -1075,13 +1100,13 @@ function handleClearStoredReservations() {
                 <!-- Nama Lengkap -->
                 <div class="space-y-1.5">
                   <label for="name" class="block text-xs font-bold uppercase tracking-wider text-navy-900">
-                    Nama Lengkap Pasien <span class="text-rose-500">*</span>
+                    {{ isEnglish ? 'Patient Full Name' : 'Nama Lengkap Pasien' }} <span class="text-rose-500">*</span>
                   </label>
                   <input
                     id="name"
                     v-model="patientForm.name"
                     type="text"
-                    placeholder="Contoh: Budi Santoso"
+                    :placeholder="isEnglish ? 'e.g. John Doe' : 'Contoh: Budi Santoso'"
                     class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.name ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
                     :aria-invalid="!!formErrors.name"
@@ -1095,13 +1120,13 @@ function handleClearStoredReservations() {
                 <!-- WhatsApp Phone -->
                 <div class="space-y-1.5">
                   <label for="whatsapp" class="block text-xs font-bold uppercase tracking-wider text-navy-900">
-                    Nomor WhatsApp <span class="text-rose-500">*</span>
+                    {{ isEnglish ? 'WhatsApp Number' : 'Nomor WhatsApp' }} <span class="text-rose-500">*</span>
                   </label>
                   <input
                     id="whatsapp"
                     v-model="patientForm.whatsapp"
                     type="tel"
-                    placeholder="Contoh: 081234567890"
+                    :placeholder="isEnglish ? 'e.g. 081234567890' : 'Contoh: 081234567890'"
                     class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.whatsapp ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
                     :aria-invalid="!!formErrors.whatsapp"
@@ -1111,20 +1136,20 @@ function handleClearStoredReservations() {
                     {{ formErrors.whatsapp }}
                   </p>
                   <p id="whatsapp-hint" class="text-[11px] text-slate-400">
-                    Nomor aktif untuk konfirmasi jadwal dan informasi kedatangan klinik.
+                    {{ isEnglish ? 'Active phone number for schedule confirmation and clinic arrival updates.' : 'Nomor aktif untuk konfirmasi jadwal dan informasi kedatangan klinik.' }}
                   </p>
                 </div>
 
                 <!-- Email (Optional) -->
                 <div class="space-y-1.5">
                   <label for="email" class="block text-xs font-bold uppercase tracking-wider text-navy-900">
-                    Alamat Email <span class="text-slate-400 text-xs normal-case">(Opsional)</span>
+                    {{ isEnglish ? 'Email Address' : 'Alamat Email' }} <span class="text-slate-400 text-xs normal-case">{{ isEnglish ? '(Optional)' : '(Opsional)' }}</span>
                   </label>
                   <input
                     id="email"
                     v-model="patientForm.email"
                     type="email"
-                    placeholder="Contoh: budi@gmail.com"
+                    :placeholder="isEnglish ? 'e.g. user@gmail.com' : 'Contoh: budi@gmail.com'"
                     class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.email ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
                     :aria-invalid="!!formErrors.email"
@@ -1138,7 +1163,7 @@ function handleClearStoredReservations() {
                 <!-- Status Pasien (Radio: Pasien Baru / Pasien Lama) -->
                 <div class="space-y-2">
                   <span class="block text-xs font-bold uppercase tracking-wider text-navy-900">
-                    Status Pasien <span class="text-rose-500">*</span>
+                    {{ isEnglish ? 'Patient Status' : 'Status Pasien' }} <span class="text-rose-500">*</span>
                   </span>
                   <div class="grid grid-cols-2 gap-4">
                     <label
@@ -1156,7 +1181,7 @@ function handleClearStoredReservations() {
                         name="patient_status"
                         class="text-primary-600 focus:ring-primary-500"
                       />
-                      <span class="text-sm">Pasien Baru</span>
+                      <span class="text-sm">{{ isEnglish ? 'New Patient' : 'Pasien Baru' }}</span>
                     </label>
 
                     <label
@@ -1174,7 +1199,7 @@ function handleClearStoredReservations() {
                         name="patient_status"
                         class="text-primary-600 focus:ring-primary-500"
                       />
-                      <span class="text-sm">Pasien Lama</span>
+                      <span class="text-sm">{{ isEnglish ? 'Returning Patient' : 'Pasien Lama' }}</span>
                     </label>
                   </div>
                   <p v-if="formErrors.isNewPatient" class="text-xs text-rose-600 font-medium">
@@ -1186,7 +1211,7 @@ function handleClearStoredReservations() {
                 <div class="space-y-1.5">
                   <div class="flex items-center justify-between">
                     <label for="notes" class="block text-xs font-bold uppercase tracking-wider text-navy-900">
-                      Keluhan / Keperluan <span class="text-slate-400 text-xs normal-case">(Opsional)</span>
+                      {{ isEnglish ? 'Concerns / Notes' : 'Keluhan / Keperluan' }} <span class="text-slate-400 text-xs normal-case">{{ isEnglish ? '(Optional)' : '(Opsional)' }}</span>
                     </label>
                     <span
                       class="text-xs"
@@ -1200,7 +1225,7 @@ function handleClearStoredReservations() {
                     v-model="patientForm.notes"
                     rows="3"
                     maxlength="300"
-                    placeholder="Ceritakan keluhan gigi Anda secara singkat bila ada..."
+                    :placeholder="isEnglish ? 'Briefly describe your dental concerns if any...' : 'Ceritakan keluhan gigi Anda secara singkat bila ada...'"
                     class="w-full px-4 py-3 bg-surface-50 border rounded-xl text-navy-900 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
                     :class="formErrors.notes ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'"
                     :aria-invalid="!!formErrors.notes"
@@ -1220,7 +1245,9 @@ function handleClearStoredReservations() {
                       class="w-4 h-4 rounded text-primary-600 focus:ring-primary-500 mt-0.5"
                     />
                     <span class="text-xs text-slate-600 leading-relaxed">
-                      Saya menyetujui bahwa data yang saya masukkan digunakan oleh pihak {{ clinic.name }} untuk keperluan penjadwalan dan konfirmasi janji temu.
+                      {{ isEnglish
+                        ? `I agree that the information entered will be used by ${clinic.name} for appointment scheduling and confirmation purposes.`
+                        : `Saya menyetujui bahwa data yang saya masukkan digunakan oleh pihak ${clinic.name} untuk keperluan penjadwalan dan konfirmasi janji temu.` }}
                     </span>
                   </label>
                   <p v-if="formErrors.agreement" class="text-xs text-rose-600 font-medium">
@@ -1238,7 +1265,7 @@ function handleClearStoredReservations() {
                     @click="goToStep(3)"
                   >
                     <ArrowLeft class="w-4 h-4 mr-1.5" aria-hidden="true" />
-                    <span>Kembali ke Jadwal</span>
+                    <span>{{ isEnglish ? 'Back to Schedule' : 'Kembali ke Jadwal' }}</span>
                   </Button>
 
                   <Button
@@ -1250,11 +1277,11 @@ function handleClearStoredReservations() {
                   >
                     <span v-if="isSubmitting" class="flex items-center gap-2">
                       <span class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      <span>Memverifikasi slot...</span>
+                      <span>{{ isEnglish ? 'Verifying slot...' : 'Memverifikasi slot...' }}</span>
                     </span>
                     <span v-else class="flex items-center gap-2">
                       <CalendarCheck class="w-5 h-5" aria-hidden="true" />
-                      <span>Konfirmasi Reservasi</span>
+                      <span>{{ isEnglish ? 'Confirm Reservation' : 'Konfirmasi Reservasi' }}</span>
                     </span>
                   </Button>
                 </div>
@@ -1267,20 +1294,20 @@ function handleClearStoredReservations() {
             <Card class="p-6 bg-white border border-slate-200/80 rounded-3xl shadow-sm space-y-5">
               <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                 <h3 class="text-base font-bold text-navy-900">
-                  Ringkasan Janji Temu
+                  {{ isEnglish ? 'Appointment Summary' : 'Ringkasan Janji Temu' }}
                 </h3>
                 <span class="text-xs font-semibold text-primary-600">
-                  Langkah {{ currentStep }} dari 4
+                  {{ isEnglish ? `Step ${currentStep} of 4` : `Langkah ${currentStep} dari 4` }}
                 </span>
               </div>
 
               <!-- Service summary -->
               <div class="space-y-1">
-                <span class="text-xs text-slate-400 font-medium block">Layanan:</span>
+                <span class="text-xs text-slate-400 font-medium block">{{ isEnglish ? 'Service:' : 'Layanan:' }}</span>
                 <p v-if="selectedService" class="text-sm font-bold text-navy-900">
-                  {{ selectedService.name }}
+                  {{ getServiceName(selectedService) }}
                 </p>
-                <p v-else class="text-xs text-slate-400 italic">Belum dipilih</p>
+                <p v-else class="text-xs text-slate-400 italic">{{ isEnglish ? 'Not selected' : 'Belum dipilih' }}</p>
                 <span v-if="selectedService" class="text-xs text-slate-500">
                   {{ isEnglish ? 'Estimated duration:' : 'Estimasi durasi:' }} {{ formatDuration(selectedService.durationMinutes) }}
                 </span>
@@ -1329,7 +1356,9 @@ function handleClearStoredReservations() {
               <div class="p-3.5 rounded-xl bg-surface-100 border border-slate-200/60 flex items-start gap-2.5 text-xs text-slate-600">
                 <Info class="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <p class="leading-relaxed">
-                  Harap hadir 10 menit sebelum jam reservasi untuk verifikasi data di meja pendaftaran.
+                  {{ isEnglish
+                    ? 'Please arrive 10 minutes prior to your appointment time for registration desk check-in.'
+                    : 'Harap hadir 10 menit sebelum jam reservasi untuk verifikasi data di meja pendaftaran.' }}
                 </p>
               </div>
             </Card>
@@ -1342,7 +1371,7 @@ function handleClearStoredReservations() {
                 @click="handleClearStoredReservations"
               >
                 <Trash2 class="w-3.5 h-3.5" aria-hidden="true" />
-                <span>Hapus data reservasi di perangkat ini</span>
+                <span>{{ isEnglish ? 'Clear saved reservation data on this device' : 'Hapus data reservasi di perangkat ini' }}</span>
               </button>
             </div>
           </aside>

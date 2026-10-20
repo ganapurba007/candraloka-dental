@@ -69,7 +69,7 @@ const waUrl = computed(() => {
         </div>
         <div class="space-y-1">
           <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
-            Kontak Cepat
+            {{ t('common.quickContact') }}
           </span>
           <div class="flex items-center gap-3">
             <a
@@ -90,7 +90,7 @@ const waUrl = computed(() => {
             </a>
           </div>
           <p class="text-xs text-slate-500">
-            Konsultasi & respon cepat tim resepsionis
+            {{ t('common.consultPrompt') }}
           </p>
         </div>
       </div>
@@ -102,7 +102,7 @@ const waUrl = computed(() => {
         </div>
         <div class="space-y-1">
           <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 block">
-            Lokasi Klinik
+            {{ t('common.clinicLocation') }}
           </span>
           <p class="text-sm font-bold text-navy-900">
             {{ address }}
@@ -113,7 +113,7 @@ const waUrl = computed(() => {
             rel="noopener noreferrer"
             class="inline-block text-xs font-semibold text-primary-600 hover:text-primary-700 hover:underline pt-0.5"
           >
-            Lihat di Google Maps &rarr;
+            {{ t('common.viewOnMaps') }}
           </a>
         </div>
       </div>

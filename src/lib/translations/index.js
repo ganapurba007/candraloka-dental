@@ -58,51 +58,60 @@ function resolvePath(obj, path) {
   return current
 }
 
-/**
- * Service title mapping for bilingual display.
- */
-const serviceTranslations = {
-  'pembersihan-karang-gigi': {
-    en: 'Scaling & Calculus Removal',
-    id: 'Pembersihan Karang Gigi (Scaling)',
-  },
-  'penambalan-gigi': {
-    en: 'Composite Tooth Filling',
-    id: 'Penambalan Gigi Komposit',
-  },
-  'pencabutan-gigi': {
-    en: 'Tooth Extraction & Odontectomy',
-    id: 'Pencabutan Gigi & Odontektomi',
-  },
-  'perawatan-saluran-akar': {
-    en: 'Root Canal Treatment',
-    id: 'Perawatan Saluran Akar',
-  },
-  'pemasangan-kawat-gigi': {
-    en: 'Orthodontic Braces',
-    id: 'Pemasangan Kawat Gigi (Behel)',
-  },
-  'pemutihan-gigi': {
-    en: 'Teeth Whitening (Bleaching)',
-    id: 'Pemutihan Gigi (Bleaching)',
-  },
-  'mahkota-jembatan-gigi': {
-    en: 'Dental Crowns & Bridges',
-    id: 'Mahkota & Jembatan Gigi (Crown & Bridge)',
-  },
-  'perawatan-gigi-anak': {
-    en: 'Pediatric Dental Care',
-    id: 'Perawatan Gigi Anak (Pediatrik)',
-  },
-}
+import { serviceTranslations } from './services'
 
 export function getServiceName(service, locale = 'id') {
   if (!service) return ''
   const slug = service.slug || ''
-  if (serviceTranslations[slug]?.[locale]) {
-    return serviceTranslations[slug][locale]
+  if (serviceTranslations[slug]?.name?.[locale]) {
+    return serviceTranslations[slug].name[locale]
   }
   return service.name || ''
+}
+
+export function getServiceSummary(service, locale = 'id') {
+  if (!service) return ''
+  const slug = service.slug || ''
+  if (serviceTranslations[slug]?.summary?.[locale]) {
+    return serviceTranslations[slug].summary[locale]
+  }
+  return service.summary || ''
+}
+
+export function getServiceDescription(service, locale = 'id') {
+  if (!service) return ''
+  const slug = service.slug || ''
+  if (serviceTranslations[slug]?.description?.[locale]) {
+    return serviceTranslations[slug].description[locale]
+  }
+  return service.description || ''
+}
+
+export function getServiceWhenNeeded(service, locale = 'id') {
+  if (!service) return []
+  const slug = service.slug || ''
+  if (serviceTranslations[slug]?.whenNeeded?.[locale]) {
+    return serviceTranslations[slug].whenNeeded[locale]
+  }
+  return service.whenNeeded || []
+}
+
+export function getServiceProcedure(service, locale = 'id') {
+  if (!service) return []
+  const slug = service.slug || ''
+  if (serviceTranslations[slug]?.procedure?.[locale]) {
+    return serviceTranslations[slug].procedure[locale]
+  }
+  return service.procedure || []
+}
+
+export function getServicePreparation(service, locale = 'id') {
+  if (!service) return []
+  const slug = service.slug || ''
+  if (serviceTranslations[slug]?.preparation?.[locale]) {
+    return serviceTranslations[slug].preparation[locale]
+  }
+  return service.preparation || []
 }
 
 /**

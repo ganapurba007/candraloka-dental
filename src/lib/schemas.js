@@ -9,40 +9,45 @@ import { z } from 'zod'
  */
 const INDONESIAN_PHONE_REGEX = /^(\+62|62|0)8[1-9][0-9]{6,11}$/
 
-export const patientFormSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(3, 'Nama wajib diisi (minimal 3 karakter)')
-    .max(60, 'Maksimal 60 karakter')
-    .regex(/^[a-zA-Z\s.,'-]+$/, 'Nama hanya boleh mengandung huruf, spasi, dan tanda baca umum'),
+export function createPatientFormSchema(locale = 'id') {
+  const isEn = locale === 'en'
+  return z.object({
+    name: z
+      .string()
+      .trim()
+      .min(3, isEn ? 'Name is required (minimum 3 characters)' : 'Nama wajib diisi (minimal 3 karakter)')
+      .max(60, isEn ? 'Maximum 60 characters' : 'Maksimal 60 karakter')
+      .regex(/^[a-zA-Z\s.,'-]+$/, isEn ? 'Name may only contain letters, spaces, and standard punctuation' : 'Nama hanya boleh mengandung huruf, spasi, dan tanda baca umum'),
 
-  whatsapp: z
-    .string()
-    .trim()
-    .transform((val) => val.replace(/[\s-]/g, ''))
-    .refine((val) => INDONESIAN_PHONE_REGEX.test(val), {
-      message: 'Nomor WhatsApp tidak valid',
+    whatsapp: z
+      .string()
+      .trim()
+      .transform((val) => val.replace(/[\s-]/g, ''))
+      .refine((val) => INDONESIAN_PHONE_REGEX.test(val), {
+        message: isEn ? 'Invalid WhatsApp number' : 'Nomor WhatsApp tidak valid',
+      }),
+
+    email: z
+      .string()
+      .trim()
+      .email(isEn ? 'Invalid email format' : 'Format email tidak valid')
+      .optional()
+      .or(z.literal('')),
+
+    notes: z
+      .string()
+      .trim()
+      .max(300, isEn ? 'Maximum 300 characters' : 'Maksimal 300 karakter')
+      .optional()
+      .or(z.literal('')),
+
+    isNewPatient: z.boolean({
+      required_error: isEn ? 'Select patient status' : 'Pilih status pasien',
     }),
+  })
+}
 
-  email: z
-    .string()
-    .trim()
-    .email('Format email tidak valid')
-    .optional()
-    .or(z.literal('')),
-
-  notes: z
-    .string()
-    .trim()
-    .max(300, 'Maksimal 300 karakter')
-    .optional()
-    .or(z.literal('')),
-
-  isNewPatient: z.boolean({
-    required_error: 'Pilih status pasien',
-  }),
-})
+export const patientFormSchema = createPatientFormSchema('id')
 
 export const reservationRecordSchema = z.object({
   code: z.string().regex(/^CDC-\d{6}-[2-9A-HJ-NP-Z]{4}$/, 'Format kode reservasi tidak valid'),

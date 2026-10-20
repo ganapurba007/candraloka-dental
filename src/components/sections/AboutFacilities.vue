@@ -1,8 +1,35 @@
 <script setup>
+import { computed } from 'vue'
 import clinicData from '@/data/clinic.json'
+import { useI18n } from '@/composables/useI18n'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 
-const facilities = clinicData.about.facilities
+const { isEnglish } = useI18n()
+
+const englishFacilities = [
+  {
+    title: 'Ergonomic Treatment Suites',
+    image: '/images/facilities/ruang-perawatan.webp',
+    caption: 'Modern dental units featuring eye-friendly surgical lighting and ergonomic patient seating.',
+  },
+  {
+    title: 'Serene & Comfortable Waiting Lounge',
+    image: '/images/facilities/ruang-tunggu.webp',
+    caption: 'Air-conditioned atmosphere, relaxing ambient music, refreshments, and informative reading.',
+  },
+  {
+    title: 'Medical-Grade Instrument Sterilization',
+    image: '/images/facilities/sterilisasi.webp',
+    caption: 'High-pressure autoclave sterilization with individually sealed sterile instrument pouches.',
+  },
+  {
+    title: 'Child-Friendly Corner',
+    image: '/images/facilities/ruang-anak.webp',
+    caption: 'Playful area with educational toys to help children feel relaxed and calm prior to examination.',
+  },
+]
+
+const facilities = computed(() => isEnglish.value ? englishFacilities : clinicData.about.facilities)
 </script>
 
 <template>
@@ -11,13 +38,17 @@ const facilities = clinicData.about.facilities
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600 block">
-          Kenyamanan & Kebersihan
+          {{ isEnglish ? 'Comfort & Hygiene' : 'Kenyamanan & Kebersihan' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
-          Fasilitas Klinik Modern & Higienis
+          {{ isEnglish ? 'Modern & Hygienic Clinic Facilities' : 'Fasilitas Klinik Modern & Higienis' }}
         </h2>
         <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Ruang perawatan ergonomis, instrumen steril bertaraf medis, dan area tunggu yang ramah bagi seluruh keluarga.
+          {{
+            isEnglish
+              ? 'Ergonomic treatment suites, medical-grade sterilized instruments, and a family-friendly waiting environment.'
+              : 'Ruang perawatan ergonomis, instrumen steril bertaraf medis, dan area tunggu yang ramah bagi seluruh keluarga.'
+          }}
         </p>
       </div>
 

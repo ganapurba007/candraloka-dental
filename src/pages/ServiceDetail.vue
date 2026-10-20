@@ -20,29 +20,41 @@ import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import NotFound from '@/pages/NotFound.vue'
 import servicesData from '@/data/services.json'
 import doctorsData from '@/data/doctors.json'
-import clinicData from '@/data/clinic.json'
 import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
-import { formatDuration } from '@/lib/format'
 
 const route = useRoute()
 const { clinic, clinicLink } = useClinic()
-const { t, getDoctorName, getDoctorSpecialty, getServiceName, getCategoryLabel, isEnglish } = useI18n()
+const {
+  t,
+  getDoctorName,
+  getDoctorSpecialty,
+  getServiceName,
+  getServiceSummary,
+  getServiceDescription,
+  getServiceWhenNeeded,
+  getServiceProcedure,
+  getServicePreparation,
+  getCategoryLabel,
+  formatDuration,
+  isEnglish,
+} = useI18n()
+
 const service = computed(() => servicesData.find((s) => s.slug === route.params.slug))
 
 useHead({
   title: computed(() =>
     service.value
-      ? `${service.value.name} | ${clinic.value.name}`
-      : `Layanan Tidak Ditemukan | ${clinic.value.name}`
+      ? `${getServiceName(service.value)} | ${clinic.value.name}`
+      : `${isEnglish.value ? 'Service Not Found' : 'Layanan Tidak Ditemukan'} | ${clinic.value.name}`
   ),
   meta: [
     {
       name: 'description',
       content: computed(() =>
         service.value
-          ? `${service.value.summary} Estimasi durasi: ${service.value.durationMinutes} menit di ${clinic.value.name}.`
-          : 'Layanan gigi yang Anda cari tidak ditemukan.'
+          ? `${getServiceSummary(service.value)} ${isEnglish.value ? 'Estimated duration:' : 'Estimasi durasi:'} ${service.value.durationMinutes} ${isEnglish.value ? 'minutes at' : 'menit di'} ${clinic.value.name}.`
+          : (isEnglish.value ? 'The dental service you are looking for was not found.' : 'Layanan gigi yang Anda cari tidak ditemukan.')
       ),
     },
   ],
@@ -70,9 +82,11 @@ const relatedServices = computed(() => {
 // WhatsApp link
 const waConsultUrl = computed(() => {
   if (!service.value) return '#'
-  const text = encodeURIComponent(
-    `Halo ${clinic.value.name}, saya ingin konsultasi mengenai layanan ${service.value.name}.`
-  )
+  const serviceName = getServiceName(service.value)
+  const greeting = isEnglish.value
+    ? `Hello ${clinic.value.name}, I would like to inquire about ${serviceName}.`
+    : `Halo ${clinic.value.name}, saya ingin konsultasi mengenai layanan ${serviceName}.`
+  const text = encodeURIComponent(greeting)
   return `https://wa.me/${clinic.value.contact.whatsapp}?text=${text}`
 })
 </script>
@@ -102,31 +116,31 @@ const waConsultUrl = computed(() => {
         <div class="max-w-3xl space-y-4">
           <div class="flex items-center gap-3">
             <span class="text-xs font-semibold uppercase tracking-wider text-primary-300">
-              {{ service.category }}
+              {{ getCategoryLabel(service.category) }}
             </span>
             <div class="flex items-center gap-1.5 text-xs text-primary-200">
               <Clock class="w-4 h-4 text-primary-400" aria-hidden="true" />
-              <span>Estimasi durasi: {{ formatDuration(service.durationMinutes) }}</span>
+              <span>{{ t('services.duration') }}: {{ formatDuration(service.durationMinutes) }}</span>
             </div>
           </div>
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            {{ service.name }}
+            {{ getServiceName(service) }}
           </h1>
 
           <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
-            {{ service.summary }}
+            {{ getServiceSummary(service) }}
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
             <Button
-              :to="`/reservasi?layanan=${service.slug}`"
+              :to="clinicLink(`/reservasi?layanan=${service.slug}`)"
               variant="primary"
               size="lg"
               class="font-semibold shadow-lg"
             >
               <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
-              <span>Reservasi Layanan Ini</span>
+              <span>{{ t('serviceDetail.bookThisService') }}</span>
             </Button>
             <a
               :href="waConsultUrl"
@@ -135,7 +149,7 @@ const waConsultUrl = computed(() => {
               class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-navy-700 bg-navy-800/80 hover:bg-navy-700 text-white font-medium text-sm transition-colors"
             >
               <IconWhatsApp class="w-4 h-4 mr-2 text-emerald-400" />
-              <span>Tanya via WhatsApp</span>
+              <span>{{ t('serviceDetail.askWhatsApp') }}</span>
             </a>
           </div>
         </div>
@@ -151,7 +165,7 @@ const waConsultUrl = computed(() => {
           <div class="rounded-3xl overflow-hidden shadow-md border border-slate-200 aspect-[16/9] bg-slate-100">
             <ResponsiveImage
               :src="service.image"
-              :alt="service.name"
+              :alt="getServiceName(service)"
               aspect-ratio="16/9"
               img-class="w-full h-full object-cover"
             />
@@ -161,10 +175,10 @@ const waConsultUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
               <ShieldCheck class="w-6 h-6 text-primary-600" aria-hidden="true" />
-              <span>Tentang Perawatan</span>
+              <span>{{ t('serviceDetail.aboutTreatment') }}</span>
             </h2>
             <p class="text-base text-slate-700 leading-relaxed">
-              {{ service.description }}
+              {{ getServiceDescription(service) }}
             </p>
           </section>
 
@@ -172,11 +186,11 @@ const waConsultUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-5">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
               <HelpCircle class="w-6 h-6 text-primary-600" aria-hidden="true" />
-              <span>Kapan Layanan Ini Dibutuhkan?</span>
+              <span>{{ t('serviceDetail.whenNeeded') }}</span>
             </h2>
             <ul class="space-y-3.5">
               <li
-                v-for="(item, idx) in service.whenNeeded"
+                v-for="(item, idx) in getServiceWhenNeeded(service)"
                 :key="idx"
                 class="flex items-start gap-3 text-slate-700"
               >
@@ -190,16 +204,16 @@ const waConsultUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
             <div class="space-y-1">
               <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">
-                Tahapan Prosedur Perawatan
+                {{ t('serviceDetail.procedureTitle') }}
               </h2>
               <p class="text-sm text-slate-500">
-                Langkah sistematis dan higienis yang dilakukan dokter selama tindakan.
+                {{ t('serviceDetail.procedureSubtitle') }}
               </p>
             </div>
 
             <div class="space-y-4">
               <div
-                v-for="(step, idx) in service.procedure"
+                v-for="(step, idx) in getServiceProcedure(service)"
                 :key="idx"
                 class="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-surface-50 border border-slate-200/60"
               >
@@ -222,11 +236,11 @@ const waConsultUrl = computed(() => {
           <section class="bg-white p-7 sm:p-9 rounded-3xl border border-slate-200/80 shadow-sm space-y-5">
             <h2 class="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight flex items-center gap-2.5">
               <AlertCircle class="w-6 h-6 text-primary-600" aria-hidden="true" />
-              <span>Persiapan Sebelum Berkunjung</span>
+              <span>{{ t('serviceDetail.preparationTitle') }}</span>
             </h2>
             <ul class="space-y-3">
               <li
-                v-for="(prep, idx) in service.preparation"
+                v-for="(prep, idx) in getServicePreparation(service)"
                 :key="idx"
                 class="flex items-start gap-3 text-slate-700"
               >
@@ -242,9 +256,9 @@ const waConsultUrl = computed(() => {
               <Info class="w-5 h-5" aria-hidden="true" />
             </div>
             <div class="space-y-1 text-sm">
-              <h4 class="font-bold text-navy-900">Informasi Biaya Tindakan</h4>
+              <h4 class="font-bold text-navy-900">{{ t('serviceDetail.pricingTitle') }}</h4>
               <p class="text-slate-600 leading-relaxed">
-                Rincian biaya disampaikan dokter setelah pemeriksaan fisik. Setiap tindakan disesuaikan dengan kondisi klinis gigi Anda secara transparan sebelum prosedur dimulai.
+                {{ t('serviceDetail.pricingDesc') }}
               </p>
             </div>
           </div>
@@ -256,35 +270,35 @@ const waConsultUrl = computed(() => {
           <Card class="p-6 sm:p-7 bg-white border border-slate-200/80 rounded-3xl shadow-sm space-y-6">
             <div class="space-y-2">
               <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-                Pemesanan Jadwal
+                {{ t('serviceDetail.quickBooking') }}
               </span>
               <h3 class="text-lg font-bold text-navy-900">
-                Reservasi Layanan Ini
+                {{ t('serviceDetail.bookThisService') }}
               </h3>
               <p class="text-xs text-slate-500 leading-relaxed">
-                Pilih dokter yang sesuai dan jam kedatangan Anda tanpa antre lama.
+                {{ t('serviceDetail.quickBookingDesc') }}
               </p>
             </div>
 
             <div class="p-4 rounded-xl bg-surface-100 border border-slate-200/60 space-y-2.5 text-xs">
               <div class="flex items-center justify-between">
-                <span class="text-slate-500">Estimasi Durasi:</span>
+                <span class="text-slate-500">{{ t('serviceDetail.estimatedDuration') }}</span>
                 <span class="font-bold text-navy-900">{{ formatDuration(service.durationMinutes) }}</span>
               </div>
               <div class="flex items-center justify-between">
-                <span class="text-slate-500">Kategori:</span>
-                <span class="font-bold text-navy-900">{{ service.category }}</span>
+                <span class="text-slate-500">{{ t('serviceDetail.category') }}</span>
+                <span class="font-bold text-navy-900">{{ getCategoryLabel(service.category) }}</span>
               </div>
             </div>
 
             <Button
-              :to="`/reservasi?layanan=${service.slug}`"
+              :to="clinicLink(`/reservasi?layanan=${service.slug}`)"
               variant="primary"
               size="md"
               class="w-full justify-center font-semibold shadow-md"
             >
               <CalendarCheck class="w-4 h-4 mr-2" aria-hidden="true" />
-              <span>Reservasi Sekarang</span>
+              <span>{{ t('serviceDetail.bookNow') }}</span>
             </Button>
           </Card>
 
@@ -294,11 +308,11 @@ const waConsultUrl = computed(() => {
               <div class="flex items-center gap-2">
                 <Stethoscope class="w-5 h-5 text-primary-600" aria-hidden="true" />
                 <h3 class="text-base font-bold text-navy-900">
-                  Dokter yang Menangani
+                  {{ t('serviceDetail.assignedDoctors') }}
                 </h3>
               </div>
               <p class="text-xs text-slate-500">
-                Dokter berpengalaman yang menangani layanan ini.
+                {{ t('serviceDetail.assignedDoctorsDesc') }}
               </p>
             </div>
 
@@ -306,7 +320,7 @@ const waConsultUrl = computed(() => {
               <RouterLink
                 v-for="doc in assignedDoctors"
                 :key="doc.id"
-                :to="`/dokter/${doc.slug}`"
+                :to="clinicLink(`/dokter/${doc.slug}`)"
                 class="group py-3.5 first:pt-0 last:pb-0 flex items-center gap-3.5 hover:text-primary-700 transition-colors"
               >
                 <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
@@ -329,28 +343,28 @@ const waConsultUrl = computed(() => {
               </RouterLink>
             </div>
             <p v-else class="text-xs text-slate-500 italic">
-              {{ isEnglish ? 'Handled by the clinic complete dental team.' : 'Ditangani oleh seluruh tim dokter klinik.' }}
+              {{ t('serviceDetail.allTeamFallback') }}
             </p>
           </div>
 
           <!-- Related Services (FR-4.2) -->
           <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
             <h3 class="text-base font-bold text-navy-900">
-              Layanan Terkait
+              {{ t('serviceDetail.relatedServices') }}
             </h3>
             <div class="space-y-3">
               <RouterLink
                 v-for="rel in relatedServices"
                 :key="rel.id"
-                :to="`/layanan/${rel.slug}`"
+                :to="clinicLink(`/layanan/${rel.slug}`)"
                 class="block p-3.5 rounded-2xl bg-surface-50 border border-slate-200/60 hover:border-primary-300 hover:bg-white transition-all group"
               >
                 <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs font-semibold text-primary-600">{{ rel.category }}</span>
+                  <span class="text-xs font-semibold text-primary-600">{{ getCategoryLabel(rel.category) }}</span>
                   <span class="text-[11px] text-slate-400">{{ formatDuration(rel.durationMinutes) }}</span>
                 </div>
                 <p class="text-sm font-bold text-navy-900 group-hover:text-primary-700 transition-colors line-clamp-1">
-                  {{ rel.name }}
+                  {{ getServiceName(rel) }}
                 </p>
               </RouterLink>
             </div>
@@ -363,17 +377,17 @@ const waConsultUrl = computed(() => {
     <div class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 sm:p-4 z-40 lg:hidden shadow-lg">
       <div class="max-w-md mx-auto flex items-center justify-between gap-3">
         <div class="min-w-0 flex-1">
-          <p class="text-xs text-slate-500 truncate">Layanan Terpilih</p>
-          <p class="text-sm font-bold text-navy-900 truncate">{{ service.name }}</p>
+          <p class="text-xs text-slate-500 truncate">{{ t('serviceDetail.selectedService') }}</p>
+          <p class="text-sm font-bold text-navy-900 truncate">{{ getServiceName(service) }}</p>
         </div>
         <Button
-          :to="`/reservasi?layanan=${service.slug}`"
+          :to="clinicLink(`/reservasi?layanan=${service.slug}`)"
           variant="primary"
           size="sm"
           class="font-semibold flex-shrink-0 shadow-md"
         >
           <CalendarCheck class="w-4 h-4 mr-1.5" aria-hidden="true" />
-          <span>Reservasi</span>
+          <span>{{ t('serviceDetail.bookNow') }}</span>
         </Button>
       </div>
     </div>

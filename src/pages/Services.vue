@@ -18,7 +18,7 @@ import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
 
 const { clinic, clinicLink } = useClinic()
-const { t, getServiceName, isEnglish } = useI18n()
+const { t, getServiceName, getServiceSummary, isEnglish } = useI18n()
 
 useHead({
   title: computed(() => isEnglish.value ? `Dental Care Services | ${clinic.value.name}` : `Layanan Perawatan Gigi | ${clinic.value.name}`),
@@ -186,7 +186,7 @@ function clearFilters() {
                 </RouterLink>
               </h2>
               <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
-                {{ srv.summary }}
+                {{ getServiceSummary(srv) }}
               </p>
             </div>
 
@@ -230,12 +230,18 @@ function clearFilters() {
         <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
           <SearchX class="w-8 h-8" aria-hidden="true" />
         </div>
-        <h3 class="text-lg font-bold text-navy-900">Tidak ada layanan ditemukan</h3>
+        <h3 class="text-lg font-bold text-navy-900">
+          {{ isEnglish ? 'No services found' : 'Tidak ada layanan ditemukan' }}
+        </h3>
         <p class="text-sm text-slate-500 leading-relaxed">
-          Tidak ditemukan layanan dengan kata kunci "{{ searchQuery }}" pada kategori {{ selectedCategory }}.
+          {{
+            isEnglish
+              ? `No dental services found matching "${searchQuery}" in category ${getCategoryDisplay(selectedCategory)}.`
+              : `Tidak ditemukan layanan dengan kata kunci "${searchQuery}" pada kategori ${selectedCategory}.`
+          }}
         </p>
         <Button variant="outline" size="sm" class="font-semibold" @click="clearFilters">
-          Reset Filter & Pencarian
+          {{ isEnglish ? 'Reset Filters & Search' : 'Reset Filter & Pencarian' }}
         </Button>
       </div>
 

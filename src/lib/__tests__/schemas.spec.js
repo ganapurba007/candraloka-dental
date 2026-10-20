@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { patientFormSchema, reservationRecordSchema } from '../schemas'
+import { createPatientFormSchema, patientFormSchema, reservationRecordSchema } from '../schemas'
 
 describe('schemas.js', () => {
   describe('patientFormSchema', () => {
@@ -61,6 +61,14 @@ describe('schemas.js', () => {
         isNewPatient: true,
       }
       expect(patientFormSchema.safeParse(invalid).success).toBe(false)
+    })
+
+    it('provides localized validation messages with createPatientFormSchema', () => {
+      const enSchema = createPatientFormSchema('en')
+      const res = enSchema.safeParse({ name: 'A', whatsapp: '123' })
+      expect(res.success).toBe(false)
+      const nameIssue = res.error.issues.find((i) => i.path[0] === 'name')
+      expect(nameIssue?.message).toContain('minimum 3 characters')
     })
   })
 

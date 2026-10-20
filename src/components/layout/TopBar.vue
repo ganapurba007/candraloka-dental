@@ -7,7 +7,7 @@ import IconWhatsApp from '@/components/ui/IconWhatsApp.vue'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher.vue'
 
 const { clinic } = useClinic()
-const { t } = useI18n()
+const { t, isEnglish } = useI18n()
 
 const phone = computed(() => clinic.value.contact.phone)
 const whatsapp = computed(() => clinic.value.contact.whatsapp)
@@ -17,7 +17,10 @@ const addressShort = computed(() => {
 })
 
 const waUrl = computed(() => {
-  const text = encodeURIComponent(`Halo ${clinic.value.name}, saya ingin bertanya mengenai layanan klinik.`)
+  const greeting = isEnglish.value
+    ? `Hello ${clinic.value.name}, I would like to inquire about your clinic services.`
+    : `Halo ${clinic.value.name}, saya ingin bertanya mengenai layanan klinik.`
+  const text = encodeURIComponent(greeting)
   return `https://wa.me/${whatsapp.value}?text=${text}`
 })
 </script>

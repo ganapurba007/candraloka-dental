@@ -17,7 +17,7 @@ const { clinic } = useClinic()
 const { t, isEnglish } = useI18n()
 
 const openStatus = computed(() => {
-  return getClinicOpenStatus(clinic.value.operatingHours, new Date())
+  return getClinicOpenStatus(clinic.value.operatingHours, new Date(), isEnglish.value ? 'en' : 'id')
 })
 
 const englishDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -48,13 +48,13 @@ const daysList = computed(() => {
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-          Akses & Kunjungan
+          {{ isEnglish ? 'Access & Visit' : 'Akses & Kunjungan' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
-          Lokasi & Jam Praktek
+          {{ isEnglish ? 'Location & Operating Hours' : 'Lokasi & Jam Praktek' }}
         </h2>
         <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Terletak di lokasi strategis yang tenang dan mudah dijangkau dengan fasilitas parkir memadai.
+          {{ isEnglish ? 'Strategically located in a quiet, accessible area with ample parking facilities.' : 'Terletak di lokasi strategis yang tenang dan mudah dijangkau dengan fasilitas parkir memadai.' }}
         </p>
       </div>
 
@@ -66,7 +66,7 @@ const daysList = computed(() => {
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <Clock class="w-5 h-5 text-primary-600" aria-hidden="true" />
-                <span class="font-bold text-navy-900">Status Klinik</span>
+                <span class="font-bold text-navy-900">{{ t('common.clinicStatus') }}</span>
               </div>
               <span
                 class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold"
@@ -86,7 +86,7 @@ const daysList = computed(() => {
                 <MapPin class="w-5 h-5" aria-hidden="true" />
               </div>
               <div class="space-y-1">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Alamat</h4>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">{{ t('common.address') }}</h4>
                 <p class="text-sm font-medium text-navy-900 leading-relaxed">
                   {{ clinic.contact.address }}
                 </p>
@@ -101,7 +101,7 @@ const daysList = computed(() => {
               >
                 <Phone class="w-4 h-4 text-primary-600" aria-hidden="true" />
                 <div class="text-xs">
-                  <p class="text-slate-400">Telepon</p>
+                  <p class="text-slate-400">{{ t('common.phone') }}</p>
                   <p class="font-semibold text-navy-900">{{ clinic.contact.phone }}</p>
                 </div>
               </a>
@@ -123,7 +123,7 @@ const daysList = computed(() => {
 
           <!-- Operating Hours Schedule Table -->
           <div class="p-6 rounded-2xl bg-surface-100 border border-slate-200/80 space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Jadwal Jam Buka</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">{{ t('common.operatingHoursSchedule') }}</h4>
             <div class="divide-y divide-slate-200/60 text-sm">
               <div
                 v-for="d in daysList"
@@ -147,7 +147,7 @@ const daysList = computed(() => {
               class="inline-flex items-center justify-center w-full px-7 py-3.5 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-bold text-base transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 gap-2"
             >
               <Navigation class="w-5 h-5" aria-hidden="true" />
-              <span>Petunjuk Arah via Google Maps</span>
+              <span>{{ t('common.getDirections') }}</span>
               <ExternalLink class="w-4 h-4 ml-1 opacity-75" aria-hidden="true" />
             </a>
           </div>

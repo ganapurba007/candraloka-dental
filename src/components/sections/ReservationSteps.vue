@@ -10,37 +10,65 @@ import {
   ShieldCheck,
 } from 'lucide-vue-next'
 import Button from '@/components/ui/Button.vue'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import homeData from '@/data/home.json'
 
+const { clinicLink } = useClinic()
+const { isEnglish } = useI18n()
 const { reservationSteps } = homeData
 
+const englishSteps = [
+  {
+    number: 1,
+    title: 'Select Service',
+    description: 'Determine the dental care you or your family members need.',
+    actionText: 'View Services',
+    to: '/layanan',
+    icon: ClipboardList,
+  },
+  {
+    number: 2,
+    title: 'Choose Dentist',
+    description: 'Pick a specialist dentist or the flexible Any Available Dentist option.',
+    actionText: 'Meet Our Doctors',
+    to: '/dokter',
+    icon: UserCheck,
+  },
+  {
+    number: 3,
+    title: 'Select Schedule',
+    description: 'Select an available date and appointment time slot in real-time.',
+    actionText: 'Check Schedule',
+    to: '/jadwal',
+    icon: CalendarClock,
+  },
+  {
+    number: 4,
+    title: 'Fill Info & Confirm',
+    description: 'Provide your contact details and receive an instant official booking code.',
+    actionText: 'Book Now',
+    to: '/reservasi',
+    icon: ShieldCheck,
+  },
+]
+
 const stepsWithMeta = computed(() => {
+  if (isEnglish.value) {
+    return englishSteps.map((s) => ({ ...s, to: clinicLink(s.to) }))
+  }
+
   const meta = [
-    {
-      icon: ClipboardList,
-      actionText: 'Lihat Pilihan Layanan',
-      to: '/layanan',
-    },
-    {
-      icon: UserCheck,
-      actionText: 'Kenali Dokter Spesialis',
-      to: '/dokter',
-    },
-    {
-      icon: CalendarClock,
-      actionText: 'Cek Jadwal Praktek',
-      to: '/jadwal',
-    },
-    {
-      icon: ShieldCheck,
-      actionText: 'Buat Reservasi Sekarang',
-      to: '/reservasi',
-    },
+    { icon: ClipboardList, actionText: 'Lihat Pilihan Layanan', to: '/layanan' },
+    { icon: UserCheck, actionText: 'Kenali Dokter Spesialis', to: '/dokter' },
+    { icon: CalendarClock, actionText: 'Cek Jadwal Praktek', to: '/jadwal' },
+    { icon: ShieldCheck, actionText: 'Buat Reservasi Sekarang', to: '/reservasi' },
   ]
 
   return reservationSteps.map((step, idx) => ({
     ...step,
     ...(meta[idx] || meta[0]),
+    to: clinicLink(meta[idx]?.to || '/reservasi'),
   }))
 })
 </script>
@@ -51,13 +79,17 @@ const stepsWithMeta = computed(() => {
       <!-- Header -->
       <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600">
-          Alur Mudah & Praktis
+          {{ isEnglish ? 'Simple & Convenient Flow' : 'Alur Mudah & Praktis' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
-          Reservasi Online dalam 4 Langkah
+          {{ isEnglish ? 'Online Booking in 4 Easy Steps' : 'Reservasi Online dalam 4 Langkah' }}
         </h2>
         <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Pilih jadwal yang cocok langsung dari smartphone Anda tanpa perlu antre di klinik.
+          {{
+            isEnglish
+              ? 'Choose your preferred schedule right from your smartphone without waiting in long clinic queues.'
+              : 'Pilih jadwal yang cocok langsung dari smartphone Anda tanpa perlu antre di klinik.'
+          }}
         </p>
       </div>
 
@@ -105,9 +137,9 @@ const stepsWithMeta = computed(() => {
 
       <!-- CTA Bottom -->
       <div class="mt-12 text-center">
-        <Button to="/reservasi" variant="primary" size="lg" class="rounded-full shadow-md hover:shadow-xl hover:scale-102 transition-all font-semibold">
+        <Button :to="clinicLink('/reservasi')" variant="primary" size="lg" class="rounded-full shadow-md hover:shadow-xl hover:scale-102 transition-all font-semibold">
           <CalendarCheck class="w-5 h-5 mr-2" aria-hidden="true" />
-          <span>Mulai Buat Reservasi Sekarang</span>
+          <span>{{ isEnglish ? 'Start Online Booking Now' : 'Mulai Buat Reservasi Sekarang' }}</span>
         </Button>
       </div>
     </div>

@@ -219,7 +219,7 @@ onUnmounted(() => {
     <button
       v-if="slides.length > 1"
       type="button"
-      aria-label="Slide sebelumnya"
+      :aria-label="isEnglish ? 'Previous slide' : 'Slide sebelumnya'"
       class="cursor-pointer hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/20 bg-navy-950/60 hover:bg-white hover:text-navy-900 text-white items-center justify-center backdrop-blur-md transition-all duration-300 z-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white shadow-xl hover:scale-105 active:scale-95"
       @click="handleManualPrev"
     >
@@ -229,7 +229,7 @@ onUnmounted(() => {
     <button
       v-if="slides.length > 1"
       type="button"
-      aria-label="Slide berikutnya"
+      :aria-label="isEnglish ? 'Next slide' : 'Slide berikutnya'"
       class="cursor-pointer hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/20 bg-navy-950/60 hover:bg-white hover:text-navy-900 text-white items-center justify-center backdrop-blur-md transition-all duration-300 z-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white shadow-xl hover:scale-105 active:scale-95"
       @click="handleManualNext"
     >
@@ -418,7 +418,7 @@ onUnmounted(() => {
             >
               <div class="flex items-center justify-center gap-1.5 text-cyan-300 mb-1">
                 <Cpu class="w-3.5 h-3.5" />
-                <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-200">Teknologi Medis</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-200">{{ isEnglish ? 'Medical Tech' : 'Teknologi Medis' }}</span>
               </div>
               <p class="text-xs sm:text-sm font-bold text-white">{{ h }}</p>
             </div>
@@ -455,7 +455,7 @@ onUnmounted(() => {
       v-if="slides.length > 1"
       class="absolute bottom-20 sm:bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-navy-950/40 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15 shadow-lg"
       role="tablist"
-      aria-label="Navigasi slide utama"
+      :aria-label="isEnglish ? 'Main slider navigation' : 'Navigasi slide utama'"
     >
       <button
         v-for="(s, sIdx) in slides"
@@ -463,7 +463,7 @@ onUnmounted(() => {
         type="button"
         role="tab"
         :aria-selected="currentSlideIndex === sIdx"
-        :aria-label="`Buka slide ${sIdx + 1}: ${s.headline}`"
+        :aria-label="`${isEnglish ? 'Open slide' : 'Buka slide'} ${sIdx + 1}: ${s.headline}`"
         class="cursor-pointer h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         :class="currentSlideIndex === sIdx ? 'w-8 bg-white shadow-md' : 'w-2 bg-white/40 hover:bg-white/70'"
         @click="goToSlide(sIdx)"

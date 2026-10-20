@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import {
   CalendarCheck,
@@ -9,7 +10,12 @@ import {
   ArrowRight,
   Check,
 } from 'lucide-vue-next'
+import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import clinicData from '@/data/clinic.json'
+
+const { clinicLink } = useClinic()
+const { isEnglish } = useI18n()
 
 const stepIcons = [
   CalendarCheck,
@@ -19,14 +25,31 @@ const stepIcons = [
   HeartHandshake,
 ]
 
-const visitSteps = clinicData.about.visitSteps
-
-const highlights = [
-  'Pemeriksaan Menyeluruh & Digital',
-  'Tindakan Medis Minim Trauma',
-  'Dokter Spesialis Berpengalaman',
-  'Transparansi Biaya Sebelum Tindakan',
+const englishSteps = [
+  { number: 1, title: 'Online / WhatsApp Booking', description: 'Choose your preferred service, dentist, date, and appointment slot according to your schedule.' },
+  { number: 2, title: 'Check-In & Arrival', description: 'Arrive at the clinic 10 minutes prior to your slot and verify your details at registration.' },
+  { number: 3, title: 'Consultation & Examination', description: 'Dentist meticulously examines your dental health and explains the tailored treatment plan.' },
+  { number: 4, title: 'Treatment Procedure', description: 'Care is performed adhering to high clinical hygiene standards with a gentle touch.' },
+  { number: 5, title: 'Post-Treatment Education', description: 'Receive personalized home oral care advice and periodic follow-up schedules if needed.' },
 ]
+
+const visitSteps = computed(() => isEnglish.value ? englishSteps : clinicData.about.visitSteps)
+
+const highlights = computed(() =>
+  isEnglish.value
+    ? [
+        'Comprehensive & Digital Examination',
+        'Minimally Traumatic Dental Care',
+        'Experienced Dental Specialists',
+        'Transparent Pricing Prior to Treatment',
+      ]
+    : [
+        'Pemeriksaan Menyeluruh & Digital',
+        'Tindakan Medis Minim Trauma',
+        'Dokter Spesialis Berpengalaman',
+        'Transparansi Biaya Sebelum Tindakan',
+      ]
+)
 </script>
 
 <template>
@@ -40,16 +63,20 @@ const highlights = [
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         <div class="lg:col-span-6 space-y-3">
           <span class="text-xs font-bold uppercase tracking-wider text-primary-400 block">
-            Alur Kunjungan Pasien Terstruktur
+            {{ isEnglish ? 'Structured Patient Visit Flow' : 'Alur Kunjungan Pasien Terstruktur' }}
           </span>
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
-            Kami Menghadirkan Standar Pelayanan Gigi Lengkap & Nyaman.
+            {{ isEnglish ? 'Delivering Complete, Seamless, and Comfort-Driven Dental Standards.' : 'Kami Menghadirkan Standar Pelayanan Gigi Lengkap & Nyaman.' }}
           </h2>
         </div>
 
         <div class="lg:col-span-6 space-y-6">
           <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Setiap tahapan dirancang demi kenyamanan dan ketenangan pasien, mulai dari reservasi waktu tanpa antre panjang hingga konsultasi tindak lanjut pasca-perawatan.
+            {{
+              isEnglish
+                ? 'Every phase is crafted for patient peace of mind, from fast queue-free booking to post-treatment follow-up consultations.'
+                : 'Setiap tahapan dirancang demi kenyamanan dan ketenangan pasien, mulai dari reservasi waktu tanpa antre panjang hingga konsultasi tindak lanjut pasca-perawatan.'
+            }}
           </p>
 
           <!-- Horizontal Highlight Bullet Points (Medcity list-items-light) -->
@@ -104,10 +131,10 @@ const highlights = [
           <!-- Bottom Step Link -->
           <div class="pt-6 mt-4 border-t border-navy-700/60">
             <RouterLink
-              :to="step.number === 1 ? '/reservasi' : '/layanan'"
+              :to="step.number === 1 ? clinicLink('/reservasi') : clinicLink('/layanan')"
               class="inline-flex items-center gap-1.5 text-xs font-bold text-primary-300 hover:text-white transition-colors"
             >
-              <span>{{ step.number === 1 ? 'Pilih Jadwal' : 'Pelajari Detail' }}</span>
+              <span>{{ step.number === 1 ? (isEnglish ? 'Select Schedule' : 'Pilih Jadwal') : (isEnglish ? 'Learn Details' : 'Pelajari Detail') }}</span>
               <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </RouterLink>
           </div>

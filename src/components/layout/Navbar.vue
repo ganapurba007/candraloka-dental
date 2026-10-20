@@ -79,7 +79,7 @@ function isActive(to) {
         <RouterLink
           :to="clinicLink('/')"
           class="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg p-1"
-          :aria-label="`${clinic.name} Beranda`"
+          :aria-label="`${clinic.name} ${t('nav.home')}`"
         >
           <img
             :src="clinic.logo"
@@ -99,7 +99,7 @@ function isActive(to) {
         </RouterLink>
 
         <!-- Desktop Navigation Links -->
-        <nav aria-label="Navigasi Utama" class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <nav :aria-label="isEnglish ? 'Main navigation' : 'Navigasi Utama'" class="hidden md:flex items-center space-x-1 lg:space-x-2">
           <RouterLink
             v-for="link in navLinks"
             :key="link.to"
@@ -138,7 +138,7 @@ function isActive(to) {
             type="button"
             :aria-expanded="isMobileMenuOpen"
             aria-controls="mobile-navigation"
-            aria-label="Buka navigasi menu"
+            :aria-label="isEnglish ? (isMobileMenuOpen ? 'Close menu navigation' : 'Open menu navigation') : (isMobileMenuOpen ? 'Tutup navigasi menu' : 'Buka navigasi menu')"
             class="p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
             @click="toggleMobileMenu"
           >
@@ -179,7 +179,7 @@ function isActive(to) {
         id="mobile-navigation"
         class="md:hidden border-b border-slate-200 bg-white shadow-xl relative z-50 px-4 pt-3 pb-6"
       >
-        <nav aria-label="Navigasi Menu Mobile" class="flex flex-col space-y-1">
+        <nav :aria-label="isEnglish ? 'Mobile navigation menu' : 'Navigasi Menu Mobile'" class="flex flex-col space-y-1">
           <RouterLink
             v-for="link in navLinks"
             :key="link.to"

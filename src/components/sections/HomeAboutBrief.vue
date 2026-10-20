@@ -46,15 +46,19 @@ const points = computed(() =>
           <div class="space-y-3">
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary-600">
               <span class="w-1.5 h-1.5 rounded-full bg-primary-600"></span>
-              <span>Tentang {{ clinic.name }}</span>
+              <span>{{ isEnglish ? `About ${clinic.name}` : `Tentang ${clinic.name}` }}</span>
             </div>
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
-              Kenyamanan dan Kesehatan Senyum Keluarga adalah Prioritas Kami
+              {{ isEnglish ? 'Your Family’s Smile Health and Comfort are Our Highest Priority' : 'Kenyamanan dan Kesehatan Senyum Keluarga adalah Prioritas Kami' }}
             </h2>
           </div>
 
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            {{ clinic.about.story }}
+            {{
+              isEnglish
+                ? 'Founded in 2018, Candraloka Dental Care is committed to delivering comprehensive, gentle, and transparent oral healthcare. We combine experienced dentists with modern technology to provide safe, comfortable care for your entire family.'
+                : clinic.about.story
+            }}
           </p>
 
           <ul class="space-y-3 pt-1">
@@ -66,7 +70,7 @@ const points = computed(() =>
 
           <div class="pt-2">
             <Button :to="clinicLink('/tentang')" variant="outline" size="md" class="rounded-full font-semibold hover:border-primary-400">
-              <span>Kenali Kami Lebih Dekat</span>
+              <span>{{ isEnglish ? 'Learn More About Us' : 'Kenali Kami Lebih Dekat' }}</span>
               <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
           </div>

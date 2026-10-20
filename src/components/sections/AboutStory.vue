@@ -2,11 +2,29 @@
 import { computed } from 'vue'
 import { CheckCircle2, Award, Heart, Target, ArrowRight, ShieldCheck } from 'lucide-vue-next'
 import { useClinic } from '@/composables/useClinic'
+import { useI18n } from '@/composables/useI18n'
 import ResponsiveImage from '@/components/ui/ResponsiveImage.vue'
 import Button from '@/components/ui/Button.vue'
 
 const { clinic, clinicLink } = useClinic()
+const { isEnglish } = useI18n()
 const about = computed(() => clinic.value.about)
+
+const visionText = computed(() =>
+  isEnglish.value
+    ? 'To become a trusted dental healthcare partner prioritizing patient comfort, high professionalism, and sustainable oral health education.'
+    : about.value.vision
+)
+
+const missionList = computed(() =>
+  isEnglish.value
+    ? [
+        'Deliver high-quality dental care with strict hygiene and sterilization standards.',
+        'Create a serene, welcoming, and child-friendly clinic atmosphere.',
+        'Provide a transparent, reliable, and punctual scheduling and appointment system.',
+      ]
+    : about.value.mission
+)
 </script>
 
 <template>
@@ -15,10 +33,10 @@ const about = computed(() => clinic.value.about)
       <!-- Medcity Top Heading Layout -->
       <div class="max-w-3xl mb-12 space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600 block">
-          Cerita & Filosofi Kami
+          {{ isEnglish ? 'Our Story & Philosophy' : 'Cerita & Filosofi Kami' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
-          Meningkatkan Kualitas Hidup Anda Melalui Kesehatan Gigi yang Optimal.
+          {{ isEnglish ? 'Improving Your Quality of Life Through Optimal Dental Health.' : 'Meningkatkan Kualitas Hidup Anda Melalui Kesehatan Gigi yang Optimal.' }}
         </h2>
       </div>
 
@@ -26,11 +44,19 @@ const about = computed(() => clinic.value.about)
         <!-- Left: Medcity about__Text -->
         <div class="lg:col-span-7 space-y-6">
           <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Tujuan utama kami adalah menghadirkan pelayanan kesehatan gigi komprehensif dengan pendekatan yang ramah, penuh empati, dan bebas rasa takut. Kami berkomitmen menjadi mitra terpercaya keluarga Anda dalam merawat senyum sehat sepanjang usia.
+            {{
+              isEnglish
+                ? 'Our primary goal is to provide comprehensive dental healthcare with a friendly, empathetic, and fear-free approach. We are committed to being your family’s trusted partner in caring for healthy smiles throughout life.'
+                : 'Tujuan utama kami adalah menghadirkan pelayanan kesehatan gigi komprehensif dengan pendekatan yang ramah, penuh empati, dan bebas rasa takut. Kami berkomitmen menjadi mitra terpercaya keluarga Anda dalam merawat senyum sehat sepanjang usia.'
+            }}
           </p>
 
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Didukung peralatan modern bertaraf medis, kami menyusun rencana perawatan yang transparan dan terpersonalisasi untuk setiap pasien—dari pembersihan karang rutin, perawatan estetika, hingga tindakan bedah mulut minim trauma.
+            {{
+              isEnglish
+                ? 'Supported by modern medical-grade equipment, we create transparent and personalized treatment plans for every patient—from routine scaling and aesthetic restorations to minimally traumatic oral surgeries.'
+                : 'Didukung peralatan modern bertaraf medis, kami menyusun rencana perawatan yang transparan dan terpersonalisasi untuk setiap pasien—dari pembersihan karang rutin, perawatan estetika, hingga tindakan bedah mulut minim trauma.'
+            }}
           </p>
 
           <!-- Visi & Misi Grid -->
@@ -40,9 +66,9 @@ const about = computed(() => clinic.value.about)
               <div class="inline-flex p-2 rounded-xl bg-primary-100 text-primary-700">
                 <Target class="w-4 h-4" aria-hidden="true" />
               </div>
-              <h3 class="text-sm font-bold text-navy-900">Visi Kami</h3>
+              <h3 class="text-sm font-bold text-navy-900">{{ isEnglish ? 'Our Vision' : 'Visi Kami' }}</h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {{ about.vision }}
+                {{ visionText }}
               </p>
             </div>
 
@@ -51,10 +77,10 @@ const about = computed(() => clinic.value.about)
               <div class="inline-flex p-2 rounded-xl bg-navy-100 text-navy-700">
                 <Heart class="w-4 h-4" aria-hidden="true" />
               </div>
-              <h3 class="text-sm font-bold text-navy-900">Misi Utama</h3>
+              <h3 class="text-sm font-bold text-navy-900">{{ isEnglish ? 'Our Mission' : 'Misi Utama' }}</h3>
               <ul class="space-y-1.5">
                 <li
-                  v-for="(item, idx) in about.mission"
+                  v-for="(item, idx) in missionList"
                   :key="idx"
                   class="flex items-start gap-1.5 text-xs text-slate-600"
                 >
@@ -73,7 +99,7 @@ const about = computed(() => clinic.value.about)
               size="md"
               class="font-semibold shadow-md hover:-translate-y-0.5 transition-all"
             >
-              <span>Kenali Dokter Kami</span>
+              <span>{{ isEnglish ? 'Meet Our Doctors' : 'Kenali Dokter Kami' }}</span>
               <ArrowRight class="w-4 h-4 ml-2" aria-hidden="true" />
             </Button>
 
@@ -82,8 +108,8 @@ const about = computed(() => clinic.value.about)
                 <ShieldCheck class="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
-                <p class="text-xs font-bold text-navy-900">Standar Medis Higienis</p>
-                <p class="text-[11px] text-slate-500">Berdiri Sejak {{ clinic.establishedYear }}</p>
+                <p class="text-xs font-bold text-navy-900">{{ isEnglish ? 'Hygienic Medical Standard' : 'Standar Medis Higienis' }}</p>
+                <p class="text-[11px] text-slate-500">{{ isEnglish ? `Established Since ${clinic.establishedYear}` : `Berdiri Sejak ${clinic.establishedYear}` }}</p>
               </div>
             </div>
           </div>
@@ -106,7 +132,9 @@ const about = computed(() => clinic.value.about)
                   <Award class="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <p class="text-xs font-extrabold uppercase tracking-wider text-primary-700">Dedikasi Portofolio Medis</p>
+                  <p class="text-xs font-extrabold uppercase tracking-wider text-primary-700">
+                    {{ isEnglish ? 'Medical Excellence Commitment' : 'Dedikasi Portofolio Medis' }}
+                  </p>
                   <p class="text-sm font-bold text-navy-900">{{ clinic.name }}</p>
                   <p class="text-[11px] text-slate-500">{{ clinic.contact.address }}</p>
                 </div>

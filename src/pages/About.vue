@@ -38,9 +38,9 @@ useHead({
 
     <!-- FR-3.6: Tim Dokter Ringkas -->
     <FeaturedDoctors
-      badge="Tim Dokter Berpengalaman"
-      title="Tenaga Medis Berdedikasi"
-      description="Didukung dokter gigi umum dan spesialis yang siap memberikan perawatan terbaik dengan komunikasi yang jelas."
+      :badge="isEnglish ? 'Experienced Medical Team' : 'Tim Dokter Berpengalaman'"
+      :title="isEnglish ? 'Dedicated Dental Practitioners' : 'Tenaga Medis Berdedikasi'"
+      :description="isEnglish ? 'Supported by general and specialist dentists ready to provide top-quality care with clear communication.' : 'Didukung dokter gigi umum dan spesialis yang siap memberikan perawatan terbaik dengan komunikasi yang jelas.'"
     />
   </div>
 </template>

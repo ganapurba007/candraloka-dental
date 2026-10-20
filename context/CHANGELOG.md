@@ -2,17 +2,31 @@
 
 > Riwayat aktif proyek — hanya simpan ~10-15 fase terbaru di sini. Fase lama dipindahkan ke `CHANGELOG-archive.md` (ringkas, jangan copy-paste detail penuh). Entri terbaru selalu di PALING ATAS.
 
-<!--
-Format tiap entri:
-
-## Fase [N] — [judul singkat] ([tanggal])
-**FR terkait:** [nomor FR dari PRD.md §3, kalau ada]
+## Audit & Lokalisasi Penuh Bahasa Inggris: Layanan, Menu, Form Reservasi, & Komponen (2026-10-20)
+**FR terkait:** FR-1.10 (Penyempurnaan Bilingual ID/EN Menyeluruh)
 **Yang dikerjakan:**
-- [poin singkat]
-**File yang berubah:** [daftar file utama, tidak perlu semua kalau banyak]
-**Test:** [X passed / Y total]
-**Docs updated:** [PRD §9 / SCHEMA.md / tidak ada perubahan scope]
--->
+- **Kamus & Engine Terjemahan Layanan (Service Detail):**
+  - Membuat `src/lib/translations/services.js` berisi kamus lengkap 8 layanan gigi (`name`, `summary`, `description`, indikasi `whenNeeded`, tahapan `procedure`, dan panduan `preparation`).
+  - Menghubungkan getter (`getServiceName`, `getServiceSummary`, `getServiceDescription`, `getServiceWhenNeeded`, `getServiceProcedure`, `getServicePreparation`) ke `useI18n()` untuk reaktivitas otomatis berdasarkan locale aktif.
+- **Lokalisasi Lengkap Alur Reservasi Online (`Booking.vue`):**
+  - Menerjemahkan Langkah 1 hingga Langkah 4: judul tahapan, subtitle, pemilihan layanan, opsi dokter mana saja/spesifik, strip navigator tanggal 14 hari, slot jam per periode (Pagi/Siang/Sore), form data pasien (nama, WA, email, status pasien baru/lama, keluhan, checkbox persetujuan), dan tombol aksi (Kembali/Lanjut/Konfirmasi).
+  - Menambahkan `createPatientFormSchema(locale)` di `src/lib/schemas.js` sehingga pesan error validasi Zod ditampilkan dalam bahasa Inggris saat locale EN aktif.
+  - Melokalisasi sidebar ringkasan reservasi, toast notifikasi, dialog hapus riwayat perangkat, serta pesan konfirmasi WhatsApp bilingual (`whatsapp.js`).
+- **Lokalisasi Menyeluruh Halaman & Komponen Publik:**
+  - `Services.vue` & `ServiceDetail.vue`: Deskripsi, indikasi, tahapan prosedur terinci, persiapan, disclaimer biaya, konsultasi WhatsApp, dan pencarian/filter.
+  - `Navbar.vue`: ARIA labels navigasi utama, tombol menu mobile, dan link brand.
+  - `HomeHero.vue`: Banner teknologi medis, label slider indicators, dan navigasi slide chevron.
+  - `FeaturedServices.vue` & `ReservationSteps.vue`: Ringkasan kartu layanan, tombol aksi, dan banner CTA.
+  - `HomeAboutBrief.vue`, `AboutStory.vue`, `AboutValues.vue`, `AboutFacilities.vue`, `AboutVisitFlow.vue`, `AboutLocation.vue`: Visi, misi, nilai perawatan, fasilitas klinik, alur kunjungan, jam operasional, dan petunjuk arah peta.
+  - `TestimonialsSection.vue`: Header ulasan pasien, 4 testimoni pasien rekaan beralih ke bahasa Inggris, badge kepuasan pasien, dan kontrol slider.
+  - `TopBar.vue`, `Footer.vue`, `FloatingWhatsapp.vue`, dan `NotFound.vue`: Pesan greeting WhatsApp, serving since footer, dan navigasi 404.
+- **Pengujian & Validasi:**
+  - Menambahkan unit test untuk getter layanan bilingual dan schema Zod (`translations.spec.js`, `schemas.spec.js`).
+  - Total test: 124 passed / 124 total (100% pass rate).
+  - Validasi build `npm run build` sukses 100% dengan lolos cek anggaran gambar 37/37 WebP.
+**File yang berubah:** src/lib/translations/services.js, src/lib/translations/index.js, src/lib/translations/id.js, src/lib/translations/en.js, src/composables/useI18n.js, src/lib/schemas.js, src/lib/whatsapp.js, src/pages/Booking.vue, src/pages/Services.vue, src/pages/ServiceDetail.vue, src/pages/NotFound.vue, src/components/layout/Navbar.vue, src/components/layout/Footer.vue, src/components/layout/TopBar.vue, src/components/layout/FloatingWhatsapp.vue, src/components/sections/HomeHero.vue, src/components/sections/FeaturedServices.vue, src/components/sections/ReservationSteps.vue, src/components/sections/HomeAboutBrief.vue, src/components/sections/AboutStory.vue, src/components/sections/AboutValues.vue, src/components/sections/AboutFacilities.vue, src/components/sections/AboutVisitFlow.vue, src/components/sections/AboutLocation.vue, src/components/sections/QuickInfoStrip.vue, src/components/sections/TestimonialsSection.vue, src/lib/__tests__/translations.spec.js, src/lib/__tests__/schemas.spec.js, context/CHANGELOG.md, AGENTS.md
+**Test:** 124 passed / 124 total
+**Docs updated:** CHANGELOG.md, AGENTS.md
 
 ## Lokalisasi Komprehensif Gelar Dokter, Kredensial, Bio, dan Jadwal Praktek (2026-10-20)
 **FR terkait:** FR-1.10 (Penyempurnaan Bilingual ID/EN)

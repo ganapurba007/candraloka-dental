@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import {
   HeartHandshake,
   ShieldCheck,
@@ -7,7 +8,10 @@ import {
   Smile,
   Users,
 } from 'lucide-vue-next'
+import { useI18n } from '@/composables/useI18n'
 import clinicData from '@/data/clinic.json'
+
+const { isEnglish } = useI18n()
 
 const iconMap = {
   HeartHandshake,
@@ -18,7 +22,16 @@ const iconMap = {
   Users,
 }
 
-const values = clinicData.about.values
+const englishValues = [
+  { icon: 'HeartHandshake', title: 'Empathetic Care', description: 'Listening attentively to your concerns and providing reassuring dental solutions.' },
+  { icon: 'ShieldCheck', title: 'Hygienic Standards', description: 'High medical-grade instrument sterilization for ultimate patient safety.' },
+  { icon: 'Cpu', title: 'Modern Technology', description: 'Advanced diagnostic equipment for precision care and minimally invasive treatments.' },
+  { icon: 'Clock', title: 'Punctual Scheduling', description: 'Structured appointment management designed to minimize your waiting time.' },
+  { icon: 'Smile', title: 'Ongoing Education', description: 'Regular oral hygiene coaching to help your healthy smile last a lifetime.' },
+  { icon: 'Users', title: 'Family-Friendly', description: 'A warm, welcoming approach designed for both adults and young children.' },
+]
+
+const values = computed(() => isEnglish.value ? englishValues : clinicData.about.values)
 </script>
 
 <template>
@@ -27,10 +40,10 @@ const values = clinicData.about.values
       <!-- Section Heading -->
       <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
         <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-100/70 border border-primary-200/60">
-          Nilai Layanan Kami
+          {{ isEnglish ? 'Our Core Values' : 'Nilai Layanan Kami' }}
         </span>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
-          Memberikan Pelayanan Medis Gigi Terbaik untuk Senyum Anda.
+          {{ isEnglish ? 'Providing the Highest Standard of Dental Care for Your Smile.' : 'Memberikan Pelayanan Medis Gigi Terbaik untuk Senyum Anda.' }}
         </h2>
       </div>
 

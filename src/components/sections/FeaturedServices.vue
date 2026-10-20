@@ -10,7 +10,7 @@ import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
 
 const { clinicLink } = useClinic()
-const { t, getServiceName, isEnglish } = useI18n()
+const { t, getServiceName, getServiceSummary, isEnglish } = useI18n()
 
 // 6 Featured services (FR-2.4)
 const featuredServices = computed(() => {
@@ -76,7 +76,7 @@ const featuredServices = computed(() => {
                   {{ getServiceName(service) }}
                 </h3>
                 <p class="text-sm text-slate-600 line-clamp-2 leading-relaxed">
-                  {{ service.summary }}
+                  {{ getServiceSummary(service) }}
                 </p>
               </div>
 

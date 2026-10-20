@@ -56,7 +56,7 @@ const navLinks = computed(() => [
             {{ clinic.tagline }}
           </p>
           <div class="text-xs text-slate-500 pt-1">
-            Melayani senyum sehat keluarga Indonesia sejak {{ clinic.establishedYear }}.
+            {{ t('footer.servingSince', { year: clinic.establishedYear }) }}
           </div>
         </div>
 
