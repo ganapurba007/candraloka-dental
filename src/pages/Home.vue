@@ -7,7 +7,6 @@ import HomeAboutBrief from '@/components/sections/HomeAboutBrief.vue'
 import FeaturedServices from '@/components/sections/FeaturedServices.vue'
 import ReservationSteps from '@/components/sections/ReservationSteps.vue'
 import FeaturedDoctors from '@/components/sections/FeaturedDoctors.vue'
-import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
 import { useClinic } from '@/composables/useClinic'
 import { useI18n } from '@/composables/useI18n'
 
@@ -42,8 +41,5 @@ useHead({
 
     <!-- FR-2.6 Featured Doctors -->
     <FeaturedDoctors />
-
-    <!-- FR-2.7 Patient Testimonials -->
-    <TestimonialsSection />
   </main>
 </template>

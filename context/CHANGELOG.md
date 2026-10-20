@@ -2,6 +2,17 @@
 
 > Riwayat aktif proyek — hanya simpan ~10-15 fase terbaru di sini. Fase lama dipindahkan ke `CHANGELOG-archive.md` (ringkas, jangan copy-paste detail penuh). Entri terbaru selalu di PALING ATAS.
 
+## Penghapusan Bagian Testimoni Pasien dari Halaman Beranda (2026-10-20)
+**FR terkait:** FR-2.7 (Penyesuaian Landing Page & Regulasi Kesehatan)
+**Yang dikerjakan:**
+- Menghapus komponen `TestimonialsSection` dari `src/pages/Home.vue` untuk memenuhi standar etika & regulasi medis periklanan internasional (seperti AHPRA guidelines) serta menyederhanakan layout landing page.
+- Memperbarui pengujian unit di `src/pages/__tests__/Home.spec.js` agar tidak menguji bagian ulasan pasien.
+- Pengujian: 124 passed / 124 total (100% pass rate).
+- Validasi build produksi (`npm run build`) sukses tanpa kendala.
+**File yang berubah:** src/pages/Home.vue, src/pages/__tests__/Home.spec.js, context/CHANGELOG.md
+**Test:** 124 passed / 124 total
+**Docs updated:** CHANGELOG.md
+
 ## Penambahan Konfigurasi Klinik Australia / Perth dengan Bahasa Default English (2026-10-20)
 **FR terkait:** FR-1.10 (Bilingual & Multi-Clinic Dynamic Branding)
 **Yang dikerjakan:**
