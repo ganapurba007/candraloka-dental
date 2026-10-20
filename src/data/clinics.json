@@ -848,6 +848,101 @@
       "heroTagline": "Specialist Paediatric Dental Care in Perth",
       "heroSubtitle": "Helping kids grow up smiling with gentle, expert care in a warm and friendly environment.",
       "customColor": "#f59e0b"
+    },
+    "arkaba-family-dental": {
+      "name": "Arkaba Family Dental",
+      "address": "1/257 Fullarton Rd, Parkside SA 5063",
+      "phone": "(08) 8271 7971",
+      "dentist": "Dr. Arkaba Clinical Team",
+      "title": "BDS, Family & Implant Dentistry",
+      "specialties": [
+        "Implant Dentistry",
+        "Root Canal Treatment",
+        "Family Check-ups",
+        "Crowns & Bridges",
+        "Emergency Dental Care",
+        "Preventative Care"
+      ],
+      "hours": "Mon - Sun: 9:00 AM - 5:00 PM",
+      "heroTagline": "Compassionate Family Dentistry in Parkside, Adelaide",
+      "heroSubtitle": "Helping Adelaide families maintain natural, healthy teeth for life with gentle everyday dental care.",
+      "customColor": "#0284c7"
+    },
+    "ohalloran-hill-dental": {
+      "name": "O'Halloran Hill Dental Clinic",
+      "address": "109 Main South Road, O’Halloran Hill SA 5158",
+      "phone": "(08) 8381 4113",
+      "dentist": "Dr. Jai Soin",
+      "title": "BDS (Adelaide), Principal Dentist",
+      "specialties": [
+        "Cosmetic Dentistry",
+        "Dental Implants",
+        "General Dental Care",
+        "Emergency Dental",
+        "Kids Dentistry",
+        "Teeth Whitening"
+      ],
+      "hours": "Mon - Thu: 9:00 AM - 6:00 PM | Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 2:00 PM",
+      "heroTagline": "Trusted Southern Adelaide Dentists for Over 15 Years",
+      "heroSubtitle": "Dedicated to personalized family and cosmetic dental care across Adelaide’s southern suburbs.",
+      "customColor": "#0d9488"
+    },
+    "glenside-dental-clinic": {
+      "name": "Glenside Dental Clinic",
+      "address": "320 Greenhill Road, Glenside SA 5065",
+      "phone": "(08) 8379 6627",
+      "dentist": "Dr. Glenside Dental Team",
+      "title": "BDS, Dental Surgeons",
+      "specialties": [
+        "Preventative Cleans",
+        "Restorative Dentistry",
+        "Crowns & Veneers",
+        "Root Canal Therapy",
+        "Wisdom Teeth Extractions",
+        "Emergency Treatment"
+      ],
+      "hours": "Mon - Thu: 8:00 AM - 6:00 PM | Fri: 8:00 AM - 4:30 PM | Sat: 9:00 AM - 12:00 PM",
+      "heroTagline": "Modern, Gentle Dental Care on Greenhill Road",
+      "heroSubtitle": "Convenient, high-quality family dental clinic serving Glenside and eastern Adelaide suburbs.",
+      "customColor": "#4f46e5"
+    },
+    "queen-street-dental": {
+      "name": "Queen Street Dental",
+      "address": "11 Queen Street, Croydon SA 5008",
+      "phone": "(08) 8346 1587",
+      "dentist": "Dr. Queen Street Team",
+      "title": "BDS, Boutique Family Practice",
+      "specialties": [
+        "Laser Teeth Whitening",
+        "Dental Implants",
+        "Restorations & Fillings",
+        "Crowns & Bridges",
+        "Root Canals",
+        "After-Hours Emergencies"
+      ],
+      "hours": "Wed & Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Adelaide Boutique Dental Practice Since 2013",
+      "heroSubtitle": "Care, comfort, and character delivering personalized family dentistry in Croydon.",
+      "customColor": "#ea580c"
+    },
+    "dental-clinic-adelaide": {
+      "name": "Dental Clinic Adelaide",
+      "address": "51 Rundle Mall, Adelaide SA 5000",
+      "phone": "(08) 7111 3862",
+      "dentist": "Dr. Rundle Mall Dental Team",
+      "title": "BDS, CBD Dental Specialists",
+      "specialties": [
+        "CBD Emergency Dental",
+        "Cosmetic Smile Design",
+        "Invisalign & Clear Aligners",
+        "Teeth Whitening",
+        "Same-Day Restorations",
+        "Routine Check-ups"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:00 PM",
+      "heroTagline": "Premium Dental Care in the Heart of Rundle Mall",
+      "heroSubtitle": "Accessible, state-of-the-art dental services right in Adelaide CBD for busy professionals and families.",
+      "customColor": "#16a34a"
     }
   }
 }
