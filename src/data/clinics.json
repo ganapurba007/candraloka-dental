@@ -543,6 +543,111 @@
         "mapUrl": "https://maps.google.com/?q=Praktek+Dokter+Gigi+Drg+Rochmani+Indrati+Jogja",
         "mapEmbedUrl": "https://maps.google.com/maps?q=Praktek+Dokter+Gigi+Drg+Rochmani+Indrati+Jogja&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "fremantle-dentist": {
+      "slug": "fremantle-dentist",
+      "name": "Fremantle Dentist (Yu Cockerill Dentists)",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Independent, Patient-Focused Dental Care for Families in Fremantle & Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(08) 9335 3481",
+        "whatsapp": "61893353481",
+        "email": "info@fremantledentist.com.au",
+        "address": "120 High St, Fremantle WA 6160, Australia",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "sk-dental-perth": {
+      "slug": "sk-dental-perth",
+      "name": "S.K. Dental Perth",
+      "shortName": "S.K. Dental",
+      "subName": "Dental Clinic Forrestfield",
+      "tagline": "Gentle, Comprehensive Family & Cosmetic Dentistry in Forrestfield, Perth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(08) 9359 3013",
+        "whatsapp": "61893593013",
+        "email": "contact@skdentalperth.com.au",
+        "address": "1/76 Hale Rd, Forrestfield WA 6058, Australia",
+        "mapUrl": "https://maps.google.com/?q=1/76+Hale+Rd+Forrestfield+WA+6058",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1/76+Hale+Rd+Forrestfield+WA+6058&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "cbd-dental-perth": {
+      "slug": "cbd-dental-perth",
+      "name": "CBD Dental Perth",
+      "shortName": "CBD Dental",
+      "subName": "Dental Practice Perth CBD",
+      "tagline": "Premium Preventive, Cosmetic, and Surgical Dentistry in Heart of Perth City",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0ea5e9",
+        "navy": "#0369a1"
+      },
+      "contact": {
+        "phone": "(08) 9321 1800",
+        "whatsapp": "61893211800",
+        "email": "info@cbddentalperth.com",
+        "address": "Level 8, 68 St Georges Terrace, Perth WA 6000, Australia",
+        "mapUrl": "https://maps.google.com/?q=68+St+Georges+Terrace+Perth+WA+6000",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=68+St+Georges+Terrace+Perth+WA+6000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "fremantle-smiles": {
+      "slug": "fremantle-smiles",
+      "name": "Fremantle Smiles",
+      "shortName": "Fremantle Smiles",
+      "subName": "Family & Emergency Dental Centre",
+      "tagline": "Quality Dental Care & Same-Day Emergency Treatments in Fremantle",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#059669",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "(08) 9336 6157",
+        "whatsapp": "61893366157",
+        "email": "reception@fremantlesmiles.com.au",
+        "address": "144 Hampton Rd, Fremantle WA 6160, Australia",
+        "mapUrl": "https://maps.google.com/?q=144+Hampton+Rd+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=144+Hampton+Rd+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "subiaco-square-dental": {
+      "slug": "subiaco-square-dental",
+      "name": "Subiaco Square Dental",
+      "shortName": "Subiaco Square",
+      "subName": "Dental Clinic Subiaco",
+      "tagline": "Modern, Gentle Dental Solutions in Subiaco Square for All Ages",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1d4ed8",
+        "navy": "#1e1b4b"
+      },
+      "contact": {
+        "phone": "(08) 9381 2200",
+        "whatsapp": "61893812200",
+        "email": "contact@subiacosquaredental.com.au",
+        "address": "10 Subiaco Square Road, Subiaco WA 6008, Australia",
+        "mapUrl": "https://maps.google.com/?q=10+Subiaco+Square+Road+Subiaco+WA+6008",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=10+Subiaco+Square+Road+Subiaco+WA+6008&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }

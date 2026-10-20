@@ -2,6 +2,21 @@
 
 > Riwayat aktif proyek — hanya simpan ~10-15 fase terbaru di sini. Fase lama dipindahkan ke `CHANGELOG-archive.md` (ringkas, jangan copy-paste detail penuh). Entri terbaru selalu di PALING ATAS.
 
+## Penambahan Konfigurasi Klinik Australia / Perth dengan Bahasa Default English (2026-10-20)
+**FR terkait:** FR-1.10 (Bilingual & Multi-Clinic Dynamic Branding)
+**Yang dikerjakan:**
+- Menambahkan 5 profil klinik gigi kawasan Perth & Fremantle (Western Australia) ke dalam `src/data/clinics.json` dengan konfigurasi `defaultLanguage: "en"`:
+  - `fremantle-dentist` (Fremantle Dentist / Yu Cockerill Dentists)
+  - `sk-dental-perth` (S.K. Dental Perth, Forrestfield)
+  - `cbd-dental-perth` (CBD Dental Perth, St Georges Terrace)
+  - `fremantle-smiles` (Fremantle Smiles, Hampton Rd)
+  - `subiaco-square-dental` (Subiaco Square Dental, Subiaco)
+- Otomatis memuat tampilan antarmuka dan alur booking dalam bahasa Inggris saat klinik-klinik tersebut diakses via query atau subdomain.
+- Validasi 124 unit test lulus 100% dan verifikasi build produksi lolos.
+**File yang berubah:** src/data/clinics.json, context/CHANGELOG.md
+**Test:** 124 passed / 124 total
+**Docs updated:** CHANGELOG.md
+
 ## Standardisasi Gelar Dokter & Riwayat Pendidikan ke Format Internasional (2026-10-20)
 **FR terkait:** FR-5.1, FR-5.2, FR-6.1, FR-7.8 (Standardisasi Gelar Internasional)
 **Yang dikerjakan:**
