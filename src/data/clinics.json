@@ -943,6 +943,196 @@
       "heroTagline": "Premium Dental Care in the Heart of Rundle Mall",
       "heroSubtitle": "Accessible, state-of-the-art dental services right in Adelaide CBD for busy professionals and families.",
       "customColor": "#16a34a"
+    },
+    "the-dentists-adelaide": {
+      "name": "The Dentists Adelaide Central Market",
+      "address": "77 Gouger Street, Adelaide CBD SA 5000",
+      "phone": "(08) 8231 5115",
+      "dentist": "Dr. Central Market Dental Team",
+      "title": "BDS, Family & General Dentistry",
+      "specialties": [
+        "Central Market Care",
+        "Preventative Dentistry",
+        "Restorative Care",
+        "Cosmetic Aligners",
+        "Emergency Toothache",
+        "Crowns & Bridges"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:30 PM",
+      "heroTagline": "Caring for Adelaide Smiles for Over 35 Years",
+      "heroSubtitle": "Conveniently located next to Adelaide Central Market on Gouger Street for all your family dental needs.",
+      "customColor": "#0284c7"
+    },
+    "city-central-dental": {
+      "name": "City Central Dental Adelaide",
+      "address": "201-203 Currie St, Adelaide CBD SA 5000",
+      "phone": "(08) 8231 9922",
+      "dentist": "Dr. City Central Team",
+      "title": "BDS, CBD Dental Surgery",
+      "specialties": [
+        "Emergency Appointments",
+        "Teeth Whitening",
+        "Root Canal Therapy",
+        "Wisdom Teeth",
+        "Custom Nightguards",
+        "Family Dentistry"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:00 PM (Late Tue & Thu til 7:00 PM)",
+      "heroTagline": "Your Trusted Dental Practice in Adelaide CBD",
+      "heroSubtitle": "Accessible, relaxed dental treatments on Currie Street with extended evening appointments.",
+      "customColor": "#059669"
+    },
+    "east-adelaide-dental": {
+      "name": "East Adelaide Dental Studio",
+      "address": "1 Allinga Avenue, Glenside SA 5065",
+      "phone": "(08) 8379 3529",
+      "dentist": "Dr. Burnside Dental Team",
+      "title": "BDS, Studio Dental Practitioners",
+      "specialties": [
+        "Burnside Village Dental",
+        "General Dentistry",
+        "Smile Enhancements",
+        "Implant Restorations",
+        "Children Dental",
+        "Preventative Care"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 6:00 PM",
+      "heroTagline": "Modern Studio Dentistry Near Burnside Village",
+      "heroSubtitle": "Located on the corner of Greenhill Road & Allinga Avenue delivering gentle, premier patient care.",
+      "customColor": "#4f46e5"
+    },
+    "adelaide-cad-dental": {
+      "name": "Adelaide Center for Advanced Dentistry",
+      "address": "Suite 11, Level 6, 55 Gawler Place, Adelaide SA 5000",
+      "phone": "(08) 8212 5294",
+      "dentist": "Dr. Advanced Dentistry Specialists",
+      "title": "BDS, Reconstructive & Aesthetic Dentistry",
+      "specialties": [
+        "Advanced Aesthetic Smile",
+        "Dental Implants",
+        "Full Mouth Rehabilitation",
+        "Crowns & Veneers",
+        "Complex Restorations",
+        "Gentle Cleanings"
+      ],
+      "hours": "Mon - Wed: 8:30 AM - 4:30 PM | Thu - Fri: 8:30 AM - 12:00 PM",
+      "heroTagline": "High-Precision Aesthetic Dentistry in Gawler Place",
+      "heroSubtitle": "Tailored advanced dental solutions in central Adelaide CBD designed for long-term health and beauty.",
+      "customColor": "#7c3aed"
+    },
+    "dental-r-us-adelaide": {
+      "name": "Dental R Us Adelaide",
+      "address": "Unit 6, Level 6, 55 Gawler Place, Adelaide SA 5000",
+      "phone": "(08) 8212 1798",
+      "dentist": "Dr. Daniel Yeun & Dr. Pik Ching Goh",
+      "title": "BDS (Adelaide), Multilingual Dentists",
+      "specialties": [
+        "Multilingual Dental Care",
+        "Invisalign Aligners",
+        "Gentle Extractions",
+        "Ceramic Fillings",
+        "Emergency Care",
+        "Orthodontics"
+      ],
+      "hours": "Mon - Sat: 9:30 AM - 6:00 PM",
+      "heroTagline": "Friendly Multilingual Family Dentistry Just Off Rundle Mall",
+      "heroSubtitle": "Catering comfortably to English, Mandarin, Korean, and Malay speaking patients in Adelaide CBD.",
+      "customColor": "#0891b2"
+    },
+    "caring-dentistry-linden": {
+      "name": "Caring Dentistry Linden Park",
+      "address": "416 Portrush Road, Linden Park SA 5065",
+      "phone": "(08) 8379 4005",
+      "dentist": "Dr. Linden Park Clinical Team",
+      "title": "BDS, Family & Implant Practice",
+      "specialties": [
+        "Opposite Burnside Village",
+        "Root Canal Therapy",
+        "Dental Implants",
+        "Cosmetic Veneers",
+        "Family Prevention",
+        "Periodontal Care"
+      ],
+      "hours": "Mon - Fri: 9:00 AM - 5:30 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Compassionate Dental Care Opposite Burnside Village",
+      "heroSubtitle": "Quiet, modern premises with convenient rear parking providing relaxing dental visits on Portrush Road.",
+      "customColor": "#16a34a"
+    },
+    "prospect-dentistry": {
+      "name": "Prospect Dentistry",
+      "address": "1 Pulsford Road, Prospect SA 5082",
+      "phone": "(08) 8269 1999",
+      "dentist": "Dr. Will King",
+      "title": "BDS, Principal Dentist",
+      "specialties": [
+        "Family & Pediatric Dentistry",
+        "Aesthetic Bonding",
+        "Restorative Ceramics",
+        "Dental Trauma Management",
+        "Routine Preventive Care",
+        "Whitening"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:30 PM (Tue til 8:30 PM) | Sat: 8:00 AM - 12:00 PM",
+      "heroTagline": "Relaxed, Multi-Generational Family Dentistry in Prospect",
+      "heroSubtitle": "High-standard modern dental care trusted by North Adelaide families across generations.",
+      "customColor": "#d97706"
+    },
+    "st-marys-dental-care": {
+      "name": "St Marys Dental Care",
+      "address": "1139-1141 South Road, St Marys SA 5042",
+      "phone": "(08) 8276 1152",
+      "dentist": "Dr. St Marys Dental Surgeons",
+      "title": "BDS, General & Family Practice",
+      "specialties": [
+        "General Dental Care",
+        "Emergency Toothache Relief",
+        "Custom Mouthguards",
+        "Crowns & Dentures",
+        "Pediatric Cleans",
+        "Wisdom Teeth"
+      ],
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM (Tue til 6:30 PM)",
+      "heroTagline": "Friendly Neighborhood Dental Care on South Road",
+      "heroSubtitle": "Dedicated southern Adelaide dental practice with easy off-street parking for your whole family.",
+      "customColor": "#2563eb"
+    },
+    "the-dental-studio-glenelg": {
+      "name": "The Dental Studio Glenelg",
+      "address": "700 Anzac Highway, Glenelg SA 5045",
+      "phone": "(08) 8294 6633",
+      "dentist": "Dr. Glenelg Dental Practitioners",
+      "title": "BDS, Advanced Cosmetic & Family Practice",
+      "specialties": [
+        "Coastal Dental Care",
+        "Comprehensive Preventive",
+        "Cosmetic Smile Makeovers",
+        "Periodontal Therapy",
+        "Emergency Visits",
+        "Teeth Whitening"
+      ],
+      "hours": "Mon - Thu: 8:30 AM - 5:30 PM | Fri: 8:30 AM - 4:00 PM",
+      "heroTagline": "Advanced, Relaxing Dental Care on Anzac Highway",
+      "heroSubtitle": "State-of-the-art clinic setting designed for patient comfort and enduring smile transformations in Glenelg.",
+      "customColor": "#0d9488"
+    },
+    "dentistry-on-unley": {
+      "name": "Dentistry on Unley",
+      "address": "Suites 1-4/292-294 Unley Rd, Hyde Park SA 5061",
+      "phone": "(08) 8272 9087",
+      "dentist": "Dr. Unley Road Clinical Team",
+      "title": "BDS, Hyde Park Dental Specialists",
+      "specialties": [
+        "Hyde Park Family Care",
+        "Aesthetic Smile Designs",
+        "Preventative Maintenance",
+        "Gentle Restorations",
+        "Clear Aligners",
+        "Nightguards"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: 8:30 AM - 12:30 PM",
+      "heroTagline": "Exceptional Family Dentistry in Hyde Park on Unley Road",
+      "heroSubtitle": "Personalized dental experience in a calm, discreet clinic environment with dedicated rear parking.",
+      "customColor": "#db2777"
     }
   }
 }
