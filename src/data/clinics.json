@@ -1133,6 +1133,291 @@
       "heroTagline": "Exceptional Family Dentistry in Hyde Park on Unley Road",
       "heroSubtitle": "Personalized dental experience in a calm, discreet clinic environment with dedicated rear parking.",
       "customColor": "#db2777"
+    },
+    "brisbane-cbd-dental": {
+      "name": "Brisbane CBD Dental Clinic",
+      "address": "Suite 6G, Level 6, 102 Adelaide St, Brisbane City QLD 4000",
+      "phone": "(07) 3229 4367",
+      "dentist": "Dr. Brisbane CBD Dental Team",
+      "title": "BDSc, CBD Dental Practitioners",
+      "specialties": [
+        "King George Square Location",
+        "Early 7:30 AM Starts",
+        "Emergency Dentistry",
+        "Teeth Whitening",
+        "Restorative Crowns",
+        "Preventative Care"
+      ],
+      "hours": "Mon - Fri: 7:30 AM - 4:30 PM | Sat & Sun: Closed",
+      "heroTagline": "Gentle & Trusted Dental Care Next to King George Square",
+      "heroSubtitle": "Conveniently located on Adelaide Street providing high-speed emergency and routine dental appointments for city workers.",
+      "customColor": "#0284c7"
+    },
+    "bite-dental-studios": {
+      "name": "Bite Dental Studios",
+      "address": "Level 6, 141 Queen Street, Brisbane City QLD 4000",
+      "phone": "(07) 3221 5399",
+      "dentist": "Dr. Simon & Bite Studio Team",
+      "title": "BDSc, Queen St Boutique Dentists",
+      "specialties": [
+        "Queen Street Mall Studio",
+        "Aesthetic Veneers",
+        "Invisalign Aligner Therapy",
+        "Same-day Emergency",
+        "Preventative Clean",
+        "Porcelain Restorations"
+      ],
+      "hours": "Mon - Thu: 8:30 AM - 5:00 PM | Fri: 8:00 AM - 4:00 PM",
+      "heroTagline": "Boutique CBD Dentistry in the Iconic Q&A Building",
+      "heroSubtitle": "A calm, boutique dental experience above Queen Street Mall focused on precision preventative and cosmetic care.",
+      "customColor": "#0d9488"
+    },
+    "mcnab-dental": {
+      "name": "McNab Dental",
+      "address": "Suite 1, Level 15, 141 Queen Street, Brisbane City QLD 4000",
+      "phone": "(07) 3221 7862",
+      "dentist": "Dr. McNab & Associates",
+      "title": "BDSc, Established CBD Practice",
+      "specialties": [
+        "Level 15 Q&A Building",
+        "Comprehensive Examinations",
+        "Discount Parking Vouchers",
+        "Gentle Fillings",
+        "Ceramic Crowns",
+        "Emergency Care"
+      ],
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM | Sat: By Appointment",
+      "heroTagline": "Personalised Family & CBD Dentistry Overlooking Brisbane",
+      "heroSubtitle": "Providing unhurried, compassionate dental care and preventative maintenance for long-standing patients across Brisbane.",
+      "customColor": "#2563eb"
+    },
+    "central-brunswick-dental": {
+      "name": "Central Brunswick Dental Centre",
+      "address": "Suite 16a Central Brunswick Complex, 421 Brunswick St, Fortitude Valley QLD 4006",
+      "phone": "(07) 3216 1100",
+      "dentist": "Dr. Brunswick Clinical Team",
+      "title": "BDS, Valley Family & Cosmetic Care",
+      "specialties": [
+        "Central Brunswick Complex Parking",
+        "Late Wednesday till 7:30 PM",
+        "Gentle Children's Care",
+        "Affordable Implants",
+        "Teeth Whitening",
+        "Wisdom Extractions"
+      ],
+      "hours": "Mon - Fri: 9:00 AM - 5:00 PM (Wed to 7:30 PM)",
+      "heroTagline": "Affordable Family & Cosmetic Dentist in Fortitude Valley",
+      "heroSubtitle": "High-quality, patient-focused dentistry with easy complex parking in the heart of Fortitude Valley.",
+      "customColor": "#7c3aed"
+    },
+    "south-brisbane-dental": {
+      "name": "South Brisbane Dental Clinic",
+      "address": "50 Russell Street, West End QLD 4101",
+      "phone": "(07) 3846 4822",
+      "dentist": "Dr. South Brisbane Dental Associates",
+      "title": "BDSc, West End Community Dentists",
+      "specialties": [
+        "Russell Street West End",
+        "Emergency Pain Relief",
+        "Preventative Maintenance",
+        "Children's First Visits",
+        "Cosmetic Enhancements",
+        "Crowns & Bridges"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:00 PM | Sat: By Appointment",
+      "heroTagline": "Welcoming Community Dental Clinic in West End",
+      "heroSubtitle": "Compassionate, gentle dentistry serving West End, South Brisbane, and surrounding riverside communities.",
+      "customColor": "#059669"
+    },
+    "toowong-dental-group": {
+      "name": "Toowong Dental Group",
+      "address": "55 Sherwood Road, Toowong QLD 4066",
+      "phone": "(07) 3870 7617",
+      "dentist": "Dr. Toowong Group Associates",
+      "title": "BDSc, Sherwood Road Dentists",
+      "specialties": [
+        "6 Dedicated Undercover Parks",
+        "Early 7:30 AM Starts",
+        "Late Thursday to 7:00 PM",
+        "Composite Restorations",
+        "Gentle Root Canal",
+        "Preventative Care"
+      ],
+      "hours": "Mon & Thu: 7:30 AM - 7:00 PM | Tue, Wed, Fri: 7:30 AM - 4:30 PM",
+      "heroTagline": "Trusted Family Dental Practice with Dedicated Undercover Parking",
+      "heroSubtitle": "Serving Toowong and western Brisbane families for decades with hassle-free parking off Jephson Street.",
+      "customColor": "#0891b2"
+    },
+    "coates-dental-toowong": {
+      "name": "Coates Dental Indooroopilly",
+      "address": "1/22 Station Road, Indooroopilly QLD 4068",
+      "phone": "(07) 3378 3367",
+      "dentist": "Dr. Coates & Team",
+      "title": "BDS, Indooroopilly Practitioners",
+      "specialties": [
+        "60+ Years in Indooroopilly",
+        "IV Sedation Sleep Dentistry",
+        "Digital OPG X-Rays",
+        "Child Dental Benefits",
+        "Veneers & Whitening",
+        "Dental Implants"
+      ],
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM | Sat: By Appointment",
+      "heroTagline": "Over 60 Years of Compassionate Dental Care in Indooroopilly",
+      "heroSubtitle": "Gentle family, cosmetic, and sleep dentistry on Station Road just steps from Indooroopilly Shopping Centre.",
+      "customColor": "#4f46e5"
+    },
+    "the-dental-suite-indooroopilly": {
+      "name": "The Dental Suite Indooroopilly",
+      "address": "1/126 Oxley Station Road, Oxley QLD 4075",
+      "phone": "(07) 3155 3655",
+      "dentist": "Dr. Kim & The Dental Suite Team",
+      "title": "BDS, Modern Dental Associates",
+      "specialties": [
+        "Open Till 8 PM Mon-Sat",
+        "Airflow Gentle Polishing",
+        "Invisalign Go Clear Aligners",
+        "Smile Makeovers",
+        "Wisdom Tooth Surgery",
+        "Restorative Implants"
+      ],
+      "hours": "Mon - Sat: 9:00 AM - 8:00 PM | Sun: Closed",
+      "heroTagline": "State-of-the-Art Technology Meets Gentle Dental Care",
+      "heroSubtitle": "Delivering premium general and aesthetic dentistry with extended evening hours until 8 PM for busy patients.",
+      "customColor": "#9333ea"
+    },
+    "ogawa-dental-studio": {
+      "name": "Ogawa Dental Studio",
+      "address": "409 Moggill Road, Indooroopilly QLD 4068",
+      "phone": "(07) 3999 6324",
+      "dentist": "Dr. Ogawa & Dental Studio Team",
+      "title": "BDSc, Indooroopilly Cosmetic Studio",
+      "specialties": [
+        "Moggill Road Studio",
+        "Specialised Teeth Whitening",
+        "Cutting-edge Diagnostic Tech",
+        "Tooth-coloured Restorations",
+        "Fissure Sealants",
+        "Emergency Care"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: 9:00 AM - 1:00 PM",
+      "heroTagline": "Affordable General & Cosmetic Dentistry on Moggill Road",
+      "heroSubtitle": "Modern, comfortable dental experience equipped with the latest technology at transparent, accessible rates.",
+      "customColor": "#d97706"
+    },
+    "essential-dental-paddington": {
+      "name": "Essential Dental Group",
+      "address": "Shop 4, Level 5, 107 Latrobe Terrace, Paddington QLD 4064",
+      "phone": "(07) 3369 8588",
+      "dentist": "Dr. Essential Paddington Team",
+      "title": "BDSc, Paddington Dental Practitioners",
+      "specialties": [
+        "Latrobe Terrace Village",
+        "After-hours Emergency Support",
+        "Gentle Hygiene Cleans",
+        "Porcelain Ceramic Crowns",
+        "CDBS Bulk Billing",
+        "Aesthetic Whitening"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appointment",
+      "heroTagline": "Caring General & Emergency Dentistry on Latrobe Terrace",
+      "heroSubtitle": "Set in the leafy village of Paddington, offering gentle family care and prompt attention for acute dental emergencies.",
+      "customColor": "#16a34a"
+    },
+    "richmond-road-dental": {
+      "name": "Richmond Road Dental",
+      "address": "251 Richmond Road, Morningside QLD 4170",
+      "phone": "(07) 3399 6988",
+      "dentist": "Dr. Elaine Lim & Principal Team",
+      "title": "BDSc, Morningside Family Dentists",
+      "specialties": [
+        "Established 1988",
+        "Monday Late Nights to 7:30 PM",
+        "Dental Anxiety Support",
+        "7 Gentle Dentists",
+        "Same-day Emergency",
+        "Preventative Focus"
+      ],
+      "hours": "Mon: 8:00 AM - 7:30 PM | Tue - Fri: 8:00 AM - 5:00 PM | Sat: By Appt",
+      "heroTagline": "Gentle Family Dental Care Serving South East Brisbane Since 1988",
+      "heroSubtitle": "Providing warm, compassionate dental treatments for generations of families on the Morningside-Cannon Hill boundary.",
+      "customColor": "#0284c7"
+    },
+    "carindale-dental": {
+      "name": "Carindale Dental",
+      "address": "Metropol Shopping Centre, Cnr Creek Rd & Pine Mountain Rd, Carindale QLD 4152",
+      "phone": "(07) 3343 8840",
+      "dentist": "Dr. Carindale Associates",
+      "title": "BDSc, Metropol Shopping Centre Dentists",
+      "specialties": [
+        "Ample Free Centre Parking",
+        "Late Nights Mon-Wed to 7:30 PM",
+        "Open Saturday Mornings",
+        "Emergency Chipped Teeth",
+        "Gentle Pediatric Care",
+        "Crowns & Bridges"
+      ],
+      "hours": "Mon - Wed: 8:30 AM - 7:30 PM | Thu - Fri: 8:30 AM - 5:00 PM | Sat: 8:30 AM - 1:00 PM",
+      "heroTagline": "Convenient Family Dentistry at Metropol Shopping Centre",
+      "heroSubtitle": "Easy access, hassle-free parking, and flexible late appointments for busy South East Brisbane families.",
+      "customColor": "#e11d48"
+    },
+    "restore-dental-chermside": {
+      "name": "Restore Dental Chermside",
+      "address": "1/392 Hamilton Road, Chermside QLD 4032",
+      "phone": "(07) 3483 2000",
+      "dentist": "Dr. Chermside Clinical Team",
+      "title": "BDSc, North Brisbane Dental Care",
+      "specialties": [
+        "Opposite Westfield Chermside",
+        "Off-street Patient Parking",
+        "Accessible Public Transport",
+        "Modern Digital Rooms",
+        "Toothache Emergency",
+        "Cosmetic Whitening"
+      ],
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM | Sat & Sun: Closed",
+      "heroTagline": "Modern Dental Surgery Across from Westfield Chermside",
+      "heroSubtitle": "Providing gentle, patient-first preventative and restorative dental treatments on the corner of Gympie and Hamilton Road.",
+      "customColor": "#0d9488"
+    },
+    "coorparoo-family-dental": {
+      "name": "Coorparoo Family Dental",
+      "address": "Level 1, 312 Old Cleveland Road, Coorparoo QLD 4151",
+      "phone": "(07) 3397 2861",
+      "dentist": "Dr. Coorparoo Dental Team",
+      "title": "BDSc, Established 1950 Practice",
+      "specialties": [
+        "Serving Smiles Since 1950",
+        "Mon-Thu Extended to 7:00 PM",
+        "Open Saturdays 8 AM - 4 PM",
+        "Opposite Coorparoo Square",
+        "Children's Dentistry",
+        "Aesthetic Veneers"
+      ],
+      "hours": "Mon - Thu: 7:30 AM - 7:00 PM | Fri: 7:30 AM - 5:00 PM | Sat: 8:00 AM - 4:00 PM",
+      "heroTagline": "Caring for Brisbane Smiles Since 1950",
+      "heroSubtitle": "One of Brisbane's longest-serving dental surgeries, combining 70+ years of community trust with modern digital equipment.",
+      "customColor": "#4f46e5"
+    },
+    "clayfield-dental": {
+      "name": "Clayfield Dental",
+      "address": "Suite 9, 713 Sandgate Road, Clayfield QLD 4011",
+      "phone": "(07) 3262 1555",
+      "dentist": "Dr. Richie & Clayfield Associates",
+      "title": "BDSc, Sandgate Road Practitioners",
+      "specialties": [
+        "Sandgate Road Village",
+        "Online Booking Integration",
+        "Gentle Preventative Focus",
+        "Restorative Fillings",
+        "Emergency Visits",
+        "Cosmetic Whitening"
+      ],
+      "hours": "Mon - Fri: 8:30 AM - 5:00 PM | Sat: By Appointment",
+      "heroTagline": "Gentle Family & Preventative Dentistry on Sandgate Road",
+      "heroSubtitle": "Personalized, compassionate family dental care in a calm, welcoming clinic environment in inner-north Brisbane.",
+      "customColor": "#059669"
     }
   }
 }
