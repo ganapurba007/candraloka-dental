@@ -1418,6 +1418,156 @@
       "heroTagline": "Gentle Family & Preventative Dentistry on Sandgate Road",
       "heroSubtitle": "Personalized, compassionate family dental care in a calm, welcoming clinic environment in inner-north Brisbane.",
       "customColor": "#059669"
+    },
+    "city-smiles-dental-clinic": {
+      "name": "City Smiles Dental Clinic",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "City Smiles Dental Clinic provides gentle and comprehensive family and cosmetic dentistry for the Melbourne CBD, VIC community.",
+      "address": "Melbourne CBD, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "dentalteam@citysmiles.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "ewan-jones-dental": {
+      "name": "Ewan Jones Dental",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Ewan Jones Dental provides gentle and comprehensive family and cosmetic dentistry for the Melbourne CBD, VIC community.",
+      "address": "Melbourne CBD, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "info@ewanjonesdental.com",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "art-de-dente-melbourne-cbd": {
+      "name": "Art De Dente Melbourne CBD",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Art De Dente Melbourne CBD provides gentle and comprehensive family and cosmetic dentistry for the Melbourne CBD, VIC community.",
+      "address": "Melbourne CBD, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@artdedente.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "the-melbourne-smile-centre": {
+      "name": "The Melbourne Smile Centre",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "The Melbourne Smile Centre provides gentle and comprehensive family and cosmetic dentistry for the Toorak / Melbourne, VIC community.",
+      "address": "Toorak / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "enquiries@melbournesmile.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "smiles-of-melbourne-toorak": {
+      "name": "Smiles Of Melbourne Toorak",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Smiles Of Melbourne Toorak provides gentle and comprehensive family and cosmetic dentistry for the Toorak / Melbourne, VIC community.",
+      "address": "Toorak / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@smilesofmelbourne.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "carlton-dental": {
+      "name": "Carlton Dental",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Carlton Dental provides gentle and comprehensive family and cosmetic dentistry for the Carlton / Melbourne, VIC community.",
+      "address": "Carlton / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@carltondental.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "smile-in-the-city": {
+      "name": "Smile In The City",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Smile In The City provides gentle and comprehensive family and cosmetic dentistry for the Carlton / Melbourne, VIC community.",
+      "address": "Carlton / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@smileinthecity.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "dentists-of-hawthorn": {
+      "name": "Dentists of Hawthorn",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Dentists of Hawthorn provides gentle and comprehensive family and cosmetic dentistry for the Hawthorn / Melbourne, VIC community.",
+      "address": "Hawthorn / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@dentistsofhawthorn.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "brunswick-dental-group": {
+      "name": "Brunswick Dental Group",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Brunswick Dental Group provides gentle and comprehensive family and cosmetic dentistry for the Brunswick / Melbourne, VIC community.",
+      "address": "Brunswick / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@bdg.net.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "apollo-family-dental": {
+      "name": "Apollo Family Dental",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Apollo Family Dental provides gentle and comprehensive family and cosmetic dentistry for the Coburg / Melbourne, VIC community.",
+      "address": "Coburg / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "info@apollofamilydental.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "teeth-on-ohea": {
+      "name": "Teeth On Ohea",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Teeth On Ohea provides gentle and comprehensive family and cosmetic dentistry for the Coburg / Melbourne, VIC community.",
+      "address": "Coburg / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "info@teethonohea.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "fine-smiles-dental": {
+      "name": "Fine Smiles Dental",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Fine Smiles Dental provides gentle and comprehensive family and cosmetic dentistry for the Footscray / Melbourne, VIC community.",
+      "address": "Footscray / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "info@finesmilesdental.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "dentist-by-the-park-bentleigh": {
+      "name": "Dentist by the Park Bentleigh",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Dentist by the Park Bentleigh provides gentle and comprehensive family and cosmetic dentistry for the Bentleigh / Melbourne, VIC community.",
+      "address": "Bentleigh / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "hello@dentistbythepark.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "mentone-smiles": {
+      "name": "Mentone Smiles",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Mentone Smiles provides gentle and comprehensive family and cosmetic dentistry for the Mentone / Melbourne, VIC community.",
+      "address": "Mentone / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "reception@mentonesmiles.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
+    },
+    "landale-dental-box-hill": {
+      "name": "Landale Dental Box Hill",
+      "tagline": "Modern, Gentle & Comprehensive Dental Care in Melbourne",
+      "about": "Landale Dental Box Hill provides gentle and comprehensive family and cosmetic dentistry for the Box Hill / Melbourne, VIC community.",
+      "address": "Box Hill / Melbourne, VIC, Australia",
+      "phone": "+61 3 9000 0000",
+      "email": "enquiry@landaledental.com.au",
+      "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
+      "themeColor": "#0284c7"
     }
   }
 }
