@@ -1883,6 +1883,321 @@
         "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+Dental+Setia+Salatiga",
         "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+Dental+Setia+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "kingsgrove-dental": {
+      "slug": "kingsgrove-dental",
+      "name": "Kingsgrove Dental Practice",
+      "shortName": "Kingsgrove Dental",
+      "subName": "Dental Clinic Kingsgrove",
+      "tagline": "Gentle, modern, and compassionate family dental care in Kingsgrove, Sydney.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9150 8882",
+        "whatsapp": "61291508882",
+        "email": "info@kingsgrovedental.com.au",
+        "address": "284 Kingsgrove Rd, Kingsgrove NSW 2208, Australia",
+        "mapUrl": "https://maps.google.com/?q=Kingsgrove+Dental+Practice+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Kingsgrove+Dental+Practice+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "redfern-street-dental": {
+      "slug": "redfern-street-dental",
+      "name": "Redfern Street Dental",
+      "shortName": "Redfern St Dental",
+      "subName": "Dental Clinic Redfern",
+      "tagline": "Quality, patient-first general and preventive dentistry in the heart of Redfern.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9698 2442",
+        "whatsapp": "61296982442",
+        "email": "reception@redfernstreetdental.com.au",
+        "address": "138 Redfern St, Redfern NSW 2016, Australia",
+        "mapUrl": "https://maps.google.com/?q=Redfern+Street+Dental+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Redfern+Street+Dental+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "finkelstein-dentist": {
+      "slug": "finkelstein-dentist",
+      "name": "Dr Finkelstein Dentist Sydney",
+      "shortName": "Dr Finkelstein",
+      "subName": "Sydney CBD Dental Practice",
+      "tagline": "Experienced general, cosmetic, and implant dentistry in Sydney CBD.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9262 7778",
+        "whatsapp": "61292627778",
+        "email": "info@finkelsteindentist.com.au",
+        "address": "Suite 102, 250 Pitt St, Sydney NSW 2000, Australia",
+        "mapUrl": "https://maps.google.com/?q=Dr+Finkelstein+Dentist+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Dr+Finkelstein+Dentist+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "lidcombe-dental": {
+      "slug": "lidcombe-dental",
+      "name": "Lidcombe Dental Care",
+      "shortName": "Lidcombe Dental",
+      "subName": "Family Dental Practice",
+      "tagline": "Comprehensive family dental treatments with modern facilities in Lidcombe.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9649 8388",
+        "whatsapp": "61296498388",
+        "email": "reception@lidcombedental.com.au",
+        "address": "28 Joseph St, Lidcombe NSW 2141, Australia",
+        "mapUrl": "https://maps.google.com/?q=Lidcombe+Dental+Care+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Lidcombe+Dental+Care+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "martin-place-dental": {
+      "slug": "martin-place-dental",
+      "name": "Martin Place Dental Health",
+      "shortName": "Martin Place Dental",
+      "subName": "Sydney CBD Dental Health",
+      "tagline": "Leading dental care and aesthetic smile solutions in Sydney Martin Place.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9232 5500",
+        "whatsapp": "61292325500",
+        "email": "admin@martinplacedental.com.au",
+        "address": "Level 1, 5 Martin Pl, Sydney NSW 2000, Australia",
+        "mapUrl": "https://maps.google.com/?q=Martin+Place+Dental+Health+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Martin+Place+Dental+Health+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "lumina-dental-ultimo": {
+      "slug": "lumina-dental-ultimo",
+      "name": "Lumina Dental Ultimo (Dr Linda Yoon)",
+      "shortName": "Lumina Dental",
+      "subName": "Dental Clinic Ultimo",
+      "tagline": "Personalised, gentle dental care and preventive oral health in Ultimo.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9281 0090",
+        "whatsapp": "61292810090",
+        "email": "care@luminadental.com.au",
+        "address": "Shop 4, 392 Jones St, Ultimo NSW 2007, Australia",
+        "mapUrl": "https://maps.google.com/?q=Lumina+Dental+Ultimo+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Lumina+Dental+Ultimo+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "angelo-preketes-dentistry": {
+      "slug": "angelo-preketes-dentistry",
+      "name": "Dr Angelo G Preketes Dentistry",
+      "shortName": "Dr Angelo Preketes",
+      "subName": "Sydney Dental Practice",
+      "tagline": "Decades of trusted clinical dental expertise and preventive family care.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9232 6072",
+        "whatsapp": "61292326072",
+        "email": "info@preketesdentistry.com.au",
+        "address": "Suite 1, Level 4, 187 Macquarie St, Sydney NSW 2000, Australia",
+        "mapUrl": "https://maps.google.com/?q=Angelo+Preketes+Dentistry+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Angelo+Preketes+Dentistry+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "smile-dental-bankstown": {
+      "slug": "smile-dental-bankstown",
+      "name": "Smile Dental Bankstown",
+      "shortName": "Smile Dental",
+      "subName": "Bankstown Dental Centre",
+      "tagline": "Affordable, caring dental treatments and emergency services in Bankstown.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9790 3888",
+        "whatsapp": "61297903888",
+        "email": "info@smiledentalbankstown.com.au",
+        "address": "Bankstown Central, North Terrace, Bankstown NSW 2200, Australia",
+        "mapUrl": "https://maps.google.com/?q=Smile+Dental+Bankstown",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Smile+Dental+Bankstown&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "surry-hills-dental": {
+      "slug": "surry-hills-dental",
+      "name": "Surry Hills Dental Centre",
+      "shortName": "Surry Hills Dental",
+      "subName": "Dental Clinic Surry Hills",
+      "tagline": "Boutique, high-standard dental care tailored to your lifestyle in Surry Hills.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9319 2323",
+        "whatsapp": "61293192323",
+        "email": "hello@surryhillsdental.com.au",
+        "address": "449 Crown St, Surry Hills NSW 2010, Australia",
+        "mapUrl": "https://maps.google.com/?q=Surry+Hills+Dental+Centre+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Surry+Hills+Dental+Centre+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "pomare-dental-leichhardt": {
+      "slug": "pomare-dental-leichhardt",
+      "name": "Pomare Dental Group Leichhardt",
+      "shortName": "Pomare Dental",
+      "subName": "Family Dentistry Leichhardt",
+      "tagline": "Trusted community dental care and oral rehabilitation in Leichhardt.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9569 4009",
+        "whatsapp": "61295694009",
+        "email": "reception@pomaredental.com.au",
+        "address": "465 Parramatta Rd, Leichhardt NSW 2040, Australia",
+        "mapUrl": "https://maps.google.com/?q=Pomare+Dental+Group+Leichhardt",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Pomare+Dental+Group+Leichhardt&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "garners-dental-marrickville": {
+      "slug": "garners-dental-marrickville",
+      "name": "Garners Dental Marrickville",
+      "shortName": "Garners Dental",
+      "subName": "Dental Care Marrickville",
+      "tagline": "Modern clinical dentistry focused on lasting dental health and comfort.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9569 3378",
+        "whatsapp": "61295693378",
+        "email": "care@garnersdental.com.au",
+        "address": "284 Marrickville Rd, Marrickville NSW 2204, Australia",
+        "mapUrl": "https://maps.google.com/?q=Garners+Dental+Marrickville",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Garners+Dental+Marrickville&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "leichhardt-dental-centre": {
+      "slug": "leichhardt-dental-centre",
+      "name": "Leichhardt Dental Centre",
+      "shortName": "Leichhardt Dental",
+      "subName": "Centre for Dental Health",
+      "tagline": "Comprehensive dental solutions with exceptional gentle care in Sydney Inner West.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9560 6848",
+        "whatsapp": "61295606848",
+        "email": "info@leichhardt-dental.com.au",
+        "address": "Marketplace Leichhardt, Flood St, Leichhardt NSW 2040, Australia",
+        "mapUrl": "https://maps.google.com/?q=Leichhardt+Dental+Centre+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Leichhardt+Dental+Centre+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "marques-dental": {
+      "slug": "marques-dental",
+      "name": "Marques Dental Surry Hills",
+      "shortName": "Marques Dental",
+      "subName": "Cosmetic & General Dentistry",
+      "tagline": "Premier general, restorative, and aesthetic smile design in Surry Hills.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9211 2224",
+        "whatsapp": "61292112224",
+        "email": "info@marquesdental.com.au",
+        "address": "180 Elizabeth St, Surry Hills NSW 2010, Australia",
+        "mapUrl": "https://maps.google.com/?q=Marques+Dental+Surry+Hills",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Marques+Dental+Surry+Hills&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dental-on-marion": {
+      "slug": "dental-on-marion",
+      "name": "Dental on Marion Leichhardt",
+      "shortName": "Dental on Marion",
+      "subName": "Family Practice Leichhardt",
+      "tagline": "Friendly, modern family dentistry ensuring healthy smiles for all generations.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9569 5777",
+        "whatsapp": "61295695777",
+        "email": "info@dentalonmarion.com.au",
+        "address": "124 Marion St, Leichhardt NSW 2040, Australia",
+        "mapUrl": "https://maps.google.com/?q=Dental+on+Marion+Leichhardt",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Dental+on+Marion+Leichhardt&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "coogee-dental": {
+      "slug": "coogee-dental",
+      "name": "Coogee Dental Practice",
+      "shortName": "Coogee Dental",
+      "subName": "Beachside Dental Practice",
+      "tagline": "Trusted beachside dental care providing high quality treatment in Coogee.",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "(02) 9665 8899",
+        "whatsapp": "61296658899",
+        "email": "dental@coogeedental.com.au",
+        "address": "206 Coogee Bay Rd, Coogee NSW 2034, Australia",
+        "mapUrl": "https://maps.google.com/?q=Coogee+Dental+Practice+Sydney",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Coogee+Dental+Practice+Sydney&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
