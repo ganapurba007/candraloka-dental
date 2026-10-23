@@ -1568,6 +1568,321 @@
       "email": "enquiry@landaledental.com.au",
       "workingHours": "Mon - Fri: 8:30 AM - 5:30 PM | Sat: By Appt",
       "themeColor": "#0284c7"
+    },
+    "bunda-dental-care-solo": {
+      "slug": "bunda-dental-care-solo",
+      "name": "Bunda Dental Care Solo",
+      "shortName": "Bunda Dental",
+      "subName": "Dental Care Solo",
+      "tagline": "Perawatan Gigi Keluarga Nyaman, Modern, dan Ramah Anak di Kota Solo",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0878-0499-8773",
+        "whatsapp": "6287804998773",
+        "email": "kontak@bundadentalcare.com",
+        "address": "Jl. Yosodipuro No.146, Banjarsari, Kota Surakarta, Jawa Tengah 57139",
+        "mapUrl": "https://maps.google.com/?q=Bunda+Dental+Care+Solo+Jl+Yosodipuro",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Bunda+Dental+Care+Solo+Jl+Yosodipuro&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "harsanaya-dental-care": {
+      "slug": "harsanaya-dental-care",
+      "name": "Harsanaya Dental Care (Solo)",
+      "shortName": "Harsanaya Dental",
+      "subName": "Dental Care & Bedah Mulut",
+      "tagline": "Klinik Dokter Gigi Spesialis & Bedah Mulut Berpengalaman di Kota Solo",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0878-1248-1222",
+        "whatsapp": "6287812481222",
+        "email": "kontak@harsanayadental.com",
+        "address": "Jl. Kerinci No.83, Kadipiro, Banjarsari, Kota Surakarta, Jawa Tengah 57136",
+        "mapUrl": "https://maps.google.com/?q=Harsanaya+Dental+Care+Jl+Kerinci+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Harsanaya+Dental+Care+Jl+Kerinci+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "rr-dental-care-solo": {
+      "slug": "rr-dental-care-solo",
+      "name": "Klinik Dokter Gigi Rr Dental Care",
+      "shortName": "Rr Dental Care",
+      "subName": "Praktek Dokter Gigi Solo",
+      "tagline": "Pelayanan Perawatan Gigi Profesional, Lembut, dan Bersahabat di Banjarsari Solo",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0856-2839-522",
+        "whatsapp": "628562839522",
+        "email": "kontak@rrdentalcare.com",
+        "address": "Kadipiro, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57136",
+        "mapUrl": "https://maps.google.com/?q=Rr+Dental+Care+Kadipiro+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Rr+Dental+Care+Kadipiro+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dentabila-dental-solo": {
+      "slug": "dentabila-dental-solo",
+      "name": "Klinik Gigi Solo Dentabila",
+      "shortName": "Dentabila",
+      "subName": "Dental Clinic Solo",
+      "tagline": "Perawatan Gigi Modern, Nyaman, dan Ramah Keluarga di Pusat Kota Solo",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0851-0003-5999",
+        "whatsapp": "6285100035999",
+        "email": "kontak@dentabila.com",
+        "address": "Jl. Dr. Cipto Mangunkusumo No.1, Sriwedari, Laweyan, Kota Surakarta, Jawa Tengah 57141",
+        "mapUrl": "https://maps.google.com/?q=Dentabila+Dental+Clinic+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Dentabila+Dental+Clinic+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "family-dental-care-solo": {
+      "slug": "family-dental-care-solo",
+      "name": "Family Dental Care Solo",
+      "shortName": "Family Dental",
+      "subName": "Dental Care Solo",
+      "tagline": "Solusi Senyum Sehat Keluarga dengan Fasilitas Lengkap dan Nyaman di Laweyan",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0858-7548-0366",
+        "whatsapp": "6285875480366",
+        "email": "kontak@familydentalcaresolo.com",
+        "address": "Jl. Dr. Rajiman No.657, Pajang, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57146",
+        "mapUrl": "https://maps.google.com/?q=Family+Dental+Care+Solo+Jl+Dr+Rajiman",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Family+Dental+Care+Solo+Jl+Dr+Rajiman&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "falcon-dental-care-solo": {
+      "slug": "falcon-dental-care-solo",
+      "name": "Falcon Dental Care Solo",
+      "shortName": "Falcon Dental",
+      "subName": "Dental Care Solo",
+      "tagline": "Klinik Dokter Gigi Terpercaya dengan Pelayanan Modern dan Nyaman di Sumber Solo",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0813-9235-7700",
+        "whatsapp": "6281392357700",
+        "email": "kontak@falcondental.id",
+        "address": "Jl. Kahuripan No.9, Sumber, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57138",
+        "mapUrl": "https://maps.google.com/?q=Falcon+Dental+Care+Jl+Kahuripan+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Falcon+Dental+Care+Jl+Kahuripan+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "apic-dental-solo": {
+      "slug": "apic-dental-solo",
+      "name": "Klinik Apic Solo",
+      "shortName": "Klinik Apic",
+      "subName": "Dental Care Solo",
+      "tagline": "Klinik Gigi Modern, Ramah Anak, dan Terjangkau di Tipes Surakarta",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0811-2579-191",
+        "whatsapp": "628112579191",
+        "email": "kontak@apicdental.com",
+        "address": "Jl. Moh. Yamin No.133, Tipes, Kec. Serengan, Kota Surakarta, Jawa Tengah 57154",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Apic+Jl+Moh+Yamin+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Apic+Jl+Moh+Yamin+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "gigi-in-solo": {
+      "slug": "gigi-in-solo",
+      "name": "GIGI.IN Dokter Gigi Solo",
+      "shortName": "GIGI.IN",
+      "subName": "Dokter Gigi Solo",
+      "tagline": "Praktek Dokter Gigi Modern, Nyaman, dan Bersahabat di Banjarsari Surakarta",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-2983-9833",
+        "whatsapp": "6281229839833",
+        "email": "kontak@gigiin.id",
+        "address": "Jl. Pajajaran Bar. III No.27, Sumber, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57138",
+        "mapUrl": "https://maps.google.com/?q=GIGI.IN+Dokter+Gigi+Solo",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=GIGI.IN+Dokter+Gigi+Solo&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "swa-dental-solo-baru": {
+      "slug": "swa-dental-solo-baru",
+      "name": "SWA Dental Care Solo Baru",
+      "shortName": "SWA Dental",
+      "subName": "Solo Baru Branch",
+      "tagline": "Klinik Orthodonti & Perawatan Gigi Modern Terlengkap di Kawasan Solo Baru",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0857-0099-8388",
+        "whatsapp": "6285700998388",
+        "email": "kontak@swadentalcare.com",
+        "address": "Jl. Ir. Soekarno AC6, Dusun I, Langenharjo, Grogol, Sukoharjo, Jawa Tengah 57552",
+        "mapUrl": "https://maps.google.com/?q=SWA+Dental+Care+Solo+Baru",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=SWA+Dental+Care+Solo+Baru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "orthoaesthetic-dental-klaten": {
+      "slug": "orthoaesthetic-dental-klaten",
+      "name": "Orthoaesthetic Dental Care Klaten",
+      "shortName": "Orthoaesthetic",
+      "subName": "Dental Care Klaten",
+      "tagline": "Klinik Perawatan Gigi Umum & Estetika Spesialistik Berpengalaman di Klaten",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0822-2337-4181",
+        "whatsapp": "6282223374181",
+        "email": "kontak@orthoaesthetic.com",
+        "address": "Jl. Deles Indah Km 2, Kebonarum, Kabupaten Klaten, Jawa Tengah 57486",
+        "mapUrl": "https://maps.google.com/?q=Orthoaesthetic+Dental+Care+Klaten",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Orthoaesthetic+Dental+Care+Klaten&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "key-dental-klaten": {
+      "slug": "key-dental-klaten",
+      "name": "Key Dental Care Klaten",
+      "shortName": "Key Dental",
+      "subName": "Dental Care Klaten",
+      "tagline": "Pilihan Tepat Perawatan Gigi Keluarga Modern dan Ramah di Klaten Utara",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0821-3551-5142",
+        "whatsapp": "6282135515142",
+        "email": "kontak@keydentalcare.com",
+        "address": "Jl. Sersan Sadikin No.91, Gergunung, Kec. Klaten Utara, Kabupaten Klaten, Jawa Tengah 57434",
+        "mapUrl": "https://maps.google.com/?q=Key+Dental+Care+Klaten+Utara",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Key+Dental+Care+Klaten+Utara&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "usmile-dental-semarang": {
+      "slug": "usmile-dental-semarang",
+      "name": "uSmile Dental Studio",
+      "shortName": "uSmile Dental",
+      "subName": "Dental Studio Semarang",
+      "tagline": "Dental Studio Modern untuk Solusi Perjalanan Senyum Terbaik Anda di Semarang",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0877-6567-7091",
+        "whatsapp": "6287765677091",
+        "email": "kontak@usmiledentalstudio.id",
+        "address": "Jl. Kedungmundu Raya No.122, Tandang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50274",
+        "mapUrl": "https://maps.google.com/?q=uSmile+Dental+Studio+Semarang",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=uSmile+Dental+Studio+Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "best-dental-semarang": {
+      "slug": "best-dental-semarang",
+      "name": "BEST DENTAL CLINIC Semarang",
+      "shortName": "BEST DENTAL",
+      "subName": "Dental Clinic Semarang",
+      "tagline": "Layanan Perawatan Gigi Profesional, Bersih, dan Berkualitas di Kota Semarang",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0817-9033-331",
+        "whatsapp": "628179033331",
+        "email": "kontak@bestdentalclinic.id",
+        "address": "Jl. Halmahera Raya No.27, Karangtempel, Kec. Semarang Timur, Kota Semarang, Jawa Tengah 50125",
+        "mapUrl": "https://maps.google.com/?q=BEST+DENTAL+CLINIC+Semarang",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=BEST+DENTAL+CLINIC+Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dentfam-semarang": {
+      "slug": "dentfam-semarang",
+      "name": "DENTFAM Klinik Dokter Gigi",
+      "shortName": "DENTFAM",
+      "subName": "Klinik Dokter Gigi Semarang",
+      "tagline": "Klinik Dokter Gigi & Bedah Mulut Terpercaya di Area Semarang Selatan",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0812-2881-0080",
+        "whatsapp": "6281228810080",
+        "email": "kontak@dentfam.com",
+        "address": "Jl. Sersan Sadikin No.91, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50241",
+        "mapUrl": "https://maps.google.com/?q=DENTFAM+Klinik+Dokter+Gigi+Semarang",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=DENTFAM+Klinik+Dokter+Gigi+Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "dental-setia-salatiga": {
+      "slug": "dental-setia-salatiga",
+      "name": "Dental Setia by drg. Sastya Fitri",
+      "shortName": "Dental Setia",
+      "subName": "drg. Sastya Fitri Salatiga",
+      "tagline": "Klinik Dokter Gigi Ramah, Sabar, dan Nyaman untuk Semua Usia di Salatiga",
+      "defaultLanguage": "id",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1e60d5",
+        "navy": "#0e204d"
+      },
+      "contact": {
+        "phone": "0882-3348-9021",
+        "whatsapp": "6288233489021",
+        "email": "kontak@dentalsetia.com",
+        "address": "Jl. Payaman, RT.01/RW.04, Tingkir Tengah, Kec. Tingkir, Kota Salatiga, Jawa Tengah 50774",
+        "mapUrl": "https://maps.google.com/?q=Klinik+Gigi+Dental+Setia+Salatiga",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Klinik+Gigi+Dental+Setia+Salatiga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
