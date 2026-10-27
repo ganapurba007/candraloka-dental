@@ -870,7 +870,7 @@
     },
     "ohalloran-hill-dental": {
       "name": "O'Halloran Hill Dental Clinic",
-      "address": "109 Main South Road, O\u2019Halloran Hill SA 5158",
+      "address": "109 Main South Road, O’Halloran Hill SA 5158",
       "phone": "(08) 8381 4113",
       "dentist": "Dr. Jai Soin",
       "title": "BDS (Adelaide), Principal Dentist",
@@ -884,7 +884,7 @@
       ],
       "hours": "Mon - Thu: 9:00 AM - 6:00 PM | Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 2:00 PM",
       "heroTagline": "Trusted Southern Adelaide Dentists for Over 15 Years",
-      "heroSubtitle": "Dedicated to personalized family and cosmetic dental care across Adelaide\u2019s southern suburbs.",
+      "heroSubtitle": "Dedicated to personalized family and cosmetic dental care across Adelaide’s southern suburbs.",
       "customColor": "#0d9488"
     },
     "glenside-dental-clinic": {
@@ -2792,6 +2792,216 @@
         "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
       },
       "city": "Tamworth NSW"
+    },
+    "kohe-dental": {
+      "slug": "kohe-dental",
+      "name": "kohe Dental",
+      "shortName": "kohe",
+      "subName": "Dental Aesthetics Dedicated Centre",
+      "tagline": "Orthodontics & Dental Aesthetics Centre in Singapore",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0f766e",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 8952 0083",
+        "whatsapp": "6589520083",
+        "email": "info.kohe@arkstonehealthcare.com",
+        "address": "9 Oxley Rise, #03-01 The Oxley, Singapore 238697",
+        "mapUrl": "https://maps.google.com/?q=9+Oxley+Rise+The+Oxley+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=9+Oxley+Rise+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "kims-dental-clinic": {
+      "slug": "kims-dental-clinic",
+      "name": "Kim's Dental Clinic",
+      "shortName": "Kims Dental",
+      "subName": "Dental Clinic",
+      "tagline": "Gentle & Comprehensive Dental Care in Jurong Gateway",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6262 6778",
+        "whatsapp": "6562626778",
+        "email": "enquiry@kimsdental.clinic",
+        "address": "132 Jurong Gateway Rd #01-273, Singapore 600132",
+        "mapUrl": "https://maps.google.com/?q=132+Jurong+Gateway+Rd+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=132+Jurong+Gateway+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "beam-dental-space": {
+      "slug": "beam-dental-space",
+      "name": "Beam Dental Space",
+      "shortName": "Beam Dental",
+      "subName": "Dental Practice",
+      "tagline": "Personalised Dental Health & Aesthetic Care at Vision Exchange",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#3b82f6",
+        "navy": "#1e293b"
+      },
+      "contact": {
+        "phone": "+65 6019 0292",
+        "whatsapp": "6560190292",
+        "email": "enquiry@beamdental.sg",
+        "address": "2 Venture Dr #01-44 Vision Exchange, Singapore 608526",
+        "mapUrl": "https://maps.google.com/?q=2+Venture+Dr+Vision+Exchange+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=2+Venture+Dr+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "lam-dental-surgery": {
+      "slug": "lam-dental-surgery",
+      "name": "Lam Dental Surgery",
+      "shortName": "Lam Dental",
+      "subName": "Dental Surgery",
+      "tagline": "Family & Preventative Dental Surgery in Tiong Bahru",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0d9488",
+        "navy": "#111827"
+      },
+      "contact": {
+        "phone": "+65 6479 2616",
+        "whatsapp": "6564792616",
+        "email": "lamdentalsurgery@gmail.com",
+        "address": "Blk 11A Boon Tiong Rd #01-08, Singapore 161011",
+        "mapUrl": "https://maps.google.com/?q=11A+Boon+Tiong+Rd+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=11A+Boon+Tiong+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "tay-dental-surgery": {
+      "slug": "tay-dental-surgery",
+      "name": "Tay Dental Surgery",
+      "shortName": "Tay Dental",
+      "subName": "Dental Surgery",
+      "tagline": "Trusted General & Restorative Dentistry in Orchard",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#1d4ed8",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6333 3861",
+        "whatsapp": "6563333861",
+        "email": "contact@taydental.com",
+        "address": "1 Sophia Rd #02-04 Peace Centre, Singapore 228149",
+        "mapUrl": "https://maps.google.com/?q=1+Sophia+Rd+Peace+Centre+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1+Sophia+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "lee-ong-dental": {
+      "slug": "lee-ong-dental",
+      "name": "Lee & Ong Dental Surgeons",
+      "shortName": "Lee & Ong",
+      "subName": "Dental Surgeons",
+      "tagline": "Dedicated Specialist & General Dental Care at Paragon Orchard",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6733 9882",
+        "whatsapp": "6567339882",
+        "email": "contact@leeandongdental.com.sg",
+        "address": "290 Orchard Rd #17-09 Paragon Medical, Singapore 238859",
+        "mapUrl": "https://maps.google.com/?q=290+Orchard+Rd+Paragon+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=290+Orchard+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "true-dental-studio": {
+      "slug": "true-dental-studio",
+      "name": "True Dental Studio",
+      "shortName": "True Dental",
+      "subName": "Dental Studio",
+      "tagline": "Modern Family Dentistry at Kitchener Complex Jalan Besar",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#059669",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "+65 6398 0797",
+        "whatsapp": "6563980797",
+        "email": "contact@truedentalstudio.com",
+        "address": "808 French Rd #02-21 Kitchener Complex, Singapore 200808",
+        "mapUrl": "https://maps.google.com/?q=808+French+Rd+Kitchener+Complex+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=808+French+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "tooth-stories": {
+      "slug": "tooth-stories",
+      "name": "Tooth Stories",
+      "shortName": "Tooth Stories",
+      "subName": "Boutique Dental Clinic",
+      "tagline": "Gentle & Patient-Centred Boutique Dental Clinic at Lucky Plaza",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#e11d48",
+        "navy": "#1e293b"
+      },
+      "contact": {
+        "phone": "+65 6734 9394",
+        "whatsapp": "6567349394",
+        "email": "hello@toothstories.com",
+        "address": "304 Orchard Rd #05-32 Lucky Plaza, Singapore 238863",
+        "mapUrl": "https://maps.google.com/?q=304+Orchard+Rd+Lucky+Plaza+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=304+Orchard+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "3dental-practice": {
+      "slug": "3dental-practice",
+      "name": "3Dental Practice",
+      "shortName": "3Dental",
+      "subName": "Dental Practice",
+      "tagline": "Comfortable & Caring Dental Practice at East Village Changi",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#4f46e5",
+        "navy": "#18181b"
+      },
+      "contact": {
+        "phone": "+65 6908 2608",
+        "whatsapp": "6569082608",
+        "email": "enquiry@3dentalpractice.com",
+        "address": "430 Upper Changi Rd #01-02 East Village, Singapore 487048",
+        "mapUrl": "https://maps.google.com/?q=430+Upper+Changi+Rd+East+Village+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=430+Upper+Changi+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "mount-elizabeth-dental": {
+      "slug": "mount-elizabeth-dental",
+      "name": "Mount Elizabeth Dental Surgery",
+      "shortName": "Mt Elizabeth Dental",
+      "subName": "Multi-Specialty Dental Clinic",
+      "tagline": "Specialised Multi-Disciplinary Dental Care Established in 1986",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0369a1",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6732 2112",
+        "whatsapp": "6567322112",
+        "email": "skysim@dentalsurgeons.com.sg",
+        "address": "3 Mount Elizabeth Block A #07-03 Mt Elizabeth Medical Centre, Singapore 228510",
+        "mapUrl": "https://maps.google.com/?q=3+Mount+Elizabeth+Block+A+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=3+Mount+Elizabeth+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
