@@ -2252,6 +2252,216 @@
       "about": "Over 16 years serving the Newtown community with gentle, comprehensive dental treatments.",
       "accentColor": "#0891b2",
       "bookingUrl": "https://www.elitedentalnewtown.com.au/contact"
+    },
+    "the-dental-practice-sg": {
+      "slug": "the-dental-practice-sg",
+      "name": "The Dental Practice",
+      "shortName": "The Dental Practice",
+      "subName": "Bedok Reservoir Clinic",
+      "tagline": "Trusted Family Dental Care & Orthodontics in Bedok Reservoir",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0c4a6e"
+      },
+      "contact": {
+        "phone": "+65 6242 5626",
+        "whatsapp": "6562425626",
+        "email": "the_dentalpractice@yahoo.com",
+        "address": "Blk 746 Bedok Reservoir Road #01-3007, Singapore 470746",
+        "mapUrl": "https://maps.google.com/?q=Blk+746+Bedok+Reservoir+Road+Singapore+470746",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+746+Bedok+Reservoir+Road+Singapore+470746&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "westfield-dental-sg": {
+      "slug": "westfield-dental-sg",
+      "name": "Westfield Dental Surgery",
+      "shortName": "Westfield Dental",
+      "subName": "Joo Chiat Dental Surgery",
+      "tagline": "Comprehensive Family & Aesthetic Dentistry in Joo Chiat",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6348 7188",
+        "whatsapp": "6591680109",
+        "email": "westfielddental@gmail.com",
+        "address": "276 Joo Chiat Road, Singapore 427530",
+        "mapUrl": "https://maps.google.com/?q=276+Joo+Chiat+Road+Singapore+427530",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=276+Joo+Chiat+Road+Singapore+427530&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "chen-dental-sg": {
+      "slug": "chen-dental-sg",
+      "name": "Chen Dental Surgery",
+      "shortName": "Chen Dental",
+      "subName": "Jurong West Clinic",
+      "tagline": "Personalised & Gentle Dental Care for Families in Jurong West",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#059669",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "+65 6564 7809",
+        "whatsapp": "6565647809",
+        "email": "surgerycds@yahoo.com.sg",
+        "address": "Blk 463 Jurong West St 41 #01-560, Singapore 640463",
+        "mapUrl": "https://maps.google.com/?q=Blk+463+Jurong+West+St+41+Singapore+640463",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+463+Jurong+West+St+41+Singapore+640463&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "florence-li-dental-sg": {
+      "slug": "florence-li-dental-sg",
+      "name": "Dr Florence Li & Associates Dental Clinic",
+      "shortName": "Dr Florence Li",
+      "subName": "Camden Medical Centre",
+      "tagline": "Premium Dental Care & Aesthetic Dentistry at Camden Medical Centre",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#4f46e5",
+        "navy": "#1e1b4b"
+      },
+      "contact": {
+        "phone": "+65 6887 3104",
+        "whatsapp": "6568873104",
+        "email": "DrFlorenceLi@yahoo.com",
+        "address": "1 Orchard Boulevard #08-05 Camden Medical Centre, Singapore 248649",
+        "mapUrl": "https://maps.google.com/?q=1+Orchard+Boulevard+Camden+Medical+Centre+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1+Orchard+Boulevard+Camden+Medical+Centre+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "supreme-dental-sg": {
+      "slug": "supreme-dental-sg",
+      "name": "Supreme Dental Surgery",
+      "shortName": "Supreme Dental",
+      "subName": "Ang Mo Kio Practice",
+      "tagline": "Dedicated Family Dentistry & Preventive Care in Ang Mo Kio",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0d9488",
+        "navy": "#134e4a"
+      },
+      "contact": {
+        "phone": "+65 6452 9541",
+        "whatsapp": "6564529541",
+        "email": "supremedental@singnet.com.sg",
+        "address": "Blk 157 Ang Mo Kio Avenue 4 #01-554, Singapore 560157",
+        "mapUrl": "https://maps.google.com/?q=Blk+157+Ang+Mo+Kio+Avenue+4+Singapore+560157",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+157+Ang+Mo+Kio+Avenue+4+Singapore+560157&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "universe-dental-sg": {
+      "slug": "universe-dental-sg",
+      "name": "Universe Dental Surgery",
+      "shortName": "Universe Dental",
+      "subName": "Bukit Batok Surgery",
+      "tagline": "Trusted Community Dental Care & Restorations in Bukit Batok",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#3b82f6",
+        "navy": "#1e3a8a"
+      },
+      "contact": {
+        "phone": "+65 6566 4656",
+        "whatsapp": "6591198063",
+        "email": "universedental@hotmail.com",
+        "address": "Blk 164 Bukit Batok Street 11 #01-144, Singapore 650164",
+        "mapUrl": "https://maps.google.com/?q=Blk+164+Bukit+Batok+Street+11+Singapore+650164",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+164+Bukit+Batok+Street+11+Singapore+650164&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "flozz-dental-sg": {
+      "slug": "flozz-dental-sg",
+      "name": "Flozz Dental Surgery",
+      "shortName": "Flozz Dental",
+      "subName": "Bukit Merah Clinic",
+      "tagline": "Friendly & Gentle Family Dentistry in Bukit Merah",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#10b981",
+        "navy": "#064e3b"
+      },
+      "contact": {
+        "phone": "+65 6276 5281",
+        "whatsapp": "6562765281",
+        "email": "huicheewah@gmail.com",
+        "address": "Blk 123 Bukit Merah Lane 1 #01-96, Singapore 150123",
+        "mapUrl": "https://maps.google.com/?q=Blk+123+Bukit+Merah+Lane+1+Singapore+150123",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+123+Bukit+Merah+Lane+1+Singapore+150123&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "bukit-batok-dental-sg": {
+      "slug": "bukit-batok-dental-sg",
+      "name": "Bukit Batok Dental Surgery",
+      "shortName": "Bukit Batok Dental",
+      "subName": "Dental Surgery Pte Ltd",
+      "tagline": "Experienced General & Restorative Dental Care in Bukit Batok",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#1e3a8a"
+      },
+      "contact": {
+        "phone": "+65 6560 3311",
+        "whatsapp": "6565603311",
+        "email": "chanthiansang@yahoo.com.sg",
+        "address": "Blk 207 Bukit Batok St 21 #01-114, Singapore 650207",
+        "mapUrl": "https://maps.google.com/?q=Blk+207+Bukit+Batok+St+21+Singapore+650207",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+207+Bukit+Batok+St+21+Singapore+650207&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "phoenix-dental-sg": {
+      "slug": "phoenix-dental-sg",
+      "name": "Phoenix Dental Surgery",
+      "shortName": "Phoenix Dental",
+      "subName": "Ang Mo Kio Clinic",
+      "tagline": "Comprehensive Oral Health & Preventive Dental Care in Ang Mo Kio",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#e11d48",
+        "navy": "#881337"
+      },
+      "contact": {
+        "phone": "+65 6451 1089",
+        "whatsapp": "6564511089",
+        "email": "phoenixdentalsurgery@gmail.com",
+        "address": "Blk 704 Ang Mo Kio Avenue 8 #01-2547, Singapore 560704",
+        "mapUrl": "https://maps.google.com/?q=Blk+704+Ang+Mo+Kio+Avenue+8+Singapore+560704",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Blk+704+Ang+Mo+Kio+Avenue+8+Singapore+560704&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "braces-aesthetics-sg": {
+      "slug": "braces-aesthetics-sg",
+      "name": "Braces & Aesthetics Dental Clinic",
+      "shortName": "Braces & Aesthetics",
+      "subName": "Square 2 Novena Specialist",
+      "tagline": "Specialist Orthodontics & Smile Aesthetics at Novena Medical",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#8b5cf6",
+        "navy": "#3b0764"
+      },
+      "contact": {
+        "phone": "+65 6732 2706",
+        "whatsapp": "6567322706",
+        "email": "braces_aesthetics@yahoo.com",
+        "address": "10 Sinaran Drive #10-36 Square 2 Novena, Singapore 307506",
+        "mapUrl": "https://maps.google.com/?q=10+Sinaran+Drive+Square+2+Novena+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=10+Sinaran+Drive+Square+2+Novena+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
