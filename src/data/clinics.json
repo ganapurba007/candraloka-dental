@@ -870,7 +870,7 @@
     },
     "ohalloran-hill-dental": {
       "name": "O'Halloran Hill Dental Clinic",
-      "address": "109 Main South Road, O’Halloran Hill SA 5158",
+      "address": "109 Main South Road, O\u2019Halloran Hill SA 5158",
       "phone": "(08) 8381 4113",
       "dentist": "Dr. Jai Soin",
       "title": "BDS (Adelaide), Principal Dentist",
@@ -884,7 +884,7 @@
       ],
       "hours": "Mon - Thu: 9:00 AM - 6:00 PM | Fri: 9:00 AM - 5:00 PM | Sat: 9:00 AM - 2:00 PM",
       "heroTagline": "Trusted Southern Adelaide Dentists for Over 15 Years",
-      "heroSubtitle": "Dedicated to personalized family and cosmetic dental care across Adelaide’s southern suburbs.",
+      "heroSubtitle": "Dedicated to personalized family and cosmetic dental care across Adelaide\u2019s southern suburbs.",
       "customColor": "#0d9488"
     },
     "glenside-dental-clinic": {
@@ -2462,6 +2462,336 @@
         "mapUrl": "https://maps.google.com/?q=10+Sinaran+Drive+Square+2+Novena+Singapore",
         "mapEmbedUrl": "https://maps.google.com/maps?q=10+Sinaran+Drive+Square+2+Novena+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "geelong-dental-group": {
+      "slug": "fremantle-dentist",
+      "name": "Geelong Dental Group",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Belmont,",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 5221 8452",
+        "whatsapp": "61893353481",
+        "email": "info@geelongdentalgroup.com.au",
+        "address": "Unit 1/114a Mt Pleasant Rd, Belmont VIC 3216",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Belmont, Geelong VIC"
+    },
+    "ballarat-family-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Ballarat Family Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Ballarat",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 5337 6659",
+        "whatsapp": "61893353481",
+        "email": "info@ballaratfamilydental.com.au",
+        "address": "Ballarat VIC 3350",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Ballarat VIC"
+    },
+    "bendigo-dental-group": {
+      "slug": "fremantle-dentist",
+      "name": "Bendigo Dental Group",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in North",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 5442 2012",
+        "whatsapp": "61893353481",
+        "email": "info@bendigodental.com.au",
+        "address": "56 Lucan Street, North Bendigo VIC 3550",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "North Bendigo VIC"
+    },
+    "pickup-bagshaw-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Pickup Bagshaw Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Launceston",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 6331 4855",
+        "whatsapp": "61893353481",
+        "email": "reception@pickupbagshawdental.com.au",
+        "address": "44 Brisbane St, Launceston TAS 7250",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Launceston TAS"
+    },
+    "ballina-dental-group": {
+      "slug": "fremantle-dentist",
+      "name": "Ballina Dental Group",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Ballina",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 6686 4503",
+        "whatsapp": "61893353481",
+        "email": "reception@ballinadentalgroup.com.au",
+        "address": "Suite 5/31 Cherry St, Ballina NSW 2478",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Ballina NSW"
+    },
+    "byron-family-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Byron Family Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Byron",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 668 58137",
+        "whatsapp": "61893353481",
+        "email": "byronfamilydentalcare@gmail.com",
+        "address": "Suite 4 Eastpoint Arcade, 107 Jonson St, Byron Bay NSW 2481",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Byron Bay NSW"
+    },
+    "wollongong-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Wollongong Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Wollongong",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 4244 0600",
+        "whatsapp": "61893353481",
+        "email": "info@wollongongdental.com.au",
+        "address": "136 Crown St, Wollongong NSW 2500",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Wollongong NSW"
+    },
+    "mundingburra-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Mundingburra Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Townsville",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4727 3434",
+        "whatsapp": "61893353481",
+        "email": "reception@mundingburradental.com.au",
+        "address": "40 Ross River Road, Mundingburra QLD 4812",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Townsville QLD"
+    },
+    "courtney-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Courtney Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Hermit",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4725 3366",
+        "whatsapp": "61893353481",
+        "email": "admin@courtneydental.com.au",
+        "address": "202 Charters Towers Road, Hermit Park QLD 4812",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Hermit Park QLD"
+    },
+    "luke-dunn-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Luke Dunn Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Cairns",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4051 8728",
+        "whatsapp": "61893353481",
+        "email": "reception@lddental.com.au",
+        "address": "Suite 1/194 McLeod Street, Cairns QLD 4870",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Cairns QLD"
+    },
+    "withers-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Withers Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Toowoomba",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4659 9477",
+        "whatsapp": "61893353481",
+        "email": "reception@withersdental.com.au",
+        "address": "305a Margaret Street, Toowoomba QLD 4350",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Toowoomba QLD"
+    },
+    "forever-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Forever Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in East",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4599 3399",
+        "whatsapp": "61893353481",
+        "email": "admin@foreverdentaltoowoomba.com.au",
+        "address": "18 Herries St, East Toowoomba QLD 4350",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "East Toowoomba QLD"
+    },
+    "oreilly-dental": {
+      "slug": "fremantle-dentist",
+      "name": "O'Reilly Dental",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Rockhampton",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 4926 2448",
+        "whatsapp": "61893353481",
+        "email": "reception@oreillydental.com.au",
+        "address": "80 High St, North Rockhampton QLD 4701",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Rockhampton QLD"
+    },
+    "dubbo-family-dentists": {
+      "slug": "fremantle-dentist",
+      "name": "Dubbo Family Dentists",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Dubbo",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 6882 5444",
+        "whatsapp": "61893353481",
+        "email": "reception@dubbofamilydentists.com.au",
+        "address": "Level 1, 282 Macquarie Street, Dubbo NSW 2830",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Dubbo NSW"
+    },
+    "happy-smiles-dental": {
+      "slug": "fremantle-dentist",
+      "name": "Happy Smiles Dental Care",
+      "shortName": "Fremantle Dentist",
+      "subName": "Dental Clinic Fremantle",
+      "tagline": "Gentle, modern family dentistry in Tamworth",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 6766 2236",
+        "whatsapp": "61893353481",
+        "email": "reception@happysmiles.com.au",
+        "address": "138 Marius Street, Tamworth NSW 2340",
+        "mapUrl": "https://maps.google.com/?q=120+High+St+Fremantle+WA+6160",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=120+High+St+Fremantle+WA+6160&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Tamworth NSW"
     }
   }
 }
