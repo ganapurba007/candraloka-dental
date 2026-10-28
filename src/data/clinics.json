@@ -3002,6 +3002,111 @@
         "mapUrl": "https://maps.google.com/?q=3+Mount+Elizabeth+Block+A+Singapore",
         "mapEmbedUrl": "https://maps.google.com/maps?q=3+Mount+Elizabeth+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "nam-seng-dental": {
+      "slug": "nam-seng-dental",
+      "name": "Nam Seng Dental Surgery",
+      "shortName": "Nam Seng Dental",
+      "subName": "General & Family Dental Practice",
+      "tagline": "Trusted Dental Care at Beauty World Centre Since 1980s",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6466 0043",
+        "whatsapp": "6585040085",
+        "email": "ns_dental@yahoo.com",
+        "address": "144 Upper Bukit Timah Rd, #01-16 Beauty World Centre, Singapore 588177",
+        "mapUrl": "https://maps.google.com/?q=144+Upper+Bukit+Timah+Rd+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=144+Upper+Bukit+Timah+Rd+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "yip-dental-surgery": {
+      "slug": "yip-dental-surgery",
+      "name": "Yip Dental Surgery",
+      "shortName": "Yip Dental",
+      "subName": "Specialist Dental & Oral Surgery Clinic",
+      "tagline": "High Standard Personalised Dental Care by Dr. Yip Wing Kong",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0d9488",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6235 4477",
+        "whatsapp": "6562354477",
+        "email": "yipdental@gmail.com",
+        "address": "#04-01 Mount Elizabeth Medical Centre, 3 Mount Elizabeth, Singapore 228510",
+        "mapUrl": "https://maps.google.com/?q=3+Mount+Elizabeth+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=3+Mount+Elizabeth+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "smileplus-dental-surgery": {
+      "slug": "smileplus-dental-surgery",
+      "name": "Smileplus Dental Surgery",
+      "shortName": "Smileplus Dental",
+      "subName": "Community & Family Dental Care",
+      "tagline": "Accessible & Compassionate Dental Healthcare in Hougang",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 9233 3862",
+        "whatsapp": "6592333862",
+        "email": "smileplusdentalsurgery@gmail.com",
+        "address": "684 Hougang Ave 8, #01-989, Singapore 530684",
+        "mapUrl": "https://maps.google.com/?q=684+Hougang+Ave+8+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=684+Hougang+Ave+8+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "clover-dental": {
+      "slug": "clover-dental",
+      "name": "Clover Dental Surgery",
+      "shortName": "Clover Dental",
+      "subName": "Family & Aesthetic Dental Practice",
+      "tagline": "Cost-Effective & Transparent Comprehensive Dental Services",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#16a34a",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6904 5674",
+        "whatsapp": "6598197238",
+        "email": "cloverdentalsurgery@gmail.com",
+        "address": "532 Ang Mo Kio Avenue 10, #01-2485, Singapore 560532",
+        "mapUrl": "https://maps.google.com/?q=532+Ang+Mo+Kio+Avenue+10+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=532+Ang+Mo+Kio+Avenue+10+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "tooth-matters-dental": {
+      "slug": "tooth-matters-dental",
+      "name": "Tooth Matters Dental Surgery",
+      "shortName": "Tooth Matters",
+      "subName": "Modern Comprehensive Dental Clinic",
+      "tagline": "Personalized Oral Healthcare in Bras Basah & Central Singapore",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6337 4618",
+        "whatsapp": "6581841707",
+        "email": "toothmattersds@gmail.com",
+        "address": "231 Bain Street, #02-95 Bras Basah Complex, Singapore 180231",
+        "mapUrl": "https://maps.google.com/?q=231+Bain+Street+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=231+Bain+Street+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
