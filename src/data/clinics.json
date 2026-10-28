@@ -3212,6 +3212,226 @@
         "mapUrl": "https://maps.google.com/?q=Novena+Medical+Centre+Singapore",
         "mapEmbedUrl": "https://maps.google.com/maps?q=10+Sinaran+Dr+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "complete-dental-newcastle": {
+      "slug": "complete-dental-newcastle",
+      "name": "Complete Dental Newcastle",
+      "shortName": "Complete Dental",
+      "subName": "Newcastle Dental Care",
+      "tagline": "Comprehensive, gentle family dental care in Newcastle",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 4926 2553",
+        "whatsapp": "61249262553",
+        "email": "reception@completedental.net.au",
+        "address": "37 King St, Newcastle NSW 2300",
+        "mapUrl": "https://maps.google.com/?q=37+King+St+Newcastle+NSW+2300",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=37+King+St+Newcastle+NSW+2300&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Newcastle NSW"
+    },
+    "newcastle-dental-care": {
+      "slug": "newcastle-dental-care",
+      "name": "Newcastle Dental Care",
+      "shortName": "Newcastle Dental",
+      "subName": "Dental Practice Newcastle",
+      "tagline": "Personalised, modern dental care in Newcastle CBD",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 4929 4287",
+        "whatsapp": "61249294287",
+        "email": "info@newcastledentalcare.com.au",
+        "address": "161 King St, Newcastle NSW 2300",
+        "mapUrl": "https://maps.google.com/?q=161+King+St+Newcastle+NSW+2300",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=161+King+St+Newcastle+NSW+2300&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Newcastle NSW"
+    },
+    "canberra-dental-care": {
+      "slug": "canberra-dental-care",
+      "name": "Canberra Dental Care",
+      "shortName": "Canberra Dental",
+      "subName": "Dental Clinic Canberra",
+      "tagline": "Professional, caring dental services in Canberra City",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 6248 0161",
+        "whatsapp": "61262480161",
+        "email": "contact@canberradental.com.au",
+        "address": "3-4/33 Allara St, Canberra City ACT 2601",
+        "mapUrl": "https://maps.google.com/?q=33+Allara+St+Canberra+ACT+2601",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=33+Allara+St+Canberra+ACT+2601&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Canberra ACT"
+    },
+    "oconnor-dental-surgery": {
+      "slug": "oconnor-dental-surgery",
+      "name": "O'Connor Dental Surgery",
+      "shortName": "O'Connor Dental",
+      "subName": "Dental Surgery Canberra",
+      "tagline": "Dedicated family dental care in O'Connor",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 6162 1310",
+        "whatsapp": "61261621310",
+        "email": "admin@oconnordentalsurgery.com",
+        "address": "Suite 4, 15 Sargood Street, O'Connor ACT 2602",
+        "mapUrl": "https://maps.google.com/?q=15+Sargood+Street+O'Connor+ACT+2602",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=15+Sargood+Street+O'Connor+ACT+2602&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "O'Connor ACT"
+    },
+    "city-dental-hobart": {
+      "slug": "city-dental-hobart",
+      "name": "City Dental Hobart",
+      "shortName": "City Dental",
+      "subName": "Hobart Dental Practice",
+      "tagline": "Trusted general and cosmetic dental care in Hobart CBD",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 6234 1303",
+        "whatsapp": "61362341303",
+        "email": "citydentalhobart@gmail.com",
+        "address": "First Floor, 119 Collins Street, Hobart TAS 7000",
+        "mapUrl": "https://maps.google.com/?q=119+Collins+Street+Hobart+TAS+7000",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=119+Collins+Street+Hobart+TAS+7000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Hobart TAS"
+    },
+    "dr-tony-tai-dental": {
+      "slug": "dr-tony-tai-dental",
+      "name": "Dr Tony Tai Dental Surgery",
+      "shortName": "Dr Tony Tai Dental",
+      "subName": "Dental Clinic Hobart",
+      "tagline": "Gentle, experienced family dentistry on Collins Street",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 6234 6088",
+        "whatsapp": "61362346088",
+        "email": "drtaidental@gmail.com",
+        "address": "Ground Floor, 77 Collins Street, Hobart TAS 7000",
+        "mapUrl": "https://maps.google.com/?q=77+Collins+Street+Hobart+TAS+7000",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=77+Collins+Street+Hobart+TAS+7000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Hobart TAS"
+    },
+    "north-hobart-dental": {
+      "slug": "north-hobart-dental",
+      "name": "North Hobart Dental",
+      "shortName": "North Hobart Dental",
+      "subName": "Family Dental Surgery",
+      "tagline": "Friendly, high quality dental care in North Hobart",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "03 6234 9322",
+        "whatsapp": "61362349322",
+        "email": "reception@northhobartdental.com.au",
+        "address": "273 Elizabeth St, North Hobart TAS 7000",
+        "mapUrl": "https://maps.google.com/?q=273+Elizabeth+St+North+Hobart+TAS+7000",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=273+Elizabeth+St+North+Hobart+TAS+7000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "North Hobart TAS"
+    },
+    "suncoast-dental-surgery": {
+      "slug": "suncoast-dental-surgery",
+      "name": "Suncoast Dental & Implant Centre",
+      "shortName": "Suncoast Dental",
+      "subName": "Implant & Dental Surgery",
+      "tagline": "Advanced oral and dental care on the Sunshine Coast",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "07 5452 5146",
+        "whatsapp": "61754525146",
+        "email": "reception@suncoastoms.com.au",
+        "address": "115 Howard St, Nambour QLD 4560",
+        "mapUrl": "https://maps.google.com/?q=115+Howard+St+Nambour+QLD+4560",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=115+Howard+St+Nambour+QLD+4560&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Nambour QLD"
+    },
+    "compass-dental-care": {
+      "slug": "compass-dental-care",
+      "name": "Compass Dental Care",
+      "shortName": "Compass Dental",
+      "subName": "Darwin Family Dentists",
+      "tagline": "Gentle, honest dental care from Darwin dentists who listen",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "08 8995 9530",
+        "whatsapp": "61889959530",
+        "email": "reception@compassdental.com.au",
+        "address": "Suite 102/12 Salonika St, Parap NT 0820",
+        "mapUrl": "https://maps.google.com/?q=12+Salonika+St+Parap+NT+0820",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=12+Salonika+St+Parap+NT+0820&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Parap NT"
+    },
+    "coastal-dental-gosford": {
+      "slug": "coastal-dental-gosford",
+      "name": "Coastal Dental Gosford",
+      "shortName": "Coastal Dental",
+      "subName": "Central Coast Dental",
+      "tagline": "Modern family dental care in the heart of Gosford",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "02 4322 6617",
+        "whatsapp": "61243226617",
+        "email": "info@coastaldental.com.au",
+        "address": "12 Baker Street, Gosford NSW 2250",
+        "mapUrl": "https://maps.google.com/?q=12+Baker+Street+Gosford+NSW+2250",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=12+Baker+Street+Gosford+NSW+2250&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      },
+      "city": "Gosford NSW"
     }
   }
 }
