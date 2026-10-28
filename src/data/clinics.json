@@ -3107,6 +3107,111 @@
         "mapUrl": "https://maps.google.com/?q=231+Bain+Street+Singapore",
         "mapEmbedUrl": "https://maps.google.com/maps?q=231+Bain+Street+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
       }
+    },
+    "shenton-dental": {
+      "slug": "shenton-dental",
+      "name": "Shenton Dental Surgery",
+      "shortName": "Shenton Dental",
+      "subName": "City Centre Group Dental Practice",
+      "tagline": "Unhurried & Comprehensive Dental Care by Dr. Rosalind Ho",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0284c7",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6333 3360",
+        "whatsapp": "6584144023",
+        "email": "shentondentalsurgery@gmail.com",
+        "address": "The Adelphi, 1 Coleman St, #03-20, Singapore 179803",
+        "mapUrl": "https://maps.google.com/?q=The+Adelphi+1+Coleman+St+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1+Coleman+St+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "profile-dental": {
+      "slug": "profile-dental",
+      "name": "Profile Dental Surgery",
+      "shortName": "Profile Dental",
+      "subName": "Affordable Community Dental Practice",
+      "tagline": "Accessible & Accredited Dental Treatment in Central Singapore",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0d9488",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 9825 0360",
+        "whatsapp": "6598250360",
+        "email": "profiledentalsurgery0712@gmail.com",
+        "address": "Central Singapore, Singapore",
+        "mapUrl": "https://maps.google.com/?q=Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "pang-ng-dental": {
+      "slug": "pang-ng-dental",
+      "name": "Pang & Ng Dental Surgery",
+      "shortName": "Pang & Ng Dental",
+      "subName": "Family Dental Surgery Clinic",
+      "tagline": "Dedicated Family Dental Care in Bishan Since Establishment",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#2563eb",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6353 5688",
+        "whatsapp": "6563535688",
+        "email": "pangng.dentalsurgery@gmail.com",
+        "address": "150A Bishan St.11, #01-177, Singapore 571150",
+        "mapUrl": "https://maps.google.com/?q=150A+Bishan+St+11+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=150A+Bishan+St+11+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "lually-dental": {
+      "slug": "lually-dental",
+      "name": "Lually Dental Surgery",
+      "shortName": "Lually Dental",
+      "subName": "Dental Surgery & Oral Healthcare",
+      "tagline": "Professional Oral Healthcare at Raffles City Tower",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0369a1",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6339 0990",
+        "whatsapp": "6563390990",
+        "email": "luallydentalsurgery@gmail.com",
+        "address": "250 North Bridge Road #05-04 Raffles City Tower, Singapore 179101",
+        "mapUrl": "https://maps.google.com/?q=250+North+Bridge+Road+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=250+North+Bridge+Road+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
+    },
+    "specialist-oral-surgeons": {
+      "slug": "specialist-oral-surgeons",
+      "name": "Specialist Oral Surgeons",
+      "shortName": "Specialist Oral Surgeons",
+      "subName": "Oral & Maxillofacial Surgery Practice",
+      "tagline": "Specialised Oral Surgical Intervention by Dr. Lim Kheng Ann",
+      "defaultLanguage": "en",
+      "logo": "/images/logos/candraloka.svg",
+      "colors": {
+        "primary": "#0f766e",
+        "navy": "#0f172a"
+      },
+      "contact": {
+        "phone": "+65 6235 3688",
+        "whatsapp": "6562353688",
+        "email": "specialistoralsurgeons@gmail.com",
+        "address": "#09-25 Novena Medical Centre, 10 Sinaran Dr, Singapore 307506",
+        "mapUrl": "https://maps.google.com/?q=Novena+Medical+Centre+Singapore",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=10+Sinaran+Dr+Singapore&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      }
     }
   }
 }
